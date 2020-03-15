@@ -68,10 +68,16 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -87,6 +93,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.panel3);
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
@@ -401,6 +408,50 @@
             this.richTextBox2.TabIndex = 26;
             this.richTextBox2.Text = "";
             // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.richTextBox4);
+            this.panel3.Controls.Add(this.label19);
+            this.panel3.Controls.Add(this.richTextBox3);
+            this.panel3.Controls.Add(this.label18);
+            this.panel3.Location = new System.Drawing.Point(6, 297);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(414, 156);
+            this.panel3.TabIndex = 2;
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(101, 6);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(301, 60);
+            this.richTextBox3.TabIndex = 28;
+            this.richTextBox3.Text = "";
+            // 
+            // label18
+            // 
+            this.label18.Location = new System.Drawing.Point(0, 11);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(100, 55);
+            this.label18.TabIndex = 27;
+            this.label18.Text = "Место проживания по паспорту";
+            // 
+            // richTextBox4
+            // 
+            this.richTextBox4.Location = new System.Drawing.Point(101, 72);
+            this.richTextBox4.Name = "richTextBox4";
+            this.richTextBox4.Size = new System.Drawing.Size(301, 60);
+            this.richTextBox4.TabIndex = 30;
+            this.richTextBox4.Text = "";
+            // 
+            // label19
+            // 
+            this.label19.Location = new System.Drawing.Point(0, 77);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(100, 55);
+            this.label19.TabIndex = 29;
+            this.label19.Text = "Место проживания фактическое";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -432,6 +483,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
         }
@@ -478,5 +530,10 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.RichTextBox richTextBox4;
     }
 }
