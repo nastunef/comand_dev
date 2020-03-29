@@ -347,6 +347,10 @@ namespace WindowsFormsApp1
                 .IsUnicode(false);
 
             modelBuilder.Entity<PERSONCARD>()
+                .Property(e => e.PLACE_VIDACHI_PASSPORT)
+                .IsUnicode(false);
+            
+            modelBuilder.Entity<PERSONCARD>()
                 .Property(e => e.PLACEBIRTH)
                 .IsUnicode(false);
 
