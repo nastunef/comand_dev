@@ -53,6 +53,9 @@ namespace WindowsFormsApp1
 
         [StringLength(1000)]
         public string PLACEREGISTER { get; set; }
+        
+        [StringLength(300)]
+        public String PLACE_VIDACHI_PASSPORT { get; set; }
 
         [StringLength(1000)]
         public string PLACEBIRTH { get; set; }
