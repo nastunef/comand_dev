@@ -80,6 +80,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddPlaceKomandForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPlaceKomandForm.Designer.cs">
+      <DependentUpon>AddPlaceKomandForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CalendarColumn.cs" />
     <Compile Include="CHARACTER_WORK.cs" />
     <Compile Include="FAMILY_MEMBER.cs" />
@@ -92,6 +98,12 @@
     <Compile Include="GENDER.cs" />
     <Compile Include="GRAZDAN.cs" />
     <Compile Include="JOB_POSITION.cs" />
+    <Compile Include="KomandirovkaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KomandirovkaForm.Designer.cs">
+      <DependentUpon>KomandirovkaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LANGUAGE.cs" />
     <Compile Include="LANGUAGE_LVL.cs" />
     <Compile Include="MARTIAL_STATUS.cs" />
@@ -108,6 +120,12 @@
     <Compile Include="PROFESSION.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchWorkerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchWorkerForm.Designer.cs">
+      <DependentUpon>SearchWorkerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SHTAT_RASP.cs" />
     <Compile Include="SPECIALTY.cs" />
     <Compile Include="STR_SHTAT_RASP.cs" />
@@ -119,8 +137,14 @@
     <Compile Include="TYPE_PRIKAZ.cs" />
     <Compile Include="TYPE_WORK.cs" />
     <Compile Include="UVAL.cs" />
+    <EmbeddedResource Include="AddPlaceKomandForm.resx">
+      <DependentUpon>AddPlaceKomandForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KomandirovkaForm.resx">
+      <DependentUpon>KomandirovkaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -131,6 +155,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SearchWorkerForm.resx">
+      <DependentUpon>SearchWorkerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
