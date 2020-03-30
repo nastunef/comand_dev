@@ -58,7 +58,7 @@ namespace WindowsFormsApp1
         private void initData(long id)
         {
             Model1 model = new Model1();
-            var card = model.PERSONCARD.First(c => c.PK_PERSONCARD == id);
+            var card = model.PERSONCARD.FirstOrDefault(c => c.PK_PERSONCARD == id);
             if (card == null) 
                 return;
 
