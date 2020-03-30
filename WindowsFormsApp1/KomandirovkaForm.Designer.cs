@@ -29,20 +29,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.placesView = new System.Windows.Forms.DataGridView();
-            this.Counrty = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.CityColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.OrganizationColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.FIOColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TabNumColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PodrazdelColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.JobPosColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FinishDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PurposeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FinanceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.finishDate = new System.Windows.Forms.DateTimePicker();
@@ -78,11 +68,41 @@
             this.ExitButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.isDateReasonCheckBox = new System.Windows.Forms.CheckBox();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SurnameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MidNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TabNumColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PodrazdelColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.JobPosColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FinishDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PurposeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FinanceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tRIPORGBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.pERSONCARDBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.TripBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pKTRIPORGDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrganizationColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.CityColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.CounrtyColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.placesView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tRIPORGBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pERSONCARDBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TripBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -95,45 +115,27 @@
             // 
             // placesView
             // 
+            this.placesView.AutoGenerateColumns = false;
             this.placesView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.placesView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Counrty,
+            this.CounrtyColumn,
             this.CityColumn,
-            this.OrganizationColumn});
+            this.OrganizationColumn,
+            this.pKTRIPORGDataGridViewTextBoxColumn});
+            this.placesView.DataSource = this.tRIPORGBindingSource1;
             this.placesView.Location = new System.Drawing.Point(9, 28);
             this.placesView.Name = "placesView";
             this.placesView.Size = new System.Drawing.Size(836, 105);
             this.placesView.TabIndex = 1;
-            // 
-            // Counrty
-            // 
-            this.Counrty.HeaderText = "Страна";
-            this.Counrty.Items.AddRange(new object[] {
-            "Казахстан",
-            "Россия",
-            "Украина"});
-            this.Counrty.Name = "Counrty";
-            this.Counrty.Sorted = true;
-            this.Counrty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Counrty.Width = 200;
-            // 
-            // CityColumn
-            // 
-            this.CityColumn.HeaderText = "Город";
-            this.CityColumn.Name = "CityColumn";
-            this.CityColumn.Width = 200;
-            // 
-            // OrganizationColumn
-            // 
-            this.OrganizationColumn.HeaderText = "Организация";
-            this.OrganizationColumn.Name = "OrganizationColumn";
-            this.OrganizationColumn.Width = 200;
+            this.placesView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.placesView_CellEndEdit);
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.FIOColumn,
+            this.SurnameColumn,
+            this.NameColumn,
+            this.MidNameColumn,
             this.TabNumColumn,
             this.PodrazdelColumn,
             this.JobPosColumn,
@@ -145,58 +147,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(936, 134);
             this.dataGridView1.TabIndex = 7;
-            // 
-            // FIOColumn
-            // 
-            this.FIOColumn.HeaderText = "ФИО";
-            this.FIOColumn.Name = "FIOColumn";
-            this.FIOColumn.ReadOnly = true;
-            this.FIOColumn.Width = 59;
-            // 
-            // TabNumColumn
-            // 
-            this.TabNumColumn.HeaderText = "Таб.номер";
-            this.TabNumColumn.Name = "TabNumColumn";
-            this.TabNumColumn.ReadOnly = true;
-            this.TabNumColumn.Width = 86;
-            // 
-            // PodrazdelColumn
-            // 
-            this.PodrazdelColumn.HeaderText = "Подразделение";
-            this.PodrazdelColumn.Name = "PodrazdelColumn";
-            this.PodrazdelColumn.ReadOnly = true;
-            this.PodrazdelColumn.Width = 112;
-            // 
-            // JobPosColumn
-            // 
-            this.JobPosColumn.HeaderText = "Должность";
-            this.JobPosColumn.Name = "JobPosColumn";
-            this.JobPosColumn.ReadOnly = true;
-            this.JobPosColumn.Width = 90;
-            // 
-            // StartDateColumn
-            // 
-            this.StartDateColumn.HeaderText = "Дата начала";
-            this.StartDateColumn.Name = "StartDateColumn";
-            this.StartDateColumn.Width = 96;
-            // 
-            // FinishDateColumn
-            // 
-            this.FinishDateColumn.HeaderText = "Дата окончания";
-            this.FinishDateColumn.Name = "FinishDateColumn";
-            this.FinishDateColumn.Width = 114;
-            // 
-            // PurposeColumn
-            // 
-            this.PurposeColumn.HeaderText = "Цель";
-            this.PurposeColumn.Name = "PurposeColumn";
-            this.PurposeColumn.Width = 58;
-            // 
-            // FinanceColumn
-            // 
-            this.FinanceColumn.HeaderText = "За счёт средств";
-            this.FinanceColumn.Name = "FinanceColumn";
-            this.FinanceColumn.Width = 114;
             // 
             // label4
             // 
@@ -500,6 +450,191 @@
             this.isDateReasonCheckBox.TabIndex = 40;
             this.isDateReasonCheckBox.UseVisualStyleBackColor = true;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "SURNAME";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Фамилия";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 81;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "NAME";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Имя";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 54;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "MIDDLENAME";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Отчество";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 79;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "TABEL_NUM";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Таб.номер";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 86;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Подразделение";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 112;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "JOB_POSITION";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Должность";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 90;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Дата начала";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 96;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Дата окончания";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 114;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "TRIP";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Цель";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 58;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.HeaderText = "За счёт средств";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Width = 114;
+            // 
+            // SurnameColumn
+            // 
+            this.SurnameColumn.DataPropertyName = "SURNAME";
+            this.SurnameColumn.HeaderText = "Фамилия";
+            this.SurnameColumn.Name = "SurnameColumn";
+            this.SurnameColumn.ReadOnly = true;
+            this.SurnameColumn.Width = 81;
+            // 
+            // NameColumn
+            // 
+            this.NameColumn.DataPropertyName = "NAME";
+            this.NameColumn.HeaderText = "Имя";
+            this.NameColumn.Name = "NameColumn";
+            this.NameColumn.ReadOnly = true;
+            this.NameColumn.Width = 54;
+            // 
+            // MidNameColumn
+            // 
+            this.MidNameColumn.DataPropertyName = "MIDDLENAME";
+            this.MidNameColumn.HeaderText = "Отчество";
+            this.MidNameColumn.Name = "MidNameColumn";
+            this.MidNameColumn.ReadOnly = true;
+            this.MidNameColumn.Width = 79;
+            // 
+            // TabNumColumn
+            // 
+            this.TabNumColumn.DataPropertyName = "TABEL_NUM";
+            this.TabNumColumn.HeaderText = "Таб.номер";
+            this.TabNumColumn.Name = "TabNumColumn";
+            this.TabNumColumn.ReadOnly = true;
+            this.TabNumColumn.Width = 86;
+            // 
+            // PodrazdelColumn
+            // 
+            this.PodrazdelColumn.HeaderText = "Подразделение";
+            this.PodrazdelColumn.Name = "PodrazdelColumn";
+            this.PodrazdelColumn.ReadOnly = true;
+            this.PodrazdelColumn.Width = 112;
+            // 
+            // JobPosColumn
+            // 
+            this.JobPosColumn.DataPropertyName = "JOB_POSITION";
+            this.JobPosColumn.HeaderText = "Должность";
+            this.JobPosColumn.Name = "JobPosColumn";
+            this.JobPosColumn.ReadOnly = true;
+            this.JobPosColumn.Width = 90;
+            // 
+            // StartDateColumn
+            // 
+            this.StartDateColumn.HeaderText = "Дата начала";
+            this.StartDateColumn.Name = "StartDateColumn";
+            this.StartDateColumn.Width = 96;
+            // 
+            // FinishDateColumn
+            // 
+            this.FinishDateColumn.HeaderText = "Дата окончания";
+            this.FinishDateColumn.Name = "FinishDateColumn";
+            this.FinishDateColumn.Width = 114;
+            // 
+            // PurposeColumn
+            // 
+            this.PurposeColumn.DataPropertyName = "TRIP";
+            this.PurposeColumn.HeaderText = "Цель";
+            this.PurposeColumn.Name = "PurposeColumn";
+            this.PurposeColumn.Width = 58;
+            // 
+            // FinanceColumn
+            // 
+            this.FinanceColumn.HeaderText = "За счёт средств";
+            this.FinanceColumn.Name = "FinanceColumn";
+            this.FinanceColumn.Width = 114;
+            // 
+            // tRIPORGBindingSource1
+            // 
+            this.tRIPORGBindingSource1.DataSource = typeof(WindowsFormsApp1.TRIP_ORG);
+            // 
+            // pERSONCARDBindingSource
+            // 
+            this.pERSONCARDBindingSource.DataSource = typeof(WindowsFormsApp1.PERSONCARD);
+            // 
+            // TripBindingSource
+            // 
+            this.TripBindingSource.DataSource = typeof(WindowsFormsApp1.TRIP);
+            // 
+            // pKTRIPORGDataGridViewTextBoxColumn
+            // 
+            this.pKTRIPORGDataGridViewTextBoxColumn.DataPropertyName = "PK_TRIP_ORG";
+            this.pKTRIPORGDataGridViewTextBoxColumn.HeaderText = "PK_TRIP_ORG";
+            this.pKTRIPORGDataGridViewTextBoxColumn.Name = "pKTRIPORGDataGridViewTextBoxColumn";
+            this.pKTRIPORGDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.pKTRIPORGDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.pKTRIPORGDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // OrganizationColumn
+            // 
+            this.OrganizationColumn.DataPropertyName = "NAME";
+            this.OrganizationColumn.DataSource = this.tRIPORGBindingSource1;
+            this.OrganizationColumn.HeaderText = "Организация";
+            this.OrganizationColumn.Name = "OrganizationColumn";
+            this.OrganizationColumn.Width = 200;
+            // 
+            // CityColumn
+            // 
+            this.CityColumn.HeaderText = "Город";
+            this.CityColumn.Name = "CityColumn";
+            this.CityColumn.Width = 200;
+            // 
+            // CounrtyColumn
+            // 
+            this.CounrtyColumn.HeaderText = "Страна";
+            this.CounrtyColumn.Name = "CounrtyColumn";
+            this.CounrtyColumn.Width = 200;
+            // 
             // KomandirovkaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -544,6 +679,9 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tRIPORGBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pERSONCARDBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TripBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -560,23 +698,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView placesView;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FinishDateColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StartDateColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn JobPosColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PodrazdelColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TabNumColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FIOColumn;
         private System.Windows.Forms.CheckBox isSameDatesCheckBox;
-        private System.Windows.Forms.DataGridViewComboBoxColumn OrganizationColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn CityColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Counrty;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PurposeColumn;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FinanceColumn;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -600,5 +727,32 @@
         private System.Windows.Forms.TextBox FinanceTextBox;
         private System.Windows.Forms.TextBox PurposeTextBox;
         private System.Windows.Forms.CheckBox PurposeCheckBox;
+        private System.Windows.Forms.BindingSource pERSONCARDBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SurnameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MidNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TabNumColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PodrazdelColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn JobPosColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StartDateColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FinishDateColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PurposeColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FinanceColumn;
+        private System.Windows.Forms.BindingSource TripBindingSource;
+        private System.Windows.Forms.BindingSource tRIPORGBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewComboBoxColumn CounrtyColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn CityColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn OrganizationColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pKTRIPORGDataGridViewTextBoxColumn;
     }
 }

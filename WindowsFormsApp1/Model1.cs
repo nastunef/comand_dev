@@ -448,8 +448,7 @@ namespace WindowsFormsApp1
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PLACE_TRIP>()
-                .Property(e => e.PK_PLACE_TRIP)
-                .HasPrecision(38, 0);
+                .Property(e => e.PK_PLACE_TRIP);
 
             modelBuilder.Entity<PLACE_TRIP>()
                 .Property(e => e.NAME)
@@ -828,7 +827,7 @@ namespace WindowsFormsApp1
 
             modelBuilder.Entity<TRIP_ORG>()
                 .Property(e => e.NAME)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<TRIP_ORG>()
                 .Property(e => e.PK_PLACE_TRIP)

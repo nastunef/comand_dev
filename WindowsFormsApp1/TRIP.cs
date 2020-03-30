@@ -22,6 +22,9 @@ namespace WindowsFormsApp1
         [StringLength(500)]
         public string GOAL { get; set; }
 
+        [StringLength(500)]
+        public string FINANCE { get; set; }
+
         public DateTime? STARTDATE { get; set; }
 
         public DateTime? ENDDATE { get; set; }

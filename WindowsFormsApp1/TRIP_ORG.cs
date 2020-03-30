@@ -10,6 +10,7 @@ namespace WindowsFormsApp1
     public partial class TRIP_ORG
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public decimal PK_TRIP_ORG { get; set; }
 
         [StringLength(255)]
@@ -18,5 +19,36 @@ namespace WindowsFormsApp1
         public decimal PK_PLACE_TRIP { get; set; }
 
         public virtual PLACE_TRIP PLACE_TRIP { get; set; }
+
+        //Костылёк
+        [NotMapped]
+        public string CountryPlace
+        {
+            get
+            {
+                return PLACE_TRIP.Country;
+            }
+
+            set
+            {
+                PLACE_TRIP.Country = value;
+            }
+        }
+
+        [NotMapped]
+        public string CityPlace
+        {
+            get
+            {
+                return PLACE_TRIP.City;
+            }
+
+            set
+            {
+                PLACE_TRIP.City = value;
+            }
+        }
+
+        public new virtual string ToString => NAME;
     }
 }

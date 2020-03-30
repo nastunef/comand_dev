@@ -31,14 +31,17 @@ namespace Komandirovki
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.CountryComboBox = new System.Windows.Forms.ComboBox();
+            this.pLACETRIPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.OrganizationTextBox = new System.Windows.Forms.TextBox();
             this.SaveButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
             this.CityTextBox = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pLACETRIPBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -56,6 +59,10 @@ namespace Komandirovki
             this.CountryComboBox.Name = "CountryComboBox";
             this.CountryComboBox.Size = new System.Drawing.Size(187, 21);
             this.CountryComboBox.TabIndex = 1;
+            // 
+            // pLACETRIPBindingSource
+            // 
+            this.pLACETRIPBindingSource.DataSource = typeof(WindowsFormsApp1.PLACE_TRIP);
             // 
             // label2
             // 
@@ -88,6 +95,7 @@ namespace Komandirovki
             this.SaveButton.TabIndex = 6;
             this.SaveButton.Text = "Сохранить";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // ExitButton
             // 
@@ -120,14 +128,13 @@ namespace Komandirovki
             this.Controls.Add(this.label1);
             this.Name = "AddPlaceKomandForm";
             this.Text = "Добавить место назначения";
+            ((System.ComponentModel.ISupportInitialize)(this.pLACETRIPBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox CityTextBox;
         private System.Windows.Forms.TextBox OrganizationTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -135,5 +142,7 @@ namespace Komandirovki
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.TextBox CityTextBox;
+        private System.Windows.Forms.BindingSource pLACETRIPBindingSource;
     }
 }

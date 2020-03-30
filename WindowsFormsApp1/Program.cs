@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//using Komandirovki;
+using Komandirovki;
 
 namespace WindowsFormsApp1
 {
@@ -18,8 +18,8 @@ namespace WindowsFormsApp1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-            //Application.Run(new KomandirovkaForm());
+            //Application.Run(new Form1());
+            Application.Run(new KomandirovkaForm());
         }
     }
 }

@@ -17,11 +17,45 @@ namespace WindowsFormsApp1
         }
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public decimal PK_PLACE_TRIP { get; set; }
 
         [StringLength(1000)]
         public string NAME { get; set; }
 
+        [NotMapped]
+        private string country;
+        [NotMapped]
+        public string Country {
+            get
+            {
+               return NAME.Substring(0, NAME.IndexOf(','));
+            }
+            set
+            {
+                country = value;
+            }
+        }
+
+        [NotMapped]
+        private string city;
+        [NotMapped]
+        public string City
+        {
+            get
+            {
+                return NAME.Substring(NAME.IndexOf(',')+1).Replace(" ", "");
+            }
+            set
+            {
+                city = value;    
+            }
+
+        }
+        public void createName()
+        {
+            NAME = country + ", " + city;
+        }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TRIP_ORG> TRIP_ORG { get; set; }
 

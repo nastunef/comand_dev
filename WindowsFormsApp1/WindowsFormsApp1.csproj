@@ -108,6 +108,7 @@
     <Compile Include="LANGUAGE_LVL.cs" />
     <Compile Include="MARTIAL_STATUS.cs" />
     <Compile Include="Model1.cs" />
+    <Compile Include="MyMsgBox.cs" />
     <Compile Include="ONE_EDU.cs" />
     <Compile Include="OUR_ORG.cs" />
     <Compile Include="PEREVOD.cs" />
@@ -132,6 +133,7 @@
     <Compile Include="STR_TABEL.cs" />
     <Compile Include="TABEL.cs" />
     <Compile Include="TRIP.cs" />
+    <Compile Include="TripOrgsDataSource.cs" />
     <Compile Include="TRIP_ORG.cs" />
     <Compile Include="TYPE_EDU.cs" />
     <Compile Include="TYPE_PRIKAZ.cs" />
@@ -159,6 +161,10 @@
       <DependentUpon>SearchWorkerForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\PERSONCARD.datasource" />
+    <None Include="Properties\DataSources\PLACE_TRIP.datasource" />
+    <None Include="Properties\DataSources\TRIP.datasource" />
+    <None Include="Properties\DataSources\TRIP_ORG.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
