@@ -65,7 +65,7 @@ private void InitializeComponent()
     this.label19 = new System.Windows.Forms.Label();
     this.label18 = new System.Windows.Forms.Label();
     this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-    this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+    this.numericUrerpDown1 = new System.Windows.Forms.NumericUpDown();
     this.label16 = new System.Windows.Forms.Label();
     this.label17 = new System.Windows.Forms.Label();
     this.panel6 = new System.Windows.Forms.Panel();
@@ -102,7 +102,7 @@ private void InitializeComponent()
     this.panel4.SuspendLayout();
     this.panel5.SuspendLayout();
     ((System.ComponentModel.ISupportInitialize) (this.numericUpDown2)).BeginInit();
-    ((System.ComponentModel.ISupportInitialize) (this.numericUpDown1)).BeginInit();
+    ((System.ComponentModel.ISupportInitialize) (this.numericUrerpDown1)).BeginInit();
     this.panel6.SuspendLayout();
     ((System.ComponentModel.ISupportInitialize) (this.numericUpDown4)).BeginInit();
     this.panel7.SuspendLayout();
@@ -371,7 +371,7 @@ private void InitializeComponent()
     this.panel5.Controls.Add(this.label19);
     this.panel5.Controls.Add(this.label18);
     this.panel5.Controls.Add(this.numericUpDown2);
-    this.panel5.Controls.Add(this.numericUpDown1);
+    this.panel5.Controls.Add(this.numericUrerpDown1);
     this.panel5.Controls.Add(this.label16);
     this.panel5.Controls.Add(this.label17);
     this.panel5.Location = new System.Drawing.Point(234, 557);
@@ -402,12 +402,12 @@ private void InitializeComponent()
     this.numericUpDown2.Size = new System.Drawing.Size(110, 23);
     this.numericUpDown2.TabIndex = 25;
     // 
-    // numericUpDown1
+    // numericUrerpDown1
     // 
-    this.numericUpDown1.Location = new System.Drawing.Point(209, 12);
-    this.numericUpDown1.Name = "numericUpDown1";
-    this.numericUpDown1.Size = new System.Drawing.Size(110, 23);
-    this.numericUpDown1.TabIndex = 24;
+    this.numericUrerpDown1.Location = new System.Drawing.Point(209, 12);
+    this.numericUrerpDown1.Name = "numericUrerpDown1";
+    this.numericUrerpDown1.Size = new System.Drawing.Size(110, 23);
+    this.numericUrerpDown1.TabIndex = 24;
     // 
     // label16
     // 
@@ -701,7 +701,7 @@ private void InitializeComponent()
     this.panel4.PerformLayout();
     this.panel5.ResumeLayout(false);
     ((System.ComponentModel.ISupportInitialize) (this.numericUpDown2)).EndInit();
-    ((System.ComponentModel.ISupportInitialize) (this.numericUpDown1)).EndInit();
+    ((System.ComponentModel.ISupportInitialize) (this.numericUrerpDown1)).EndInit();
     this.panel6.ResumeLayout(false);
     ((System.ComponentModel.ISupportInitialize) (this.numericUpDown4)).EndInit();
     this.panel7.ResumeLayout(false);
@@ -747,7 +747,6 @@ private void InitializeComponent()
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
@@ -779,5 +778,6 @@ private void InitializeComponent()
         private System.Windows.Forms.ToolStripMenuItem приказыToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem linkDeleteWork;
+        private System.Windows.Forms.NumericUpDown numericUrerpDown1;
     }
 }

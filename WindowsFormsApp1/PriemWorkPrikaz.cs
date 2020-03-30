@@ -57,7 +57,13 @@ namespace WindowsFormsApp1
             textBox4.Text = selectedMen.TABEL_NUM.ToString();
             
             textBox5.Text = selectedMen.TABEL.PODRAZDELORG.NAME;
-            textBox6.Text = selectedMen.TABEL.
+            textBox6.Text = selectedMen.JOB_POSITION.NAME;
+            textBox7.Text = selectedMen.PROFESSION.NAME;
+            textBox8.Text = selectedMen.CHARACTER_WORK.NAME;
+
+            var strStat  = model.STR_SHTAT_RASP.FirstOrDefault(stat => stat.PK_JOB_POS == selectedMen.JOB_POSITION.PK_JOB_POS);
+            numericUrerpDown1.Value = (decimal) strStat.TARIFF;
+            numericUrerpDown1.Value = (decimal) strStat.NADBAVKA1;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
