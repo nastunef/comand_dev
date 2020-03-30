@@ -36,9 +36,18 @@ namespace WindowsFormsApp1
                 return;
             int selRowNum = dataGridView_family.SelectedCells[0].RowIndex;
             decimal tabNumber = (decimal) dataGridView_family.Rows[selRowNum].Cells[2].Value;
-            
-            PriemWorkPrikaz priemWorkPrikaz = new PriemWorkPrikaz(tabNumber);
-            priemWorkPrikaz.Show();
+
+            if (priem.Checked == true)
+            {
+                PriemWorkPrikaz priemWorkPrikaz = new PriemWorkPrikaz(tabNumber);
+                priemWorkPrikaz.Show();
+            }
+
+            if (deletework.Checked == true)
+            {
+                DelWorkPrikaz delWorkPrikaz = new DelWorkPrikaz(tabNumber);
+                delWorkPrikaz.Show();
+            }
         }
     }
 }
