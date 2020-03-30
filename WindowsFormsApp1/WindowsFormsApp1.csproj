@@ -15,6 +15,7 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -27,7 +28,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -113,6 +113,7 @@
     <Compile Include="OUR_ORG.cs" />
     <Compile Include="PEREVOD.cs" />
     <Compile Include="PERSONCARD.cs" />
+    <Compile Include="PERSONCARD_TRIP.cs" />
     <Compile Include="PLACE_EDU.cs" />
     <Compile Include="PLACE_TRIP.cs" />
     <Compile Include="PODRAZDELORG.cs" />
@@ -133,7 +134,6 @@
     <Compile Include="STR_TABEL.cs" />
     <Compile Include="TABEL.cs" />
     <Compile Include="TRIP.cs" />
-    <Compile Include="TripOrgsDataSource.cs" />
     <Compile Include="TRIP_ORG.cs" />
     <Compile Include="TYPE_EDU.cs" />
     <Compile Include="TYPE_PRIKAZ.cs" />

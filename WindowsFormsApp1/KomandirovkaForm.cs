@@ -15,12 +15,11 @@ namespace Komandirovki
 {
     public partial class KomandirovkaForm : Form
     {
-        private BindingSource bindingSource = new BindingSource();
         private Model1 model = new Model1();
         //Country -> cities
         public Dictionary<String, List<String>> cities;
         //City -> orgs
-        public Dictionary<String, List<String>> organizations;
+        public Dictionary<String, List<TRIP_ORG>> organizations;
         private DbSet<TRIP_ORG> allOrgs;
         private DbSet<PLACE_TRIP> allPlaces;
         public KomandirovkaForm()
@@ -33,11 +32,15 @@ namespace Komandirovki
 
             UpdatePlaces();
             CounrtyColumn.DataSource = cities.Keys.ToList();
+            OrganizationColumn.DisplayMember = "NAME";
+            OrganizationColumn.ValueMember = "PK_TRIP_ORG";
+
+            WorkersGridView.DataSource = 
         }
 
         public void UpdatePlaces()
         {
-            organizations = new Dictionary<String, List<String>>();
+            organizations = new Dictionary<String, List<TRIP_ORG>>();
             cities = new Dictionary<String, List<String>>();
             allOrgs = model.TRIP_ORG;
             allPlaces = model.PLACE_TRIP;
@@ -50,15 +53,15 @@ namespace Komandirovki
                     cities[country] = new List<string>();
                 cities[country].Add(city);
                 if (!organizations.ContainsKey(city))
-                    organizations[city] = new List<String>();
-                organizations[city].Add(org.NAME);
+                    organizations[city] = new List<TRIP_ORG>();
+                organizations[city].Add(org);
             }
         }
 
 
         private void AddWorkerButton_Click(object sender, EventArgs e)
         {
-            SearchWorkerForm searchWorkerForm = new SearchWorkerForm();
+            SearchWorkerForm searchWorkerForm = new SearchWorkerForm(model, this);
             searchWorkerForm.Show();
         }
 
@@ -104,19 +107,46 @@ namespace Komandirovki
             {
                 organization.Value = null;
             }
-
-            if (e.ColumnIndex == 2)
-            {
-                var orgName = row.Cells[2].Value as String;
-                if (orgName != null && orgName != "")
-                    row.Cells[3].Value = allOrgs.Where(org => org.NAME == orgName).FirstOrDefault().PK_TRIP_ORG;
-            }
-            Console.WriteLine(row.Cells[3].Value);
         }
+        
+        public void AddOrgTrip(TRIP_ORG org)
+        {
+            int i = placesView.Rows.Add();
+            Console.WriteLine($" {(placesView.Rows[i].Cells[0] as DataGridViewComboBoxCell).Value} , {(placesView.Rows[i].Cells[1] as DataGridViewComboBoxCell).Value} , {(placesView.Rows[i].Cells[2] as DataGridViewComboBoxCell).Value} ");
+            (placesView.Rows[i].Cells[0] as DataGridViewComboBoxCell).Value = org.CountryPlace;
+            (placesView.Rows[i].Cells[1] as DataGridViewComboBoxCell).Value = org.CityPlace;
+            //(placesView.Rows[i].Cells[2] as DataGridViewComboBoxCell).Value = org;
+            Console.WriteLine($" {(placesView.Rows[i].Cells[0] as DataGridViewComboBoxCell).Value} , {(placesView.Rows[i].Cells[1] as DataGridViewComboBoxCell).Value} , {(placesView.Rows[i].Cells[2] as DataGridViewComboBoxCell).Value} ");
+
+        }
+
 
         public Dictionary<string, List<string>> GetCities()
         {
             return cities;
+        }
+
+        private void DeletePlaceButton_Click(object sender, EventArgs e)
+        {
+            var rows = WorkersGridView.SelectedRows;
+            if (rows.Count < 1)
+                MyMsgBox.showInfo("Вы не выделили строку");
+            if (MyMsgBox.showAsk("Вы точно хотите удалить?") == false)
+                return;
+            
+            for(int i = 0; i < rows.Count; i++){
+                TRIP_ORG org = rows[i].Cells[2].Value as TRIP_ORG;
+                if (org == null)
+                    continue;
+                model.TRIP_ORG.Remove(org);
+                WorkersGridView.Rows.Remove(rows[i]);
+            }
+            model.SaveChanges();
+        }
+
+        public void SetWorkers(IList<PERSONCARD> workers)
+        {
+            Console.WriteLine(workers);
         }
     }
 }

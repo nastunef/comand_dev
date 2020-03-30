@@ -13,7 +13,6 @@ namespace WindowsFormsApp1
         public PLACE_TRIP()
         {
             TRIP_ORG = new HashSet<TRIP_ORG>();
-            TRIP = new HashSet<TRIP>();
         }
 
         [Key]
@@ -59,7 +58,6 @@ namespace WindowsFormsApp1
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TRIP_ORG> TRIP_ORG { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TRIP> TRIP { get; set; }
+
     }
 }

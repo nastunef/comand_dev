@@ -39,7 +39,7 @@ namespace Komandirovki
                 return;
             }
             var org = OrganizationTextBox.Text;
-            if (org == null || org == "")
+            if (string.IsNullOrEmpty(org))
             {
                 MyMsgBox.showError("Введите название организации");
                 return;
@@ -49,7 +49,7 @@ namespace Komandirovki
             PLACE_TRIP neededPlace = null;
             foreach(PLACE_TRIP place in places)
             {
-                if(String.Compare(place.NAME, city, true) == 0) {
+                if(String.Compare(place.City, city, StringComparison.OrdinalIgnoreCase) == 0) {
                     neededPlace = place;
                     break;
                 }
@@ -64,7 +64,9 @@ namespace Komandirovki
                 newPlace.createName();
                 model.PLACE_TRIP.Add(newPlace);
                 model.SaveChanges();
-                neededPlace = model.PLACE_TRIP.Where(place => place.NAME == newPlace.NAME).FirstOrDefault();
+                neededPlace = newPlace;
+                Console.WriteLine($"id = {neededPlace.PK_PLACE_TRIP}");
+                //neededPlace = model.PLACE_TRIP.FirstOrDefault(place => place.NAME == newPlace.NAME);
             }
 
             TRIP_ORG trip_org = new TRIP_ORG();
@@ -73,7 +75,8 @@ namespace Komandirovki
             model.TRIP_ORG.Add(trip_org);
             model.SaveChanges();
             komandirovkaForm.UpdatePlaces();
-
+            Console.WriteLine($"id org = {trip_org.PK_TRIP_ORG}");
+            komandirovkaForm.AddOrgTrip(trip_org);
             MyMsgBox.showInfo("Добавлено!");
         }
     }

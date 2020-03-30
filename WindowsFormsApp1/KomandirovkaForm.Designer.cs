@@ -32,7 +32,10 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.placesView = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.CounrtyColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.CityColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.OrganizationColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.WorkersGridView = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.finishDate = new System.Windows.Forms.DateTimePicker();
@@ -78,6 +81,7 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SurnameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MidNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,14 +93,11 @@
             this.PurposeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FinanceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tRIPORGBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.PK_ORG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pERSONCARDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.TripBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pKTRIPORGDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrganizationColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.CityColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.CounrtyColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.placesView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WorkersGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -115,24 +116,42 @@
             // 
             // placesView
             // 
-            this.placesView.AutoGenerateColumns = false;
             this.placesView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.placesView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CounrtyColumn,
             this.CityColumn,
             this.OrganizationColumn,
-            this.pKTRIPORGDataGridViewTextBoxColumn});
-            this.placesView.DataSource = this.tRIPORGBindingSource1;
+            this.PK_ORG});
             this.placesView.Location = new System.Drawing.Point(9, 28);
             this.placesView.Name = "placesView";
             this.placesView.Size = new System.Drawing.Size(836, 105);
             this.placesView.TabIndex = 1;
             this.placesView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.placesView_CellEndEdit);
             // 
-            // dataGridView1
+            // CounrtyColumn
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CounrtyColumn.HeaderText = "Страна";
+            this.CounrtyColumn.Name = "CounrtyColumn";
+            this.CounrtyColumn.Width = 200;
+            // 
+            // CityColumn
+            // 
+            this.CityColumn.HeaderText = "Город";
+            this.CityColumn.Name = "CityColumn";
+            this.CityColumn.Width = 200;
+            // 
+            // OrganizationColumn
+            // 
+            this.OrganizationColumn.DataPropertyName = "NAME";
+            this.OrganizationColumn.DataSource = this.tRIPORGBindingSource1;
+            this.OrganizationColumn.HeaderText = "Организация";
+            this.OrganizationColumn.Name = "OrganizationColumn";
+            this.OrganizationColumn.Width = 200;
+            // 
+            // WorkersGridView
+            // 
+            this.WorkersGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.WorkersGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SurnameColumn,
             this.NameColumn,
             this.MidNameColumn,
@@ -143,10 +162,10 @@
             this.FinishDateColumn,
             this.PurposeColumn,
             this.FinanceColumn});
-            this.dataGridView1.Location = new System.Drawing.Point(8, 153);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(936, 134);
-            this.dataGridView1.TabIndex = 7;
+            this.WorkersGridView.Location = new System.Drawing.Point(8, 153);
+            this.WorkersGridView.Name = "WorkersGridView";
+            this.WorkersGridView.Size = new System.Drawing.Size(936, 134);
+            this.WorkersGridView.TabIndex = 7;
             // 
             // label4
             // 
@@ -382,6 +401,7 @@
             this.DeletePlaceButton.TabIndex = 33;
             this.DeletePlaceButton.Text = "Удалить выделенную";
             this.DeletePlaceButton.UseVisualStyleBackColor = true;
+            this.DeletePlaceButton.Click += new System.EventHandler(this.DeletePlaceButton_Click);
             // 
             // DeleteWorkerButton
             // 
@@ -456,6 +476,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "Фамилия";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
             this.dataGridViewTextBoxColumn1.Width = 81;
             // 
             // dataGridViewTextBoxColumn2
@@ -484,6 +505,7 @@
             // 
             // dataGridViewTextBoxColumn5
             // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "TABEL_NUM";
             this.dataGridViewTextBoxColumn5.HeaderText = "Подразделение";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
@@ -499,8 +521,10 @@
             // 
             // dataGridViewTextBoxColumn7
             // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "JOB_POSITION";
             this.dataGridViewTextBoxColumn7.HeaderText = "Дата начала";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             this.dataGridViewTextBoxColumn7.Width = 96;
             // 
             // dataGridViewTextBoxColumn8
@@ -518,9 +542,16 @@
             // 
             // dataGridViewTextBoxColumn10
             // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "TRIP";
             this.dataGridViewTextBoxColumn10.HeaderText = "За счёт средств";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.Width = 114;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.HeaderText = "За счёт средств";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.Width = 114;
             // 
             // SurnameColumn
             // 
@@ -598,6 +629,12 @@
             // 
             this.tRIPORGBindingSource1.DataSource = typeof(WindowsFormsApp1.TRIP_ORG);
             // 
+            // PK_ORG
+            // 
+            this.PK_ORG.HeaderText = "PK_ORG";
+            this.PK_ORG.Name = "PK_ORG";
+            this.PK_ORG.Visible = false;
+            // 
             // pERSONCARDBindingSource
             // 
             this.pERSONCARDBindingSource.DataSource = typeof(WindowsFormsApp1.PERSONCARD);
@@ -605,35 +642,6 @@
             // TripBindingSource
             // 
             this.TripBindingSource.DataSource = typeof(WindowsFormsApp1.TRIP);
-            // 
-            // pKTRIPORGDataGridViewTextBoxColumn
-            // 
-            this.pKTRIPORGDataGridViewTextBoxColumn.DataPropertyName = "PK_TRIP_ORG";
-            this.pKTRIPORGDataGridViewTextBoxColumn.HeaderText = "PK_TRIP_ORG";
-            this.pKTRIPORGDataGridViewTextBoxColumn.Name = "pKTRIPORGDataGridViewTextBoxColumn";
-            this.pKTRIPORGDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.pKTRIPORGDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.pKTRIPORGDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // OrganizationColumn
-            // 
-            this.OrganizationColumn.DataPropertyName = "NAME";
-            this.OrganizationColumn.DataSource = this.tRIPORGBindingSource1;
-            this.OrganizationColumn.HeaderText = "Организация";
-            this.OrganizationColumn.Name = "OrganizationColumn";
-            this.OrganizationColumn.Width = 200;
-            // 
-            // CityColumn
-            // 
-            this.CityColumn.HeaderText = "Город";
-            this.CityColumn.Name = "CityColumn";
-            this.CityColumn.Width = 200;
-            // 
-            // CounrtyColumn
-            // 
-            this.CounrtyColumn.HeaderText = "Страна";
-            this.CounrtyColumn.Name = "CounrtyColumn";
-            this.CounrtyColumn.Width = 200;
             // 
             // KomandirovkaForm
             // 
@@ -666,14 +674,14 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.isSameDatesCheckBox);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.WorkersGridView);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.placesView);
             this.Controls.Add(this.label1);
             this.Name = "KomandirovkaForm";
             this.Text = "Командировка";
             ((System.ComponentModel.ISupportInitialize)(this.placesView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WorkersGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -690,7 +698,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView WorkersGridView;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker finishDate;
@@ -753,6 +761,7 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn CounrtyColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn CityColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn OrganizationColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pKTRIPORGDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PK_ORG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
     }
 }

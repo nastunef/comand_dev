@@ -459,10 +459,10 @@ namespace WindowsFormsApp1
                 .WithRequired(e => e.PLACE_TRIP)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<PLACE_TRIP>()
+            modelBuilder.Entity<TRIP_ORG>()
                 .HasMany(e => e.TRIP)
-                .WithMany(e => e.PLACE_TRIP)
-                .Map(m => m.ToTable("TRIP_PLACETRIP", "ADMIN").MapLeftKey("PK_PLACE_TRIP").MapRightKey("PK_TRIP"));
+                .WithMany(e => e.TRIP_ORG)
+                .Map(m => m.ToTable("TRIP_TRIPORG", "ADMIN").MapLeftKey("PK_TRIP_ORG").MapRightKey("PK_TRIP"));
 
             modelBuilder.Entity<PODRAZDELORG>()
                 .Property(e => e.PK_PODRAZDEL)

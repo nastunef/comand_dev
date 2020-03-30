@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
         public TRIP()
         {
             PERSONCARD = new HashSet<PERSONCARD>();
-            PLACE_TRIP = new HashSet<PLACE_TRIP>();
+            TRIP_ORG = new HashSet<TRIP_ORG>();
         }
 
         [Key]
@@ -37,6 +37,6 @@ namespace WindowsFormsApp1
         public virtual ICollection<PERSONCARD> PERSONCARD { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PLACE_TRIP> PLACE_TRIP { get; set; }
+        public virtual ICollection<TRIP_ORG> TRIP_ORG { get; set; }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SurNameTextBox = new System.Windows.Forms.TextBox();
@@ -38,14 +39,21 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.pERSONCARDBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SurnameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MidNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TabNumColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.pk_personcardcolumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pERSONCARDBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -125,42 +133,21 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SurnameColumn,
             this.NameColumn,
             this.MidNameColumn,
-            this.TabNumColumn});
+            this.TabNumColumn,
+            this.pk_personcardcolumn});
+            this.dataGridView1.DataSource = this.pERSONCARDBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(17, 158);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(452, 150);
             this.dataGridView1.TabIndex = 9;
-            // 
-            // SurnameColumn
-            // 
-            this.SurnameColumn.HeaderText = "Фамилия";
-            this.SurnameColumn.Name = "SurnameColumn";
-            this.SurnameColumn.ReadOnly = true;
-            // 
-            // NameColumn
-            // 
-            this.NameColumn.HeaderText = "Имя";
-            this.NameColumn.Name = "NameColumn";
-            this.NameColumn.ReadOnly = true;
-            // 
-            // MidNameColumn
-            // 
-            this.MidNameColumn.HeaderText = "Отчество";
-            this.MidNameColumn.Name = "MidNameColumn";
-            this.MidNameColumn.ReadOnly = true;
-            // 
-            // TabNumColumn
-            // 
-            this.TabNumColumn.HeaderText = "Табельный номер";
-            this.TabNumColumn.Name = "TabNumColumn";
-            this.TabNumColumn.ReadOnly = true;
             // 
             // button1
             // 
@@ -170,6 +157,7 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "Добавить выбранного работника в командировку";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -189,6 +177,71 @@
             this.button3.TabIndex = 12;
             this.button3.Text = "ИСКАТЬ";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // pERSONCARDBindingSource
+            // 
+            this.pERSONCARDBindingSource.DataSource = typeof(WindowsFormsApp1.PERSONCARD);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "SURNAME";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Фамилия";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "NAME";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Имя";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "MIDDLENAME";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Отчество";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "TABEL_NUM";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Табельный номер";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // SurnameColumn
+            // 
+            this.SurnameColumn.DataPropertyName = "SURNAME";
+            this.SurnameColumn.HeaderText = "Фамилия";
+            this.SurnameColumn.Name = "SurnameColumn";
+            this.SurnameColumn.ReadOnly = true;
+            // 
+            // NameColumn
+            // 
+            this.NameColumn.DataPropertyName = "NAME";
+            this.NameColumn.HeaderText = "Имя";
+            this.NameColumn.Name = "NameColumn";
+            this.NameColumn.ReadOnly = true;
+            // 
+            // MidNameColumn
+            // 
+            this.MidNameColumn.DataPropertyName = "MIDDLENAME";
+            this.MidNameColumn.HeaderText = "Отчество";
+            this.MidNameColumn.Name = "MidNameColumn";
+            this.MidNameColumn.ReadOnly = true;
+            // 
+            // TabNumColumn
+            // 
+            this.TabNumColumn.DataPropertyName = "TABEL_NUM";
+            this.TabNumColumn.HeaderText = "Табельный номер";
+            this.TabNumColumn.Name = "TabNumColumn";
+            this.TabNumColumn.ReadOnly = true;
+            // 
+            // pk_personcardcolumn
+            // 
+            this.pk_personcardcolumn.DataPropertyName = "PK_PERSONCARD";
+            this.pk_personcardcolumn.HeaderText = "PK_PERSONCARD";
+            this.pk_personcardcolumn.Name = "pk_personcardcolumn";
+            this.pk_personcardcolumn.ReadOnly = true;
+            this.pk_personcardcolumn.Visible = false;
             // 
             // SearchWorkerForm
             // 
@@ -211,6 +264,7 @@
             this.Name = "SearchWorkerForm";
             this.Text = "SearchWorkerForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pERSONCARDBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,12 +282,18 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.BindingSource pERSONCARDBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn SurnameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn MidNameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn TabNumColumn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pk_personcardcolumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }

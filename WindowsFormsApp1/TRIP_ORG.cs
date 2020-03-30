@@ -9,6 +9,10 @@ namespace WindowsFormsApp1
     [Table("ADMIN.TRIP_ORG")]
     public partial class TRIP_ORG
     {
+        public TRIP_ORG()
+        {
+            TRIP = new HashSet<TRIP>();
+        }
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public decimal PK_TRIP_ORG { get; set; }
@@ -48,6 +52,9 @@ namespace WindowsFormsApp1
                 PLACE_TRIP.City = value;
             }
         }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TRIP> TRIP { get; set; }
 
         public new virtual string ToString => NAME;
     }
