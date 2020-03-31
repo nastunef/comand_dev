@@ -149,6 +149,9 @@
     <Compile Include="TYPE_PRIKAZ.cs" />
     <Compile Include="TYPE_WORK.cs" />
     <Compile Include="UVAL.cs" />
+    <EmbeddedResource Include="DelWorkPrikaz.resx">
+      <DependentUpon>DelWorkPrikaz.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

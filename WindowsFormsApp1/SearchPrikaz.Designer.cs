@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections;
+using System.ComponentModel;
 
 namespace WindowsFormsApp1
 {
@@ -31,6 +32,7 @@ namespace WindowsFormsApp1
          /// </summary>
          private void InitializeComponent()
          {
+             _list = new ArrayList();
              this.fullname = new System.Windows.Forms.TextBox();
              this.firstname = new System.Windows.Forms.TextBox();
              this.otchestvo = new System.Windows.Forms.TextBox();
@@ -53,6 +55,7 @@ namespace WindowsFormsApp1
              this.label5 = new System.Windows.Forms.Label();
              this.label6 = new System.Windows.Forms.Label();
              this.checkBox_Confirm = new System.Windows.Forms.CheckBox();
+             this.label7 = new System.Windows.Forms.Label();
              ((System.ComponentModel.ISupportInitialize) (this.dataGridView_family)).BeginInit();
              this.SuspendLayout();
              // 
@@ -159,7 +162,7 @@ namespace WindowsFormsApp1
              // 
              // button2
              // 
-             this.button2.Location = new System.Drawing.Point(992, 420);
+             this.button2.Location = new System.Drawing.Point(748, 526);
              this.button2.Name = "button2";
              this.button2.Size = new System.Drawing.Size(136, 54);
              this.button2.TabIndex = 28;
@@ -196,7 +199,7 @@ namespace WindowsFormsApp1
              // 
              // dateTimePickerOt
              // 
-             this.dateTimePickerOt.Location = new System.Drawing.Point(530, 104);
+             this.dateTimePickerOt.Location = new System.Drawing.Point(530, 131);
              this.dateTimePickerOt.Name = "dateTimePickerOt";
              this.dateTimePickerOt.Size = new System.Drawing.Size(126, 23);
              this.dateTimePickerOt.TabIndex = 32;
@@ -210,7 +213,7 @@ namespace WindowsFormsApp1
              // 
              // label5
              // 
-             this.label5.Location = new System.Drawing.Point(491, 108);
+             this.label5.Location = new System.Drawing.Point(491, 135);
              this.label5.Name = "label5";
              this.label5.Size = new System.Drawing.Size(22, 18);
              this.label5.TabIndex = 34;
@@ -233,11 +236,20 @@ namespace WindowsFormsApp1
              this.checkBox_Confirm.Text = "Подтвержден";
              this.checkBox_Confirm.UseVisualStyleBackColor = true;
              // 
+             // label7
+             // 
+             this.label7.Location = new System.Drawing.Point(529, 95);
+             this.label7.Name = "label7";
+             this.label7.Size = new System.Drawing.Size(127, 27);
+             this.label7.TabIndex = 37;
+             this.label7.Text = "Дата составления";
+             // 
              // SearchPrikaz
              // 
              this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
              this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
              this.ClientSize = new System.Drawing.Size(1350, 729);
+             this.Controls.Add(this.label7);
              this.Controls.Add(this.checkBox_Confirm);
              this.Controls.Add(this.label6);
              this.Controls.Add(this.label5);
@@ -289,5 +301,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.CheckBox checkBoxPriem;
         private System.Windows.Forms.CheckBox checkBoxDelWork;
         private System.Windows.Forms.CheckBox checkBoxKomand;
+        private System.Windows.Forms.Label label7;
+        private ArrayList _list;
     }
 }
