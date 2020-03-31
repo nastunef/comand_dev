@@ -100,6 +100,12 @@
     <Compile Include="JOB_POSITION.cs" />
     <Compile Include="LANGUAGE.cs" />
     <Compile Include="LANGUAGE_LVL.cs" />
+    <Compile Include="MainPagePrikaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainPagePrikaz.Designer.cs">
+      <DependentUpon>MainPagePrikaz.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainPrikaz.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,12 @@
     <Compile Include="PROFESSION.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchPrikaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchPrikaz.Designer.cs">
+      <DependentUpon>SearchPrikaz.cs</DependentUpon>
+    </Compile>
     <Compile Include="SHTAT_RASP.cs" />
     <Compile Include="SPECIALTY.cs" />
     <Compile Include="STR_SHTAT_RASP.cs" />
@@ -139,6 +151,9 @@
     <Compile Include="UVAL.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainPagePrikaz.resx">
+      <DependentUpon>MainPagePrikaz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainPrikaz.resx">
       <DependentUpon>MainPrikaz.cs</DependentUpon>
@@ -155,6 +170,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SearchPrikaz.resx">
+      <DependentUpon>SearchPrikaz.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

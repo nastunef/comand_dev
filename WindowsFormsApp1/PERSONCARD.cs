@@ -18,6 +18,7 @@ namespace WindowsFormsApp1
             PRIEM = new HashSet<PRIEM>();
             UVAL = new HashSet<UVAL>();
             TRIP = new HashSet<TRIP>();
+            PRIKAZ = new HashSet<PRIKAZ>();
         }
 
         [Key]
@@ -138,5 +139,8 @@ namespace WindowsFormsApp1
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TRIP> TRIP { get; set; }
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PRIKAZ> PRIKAZ { get; set; }
     }
 }

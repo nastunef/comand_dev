@@ -271,6 +271,11 @@ namespace WindowsFormsApp1
                 .HasMany(e => e.PRIKAZ)
                 .WithRequired(e => e.OUR_ORG)
                 .WillCascadeOnDelete(false);
+            
+            modelBuilder.Entity<PERSONCARD>()
+                .HasMany(e => e.PRIKAZ)
+                .WithRequired(e => e.PERSONCARD)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PEREVOD>()
                 .Property(e => e.TYPE)
@@ -568,6 +573,10 @@ namespace WindowsFormsApp1
 
             modelBuilder.Entity<PRIKAZ>()
                 .Property(e => e.PK_OUR_ORG)
+                .HasPrecision(38, 0);
+            
+            modelBuilder.Entity<PRIKAZ>()
+                .Property(e => e.PK_PERSONCARD)
                 .HasPrecision(38, 0);
 
             modelBuilder.Entity<PRIKAZ>()
