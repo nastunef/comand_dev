@@ -93,6 +93,8 @@ namespace WindowsFormsApp1
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonDel = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.buttonBack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -176,6 +178,7 @@ namespace WindowsFormsApp1
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Enabled = false;
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(234, 250);
             this.panel1.Name = "panel1";
@@ -208,6 +211,7 @@ namespace WindowsFormsApp1
             // 
             // textBox4
             // 
+            this.textBox4.Enabled = false;
             this.textBox4.Location = new System.Drawing.Point(1099, 253);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(135, 23);
@@ -268,6 +272,7 @@ namespace WindowsFormsApp1
             this.panel2.Controls.Add(this.textBox5);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label10);
+            this.panel2.Enabled = false;
             this.panel2.Location = new System.Drawing.Point(234, 331);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(654, 68);
@@ -281,6 +286,7 @@ namespace WindowsFormsApp1
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.textBox6);
             this.panel3.Controls.Add(this.label11);
+            this.panel3.Enabled = false;
             this.panel3.Location = new System.Drawing.Point(234, 405);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(654, 61);
@@ -316,6 +322,7 @@ namespace WindowsFormsApp1
             this.panel4.Controls.Add(this.label14);
             this.panel4.Controls.Add(this.label15);
             this.panel4.Controls.Add(this.textBox9);
+            this.panel4.Enabled = false;
             this.panel4.Location = new System.Drawing.Point(234, 480);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(654, 61);
@@ -360,6 +367,7 @@ namespace WindowsFormsApp1
             this.panel5.Controls.Add(this.numericUrerpDown1);
             this.panel5.Controls.Add(this.label16);
             this.panel5.Controls.Add(this.label17);
+            this.panel5.Enabled = false;
             this.panel5.Location = new System.Drawing.Point(234, 557);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(654, 61);
@@ -417,6 +425,7 @@ namespace WindowsFormsApp1
             this.panel6.Controls.Add(this.label21);
             this.panel6.Controls.Add(this.numericUpDown4);
             this.panel6.Controls.Add(this.label23);
+            this.panel6.Enabled = false;
             this.panel6.Location = new System.Drawing.Point(234, 623);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(654, 61);
@@ -453,6 +462,7 @@ namespace WindowsFormsApp1
             this.panel7.Controls.Add(this.dateTimePicker3);
             this.panel7.Controls.Add(this.label24);
             this.panel7.Controls.Add(this.label22);
+            this.panel7.Enabled = false;
             this.panel7.Location = new System.Drawing.Point(234, 690);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(654, 61);
@@ -509,6 +519,7 @@ namespace WindowsFormsApp1
             // 
             // textBox11
             // 
+            this.textBox11.Enabled = false;
             this.textBox11.Location = new System.Drawing.Point(462, 88);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(426, 23);
@@ -540,6 +551,7 @@ namespace WindowsFormsApp1
             // 
             // textBox12
             // 
+            this.textBox12.Enabled = false;
             this.textBox12.Location = new System.Drawing.Point(1099, 65);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(104, 23);
@@ -547,6 +559,7 @@ namespace WindowsFormsApp1
             // 
             // textBox13
             // 
+            this.textBox13.Enabled = false;
             this.textBox13.Location = new System.Drawing.Point(1099, 90);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(104, 23);
@@ -562,6 +575,7 @@ namespace WindowsFormsApp1
             // 
             // textBox14
             // 
+            this.textBox14.Enabled = false;
             this.textBox14.Location = new System.Drawing.Point(1099, 132);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(135, 23);
@@ -595,6 +609,7 @@ namespace WindowsFormsApp1
             // 
             // dateTimePicker4
             // 
+            this.dateTimePicker4.Enabled = false;
             this.dateTimePicker4.Location = new System.Drawing.Point(462, 167);
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(150, 23);
@@ -602,6 +617,7 @@ namespace WindowsFormsApp1
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Location = new System.Drawing.Point(1099, 162);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(135, 23);
@@ -627,11 +643,32 @@ namespace WindowsFormsApp1
             this.buttonDel.Text = "Удалить приказ";
             this.buttonDel.UseVisualStyleBackColor = true;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.Location = new System.Drawing.Point(626, 207);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(129, 18);
+            this.checkBox1.TabIndex = 46;
+            this.checkBox1.Text = "Бессрочно";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // buttonBack
+            // 
+            this.buttonBack.Location = new System.Drawing.Point(1239, 1);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(113, 28);
+            this.buttonBack.TabIndex = 47;
+            this.buttonBack.Text = "назад";
+            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
             // ReadPriemPrikaz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 749);
+            this.Controls.Add(this.buttonBack);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.buttonDel);
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.dateTimePicker1);
@@ -663,7 +700,9 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label1);
             this.Name = "ReadPriemPrikaz";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Приказ о приеме на работу";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -747,5 +786,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button buttonDel;
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonConfirm;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button buttonBack;
     }
 }

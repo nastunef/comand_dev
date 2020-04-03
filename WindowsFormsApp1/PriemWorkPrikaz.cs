@@ -123,5 +123,10 @@ namespace WindowsFormsApp1
             // закрываем форму
             Close();
         }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

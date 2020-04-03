@@ -27,7 +27,9 @@ namespace WindowsFormsApp1
             if (priem == null ) return;
 
             dateTimePicker4.Value = priem.STARTWORKDATE.Value;
-            dateTimePicker2.Value = priem.ENDWORKDATE.Value;
+            if (priem.ENDWORKDATE != null)
+                dateTimePicker2.Value = priem.ENDWORKDATE.Value;
+            if (prikaz.ISPROJECT == "1") buttonConfirm.Enabled = false;
             
             textBox11.Text = prikaz.OUR_ORG.NAME;
             textBox12.Text = "0301001";
@@ -56,6 +58,11 @@ namespace WindowsFormsApp1
             }
             
             numericUpDown4.Value = priem.TESTPERIOD.Value;
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

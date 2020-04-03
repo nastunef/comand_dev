@@ -67,7 +67,7 @@ namespace WindowsFormsApp1
             newPrikaz.PERSONCARD = model.PERSONCARD.FirstOrDefault(men => men.PK_PERSONCARD == idSelectMen);
             newPrikaz.OUR_ORG = model.OUR_ORG.FirstOrDefault(ourOrg => ourOrg.NAME == textBox11.Text);
             newPrikaz.ISPROJECT = "0";
-            newPrikaz.TYPE_PRIKAZ = model.TYPE_PRIKAZ.FirstOrDefault(type => type.PK_TYPE == 1);
+            newPrikaz.TYPE_PRIKAZ = model.TYPE_PRIKAZ.FirstOrDefault(type => type.PK_TYPE == 3);
             model.PRIKAZ.Add(newPrikaz);
             model.SaveChanges();
             
@@ -90,6 +90,11 @@ namespace WindowsFormsApp1
             model.UVAL.Add(newUval);
             model.SaveChanges();
             // закрываем форму
+            Close();
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
             Close();
         }
     }

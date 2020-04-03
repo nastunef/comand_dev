@@ -32,6 +32,7 @@ namespace WindowsFormsApp1
          /// </summary>
          private void InitializeComponent()
          {
+             
              this.fullname = new System.Windows.Forms.TextBox();
              this.firstname = new System.Windows.Forms.TextBox();
              this.otchestvo = new System.Windows.Forms.TextBox();
@@ -55,6 +56,7 @@ namespace WindowsFormsApp1
              this.label6 = new System.Windows.Forms.Label();
              this.checkBox_Confirm = new System.Windows.Forms.CheckBox();
              this.label7 = new System.Windows.Forms.Label();
+             this.buttonBack = new System.Windows.Forms.Button();
              ((System.ComponentModel.ISupportInitialize) (this.dataGridView_family)).BeginInit();
              this.SuspendLayout();
              // 
@@ -243,11 +245,22 @@ namespace WindowsFormsApp1
              this.label7.TabIndex = 37;
              this.label7.Text = "Дата составления";
              // 
+             // buttonBack
+             // 
+             this.buttonBack.Location = new System.Drawing.Point(1237, 1);
+             this.buttonBack.Name = "buttonBack";
+             this.buttonBack.Size = new System.Drawing.Size(113, 28);
+             this.buttonBack.TabIndex = 45;
+             this.buttonBack.Text = "назад";
+             this.buttonBack.UseVisualStyleBackColor = true;
+             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+             // 
              // SearchPrikaz
              // 
              this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
              this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
              this.ClientSize = new System.Drawing.Size(1350, 729);
+             this.Controls.Add(this.buttonBack);
              this.Controls.Add(this.label7);
              this.Controls.Add(this.checkBox_Confirm);
              this.Controls.Add(this.label6);
@@ -268,7 +281,9 @@ namespace WindowsFormsApp1
              this.Controls.Add(this.firstname);
              this.Controls.Add(this.fullname);
              this.Name = "SearchPrikaz";
+             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
              this.Text = "MainPrikaz";
+             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
              ((System.ComponentModel.ISupportInitialize) (this.dataGridView_family)).EndInit();
              this.ResumeLayout(false);
              this.PerformLayout();
@@ -302,5 +317,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.CheckBox checkBoxKomand;
         private System.Windows.Forms.Label label7;
         private System.Collections.ArrayList _list;
+        private System.Windows.Forms.Button buttonBack;
     }
 }

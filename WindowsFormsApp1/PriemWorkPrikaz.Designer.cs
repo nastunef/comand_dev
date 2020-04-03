@@ -93,10 +93,7 @@ private void InitializeComponent()
     this.label31 = new System.Windows.Forms.Label();
     this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
     this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-    this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-    this.приказыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-    this.приемНаРаботуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-    this.linkDeleteWork = new System.Windows.Forms.ToolStripMenuItem();
+    this.buttonBack = new System.Windows.Forms.Button();
     this.panel1.SuspendLayout();
     this.panel2.SuspendLayout();
     this.panel3.SuspendLayout();
@@ -107,7 +104,6 @@ private void InitializeComponent()
     this.panel6.SuspendLayout();
     ((System.ComponentModel.ISupportInitialize) (this.numericUpDown4)).BeginInit();
     this.panel7.SuspendLayout();
-    this.menuStrip1.SuspendLayout();
     this.SuspendLayout();
     // 
     // label1
@@ -624,43 +620,22 @@ private void InitializeComponent()
     this.dateTimePicker1.Size = new System.Drawing.Size(135, 23);
     this.dateTimePicker1.TabIndex = 43;
     // 
-    // menuStrip1
+    // buttonBack
     // 
-    this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {this.приказыToolStripMenuItem});
-    this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-    this.menuStrip1.Name = "menuStrip1";
-    this.menuStrip1.Size = new System.Drawing.Size(1350, 24);
-    this.menuStrip1.TabIndex = 44;
-    this.menuStrip1.Text = "menuStrip1";
-    // 
-    // приказыToolStripMenuItem
-    // 
-    this.приказыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[]
-        {this.приемНаРаботуToolStripMenuItem, this.linkDeleteWork});
-    this.приказыToolStripMenuItem.Name = "приказыToolStripMenuItem";
-    this.приказыToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
-    this.приказыToolStripMenuItem.Text = "Приказы";
-    // 
-    // приемНаРаботуToolStripMenuItem
-    // 
-    this.приемНаРаботуToolStripMenuItem.Name = "приемНаРаботуToolStripMenuItem";
-    this.приемНаРаботуToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-    this.приемНаРаботуToolStripMenuItem.Text = "Прием на работу";
-    // 
-    // linkDeleteWork
-    // 
-    this.linkDeleteWork.CheckOnClick = true;
-    this.linkDeleteWork.DoubleClickEnabled = true;
-    this.linkDeleteWork.Name = "linkDeleteWork";
-    this.linkDeleteWork.Size = new System.Drawing.Size(193, 22);
-    this.linkDeleteWork.Text = "Увольнение с работы";
-    this.linkDeleteWork.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
+    this.buttonBack.Location = new System.Drawing.Point(1237, 1);
+    this.buttonBack.Name = "buttonBack";
+    this.buttonBack.Size = new System.Drawing.Size(113, 28);
+    this.buttonBack.TabIndex = 44;
+    this.buttonBack.Text = "назад";
+    this.buttonBack.UseVisualStyleBackColor = true;
+    this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
     // 
     // PriemWorkPrikaz
     // 
     this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
     this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
     this.ClientSize = new System.Drawing.Size(1350, 749);
+    this.Controls.Add(this.buttonBack);
     this.Controls.Add(this.dateTimePicker1);
     this.Controls.Add(this.dateTimePicker4);
     this.Controls.Add(this.label31);
@@ -690,8 +665,6 @@ private void InitializeComponent()
     this.Controls.Add(this.label2);
     this.Controls.Add(this.dateTimePicker2);
     this.Controls.Add(this.label1);
-    this.Controls.Add(this.menuStrip1);
-    this.MainMenuStrip = this.menuStrip1;
     this.Name = "PriemWorkPrikaz";
     this.Text = "Приказ о приеме на работу";
     this.panel1.ResumeLayout(false);
@@ -709,8 +682,6 @@ private void InitializeComponent()
     ((System.ComponentModel.ISupportInitialize) (this.numericUpDown4)).EndInit();
     this.panel7.ResumeLayout(false);
     this.panel7.PerformLayout();
-    this.menuStrip1.ResumeLayout(false);
-    this.menuStrip1.PerformLayout();
     this.ResumeLayout(false);
     this.PerformLayout();
 }
@@ -777,11 +748,8 @@ private void InitializeComponent()
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.DateTimePicker dateTimePicker4;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ToolStripMenuItem приемНаРаботуToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem приказыToolStripMenuItem;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem linkDeleteWork;
         private System.Windows.Forms.NumericUpDown numericUrerpDown1;
-        private long idSelectMen;
+        private System.Int64 idSelectMen;
+        private System.Windows.Forms.Button buttonBack;
     }
 }

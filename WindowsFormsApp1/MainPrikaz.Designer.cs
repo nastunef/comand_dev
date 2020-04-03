@@ -47,6 +47,7 @@ namespace WindowsFormsApp1
             this.deletework = new System.Windows.Forms.RadioButton();
             this.comandirovka = new System.Windows.Forms.RadioButton();
             this.button2 = new System.Windows.Forms.Button();
+            this.buttonBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView_family)).BeginInit();
             this.SuspendLayout();
             // 
@@ -184,11 +185,22 @@ namespace WindowsFormsApp1
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // buttonBack
+            // 
+            this.buttonBack.Location = new System.Drawing.Point(1238, 1);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(113, 28);
+            this.buttonBack.TabIndex = 45;
+            this.buttonBack.Text = "назад";
+            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
             // MainPrikaz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.comandirovka);
             this.Controls.Add(this.deletework);
@@ -203,7 +215,9 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.firstname);
             this.Controls.Add(this.fullname);
             this.Name = "MainPrikaz";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "MainPrikaz";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView_family)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -229,5 +243,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonBack;
     }
 }

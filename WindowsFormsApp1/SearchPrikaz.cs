@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -9,6 +10,7 @@ namespace WindowsFormsApp1
         public SearchPrikaz()
         {
             InitializeComponent();
+            _list = new ArrayList();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -50,9 +52,9 @@ namespace WindowsFormsApp1
                 bool isProject = false;
                 if (item.ISPROJECT == "1") 
                     isProject = true;
-                if ((checkBoxPriem.Checked && item.TYPE_PRIKAZ.PK_TYPE == 1) ||
-                    (checkBoxKomand.Checked && item.TYPE_PRIKAZ.PK_TYPE == 2) ||
-                    (checkBoxKomand.Checked && item.TYPE_PRIKAZ.PK_TYPE == 3))
+                if ((checkBoxPriem.Checked && item.PK_TYPE_PRIKAZ == 1) ||
+                    (checkBoxKomand.Checked && item.PK_TYPE_PRIKAZ == 2) ||
+                    (checkBoxKomand.Checked && item.PK_TYPE_PRIKAZ == 3))
                 {
                     dataGridView_family.Rows.Add(item.PERSONCARD.SURNAME + " " + item.PERSONCARD.NAME + " " + item.PERSONCARD.MIDDLENAME,
                         item.CREATEDATE,  item.TYPE_PRIKAZ.NAME, isProject);
@@ -90,6 +92,11 @@ namespace WindowsFormsApp1
             {
                 // TODO
             }
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

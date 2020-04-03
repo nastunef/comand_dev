@@ -69,6 +69,7 @@ namespace WindowsFormsApp1
           this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
           this.label1 = new System.Windows.Forms.Label();
           this.label2 = new System.Windows.Forms.Label();
+          this.buttonBack = new System.Windows.Forms.Button();
           this.panel7.SuspendLayout();
           this.panel3.SuspendLayout();
           this.panel2.SuspendLayout();
@@ -395,11 +396,22 @@ namespace WindowsFormsApp1
           this.label2.TabIndex = 74;
           this.label2.Text = "уволить";
           // 
+          // buttonBack
+          // 
+          this.buttonBack.Location = new System.Drawing.Point(1237, -1);
+          this.buttonBack.Name = "buttonBack";
+          this.buttonBack.Size = new System.Drawing.Size(113, 28);
+          this.buttonBack.TabIndex = 75;
+          this.buttonBack.Text = "назад";
+          this.buttonBack.UseVisualStyleBackColor = true;
+          this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+          // 
           // DelWorkPrikaz
           // 
           this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
           this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
           this.ClientSize = new System.Drawing.Size(1350, 729);
+          this.Controls.Add(this.buttonBack);
           this.Controls.Add(this.label2);
           this.Controls.Add(this.label25);
           this.Controls.Add(this.panel7);
@@ -426,6 +438,7 @@ namespace WindowsFormsApp1
           this.Controls.Add(this.label1);
           this.Name = "DelWorkPrikaz";
           this.Text = "DeleteWork";
+          this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
           this.panel7.ResumeLayout(false);
           this.panel7.PerformLayout();
           this.panel3.ResumeLayout(false);
@@ -478,6 +491,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox8;
-        private long idSelectMen;
+        private System.Int64 idSelectMen;
+        private System.Windows.Forms.Button buttonBack;
     }
 }

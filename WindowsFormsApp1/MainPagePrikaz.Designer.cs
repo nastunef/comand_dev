@@ -72,14 +72,15 @@ namespace WindowsFormsApp1
             // 
             // MainPagePrikaz
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.searchPrikaz);
             this.Controls.Add(this.createPrikaz);
             this.Controls.Add(this.label1);
             this.Name = "MainPagePrikaz";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "MainPagePrikaz";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
         }
 
