@@ -32,7 +32,6 @@ namespace WindowsFormsApp1
          /// </summary>
          private void InitializeComponent()
          {
-             _list = new ArrayList();
              this.fullname = new System.Windows.Forms.TextBox();
              this.firstname = new System.Windows.Forms.TextBox();
              this.otchestvo = new System.Windows.Forms.TextBox();
@@ -199,7 +198,7 @@ namespace WindowsFormsApp1
              // 
              // dateTimePickerOt
              // 
-             this.dateTimePickerOt.Location = new System.Drawing.Point(530, 131);
+             this.dateTimePickerOt.Location = new System.Drawing.Point(530, 132);
              this.dateTimePickerOt.Name = "dateTimePickerOt";
              this.dateTimePickerOt.Size = new System.Drawing.Size(126, 23);
              this.dateTimePickerOt.TabIndex = 32;
@@ -238,7 +237,7 @@ namespace WindowsFormsApp1
              // 
              // label7
              // 
-             this.label7.Location = new System.Drawing.Point(529, 95);
+             this.label7.Location = new System.Drawing.Point(528, 95);
              this.label7.Name = "label7";
              this.label7.Size = new System.Drawing.Size(127, 27);
              this.label7.TabIndex = 37;
@@ -302,6 +301,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.CheckBox checkBoxDelWork;
         private System.Windows.Forms.CheckBox checkBoxKomand;
         private System.Windows.Forms.Label label7;
-        private ArrayList _list;
+        private System.Collections.ArrayList _list;
     }
 }

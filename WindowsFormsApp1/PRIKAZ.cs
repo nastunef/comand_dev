@@ -22,9 +22,9 @@ namespace WindowsFormsApp1
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long PK_PRIKAZ { get; set; }
 
-        public decimal? OKUD { get; set; }
+        public string OKUD { get; set; }
 
-        public decimal? OKPO { get; set; }
+        public string OKPO { get; set; }
 
         [StringLength(200)]
         public string NUMDOC { get; set; }

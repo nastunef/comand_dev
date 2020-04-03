@@ -76,8 +76,8 @@ namespace WindowsFormsApp1
 
             if (selectedPrikaz.TYPE_PRIKAZ.PK_TYPE == 1)
             {
-                PriemWorkPrikaz priemWorkPrikaz = new PriemWorkPrikaz();
-                priemWorkPrikaz.Show();
+                ReadPriemPrikaz readPriemPrikaz = new ReadPriemPrikaz(selectedPrikaz.PK_PRIKAZ);
+                readPriemPrikaz.Show();
             }
             
             if (selectedPrikaz.TYPE_PRIKAZ.PK_TYPE == 2)

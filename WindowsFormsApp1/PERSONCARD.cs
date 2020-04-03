@@ -15,7 +15,6 @@ namespace WindowsFormsApp1
             FAMILY_MEMBER = new HashSet<FAMILY_MEMBER>();
             ONE_EDU = new HashSet<ONE_EDU>();
             PEREVOD = new HashSet<PEREVOD>();
-            PRIEM = new HashSet<PRIEM>();
             UVAL = new HashSet<UVAL>();
             TRIP = new HashSet<TRIP>();
             PRIKAZ = new HashSet<PRIKAZ>();
@@ -130,9 +129,6 @@ namespace WindowsFormsApp1
         public virtual TABEL TABEL { get; set; }
 
         public virtual TYPE_WORK TYPE_WORK { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PRIEM> PRIEM { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UVAL> UVAL { get; set; }

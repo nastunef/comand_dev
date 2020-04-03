@@ -19,10 +19,18 @@ namespace WindowsFormsApp1
             string fullname = this.fullname.Text;
             string otchestvo = this.otchestvo.Text;
             Model1 model = new Model1();
-            var selectMens = model.PERSONCARD.Where
-                (men => men.SURNAME == fullname && men.NAME == firstname && men.MIDDLENAME == otchestvo).ToArray();
+            IQueryable<PERSONCARD> selectMens = model.PERSONCARD;
+            if (firstname != "")
+                selectMens = selectMens.Where
+                    (men => men.NAME == firstname);
+            if (fullname != "") selectMens = selectMens.Where
+                (men => men.SURNAME == fullname);
+            if (otchestvo != "") selectMens = selectMens.Where
+                (men => men.MIDDLENAME == otchestvo);
+            selectMens.FirstOrDefault();
             if (selectMens == null) 
                 return;
+            selectMens.ToArray();
             foreach (var item in selectMens)
             {
                 dataGridView_family.Rows.Add(item.SURNAME + " " + item.NAME + " " + item.MIDDLENAME,
@@ -36,7 +44,7 @@ namespace WindowsFormsApp1
                 return;
             int selRowNum = dataGridView_family.SelectedCells[0].RowIndex;
             decimal tabNumber = (decimal) dataGridView_family.Rows[selRowNum].Cells[2].Value;
-
+            
             if (priem.Checked == true)
             {
                 PriemWorkPrikaz priemWorkPrikaz = new PriemWorkPrikaz(tabNumber);

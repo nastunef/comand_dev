@@ -526,10 +526,7 @@ namespace WindowsFormsApp1
             modelBuilder.Entity<PRIEM>()
                 .Property(e => e.PK_PODR)
                 .HasPrecision(38, 0);
-
-            modelBuilder.Entity<PRIEM>()
-                .Property(e => e.PK_PERSONCARD)
-                .HasPrecision(38, 0);
+            
 
             modelBuilder.Entity<PRIEM>()
                 .Property(e => e.TESTPERIOD)
@@ -557,11 +554,11 @@ namespace WindowsFormsApp1
 
             modelBuilder.Entity<PRIKAZ>()
                 .Property(e => e.OKUD)
-                .HasPrecision(38, 0);
+                .IsUnicode(false);
 
             modelBuilder.Entity<PRIKAZ>()
                 .Property(e => e.OKPO)
-                .HasPrecision(38, 0);
+                .IsUnicode(false);
 
             modelBuilder.Entity<PRIKAZ>()
                 .Property(e => e.NUMDOC)

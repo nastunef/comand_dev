@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 
 namespace WindowsFormsApp1
 {
@@ -253,6 +254,7 @@ private void InitializeComponent()
     // 
     // checkBox1
     // 
+    this.checkBox1.Font = new System.Drawing.Font("Kristen ITC", 8.25F);
     this.checkBox1.Location = new System.Drawing.Point(626, 205);
     this.checkBox1.Name = "checkBox1";
     this.checkBox1.Size = new System.Drawing.Size(187, 23);
@@ -520,6 +522,7 @@ private void InitializeComponent()
     this.button1.TabIndex = 28;
     this.button1.Text = "Отдать на распоряжение";
     this.button1.UseVisualStyleBackColor = true;
+    this.button1.Click += new System.EventHandler(this.button1_Click);
     // 
     // textBox11
     // 
@@ -779,5 +782,6 @@ private void InitializeComponent()
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem linkDeleteWork;
         private System.Windows.Forms.NumericUpDown numericUrerpDown1;
+        private long idSelectMen;
     }
 }
