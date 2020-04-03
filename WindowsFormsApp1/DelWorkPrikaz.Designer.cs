@@ -68,16 +68,11 @@ namespace WindowsFormsApp1
           this.label4 = new System.Windows.Forms.Label();
           this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
           this.label1 = new System.Windows.Forms.Label();
-          this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-          this.приказыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-          this.приемНаРаботуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-          this.увольнениеСРаботыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
           this.label2 = new System.Windows.Forms.Label();
           this.panel7.SuspendLayout();
           this.panel3.SuspendLayout();
           this.panel2.SuspendLayout();
           this.panel1.SuspendLayout();
-          this.menuStrip1.SuspendLayout();
           this.SuspendLayout();
           // 
           // label25
@@ -210,6 +205,7 @@ namespace WindowsFormsApp1
           this.button1.TabIndex = 59;
           this.button1.Text = "Отдать на распоряжение";
           this.button1.UseVisualStyleBackColor = true;
+          this.button1.Click += new System.EventHandler(this.button1_Click);
           // 
           // dateTimePicker1
           // 
@@ -389,35 +385,6 @@ namespace WindowsFormsApp1
           this.label1.TabIndex = 44;
           this.label1.Text = "Дата";
           // 
-          // menuStrip1
-          // 
-          this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {this.приказыToolStripMenuItem});
-          this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-          this.menuStrip1.Name = "menuStrip1";
-          this.menuStrip1.Size = new System.Drawing.Size(1350, 24);
-          this.menuStrip1.TabIndex = 73;
-          this.menuStrip1.Text = "menuStrip1";
-          // 
-          // приказыToolStripMenuItem
-          // 
-          this.приказыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[]
-              {this.приемНаРаботуToolStripMenuItem, this.увольнениеСРаботыToolStripMenuItem});
-          this.приказыToolStripMenuItem.Name = "приказыToolStripMenuItem";
-          this.приказыToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
-          this.приказыToolStripMenuItem.Text = "Приказы";
-          // 
-          // приемНаРаботуToolStripMenuItem
-          // 
-          this.приемНаРаботуToolStripMenuItem.Name = "приемНаРаботуToolStripMenuItem";
-          this.приемНаРаботуToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-          this.приемНаРаботуToolStripMenuItem.Text = "Прием на работу";
-          // 
-          // увольнениеСРаботыToolStripMenuItem
-          // 
-          this.увольнениеСРаботыToolStripMenuItem.Name = "увольнениеСРаботыToolStripMenuItem";
-          this.увольнениеСРаботыToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-          this.увольнениеСРаботыToolStripMenuItem.Text = "Увольнение с работы";
-          // 
           // label2
           // 
           this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
@@ -434,7 +401,6 @@ namespace WindowsFormsApp1
           this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
           this.ClientSize = new System.Drawing.Size(1350, 729);
           this.Controls.Add(this.label2);
-          this.Controls.Add(this.menuStrip1);
           this.Controls.Add(this.label25);
           this.Controls.Add(this.panel7);
           this.Controls.Add(this.label30);
@@ -468,8 +434,6 @@ namespace WindowsFormsApp1
           this.panel2.PerformLayout();
           this.panel1.ResumeLayout(false);
           this.panel1.PerformLayout();
-          this.menuStrip1.ResumeLayout(false);
-          this.menuStrip1.PerformLayout();
           this.ResumeLayout(false);
           this.PerformLayout();
       }
@@ -512,11 +476,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.ToolStripMenuItem увольнениеСРаботыToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem приемНаРаботуToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem приказыToolStripMenuItem;
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox8;
+        private long idSelectMen;
     }
 }
