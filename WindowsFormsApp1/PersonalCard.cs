@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class PersonalCard : Form
     {
         private long id = -1;
 
-        public Form1()
+        public PersonalCard()
         {
             InitializeComponent();
             initCatalogs();
             richTextBox_dopSved.ReadOnly = true;
         }
 
-        public Form1(long id)
+        public PersonalCard(long id)
         {
             InitializeComponent();
             initCatalogs();
