@@ -22,9 +22,9 @@ namespace WindowsFormsApp1
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long PK_PRIKAZ { get; set; }
 
-        public decimal? OKUD { get; set; }
+        public string OKUD { get; set; }
 
-        public decimal? OKPO { get; set; }
+        public string OKPO { get; set; }
 
         [StringLength(200)]
         public string NUMDOC { get; set; }
@@ -33,6 +33,8 @@ namespace WindowsFormsApp1
         public string PATH { get; set; }
 
         public decimal PK_OUR_ORG { get; set; }
+        
+        public decimal PK_PERSONCARD { get; set; }
 
         public DateTime? CREATEDATE { get; set; }
 
@@ -42,6 +44,8 @@ namespace WindowsFormsApp1
         public decimal PK_TYPE_PRIKAZ { get; set; }
 
         public virtual OUR_ORG OUR_ORG { get; set; }
+        
+        public virtual PERSONCARD PERSONCARD { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PEREVOD> PEREVOD { get; set; }
