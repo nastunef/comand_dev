@@ -111,7 +111,7 @@ namespace Komandirovki
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void AddPlaceButton_Click(object sender, EventArgs e)
@@ -254,8 +254,11 @@ namespace Komandirovki
             reason = ReasonTextBox.Text;
             if (!checkString(reason, "Основание - пустая строка")) return;
             trip.OSNOVANIE = reason;
-            if (isDateReasonCheckBox.Checked && checkDateOnNull(DateReason.Value, "Дата основания")) {
-                trip.OSNOVANIEDATE = DateReason.Value;
+            if (isDateReasonCheckBox.Checked) {
+                if (checkDateOnNull(DateReason.Value, "Дата основания"))
+                    trip.OSNOVANIEDATE = DateReason.Value;
+                else
+                    return;
             }
 
             note = NoteTextBox.Text;
@@ -268,8 +271,10 @@ namespace Komandirovki
                 trip.PRIKAZ.PK_TYPE_PRIKAZ = 2;
                 trip.PRIKAZ.PK_OUR_ORG = 1;
             }
-            if(checkDateOnNull(DatePrikaz.Value, "Дата приказа"))
+            if (checkDateOnNull(DatePrikaz.Value, "Дата приказа"))
                 trip.PRIKAZ.CREATEDATE = datePrikaz;
+            else
+                return;
 
             numPrikaz = NumPrikazTextBox.Text;
             if (!checkString(numPrikaz, "Номер приказа - пустая строка")) return;
