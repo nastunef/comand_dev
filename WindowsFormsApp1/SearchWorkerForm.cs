@@ -37,6 +37,7 @@ namespace Komandirovki
 
         private void button3_Click(object sender, EventArgs e)
         {
+            pERSONCARDBindingSource.Clear();
             var surname = SurNameTextBox.Text;
             var name = NameTextBox.Text;
             var midname = MidNameTextBox.Text;
@@ -55,9 +56,10 @@ namespace Komandirovki
             if (!string.IsNullOrWhiteSpace(midname))
                 query = query.Where(worker => worker.MIDDLENAME == midname);
             if (!string.IsNullOrWhiteSpace(tabNum)) {
-                int tabNumInt;
+                decimal tabNumInt;
                 try {
-                    tabNumInt = int.Parse(tabNum); 
+                    tabNumInt = Decimal.Parse(tabNum);
+                    Console.WriteLine(tabNumInt);
                 }catch(Exception expr)
                 {
                     MyMsgBox.showError("Табельный номер должен содержать только числа");
@@ -72,6 +74,7 @@ namespace Komandirovki
                 MyMsgBox.showInfo("Ничего не найдено");
                 return;
             }
+            result = new List<PERSONCARD>(query.Count());
             foreach(PERSONCARD worker in query)
             {
                 result.Add(worker);
@@ -86,6 +89,7 @@ namespace Komandirovki
             if(rows.Count == 0)
             {
                 MyMsgBox.showError("Ничего не выделено");
+                return;
             }
             List<PERSONCARD> selected = new List<PERSONCARD>();
             foreach(DataGridViewRow row in rows)
@@ -93,8 +97,9 @@ namespace Komandirovki
                 selected.Add(result[row.Index]);
             }
 
-            komandirovkaForm.SetWorkers(result);
+            komandirovkaForm.SetWorkers(selected);
             MyMsgBox.showInfo("Добавлено!");
+            this.Close();
         }
     }
 }

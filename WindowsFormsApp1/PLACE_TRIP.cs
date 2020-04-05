@@ -9,18 +9,19 @@ namespace WindowsFormsApp1
     [Table("ADMIN.PLACE_TRIP")]
     public partial class PLACE_TRIP
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column("PK_PLACE_TRIP")]
+        public decimal PK_PLACE_TRIP { get; set; }
+
+        [StringLength(1000)]
+        [Column("NAME")]
+        public string NAME { get; set; }
         public PLACE_TRIP()
         {
             TRIP_ORG = new HashSet<TRIP_ORG>();
         }
-
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public decimal PK_PLACE_TRIP { get; set; }
-
-        [StringLength(1000)]
-        public string NAME { get; set; }
 
         [NotMapped]
         private string country;
@@ -51,6 +52,7 @@ namespace WindowsFormsApp1
             }
 
         }
+
         public void createName()
         {
             NAME = country + ", " + city;

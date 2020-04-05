@@ -14,17 +14,17 @@ namespace WindowsFormsApp1
         {
             PEREVOD = new HashSet<PEREVOD>();
             PRIEM = new HashSet<PRIEM>();
-            TRIP = new HashSet<TRIP>();
+            TRIP2 = new HashSet<UpdatedTRIP>();
             UVAL = new HashSet<UVAL>();
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long PK_PRIKAZ { get; set; }
 
-        public decimal? OKUD { get; set; }
+        public string OKUD { get; set; }
 
-        public decimal? OKPO { get; set; }
+        public string OKPO { get; set; }
 
         [StringLength(200)]
         public string NUMDOC { get; set; }
@@ -52,7 +52,8 @@ namespace WindowsFormsApp1
         public virtual TYPE_PRIKAZ TYPE_PRIKAZ { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TRIP> TRIP { get; set; }
+        public virtual ICollection<UpdatedTRIP> TRIP2 { get; set; }
+
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UVAL> UVAL { get; set; }

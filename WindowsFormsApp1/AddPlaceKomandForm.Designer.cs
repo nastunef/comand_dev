@@ -34,13 +34,13 @@ namespace Komandirovki
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.CountryComboBox = new System.Windows.Forms.ComboBox();
-            this.pLACETRIPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.OrganizationTextBox = new System.Windows.Forms.TextBox();
             this.SaveButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
             this.CityTextBox = new System.Windows.Forms.TextBox();
+            this.pLACETRIPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pLACETRIPBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,10 +59,6 @@ namespace Komandirovki
             this.CountryComboBox.Name = "CountryComboBox";
             this.CountryComboBox.Size = new System.Drawing.Size(187, 21);
             this.CountryComboBox.TabIndex = 1;
-            // 
-            // pLACETRIPBindingSource
-            // 
-            this.pLACETRIPBindingSource.DataSource = typeof(WindowsFormsApp1.PLACE_TRIP);
             // 
             // label2
             // 
@@ -113,6 +109,10 @@ namespace Komandirovki
             this.CityTextBox.Size = new System.Drawing.Size(187, 20);
             this.CityTextBox.TabIndex = 8;
             // 
+            // pLACETRIPBindingSource
+            // 
+            this.pLACETRIPBindingSource.DataSource = typeof(WindowsFormsApp1.PLACE_TRIP);
+            // 
             // AddPlaceKomandForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,6 +128,7 @@ namespace Komandirovki
             this.Controls.Add(this.label1);
             this.Name = "AddPlaceKomandForm";
             this.Text = "Добавить место назначения";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddPlaceKomandForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pLACETRIPBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

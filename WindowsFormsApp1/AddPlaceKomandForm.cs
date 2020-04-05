@@ -69,7 +69,7 @@ namespace Komandirovki
                 //neededPlace = model.PLACE_TRIP.FirstOrDefault(place => place.NAME == newPlace.NAME);
             }
 
-            TRIP_ORG trip_org = new TRIP_ORG();
+            TRIP_ORG trip_org = model.TRIP_ORG.Create();
             trip_org.NAME = org;
             trip_org.PLACE_TRIP = neededPlace;
             model.TRIP_ORG.Add(trip_org);
@@ -78,6 +78,13 @@ namespace Komandirovki
             Console.WriteLine($"id org = {trip_org.PK_TRIP_ORG}");
             komandirovkaForm.AddOrgTrip(trip_org);
             MyMsgBox.showInfo("Добавлено!");
+            this.Close();
+        }
+
+        private void AddPlaceKomandForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MyMsgBox.showAsk("Вы уверены?"))
+                this.Close();
         }
     }
 }

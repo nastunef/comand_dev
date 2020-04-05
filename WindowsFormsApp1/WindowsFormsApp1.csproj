@@ -113,7 +113,7 @@
     <Compile Include="OUR_ORG.cs" />
     <Compile Include="PEREVOD.cs" />
     <Compile Include="PERSONCARD.cs" />
-    <Compile Include="PERSONCARD_TRIP.cs" />
+    <Compile Include="PERSONCARD_IN_TRIP.cs" />
     <Compile Include="PLACE_EDU.cs" />
     <Compile Include="PLACE_TRIP.cs" />
     <Compile Include="PODRAZDELORG.cs" />
@@ -133,11 +133,11 @@
     <Compile Include="STR_SHTAT_RASP.cs" />
     <Compile Include="STR_TABEL.cs" />
     <Compile Include="TABEL.cs" />
-    <Compile Include="TRIP.cs" />
     <Compile Include="TRIP_ORG.cs" />
     <Compile Include="TYPE_EDU.cs" />
     <Compile Include="TYPE_PRIKAZ.cs" />
     <Compile Include="TYPE_WORK.cs" />
+    <Compile Include="UpdatedTRIP.cs" />
     <Compile Include="UVAL.cs" />
     <EmbeddedResource Include="AddPlaceKomandForm.resx">
       <DependentUpon>AddPlaceKomandForm.cs</DependentUpon>
@@ -161,9 +161,6 @@
       <DependentUpon>SearchWorkerForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\PERSONCARD.datasource" />
-    <None Include="Properties\DataSources\PLACE_TRIP.datasource" />
-    <None Include="Properties\DataSources\TRIP.datasource" />
     <None Include="Properties\DataSources\TRIP_ORG.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

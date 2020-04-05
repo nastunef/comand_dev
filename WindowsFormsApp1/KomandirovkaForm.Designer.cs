@@ -30,25 +30,30 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.placesView = new System.Windows.Forms.DataGridView();
             this.CounrtyColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.CityColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.OrganizationColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.WorkersGridView = new System.Windows.Forms.DataGridView();
+            this.pERSONCARDINTRIPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelDates = new System.Windows.Forms.Panel();
             this.finishDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.startDate = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.isSameDatesCheckBox = new System.Windows.Forms.CheckBox();
             this.PurposeCheckBox = new System.Windows.Forms.CheckBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelPurpose = new System.Windows.Forms.Panel();
             this.PurposeTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.FinanceCheckBox = new System.Windows.Forms.CheckBox();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelFinance = new System.Windows.Forms.Panel();
             this.FinanceTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -71,6 +76,7 @@
             this.ExitButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.isDateReasonCheckBox = new System.Windows.Forms.CheckBox();
+            this.TripBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -92,18 +98,16 @@
             this.FinishDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PurposeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FinanceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tRIPORGBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tRIPORGBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PK_ORG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pERSONCARDBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.TripBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.placesView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WorkersGridView)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tRIPORGBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pERSONCARDBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pERSONCARDINTRIPBindingSource)).BeginInit();
+            this.panelDates.SuspendLayout();
+            this.panelPurpose.SuspendLayout();
+            this.panelFinance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TripBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tRIPORGBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -123,10 +127,13 @@
             this.OrganizationColumn,
             this.PK_ORG});
             this.placesView.Location = new System.Drawing.Point(9, 28);
+            this.placesView.MultiSelect = false;
             this.placesView.Name = "placesView";
+            this.placesView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.placesView.Size = new System.Drawing.Size(836, 105);
             this.placesView.TabIndex = 1;
             this.placesView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.placesView_CellEndEdit);
+            this.placesView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.placesView_DataError);
             // 
             // CounrtyColumn
             // 
@@ -143,13 +150,14 @@
             // OrganizationColumn
             // 
             this.OrganizationColumn.DataPropertyName = "NAME";
-            this.OrganizationColumn.DataSource = this.tRIPORGBindingSource1;
+            this.OrganizationColumn.DataSource = this.tRIPORGBindingSource;
             this.OrganizationColumn.HeaderText = "Организация";
             this.OrganizationColumn.Name = "OrganizationColumn";
             this.OrganizationColumn.Width = 200;
             // 
             // WorkersGridView
             // 
+            this.WorkersGridView.AutoGenerateColumns = false;
             this.WorkersGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.WorkersGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SurnameColumn,
@@ -162,10 +170,14 @@
             this.FinishDateColumn,
             this.PurposeColumn,
             this.FinanceColumn});
+            this.WorkersGridView.DataSource = this.pERSONCARDINTRIPBindingSource;
             this.WorkersGridView.Location = new System.Drawing.Point(8, 153);
+            this.WorkersGridView.MultiSelect = false;
             this.WorkersGridView.Name = "WorkersGridView";
+            this.WorkersGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.WorkersGridView.Size = new System.Drawing.Size(936, 134);
             this.WorkersGridView.TabIndex = 7;
+            this.WorkersGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.WorkersGridView_DataError);
             // 
             // label4
             // 
@@ -175,21 +187,22 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Список работников";
             // 
-            // panel1
+            // panelDates
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.finishDate);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.startDate);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(8, 327);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(260, 73);
-            this.panel1.TabIndex = 12;
+            this.panelDates.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelDates.Controls.Add(this.finishDate);
+            this.panelDates.Controls.Add(this.label3);
+            this.panelDates.Controls.Add(this.startDate);
+            this.panelDates.Controls.Add(this.label2);
+            this.panelDates.Location = new System.Drawing.Point(8, 327);
+            this.panelDates.Name = "panelDates";
+            this.panelDates.Size = new System.Drawing.Size(283, 73);
+            this.panelDates.TabIndex = 12;
+            this.panelDates.Visible = false;
             // 
             // finishDate
             // 
-            this.finishDate.Location = new System.Drawing.Point(96, 41);
+            this.finishDate.Location = new System.Drawing.Point(121, 40);
             this.finishDate.Name = "finishDate";
             this.finishDate.Size = new System.Drawing.Size(145, 20);
             this.finishDate.TabIndex = 13;
@@ -198,13 +211,13 @@
             // 
             this.label3.Location = new System.Drawing.Point(3, 46);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 16);
+            this.label3.Size = new System.Drawing.Size(107, 16);
             this.label3.TabIndex = 12;
             this.label3.Text = "Дата окончания:";
             // 
             // startDate
             // 
-            this.startDate.Location = new System.Drawing.Point(96, 10);
+            this.startDate.Location = new System.Drawing.Point(121, 10);
             this.startDate.Name = "startDate";
             this.startDate.Size = new System.Drawing.Size(145, 20);
             this.startDate.TabIndex = 11;
@@ -225,25 +238,28 @@
             this.isSameDatesCheckBox.TabIndex = 15;
             this.isSameDatesCheckBox.Text = "Дата окончания одна для всех\r\n";
             this.isSameDatesCheckBox.UseVisualStyleBackColor = true;
+            this.isSameDatesCheckBox.CheckedChanged += new System.EventHandler(this.isSameDatesCheckBox_CheckedChanged);
             // 
             // PurposeCheckBox
             // 
-            this.PurposeCheckBox.Location = new System.Drawing.Point(275, 306);
+            this.PurposeCheckBox.Location = new System.Drawing.Point(303, 305);
             this.PurposeCheckBox.Name = "PurposeCheckBox";
             this.PurposeCheckBox.Size = new System.Drawing.Size(192, 16);
             this.PurposeCheckBox.TabIndex = 17;
             this.PurposeCheckBox.Text = "Цель одна для всех";
             this.PurposeCheckBox.UseVisualStyleBackColor = true;
+            this.PurposeCheckBox.CheckedChanged += new System.EventHandler(this.PurposeCheckBox_CheckedChanged);
             // 
-            // panel2
+            // panelPurpose
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.PurposeTextBox);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(274, 327);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(270, 73);
-            this.panel2.TabIndex = 16;
+            this.panelPurpose.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelPurpose.Controls.Add(this.PurposeTextBox);
+            this.panelPurpose.Controls.Add(this.label6);
+            this.panelPurpose.Location = new System.Drawing.Point(303, 327);
+            this.panelPurpose.Name = "panelPurpose";
+            this.panelPurpose.Size = new System.Drawing.Size(270, 73);
+            this.panelPurpose.TabIndex = 16;
+            this.panelPurpose.Visible = false;
             // 
             // PurposeTextBox
             // 
@@ -269,16 +285,18 @@
             this.FinanceCheckBox.TabIndex = 19;
             this.FinanceCheckBox.Text = "Источник средств один на всех";
             this.FinanceCheckBox.UseVisualStyleBackColor = true;
+            this.FinanceCheckBox.CheckedChanged += new System.EventHandler(this.FinanceCheckBox_CheckedChanged);
             // 
-            // panel3
+            // panelFinance
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.FinanceTextBox);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Location = new System.Drawing.Point(579, 327);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(328, 73);
-            this.panel3.TabIndex = 18;
+            this.panelFinance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelFinance.Controls.Add(this.FinanceTextBox);
+            this.panelFinance.Controls.Add(this.label5);
+            this.panelFinance.Location = new System.Drawing.Point(579, 327);
+            this.panelFinance.Name = "panelFinance";
+            this.panelFinance.Size = new System.Drawing.Size(328, 73);
+            this.panelFinance.TabIndex = 18;
+            this.panelFinance.Visible = false;
             // 
             // FinanceTextBox
             // 
@@ -322,9 +340,12 @@
             // DatePrikaz
             // 
             this.DatePrikaz.Location = new System.Drawing.Point(197, 422);
+            this.DatePrikaz.MaxDate = new System.DateTime(2030, 1, 1, 0, 0, 0, 0);
+            this.DatePrikaz.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.DatePrikaz.Name = "DatePrikaz";
             this.DatePrikaz.Size = new System.Drawing.Size(147, 20);
             this.DatePrikaz.TabIndex = 23;
+            this.DatePrikaz.Value = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             // 
             // label9
             // 
@@ -336,12 +357,13 @@
             // 
             // DateReason
             // 
-            this.DateReason.CausesValidation = false;
-            this.DateReason.Checked = false;
             this.DateReason.Location = new System.Drawing.Point(876, 457);
+            this.DateReason.MaxDate = new System.DateTime(2030, 1, 1, 0, 0, 0, 0);
+            this.DateReason.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.DateReason.Name = "DateReason";
-            this.DateReason.Size = new System.Drawing.Size(139, 20);
+            this.DateReason.Size = new System.Drawing.Size(155, 20);
             this.DateReason.TabIndex = 26;
+            this.DateReason.Value = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             // 
             // label10
             // 
@@ -361,9 +383,9 @@
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("Segoe UI", 7F);
-            this.label11.Location = new System.Drawing.Point(808, 479);
+            this.label11.Location = new System.Drawing.Point(823, 480);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(207, 15);
+            this.label11.Size = new System.Drawing.Size(223, 15);
             this.label11.TabIndex = 28;
             this.label11.Text = "(поставить галочку и указать при наличии)";
             // 
@@ -380,7 +402,7 @@
             this.NoteTextBox.Location = new System.Drawing.Point(12, 512);
             this.NoteTextBox.Multiline = true;
             this.NoteTextBox.Name = "NoteTextBox";
-            this.NoteTextBox.Size = new System.Drawing.Size(1003, 62);
+            this.NoteTextBox.Size = new System.Drawing.Size(1019, 62);
             this.NoteTextBox.TabIndex = 30;
             // 
             // AddPlaceButton
@@ -411,6 +433,7 @@
             this.DeleteWorkerButton.TabIndex = 35;
             this.DeleteWorkerButton.Text = "Удалить выделенную";
             this.DeleteWorkerButton.UseVisualStyleBackColor = true;
+            this.DeleteWorkerButton.Click += new System.EventHandler(this.DeleteWorkerButton_Click);
             // 
             // AddWorkerButton
             // 
@@ -430,6 +453,7 @@
             this.SaveButton.TabIndex = 36;
             this.SaveButton.Text = "Сохранить";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // ExportButton
             // 
@@ -459,16 +483,16 @@
             this.DeleteButton.TabIndex = 39;
             this.DeleteButton.Text = "Удалить";
             this.DeleteButton.UseVisualStyleBackColor = false;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // isDateReasonCheckBox
             // 
-            this.isDateReasonCheckBox.Checked = true;
-            this.isDateReasonCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.isDateReasonCheckBox.Location = new System.Drawing.Point(849, 457);
             this.isDateReasonCheckBox.Name = "isDateReasonCheckBox";
             this.isDateReasonCheckBox.Size = new System.Drawing.Size(21, 20);
             this.isDateReasonCheckBox.TabIndex = 40;
             this.isDateReasonCheckBox.UseVisualStyleBackColor = true;
+            this.isDateReasonCheckBox.CheckedChanged += new System.EventHandler(this.isDateReasonCheckBox_CheckedChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -529,6 +553,10 @@
             // 
             // dataGridViewTextBoxColumn8
             // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "STARTDATE";
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = "01.01.2020";
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTextBoxColumn8.HeaderText = "Дата окончания";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.Width = 114;
@@ -536,6 +564,9 @@
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "TRIP";
+            dataGridViewCellStyle4.Format = "d";
+            dataGridViewCellStyle4.NullValue = "01.01.2020";
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn9.HeaderText = "Цель";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.Width = 58;
@@ -549,6 +580,7 @@
             // 
             // dataGridViewTextBoxColumn11
             // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "FINANCE";
             this.dataGridViewTextBoxColumn11.HeaderText = "За счёт средств";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.Width = 114;
@@ -587,6 +619,7 @@
             // 
             // PodrazdelColumn
             // 
+            this.PodrazdelColumn.DataPropertyName = "PODRAZDELORG";
             this.PodrazdelColumn.HeaderText = "Подразделение";
             this.PodrazdelColumn.Name = "PodrazdelColumn";
             this.PodrazdelColumn.ReadOnly = true;
@@ -594,7 +627,7 @@
             // 
             // JobPosColumn
             // 
-            this.JobPosColumn.DataPropertyName = "JOB_POSITION";
+            this.JobPosColumn.DataPropertyName = "JOB_POS";
             this.JobPosColumn.HeaderText = "Должность";
             this.JobPosColumn.Name = "JobPosColumn";
             this.JobPosColumn.ReadOnly = true;
@@ -602,46 +635,47 @@
             // 
             // StartDateColumn
             // 
+            this.StartDateColumn.DataPropertyName = "STARTDATE";
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = "01.01.2020";
+            this.StartDateColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.StartDateColumn.HeaderText = "Дата начала";
             this.StartDateColumn.Name = "StartDateColumn";
             this.StartDateColumn.Width = 96;
             // 
             // FinishDateColumn
             // 
+            this.FinishDateColumn.DataPropertyName = "ENDDATE";
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = "01.01.2020";
+            this.FinishDateColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.FinishDateColumn.HeaderText = "Дата окончания";
             this.FinishDateColumn.Name = "FinishDateColumn";
             this.FinishDateColumn.Width = 114;
             // 
             // PurposeColumn
             // 
-            this.PurposeColumn.DataPropertyName = "TRIP";
+            this.PurposeColumn.DataPropertyName = "GOAL";
             this.PurposeColumn.HeaderText = "Цель";
             this.PurposeColumn.Name = "PurposeColumn";
             this.PurposeColumn.Width = 58;
             // 
             // FinanceColumn
             // 
+            this.FinanceColumn.DataPropertyName = "FINANCE";
             this.FinanceColumn.HeaderText = "За счёт средств";
             this.FinanceColumn.Name = "FinanceColumn";
             this.FinanceColumn.Width = 114;
             // 
-            // tRIPORGBindingSource1
+            // tRIPORGBindingSource
             // 
-            this.tRIPORGBindingSource1.DataSource = typeof(WindowsFormsApp1.TRIP_ORG);
+            this.tRIPORGBindingSource.DataSource = typeof(WindowsFormsApp1.TRIP_ORG);
             // 
             // PK_ORG
             // 
             this.PK_ORG.HeaderText = "PK_ORG";
             this.PK_ORG.Name = "PK_ORG";
             this.PK_ORG.Visible = false;
-            // 
-            // pERSONCARDBindingSource
-            // 
-            this.pERSONCARDBindingSource.DataSource = typeof(WindowsFormsApp1.PERSONCARD);
-            // 
-            // TripBindingSource
-            // 
-            this.TripBindingSource.DataSource = typeof(WindowsFormsApp1.TRIP);
             // 
             // KomandirovkaForm
             // 
@@ -669,27 +703,28 @@
             this.Controls.Add(this.NumPrikazTextBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.FinanceCheckBox);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panelFinance);
             this.Controls.Add(this.PurposeCheckBox);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelPurpose);
             this.Controls.Add(this.isSameDatesCheckBox);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelDates);
             this.Controls.Add(this.WorkersGridView);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.placesView);
             this.Controls.Add(this.label1);
             this.Name = "KomandirovkaForm";
             this.Text = "Командировка";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.KomandirovkaForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.placesView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WorkersGridView)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tRIPORGBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pERSONCARDBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pERSONCARDINTRIPBindingSource)).EndInit();
+            this.panelDates.ResumeLayout(false);
+            this.panelPurpose.ResumeLayout(false);
+            this.panelPurpose.PerformLayout();
+            this.panelFinance.ResumeLayout(false);
+            this.panelFinance.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TripBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tRIPORGBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -705,13 +740,13 @@
         private System.Windows.Forms.DateTimePicker startDate;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView placesView;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelDates;
         private System.Windows.Forms.CheckBox isSameDatesCheckBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelPurpose;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panelFinance;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -735,19 +770,7 @@
         private System.Windows.Forms.TextBox FinanceTextBox;
         private System.Windows.Forms.TextBox PurposeTextBox;
         private System.Windows.Forms.CheckBox PurposeCheckBox;
-        private System.Windows.Forms.BindingSource pERSONCARDBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SurnameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MidNameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TabNumColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PodrazdelColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn JobPosColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StartDateColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FinishDateColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PurposeColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FinanceColumn;
         private System.Windows.Forms.BindingSource TripBindingSource;
-        private System.Windows.Forms.BindingSource tRIPORGBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -758,10 +781,22 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.BindingSource pERSONCARDINTRIPBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SurnameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MidNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TabNumColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PodrazdelColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn JobPosColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StartDateColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FinishDateColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PurposeColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FinanceColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn CounrtyColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn CityColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn OrganizationColumn;
+        private System.Windows.Forms.BindingSource tRIPORGBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn PK_ORG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
     }
 }

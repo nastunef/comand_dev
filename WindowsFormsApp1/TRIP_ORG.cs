@@ -1,6 +1,7 @@
 namespace WindowsFormsApp1
 {
     using System;
+    using System.Linq;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
@@ -9,20 +10,26 @@ namespace WindowsFormsApp1
     [Table("ADMIN.TRIP_ORG")]
     public partial class TRIP_ORG
     {
-        public TRIP_ORG()
-        {
-            TRIP = new HashSet<TRIP>();
-        }
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column("PK_TRIP_ORG")]
         public decimal PK_TRIP_ORG { get; set; }
 
         [StringLength(255)]
+        [Column("NAME")]
         public string NAME { get; set; }
 
+        [Column("PK_PLACE_TRIP")]
         public decimal PK_PLACE_TRIP { get; set; }
 
+        [ForeignKey("PK_PLACE_TRIP")]
         public virtual PLACE_TRIP PLACE_TRIP { get; set; }
+
+        public TRIP_ORG()
+        {
+            TRIP = new HashSet<UpdatedTRIP>();
+        }
 
         //Костылёк
         [NotMapped]
@@ -53,8 +60,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TRIP> TRIP { get; set; }
+        public virtual ICollection<UpdatedTRIP> TRIP { get; set; }
 
         public new virtual string ToString => NAME;
     }
