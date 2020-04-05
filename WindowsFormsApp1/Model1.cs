@@ -10,7 +10,6 @@ namespace WindowsFormsApp1
         public Model1()
             : base("name=Model1")
         {
-            Database.Log = (s => System.Diagnostics.Debug.WriteLine(s));
         }
 
         public virtual DbSet<CHARACTER_WORK> CHARACTER_WORK { get; set; }
@@ -275,6 +274,11 @@ namespace WindowsFormsApp1
                 .HasMany(e => e.PRIKAZ)
                 .WithRequired(e => e.OUR_ORG)
                 .WillCascadeOnDelete(false);
+            
+            modelBuilder.Entity<PERSONCARD>()
+                .HasMany(e => e.PRIKAZ)
+                .WithRequired(e => e.PERSONCARD)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PEREVOD>()
                 .Property(e => e.TYPE)
@@ -350,6 +354,10 @@ namespace WindowsFormsApp1
                 .Property(e => e.PLACEREGISTER)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<PERSONCARD>()
+                .Property(e => e.PLACE_VIDACHI_PASSPORT)
+                .IsUnicode(false);
+            
             modelBuilder.Entity<PERSONCARD>()
                 .Property(e => e.PLACEBIRTH)
                 .IsUnicode(false);
@@ -550,10 +558,7 @@ namespace WindowsFormsApp1
             modelBuilder.Entity<PRIEM>()
                 .Property(e => e.PK_PODR)
                 .HasPrecision(38, 0);
-
-            modelBuilder.Entity<PRIEM>()
-                .Property(e => e.PK_PERSONCARD)
-                .HasPrecision(38, 0);
+            
 
             modelBuilder.Entity<PRIEM>()
                 .Property(e => e.TESTPERIOD)
@@ -579,7 +584,14 @@ namespace WindowsFormsApp1
                 .Property(e => e.PODRAZDELORG_PK_PODRAZDEL)
                 .HasPrecision(38, 0);
 
-           
+            modelBuilder.Entity<PRIKAZ>()
+                .Property(e => e.OKUD)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PRIKAZ>()
+                .Property(e => e.OKPO)
+                .IsUnicode(false);
+
             modelBuilder.Entity<PRIKAZ>()
                 .Property(e => e.NUMDOC)
                 .IsUnicode(false);
@@ -591,6 +603,10 @@ namespace WindowsFormsApp1
             modelBuilder.Entity<PRIKAZ>()
                 .Property(e => e.PK_OUR_ORG)
                 .HasPrecision(38, 0);
+            
+            modelBuilder.Entity<PRIKAZ>()
+                .Property(e => e.PK_PERSONCARD)
+                .HasPrecision(38, 0);
 
             modelBuilder.Entity<PRIKAZ>()
                 .Property(e => e.ISPROJECT)
@@ -601,12 +617,6 @@ namespace WindowsFormsApp1
                 .Property(e => e.PK_TYPE_PRIKAZ)
                 .HasPrecision(38, 0);
 
-
-            modelBuilder.Entity<PRIKAZ>()
-                .HasMany(e => e.PRIEM)
-                .WithRequired(e => e.PRIKAZ)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<PRIKAZ>()
                 .HasMany(e => e.PEREVOD)
                 .WithRequired(e => e.PRIKAZ)
@@ -616,7 +626,6 @@ namespace WindowsFormsApp1
                 .HasMany(e => e.TRIP2)
                 .WithRequired(e => e.PRIKAZ)
                 .WillCascadeOnDelete(false);
-
 
             modelBuilder.Entity<PRIKAZ>()
                 .HasMany(e => e.UVAL)
@@ -853,7 +862,7 @@ namespace WindowsFormsApp1
 
             modelBuilder.Entity<TRIP_ORG>()
                 .Property(e => e.NAME)
-                .IsUnicode(true);
+                .IsUnicode(false);
 
             modelBuilder.Entity<TRIP_ORG>()
                 .Property(e => e.PK_PLACE_TRIP)
@@ -863,7 +872,6 @@ namespace WindowsFormsApp1
                 .HasMany(e => e.TRIP)
                 .WithMany(e => e.TRIP_ORG)
                 .Map(m => m.ToTable("TRIP_TRIPORG", "ADMIN").MapLeftKey("PK_TRIP_ORG").MapRightKey("PK_TRIP"));
-
 
             modelBuilder.Entity<TYPE_EDU>()
                 .Property(e => e.PK_TYPE_EDU)

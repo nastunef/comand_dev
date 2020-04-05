@@ -15,9 +15,9 @@ namespace WindowsFormsApp1
             FAMILY_MEMBER = new HashSet<FAMILY_MEMBER>();
             ONE_EDU = new HashSet<ONE_EDU>();
             PEREVOD = new HashSet<PEREVOD>();
-            PRIEM = new HashSet<PRIEM>();
             UVAL = new HashSet<UVAL>();
             PERSONCARD_IN_TRIP = new HashSet<PERSONCARD_IN_TRIP>();
+            PRIKAZ = new HashSet<PRIKAZ>();
         }
 
         [Key]
@@ -53,6 +53,9 @@ namespace WindowsFormsApp1
 
         [StringLength(1000)]
         public string PLACEREGISTER { get; set; }
+        
+        [StringLength(300)]
+        public String PLACE_VIDACHI_PASSPORT { get; set; }
 
         [StringLength(1000)]
         public string PLACEBIRTH { get; set; }
@@ -128,13 +131,12 @@ namespace WindowsFormsApp1
         public virtual TYPE_WORK TYPE_WORK { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PRIEM> PRIEM { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UVAL> UVAL { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PERSONCARD_IN_TRIP> PERSONCARD_IN_TRIP { get; set; }
-       
+        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PRIKAZ> PRIKAZ { get; set; }
     }
 }
