@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.Entity;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Excel = Microsoft.Office.Interop.Excel;
 using WindowsFormsApp1;
+using System.IO;
+using System.Net;
 
 namespace Komandirovki
 {
@@ -25,6 +22,7 @@ namespace Komandirovki
         private UpdatedTRIP trip = null;
 
         private DateTime nullDateTime = new DateTime(2020, 01, 01);
+
         /*
          * Для добавления командировки
          * **/
@@ -216,7 +214,7 @@ namespace Komandirovki
         /*
          * Сохранение
          * **/
-        private void SaveButton_Click(object sender, EventArgs e)
+         public bool Save()
         {
             if (trip == null)
                 trip = new UpdatedTRIP();
@@ -228,14 +226,14 @@ namespace Komandirovki
                 allStartDate = startDate.Value;
                 allFinishDate = finishDate.Value;
                 if (!checkedDates(allStartDate, allFinishDate))
-                    return;
+                    return false;
             }
 
             if (PurposeCheckBox.Checked)
             {
                 allPurpose = PurposeTextBox.Text;
                 if (!checkString(allPurpose, "Цель - пустая строка"))
-                    return;
+                    return false;
 
             }
 
@@ -244,7 +242,7 @@ namespace Komandirovki
             {
                 allFinance = FinanceTextBox.Text;
                 if (!checkString(allFinance, "Источник финансов - пустая строка"))
-                    return;
+                    return false;
 
             }
 
@@ -252,13 +250,14 @@ namespace Komandirovki
             DateTime datePrikaz;
 
             reason = ReasonTextBox.Text;
-            if (!checkString(reason, "Основание - пустая строка")) return;
+            if (!checkString(reason, "Основание - пустая строка")) return false;
             trip.OSNOVANIE = reason;
-            if (isDateReasonCheckBox.Checked) {
+            if (isDateReasonCheckBox.Checked)
+            {
                 if (checkDateOnNull(DateReason.Value, "Дата основания"))
                     trip.OSNOVANIEDATE = DateReason.Value;
                 else
-                    return;
+                    return false;
             }
 
             note = NoteTextBox.Text;
@@ -274,32 +273,33 @@ namespace Komandirovki
             if (checkDateOnNull(DatePrikaz.Value, "Дата приказа"))
                 trip.PRIKAZ.CREATEDATE = datePrikaz;
             else
-                return;
+                return false;
 
             numPrikaz = NumPrikazTextBox.Text;
-            if (!checkString(numPrikaz, "Номер приказа - пустая строка")) return;
+            if (!checkString(numPrikaz, "Номер приказа - пустая строка")) return false;
             trip.PRIKAZ.NUMDOC = numPrikaz;
             List<TRIP_ORG> addedOrgs = new List<TRIP_ORG>();
             foreach (DataGridViewRow row in placesView.Rows)
             {
                 decimal pk_org = 0;
-                try 
-                { 
+                try
+                {
                     pk_org = (Decimal)(row.Cells[2] as DataGridViewComboBoxCell).Value;
                 }
-                catch(Exception except)
+                catch (Exception except)
                 {
                     continue;
                 }
 
-               if (pk_org == 0) {
+                if (pk_org == 0)
+                {
                     Console.WriteLine("пк орг = 0");
                     continue;
                 }
 
-                TRIP_ORG  org = model.TRIP_ORG.Find(pk_org);
+                TRIP_ORG org = model.TRIP_ORG.Find(pk_org);
 
-                if(org == null)
+                if (org == null)
                 {
                     Console.WriteLine("орг = 0, но пкОрг != 0");
                     continue;
@@ -313,7 +313,8 @@ namespace Komandirovki
             List<PERSONCARD_IN_TRIP> addedWorkers = new List<PERSONCARD_IN_TRIP>();
             foreach (PERSONCARD_IN_TRIP worker in pERSONCARDINTRIPBindingSource)
             {
-                if (isSameDatesCheckBox.Checked) {
+                if (isSameDatesCheckBox.Checked)
+                {
                     worker.STARTDATE = allStartDate;
                     worker.ENDDATE = allFinishDate;
                 }
@@ -325,27 +326,40 @@ namespace Komandirovki
                 {
                     worker.FINANCE = allFinance;
                 }
-                if (checkWorker(worker)) {
+                if (checkWorker(worker))
+                {
                     addedWorkers.Add(worker);
-                    if(trip.PERSONCARD_IN_TRIP.Contains<PERSONCARD_IN_TRIP>(worker) == false)
+                    if (trip.PERSONCARD_IN_TRIP.Contains<PERSONCARD_IN_TRIP>(worker) == false)
                         trip.PERSONCARD_IN_TRIP.Add(worker);
                 }
                 else
                 {
                     if (!MyMsgBox.showAsk("Найдены работники с невалидными данными. Пропустить их(ДА) или остановить сохранение(НЕТ)"))
-                        return;
+                        return false;
                 }
             }
             DeleteFromList<PERSONCARD_IN_TRIP>(addedWorkers, trip.PERSONCARD_IN_TRIP);
 
-            if (trip.PK_TRIP != 0) 
+            if (trip.PK_TRIP != 0)
             {
                 model.Entry<UpdatedTRIP>(trip).State = System.Data.Entity.EntityState.Modified;
             }
             else
                 model.UpdatedTRIP.Add(trip);
-            model.SaveChanges();
-            MyMsgBox.showInfo("Сохранено");
+            try { 
+                model.SaveChanges();
+            }catch(Exception except)
+            {
+                Console.Error.WriteLine(except.Message);
+                return false;
+            }
+            return true;
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            if(Save())
+                MyMsgBox.showInfo("Сохранено");
         }
 
         public void DeleteFromList<TEntity>(ICollection<TEntity> added, ICollection<TEntity> all) where TEntity : class
@@ -515,6 +529,145 @@ namespace Komandirovki
             {
                 WorkersGridView.Rows.Remove(rows[i]);
             }
+        }
+
+        private void ExportButton_Click(object sender, EventArgs e)
+        {
+            Excel.Application exApp = new Excel.Application();
+            string PATH_TO_T9 = "templates\\T-9.xls";
+            string PATH_TO_T9A = "templates\\T-9AAA.xls";
+            if (!Directory.Exists("templates"))
+                Directory.CreateDirectory("templates");
+            if (!File.Exists(PATH_TO_T9))
+            {
+                new WebClient().DownloadFile(new Uri("https://github.com/pi62/Komandirovki/raw/master/templates/T-9.xls"), PATH_TO_T9);
+            }
+            if (!File.Exists(PATH_TO_T9A))
+            {
+                new WebClient().DownloadFile(new Uri("https://github.com/pi62/Komandirovki/raw/master/templates/T-9A.xls"), PATH_TO_T9A);
+            }
+            var saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            saveFileDialog1.InitialDirectory = Directory.GetCurrentDirectory();
+           
+            saveFileDialog1.DefaultExt = "xls";
+            saveFileDialog1.ShowDialog();
+            var SAVE_PATH = saveFileDialog1.FileName;
+           
+            if (String.IsNullOrWhiteSpace(SAVE_PATH) || !Save() || trip == null)
+                return;
+            Excel.Workbook excelappworkbooks = null;
+            try {
+                if (trip.PERSONCARD_IN_TRIP.Count > 1) {
+                    excelappworkbooks = exApp.Workbooks.Open(Directory.GetCurrentDirectory() + "\\" + PATH_TO_T9A, Type.Missing, false, Type.Missing, Type.Missing,
+                  Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+                }
+                else
+                {
+                    excelappworkbooks = exApp.Workbooks.Open(Directory.GetCurrentDirectory() + "\\" + PATH_TO_T9, Type.Missing, false, Type.Missing, Type.Missing,
+                      Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+                }
+            } catch (Exception except)
+            {
+                Console.Error.WriteLine(except.Message);
+                MyMsgBox.showError("Не удалось открыть шаблон");
+                return;
+            }
+            if (excelappworkbooks == null) {
+                MyMsgBox.showError("Не удалось открыть шаблон");
+                return;
+            }
+            try { 
+                if (trip.PERSONCARD_IN_TRIP.Count > 1)
+                {
+                    Excel.Worksheet excelsheets = excelappworkbooks.Worksheets.get_Item(1);
+                    OUR_ORG org = model.OUR_ORG.First<OUR_ORG>();
+                    excelsheets.Cells[5,1].Value = org.NAME;
+                    excelsheets.Cells[5, 93] = org.OKPO;
+                    excelsheets.Cells[9, 61] = trip.PRIKAZ.NUMDOC;
+                    excelsheets.Cells[9, 80] = trip.PRIKAZ.CREATEDATE.Value.ToString("dd.MM.yyyy");
+                    int i = 0;
+                    foreach(PERSONCARD_IN_TRIP person in trip.PERSONCARD_IN_TRIP) {
+                            if(i == 3)
+                            {
+                                MyMsgBox.showError("В одном приказе не больше 3х человек");
+                                break;
+                            }
+                        excelsheets.Cells[15, 44 + 22 * i].Value = person.SURNAME + " " + person.NAME + " " + person.MIDDLENAME;
+                            excelsheets.Cells[16, 44 + 22 * i].Value = person.TABEL_NUM;
+                            if(person.PODRAZDELORG != null)
+                                excelsheets.Cells[17, 44 + 22 * i].Value = person.PODRAZDELORG.NAME;
+                            excelsheets.Cells[18, 44 + 22 * i].Value = person.JOB_POS.NAME;
+                            //Костыль
+                            excelsheets.Cells[19, 44 + 22 * i].Value = trip.TRIP_ORG.First<TRIP_ORG>().PLACE_TRIP.NAME;
+                            excelsheets.Cells[20, 44 + 22 * i].Value = trip.TRIP_ORG.First<TRIP_ORG>().NAME;
+                            excelsheets.Cells[21, 44 + 22 * i].Value = person.STARTDATE.Value.ToString("dd.MM.yyyy");
+                            excelsheets.Cells[22, 44 + 22 * i].Value = person.ENDDATE.Value.ToString("dd.MM.yyyy");
+                            excelsheets.Cells[23, 44 + 22 * i].Value = (int)person.ENDDATE.Value.Subtract(person.STARTDATE.Value).TotalDays;
+                            excelsheets.Cells[24, 44 + 22 * i].Value = person.GOAL;
+                            excelsheets.Cells[25, 44 + 22 * i].Value = person.FINANCE;
+                            i++;
+                    }
+                    
+                        if (trip.OSNOVANIEDATE != null)
+                            excelsheets.Cells[30,36].Value = trip.OSNOVANIE + " от " + trip.OSNOVANIEDATE.Value.ToString("dd.MM.yyyy");
+                        else
+                            excelsheets.Cells[30,36].Value = trip.OSNOVANIE;
+                }
+                else
+                {
+                    Excel.Worksheet excelsheets = excelappworkbooks.Worksheets.get_Item(1);
+                    OUR_ORG org = model.OUR_ORG.First<OUR_ORG>();
+                    excelsheets.Cells[7, 1].Value = org.NAME;
+                    excelsheets.Cells[7, 45] = org.OKPO;
+                    excelsheets.Cells[13, 35] = trip.PRIKAZ.NUMDOC;
+                    excelsheets.Cells[13, 48] = trip.PRIKAZ.CREATEDATE.Value.ToString("dd.MM.yyyy");
+                    PERSONCARD_IN_TRIP person = trip.PERSONCARD_IN_TRIP.First();
+                    excelsheets.Cells[18, 1].Value = person.SURNAME + " " + person.NAME + " " + person.MIDDLENAME;
+                    excelsheets.Cells[18, 47].Value = person.TABEL_NUM;
+                    if (person.PODRAZDELORG != null)
+                        excelsheets.Cells[20, 1].Value = person.PODRAZDELORG.NAME;
+                    excelsheets.Cells[22,1].Value = person.JOB_POS.NAME;
+                    int i = 0;
+                    foreach(TRIP_ORG tripOrg in trip.TRIP_ORG) { 
+                        if(excelsheets.Cells[24 + i, 1].Text.Length > 100)
+                        {
+                            if (i == 0)
+                                i += 2;
+                            else
+                                i++;
+                        }
+                        excelsheets.Cells[24+i, 1].Value += tripOrg.PLACE_TRIP.NAME;
+                        excelsheets.Cells[24+i, 1].Value += ", " + tripOrg.NAME;
+                        excelsheets.Cells[24 + i, 1].Value += " ; ";
+                    }
+                    excelsheets.Cells[33, 3].Value = person.STARTDATE.Value.Day;
+                    excelsheets.Cells[33, 7].Value = person.STARTDATE.Value.ToString("MMMM");
+                    excelsheets.Cells[33, 21].Value = person.STARTDATE.Value.ToString("yy");
+
+                    excelsheets.Cells[33, 30].Value = person.ENDDATE.Value.Day;
+                    excelsheets.Cells[33, 34].Value = person.ENDDATE.Value.ToString("MMMM");
+                    excelsheets.Cells[33, 48].Value = person.ENDDATE.Value.ToString("yy");
+
+                    excelsheets.Cells[31, 8].Value = (int)person.ENDDATE.Value.Subtract(person.STARTDATE.Value).TotalDays;
+                    excelsheets.Cells[35,6].Value = person.GOAL;
+                    excelsheets.Cells[38, 18].Value = person.FINANCE;
+                   
+                    
+
+                    if (trip.OSNOVANIEDATE != null)
+                        excelsheets.Cells[42, 15].Value = trip.OSNOVANIE + " от " + trip.OSNOVANIEDATE.Value.ToString("dd.MM.yyyy");
+                    else
+                        excelsheets.Cells[42, 15].Value = trip.OSNOVANIE;
+                }
+                
+            }
+            catch(Exception except)
+            {
+                Console.Error.WriteLine(except.Message);
+            }
+            MyMsgBox.showInfo("Готово!");
+            excelappworkbooks.SaveAs(SAVE_PATH);
+            exApp.Quit();
         }
     }
 }

@@ -30,16 +30,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.placesView = new System.Windows.Forms.DataGridView();
             this.CounrtyColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.CityColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.OrganizationColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tRIPORGBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PK_ORG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.WorkersGridView = new System.Windows.Forms.DataGridView();
+            this.SurnameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MidNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TabNumColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PodrazdelColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.JobPosColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FinishDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PurposeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FinanceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pERSONCARDINTRIPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.panelDates = new System.Windows.Forms.Panel();
@@ -88,26 +100,14 @@
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SurnameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MidNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TabNumColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PodrazdelColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.JobPosColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FinishDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PurposeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FinanceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tRIPORGBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.PK_ORG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.placesView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tRIPORGBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WorkersGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pERSONCARDINTRIPBindingSource)).BeginInit();
             this.panelDates.SuspendLayout();
             this.panelPurpose.SuspendLayout();
             this.panelFinance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TripBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tRIPORGBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -155,6 +155,16 @@
             this.OrganizationColumn.Name = "OrganizationColumn";
             this.OrganizationColumn.Width = 200;
             // 
+            // tRIPORGBindingSource
+            // 
+            this.tRIPORGBindingSource.DataSource = typeof(WindowsFormsApp1.TRIP_ORG);
+            // 
+            // PK_ORG
+            // 
+            this.PK_ORG.HeaderText = "PK_ORG";
+            this.PK_ORG.Name = "PK_ORG";
+            this.PK_ORG.Visible = false;
+            // 
             // WorkersGridView
             // 
             this.WorkersGridView.AutoGenerateColumns = false;
@@ -178,6 +188,88 @@
             this.WorkersGridView.Size = new System.Drawing.Size(936, 134);
             this.WorkersGridView.TabIndex = 7;
             this.WorkersGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.WorkersGridView_DataError);
+            // 
+            // SurnameColumn
+            // 
+            this.SurnameColumn.DataPropertyName = "SURNAME";
+            this.SurnameColumn.HeaderText = "Фамилия";
+            this.SurnameColumn.Name = "SurnameColumn";
+            this.SurnameColumn.ReadOnly = true;
+            this.SurnameColumn.Width = 81;
+            // 
+            // NameColumn
+            // 
+            this.NameColumn.DataPropertyName = "NAME";
+            this.NameColumn.HeaderText = "Имя";
+            this.NameColumn.Name = "NameColumn";
+            this.NameColumn.ReadOnly = true;
+            this.NameColumn.Width = 54;
+            // 
+            // MidNameColumn
+            // 
+            this.MidNameColumn.DataPropertyName = "MIDDLENAME";
+            this.MidNameColumn.HeaderText = "Отчество";
+            this.MidNameColumn.Name = "MidNameColumn";
+            this.MidNameColumn.ReadOnly = true;
+            this.MidNameColumn.Width = 79;
+            // 
+            // TabNumColumn
+            // 
+            this.TabNumColumn.DataPropertyName = "TABEL_NUM";
+            this.TabNumColumn.HeaderText = "Таб.номер";
+            this.TabNumColumn.Name = "TabNumColumn";
+            this.TabNumColumn.ReadOnly = true;
+            this.TabNumColumn.Width = 86;
+            // 
+            // PodrazdelColumn
+            // 
+            this.PodrazdelColumn.DataPropertyName = "PODRAZDELORG";
+            this.PodrazdelColumn.HeaderText = "Подразделение";
+            this.PodrazdelColumn.Name = "PodrazdelColumn";
+            this.PodrazdelColumn.ReadOnly = true;
+            this.PodrazdelColumn.Width = 112;
+            // 
+            // JobPosColumn
+            // 
+            this.JobPosColumn.DataPropertyName = "JOB_POS";
+            this.JobPosColumn.HeaderText = "Должность";
+            this.JobPosColumn.Name = "JobPosColumn";
+            this.JobPosColumn.ReadOnly = true;
+            this.JobPosColumn.Width = 90;
+            // 
+            // StartDateColumn
+            // 
+            this.StartDateColumn.DataPropertyName = "STARTDATE";
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = "01.01.2020";
+            this.StartDateColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.StartDateColumn.HeaderText = "Дата начала";
+            this.StartDateColumn.Name = "StartDateColumn";
+            this.StartDateColumn.Width = 96;
+            // 
+            // FinishDateColumn
+            // 
+            this.FinishDateColumn.DataPropertyName = "ENDDATE";
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = "01.01.2020";
+            this.FinishDateColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.FinishDateColumn.HeaderText = "Дата окончания";
+            this.FinishDateColumn.Name = "FinishDateColumn";
+            this.FinishDateColumn.Width = 114;
+            // 
+            // PurposeColumn
+            // 
+            this.PurposeColumn.DataPropertyName = "GOAL";
+            this.PurposeColumn.HeaderText = "Цель";
+            this.PurposeColumn.Name = "PurposeColumn";
+            this.PurposeColumn.Width = 58;
+            // 
+            // FinanceColumn
+            // 
+            this.FinanceColumn.DataPropertyName = "FINANCE";
+            this.FinanceColumn.HeaderText = "За счёт средств";
+            this.FinanceColumn.Name = "FinanceColumn";
+            this.FinanceColumn.Width = 114;
             // 
             // label4
             // 
@@ -463,6 +555,7 @@
             this.ExportButton.TabIndex = 37;
             this.ExportButton.Text = "Экспорт в документ";
             this.ExportButton.UseVisualStyleBackColor = true;
+            this.ExportButton.Click += new System.EventHandler(this.ExportButton_Click);
             // 
             // ExitButton
             // 
@@ -585,98 +678,6 @@
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.Width = 114;
             // 
-            // SurnameColumn
-            // 
-            this.SurnameColumn.DataPropertyName = "SURNAME";
-            this.SurnameColumn.HeaderText = "Фамилия";
-            this.SurnameColumn.Name = "SurnameColumn";
-            this.SurnameColumn.ReadOnly = true;
-            this.SurnameColumn.Width = 81;
-            // 
-            // NameColumn
-            // 
-            this.NameColumn.DataPropertyName = "NAME";
-            this.NameColumn.HeaderText = "Имя";
-            this.NameColumn.Name = "NameColumn";
-            this.NameColumn.ReadOnly = true;
-            this.NameColumn.Width = 54;
-            // 
-            // MidNameColumn
-            // 
-            this.MidNameColumn.DataPropertyName = "MIDDLENAME";
-            this.MidNameColumn.HeaderText = "Отчество";
-            this.MidNameColumn.Name = "MidNameColumn";
-            this.MidNameColumn.ReadOnly = true;
-            this.MidNameColumn.Width = 79;
-            // 
-            // TabNumColumn
-            // 
-            this.TabNumColumn.DataPropertyName = "TABEL_NUM";
-            this.TabNumColumn.HeaderText = "Таб.номер";
-            this.TabNumColumn.Name = "TabNumColumn";
-            this.TabNumColumn.ReadOnly = true;
-            this.TabNumColumn.Width = 86;
-            // 
-            // PodrazdelColumn
-            // 
-            this.PodrazdelColumn.DataPropertyName = "PODRAZDELORG";
-            this.PodrazdelColumn.HeaderText = "Подразделение";
-            this.PodrazdelColumn.Name = "PodrazdelColumn";
-            this.PodrazdelColumn.ReadOnly = true;
-            this.PodrazdelColumn.Width = 112;
-            // 
-            // JobPosColumn
-            // 
-            this.JobPosColumn.DataPropertyName = "JOB_POS";
-            this.JobPosColumn.HeaderText = "Должность";
-            this.JobPosColumn.Name = "JobPosColumn";
-            this.JobPosColumn.ReadOnly = true;
-            this.JobPosColumn.Width = 90;
-            // 
-            // StartDateColumn
-            // 
-            this.StartDateColumn.DataPropertyName = "STARTDATE";
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = "01.01.2020";
-            this.StartDateColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.StartDateColumn.HeaderText = "Дата начала";
-            this.StartDateColumn.Name = "StartDateColumn";
-            this.StartDateColumn.Width = 96;
-            // 
-            // FinishDateColumn
-            // 
-            this.FinishDateColumn.DataPropertyName = "ENDDATE";
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = "01.01.2020";
-            this.FinishDateColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.FinishDateColumn.HeaderText = "Дата окончания";
-            this.FinishDateColumn.Name = "FinishDateColumn";
-            this.FinishDateColumn.Width = 114;
-            // 
-            // PurposeColumn
-            // 
-            this.PurposeColumn.DataPropertyName = "GOAL";
-            this.PurposeColumn.HeaderText = "Цель";
-            this.PurposeColumn.Name = "PurposeColumn";
-            this.PurposeColumn.Width = 58;
-            // 
-            // FinanceColumn
-            // 
-            this.FinanceColumn.DataPropertyName = "FINANCE";
-            this.FinanceColumn.HeaderText = "За счёт средств";
-            this.FinanceColumn.Name = "FinanceColumn";
-            this.FinanceColumn.Width = 114;
-            // 
-            // tRIPORGBindingSource
-            // 
-            this.tRIPORGBindingSource.DataSource = typeof(WindowsFormsApp1.TRIP_ORG);
-            // 
-            // PK_ORG
-            // 
-            this.PK_ORG.HeaderText = "PK_ORG";
-            this.PK_ORG.Name = "PK_ORG";
-            this.PK_ORG.Visible = false;
-            // 
             // KomandirovkaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -716,6 +717,7 @@
             this.Text = "Командировка";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.KomandirovkaForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.placesView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tRIPORGBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WorkersGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pERSONCARDINTRIPBindingSource)).EndInit();
             this.panelDates.ResumeLayout(false);
@@ -724,7 +726,6 @@
             this.panelFinance.ResumeLayout(false);
             this.panelFinance.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TripBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tRIPORGBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -86,6 +86,16 @@ namespace WindowsFormsApp1
                 return PERSONCARD.JOB_POSITION;
             }
         }
+
+        [NotMapped]
+        public PODRAZDELORG PODRAZDELORG
+        {
+            get
+            {
+                if (PERSONCARD == null || PERSONCARD.TABEL == null || PERSONCARD.TABEL.PODRAZDELORG == null) return null;
+                return PERSONCARD.TABEL.PODRAZDELORG;
+            }
+        }
     }
     
 }
