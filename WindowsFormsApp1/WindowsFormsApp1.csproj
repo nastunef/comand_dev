@@ -57,6 +57,10 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Oracle.ManagedDataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
       <HintPath>..\packages\Oracle.ManagedDataAccess.19.6.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
     </Reference>
@@ -80,6 +84,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddPlaceKomandForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPlaceKomandForm.Designer.cs">
+      <DependentUpon>AddPlaceKomandForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CalendarColumn.cs" />
     <Compile Include="CHARACTER_WORK.cs" />
     <Compile Include="DelWorkPrikaz.cs">
@@ -104,6 +114,12 @@
     <Compile Include="GENDER.cs" />
     <Compile Include="GRAZDAN.cs" />
     <Compile Include="JOB_POSITION.cs" />
+    <Compile Include="KomandirovkaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KomandirovkaForm.Designer.cs">
+      <DependentUpon>KomandirovkaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LANGUAGE.cs" />
     <Compile Include="LANGUAGE_LVL.cs" />
     <Compile Include="MainPagePrikaz.cs">
@@ -120,10 +136,12 @@
     </Compile>
     <Compile Include="MARTIAL_STATUS.cs" />
     <Compile Include="Model1.cs" />
+    <Compile Include="MyMsgBox.cs" />
     <Compile Include="ONE_EDU.cs" />
     <Compile Include="OUR_ORG.cs" />
     <Compile Include="PEREVOD.cs" />
     <Compile Include="PERSONCARD.cs" />
+    <Compile Include="PERSONCARD_IN_TRIP.cs" />
     <Compile Include="PLACE_EDU.cs" />
     <Compile Include="PLACE_TRIP.cs" />
     <Compile Include="PODRAZDELORG.cs" />
@@ -138,6 +156,12 @@
     <Compile Include="PROFESSION.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchWorkerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchWorkerForm.Designer.cs">
+      <DependentUpon>SearchWorkerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReadPriemPrikaz.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,12 +179,15 @@
     <Compile Include="STR_SHTAT_RASP.cs" />
     <Compile Include="STR_TABEL.cs" />
     <Compile Include="TABEL.cs" />
-    <Compile Include="TRIP.cs" />
     <Compile Include="TRIP_ORG.cs" />
     <Compile Include="TYPE_EDU.cs" />
     <Compile Include="TYPE_PRIKAZ.cs" />
     <Compile Include="TYPE_WORK.cs" />
+    <Compile Include="UpdatedTRIP.cs" />
     <Compile Include="UVAL.cs" />
+    <EmbeddedResource Include="AddPlaceKomandForm.resx">
+      <DependentUpon>AddPlaceKomandForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DelWorkPrikaz.resx">
       <DependentUpon>DelWorkPrikaz.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KomandirovkaForm.resx">
+      <DependentUpon>KomandirovkaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainPagePrikaz.resx">
       <DependentUpon>MainPagePrikaz.cs</DependentUpon>
@@ -188,6 +218,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SearchWorkerForm.resx">
+      <DependentUpon>SearchWorkerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReadPriemPrikaz.resx">
       <DependentUpon>ReadPriemPrikaz.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,6 +228,7 @@
       <DependentUpon>SearchPrikaz.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\TRIP_ORG.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
