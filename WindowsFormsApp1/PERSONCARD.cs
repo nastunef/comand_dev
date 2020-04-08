@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
             ONE_EDU = new HashSet<ONE_EDU>();
             PEREVOD = new HashSet<PEREVOD>();
             UVAL = new HashSet<UVAL>();
-            TRIP = new HashSet<TRIP>();
+            PERSONCARD_IN_TRIP = new HashSet<PERSONCARD_IN_TRIP>();
             PRIKAZ = new HashSet<PRIKAZ>();
         }
 
@@ -134,7 +134,7 @@ namespace WindowsFormsApp1
         public virtual ICollection<UVAL> UVAL { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TRIP> TRIP { get; set; }
+        public virtual ICollection<PERSONCARD_IN_TRIP> PERSONCARD_IN_TRIP { get; set; }
         
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PRIKAZ> PRIKAZ { get; set; }
