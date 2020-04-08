@@ -82,8 +82,8 @@ namespace Komandirovki
 
         private void AddPlaceKomandForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MyMsgBox.showAsk("Вы уверены?"))
-                this.Close();
+            if (!MyMsgBox.showAsk("Вы уверены?"))
+                e.Cancel = true;
         }
     }
 }
