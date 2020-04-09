@@ -46,9 +46,9 @@ namespace WindowsFormsApp1
 
             comboBox_profession.Items.AddRange(model.PROFESSION.Select(p => p.NAME).ToArray());
 
-            Column_educationType.Items.AddRange(model.TYPE_EDU.Select(type => type.NAME));
-            Column_educationPlace.Items.AddRange(model.PLACE_EDU.Select(place => place.NAME));
-            Column_specialnost.Items.AddRange(model.SPECIALTY.Select(spec => spec.NAME));
+            Column_educationType.Items.AddRange(model.TYPE_EDU.Select(type => type.NAME).ToArray());
+            Column_educationPlace.Items.AddRange(model.PLACE_EDU.Select(place => place.NAME).ToArray());
+            Column_specialnost.Items.AddRange(model.SPECIALTY.Select(spec => spec.NAME).ToArray());
         }
 
         private void button_dopSved_Click(object sender, EventArgs e)
@@ -96,7 +96,8 @@ namespace WindowsFormsApp1
                     member.BIRTHYEAR);
             }
 
-            dataGridView_languages.Rows.Add(card.LANGUAGE.NAME, card.LANGUAGE.LANGUAGE_LVL.NAME);
+            if (card.LANGUAGE != null)
+                dataGridView_languages.Rows.Add(card.LANGUAGE.NAME, card.LANGUAGE.LANGUAGE_LVL.NAME);
 
             comboBox_profession.Text = card.PROFESSION.NAME;
 
@@ -111,8 +112,8 @@ namespace WindowsFormsApp1
                     edu.ENDDATE
                 );
             }
-            
-            textBox_doljnost2.Text =  card.JOB_POSITION.NAME;
+
+            textBox_doljnost2.Text = card.JOB_POSITION.NAME;
             textBox_structOtdel.Text = card.TABEL.PODRAZDELORG.NAME;
             textBox_workType.Text = card.TYPE_WORK.NAME;
             textBox_workCharacter.Text = card.CHARACTER_WORK.NAME;
@@ -133,23 +134,128 @@ namespace WindowsFormsApp1
             }
 
             dataGridView_comand.Rows.Clear();
-            foreach (var trip in card.TRIP)
+            //todo командировки найти
+            foreach (var trip in card.PERSONCARD_IN_TRIP)
             {
                 dataGridView_comand.Rows.Add(
                     trip.STARTDATE,
                     trip.ENDDATE,
-                    trip.PLACE_TRIP.First().NAME,
+                    trip.UPDTRIP.TRIP_ORG.First().NAME,
                     trip.GOAL
-                    );
+                );
             }
 
             richTextBox_dopSved.Text = card.DOPINFO;
 
             textBox_dateUval.Text = card.UVALDATE.ToString();
-            textBox_uvalWorkerJob.Text = card.UVAL.First().JOB_POSITION.NAME;
-            //todo фио уволившего найти хз где
-            textBox_orderNumber.Text = card.UVAL.First().NUMWORKDOGOVOR;
-            textBox_orderDate.Text = card.UVAL.First().ENDWORKDOGOVORDATE.ToString();
+            try
+            {
+                textBox_uvalWorkerJob.Text = card.UVAL.First().JOB_POSITION.NAME;
+                //todo фио уволившего найти хз где
+                textBox_orderNumber.Text = card.UVAL.First().NUMWORKDOGOVOR;
+                textBox_orderDate.Text = card.UVAL.First().ENDWORKDOGOVORDATE.ToString();
+            }
+            catch (Exception e)
+            {
+                // значит там наверное пусто и нам поебать
+            }
+        }
+
+        private void saveData()
+        {
+            Model1 model = new Model1();
+            PERSONCARD personcard;
+            if (id != -1)
+                personcard = model.PERSONCARD.First(x => x.PK_PERSONCARD == id);
+            else
+                personcard = new PERSONCARD();
+
+            personcard.NAME = textBox_name.Text;
+            personcard.SURNAME = textBox_secondName.Text;
+            personcard.MIDDLENAME = textBox_otch.Text;
+            personcard.MOBTEL = textBox_telephone.Text;
+            personcard.DOPTEL = textBox_telephone2.Text;
+            personcard.TABEL_NUM = Convert.ToInt32(textBox_tabelNumber.Text);
+
+            personcard.GENDER = model.GENDER.First(g => g.NAME == comboBox_gender.Text);
+
+            personcard.GRAZDAN = model.GRAZDAN.First(g => g.NAME == comboBox_grazdan.Text);
+
+            personcard.SERPASSPORT = textBox_passportSerial.Text;
+            personcard.NUMPASSPORT = textBox_passportNumber.Text;
+            personcard.PLACE_VIDACHI_PASSPORT = richTextBox_vidan.Text;
+            personcard.PASSPORTGETDATE = Convert.ToDateTime(dateTimePicker_dateVidan.Text);
+
+            personcard.BIRTHDATE = Convert.ToDateTime(dateTimePicker_birthday.Text);
+            personcard.PLACEBIRTH = richTextBox_birthdayPlace.Text;
+
+            personcard.INN = textBox_inn.Text;
+            personcard.SNILS = textBox_strah.Text;
+
+            personcard.MARTIAL_STATUS = model.MARTIAL_STATUS.First(m => m.NAME == comboBobx_brak.Text);
+
+            personcard.PROFESSION = model.PROFESSION.First(p => p.NAME == comboBox_profession.Text);
+
+            if (dataGridView_languages.Rows[0].Cells[0].Value != null)
+                personcard.LANGUAGE =
+                    model.LANGUAGE.First(l => l.NAME == dataGridView_languages.Rows[0].Cells[0].Value.ToString());
+
+            //todo finish
+            saveFamily(personcard, model);
+            saveEducation(personcard, model);
+
+            model.SaveChanges();
+            this.id = Convert.ToInt64(personcard.PK_PERSONCARD);
+        }
+
+        private void saveFamily(PERSONCARD personcard, Model1 model)
+        {
+            foreach (var familyMember in model.FAMILY_MEMBER.Where(m => m.PK_PERSONCARD == personcard.PK_PERSONCARD))
+            {
+                model.FAMILY_MEMBER.Remove(familyMember);
+            }
+
+            for (int i = 0; i < dataGridView_family.Rows.Count - 1; i++)
+            {
+                String name = dataGridView_family.Rows[i].Cells[0].Value.ToString();
+                FAMILY_MEMBER member = new FAMILY_MEMBER();
+                member.SURNAME = name.Split(' ')[0];
+                member.NAME = name.Split(' ')[1];
+                member.MIDDLENAME = name.Split(' ')[2];
+                member.PERSONCARD = personcard;
+                member.BIRTHYEAR = Convert.ToDateTime(dataGridView_family.Rows[i].Cells[0].Value.ToString());
+                model.FAMILY_MEMBER.Add(member);
+            }
+        }
+
+        private void saveEducation(PERSONCARD personcard, Model1 model)
+        {
+            foreach (var edu in model.ONE_EDU.Where(m => m.PK_PERSONCARD == personcard.PK_PERSONCARD))
+            {
+                model.ONE_EDU.Remove(edu);
+            }
+
+            for (int i = 0; i < dataGridView_education.Rows.Count - 1; i++)
+            {
+                var row = dataGridView_education.Rows[i];
+                ONE_EDU edu = new ONE_EDU();
+                edu.NUMDOC = row.Cells[0].Value.ToString();
+                edu.ENDDATE = Convert.ToDateTime(row.Cells[0].Value.ToString());
+                edu.PERSONCARD = personcard;
+                edu.TYPE_EDU = model.TYPE_EDU.First(t => t.NAME == row.Cells[1].Value.ToString());
+                edu.PLACE_EDU = model.PLACE_EDU.First(t => t.NAME == row.Cells[2].Value.ToString());
+                edu.SPECIALTY = model.SPECIALTY.First(s => s.NAME == row.Cells[3].Value.ToString());
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            saveData();
+        }
+
+        private void dataGridView_education_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            Console.WriteLine(e);
         }
     }
 }

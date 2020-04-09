@@ -318,6 +318,7 @@
             this.button1.TabIndex = 19;
             this.button1.Text = "Сохранить изменения";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -802,10 +803,10 @@
             this.tabPage2.Controls.Add(this.comboBox_profession);
             this.tabPage2.Controls.Add(this.label25);
             this.tabPage2.Controls.Add(this.dataGridView_education);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1069, 686);
+            this.tabPage2.Size = new System.Drawing.Size(1069, 684);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Образование";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -867,6 +868,8 @@
             this.dataGridView_education.Name = "dataGridView_education";
             this.dataGridView_education.Size = new System.Drawing.Size(962, 363);
             this.dataGridView_education.TabIndex = 0;
+            this.dataGridView_education.DataError +=
+                new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView_education_DataError);
             // 
             // Column_documentNumber
             // 
@@ -1010,7 +1013,6 @@
             // comboBobx_brak
             // 
             this.comboBobx_brak.FormattingEnabled = true;
-            this.comboBobx_brak.Items.AddRange(new object[] {"свободен", "женат/замужем"});
             this.comboBobx_brak.Location = new System.Drawing.Point(525, 166);
             this.comboBobx_brak.Name = "comboBobx_brak";
             this.comboBobx_brak.Size = new System.Drawing.Size(282, 23);
@@ -1259,7 +1261,7 @@
             this.tabControl1.Size = new System.Drawing.Size(1077, 712);
             this.tabControl1.TabIndex = 0;
             // 
-            // Form1
+            // PersonalCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1285,7 +1287,7 @@
             this.Controls.Add(this.textBox_secondName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
-            this.Name = "Form1";
+            this.Name = "PersonalCard";
             this.Text = "Личная карточка";
             this.tabPage6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);

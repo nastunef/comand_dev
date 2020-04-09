@@ -24,6 +24,7 @@ namespace WindowsFormsApp1
         public virtual DbSet<OUR_ORG> OUR_ORG { get; set; }
         public virtual DbSet<PEREVOD> PEREVOD { get; set; }
         public virtual DbSet<PERSONCARD> PERSONCARD { get; set; }
+        public virtual DbSet<PERSONCARD_IN_TRIP> PERSONCARD_IN_TRIP { get; set; }
         public virtual DbSet<PLACE_EDU> PLACE_EDU { get; set; }
         public virtual DbSet<PLACE_TRIP> PLACE_TRIP { get; set; }
         public virtual DbSet<PODRAZDELORG> PODRAZDELORG { get; set; }
@@ -35,11 +36,11 @@ namespace WindowsFormsApp1
         public virtual DbSet<STR_SHTAT_RASP> STR_SHTAT_RASP { get; set; }
         public virtual DbSet<STR_TABEL> STR_TABEL { get; set; }
         public virtual DbSet<TABEL> TABEL { get; set; }
-        public virtual DbSet<TRIP> TRIP { get; set; }
         public virtual DbSet<TRIP_ORG> TRIP_ORG { get; set; }
         public virtual DbSet<TYPE_EDU> TYPE_EDU { get; set; }
         public virtual DbSet<TYPE_PRIKAZ> TYPE_PRIKAZ { get; set; }
         public virtual DbSet<TYPE_WORK> TYPE_WORK { get; set; }
+        public virtual DbSet<UPDTRIP> UPDTRIP { get; set; }
         public virtual DbSet<UVAL> UVAL { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -267,16 +268,6 @@ namespace WindowsFormsApp1
                 .WithRequired(e => e.OUR_ORG)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<OUR_ORG>()
-                .HasMany(e => e.PRIKAZ)
-                .WithRequired(e => e.OUR_ORG)
-                .WillCascadeOnDelete(false);
-            
-            modelBuilder.Entity<PERSONCARD>()
-                .HasMany(e => e.PRIKAZ)
-                .WithRequired(e => e.PERSONCARD)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<PEREVOD>()
                 .Property(e => e.TYPE)
                 .IsUnicode(false);
@@ -352,10 +343,6 @@ namespace WindowsFormsApp1
                 .IsUnicode(false);
 
             modelBuilder.Entity<PERSONCARD>()
-                .Property(e => e.PLACE_VIDACHI_PASSPORT)
-                .IsUnicode(false);
-            
-            modelBuilder.Entity<PERSONCARD>()
                 .Property(e => e.PLACEBIRTH)
                 .IsUnicode(false);
 
@@ -420,6 +407,10 @@ namespace WindowsFormsApp1
                 .HasPrecision(38, 0);
 
             modelBuilder.Entity<PERSONCARD>()
+                .Property(e => e.PLACE_VIDACHI_PASSPORT)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PERSONCARD>()
                 .HasMany(e => e.FAMILY_MEMBER)
                 .WithRequired(e => e.PERSONCARD)
                 .WillCascadeOnDelete(false);
@@ -435,9 +426,13 @@ namespace WindowsFormsApp1
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PERSONCARD>()
-                .HasMany(e => e.TRIP)
-                .WithMany(e => e.PERSONCARD)
-                .Map(m => m.ToTable("PERSONCARD_TRIP", "ADMIN").MapLeftKey("PK_PERSONCARD").MapRightKey("PK_TRIP"));
+                .HasMany(e => e.PERSONCARD_IN_TRIP)
+                .WithRequired(e => e.PERSONCARD)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PERSONCARD_IN_TRIP>()
+                .Property(e => e.PK_PERSONCARD)
+                .HasPrecision(38, 0);
 
             modelBuilder.Entity<PLACE_EDU>()
                 .Property(e => e.PK_PLACE_EDU)
@@ -469,11 +464,6 @@ namespace WindowsFormsApp1
                 .WithRequired(e => e.PLACE_TRIP)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<PLACE_TRIP>()
-                .HasMany(e => e.TRIP)
-                .WithMany(e => e.PLACE_TRIP)
-                .Map(m => m.ToTable("TRIP_PLACETRIP", "ADMIN").MapLeftKey("PK_PLACE_TRIP").MapRightKey("PK_TRIP"));
-
             modelBuilder.Entity<PODRAZDELORG>()
                 .Property(e => e.PK_PODRAZDEL)
                 .HasPrecision(38, 0);
@@ -487,6 +477,10 @@ namespace WindowsFormsApp1
                 .IsUnicode(false);
 
             modelBuilder.Entity<PODRAZDELORG>()
+                .Property(e => e.PK_PODRAZDEL_PK_PODRAZDEL)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<PODRAZDELORG>()
                 .HasMany(e => e.PEREVOD)
                 .WithRequired(e => e.PODRAZDELORG)
                 .HasForeignKey(e => e.OLD_PODRAZDEL)
@@ -497,6 +491,11 @@ namespace WindowsFormsApp1
                 .WithRequired(e => e.PODRAZDELORG1)
                 .HasForeignKey(e => e.PK_NEW_PODRAZDEL)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PODRAZDELORG>()
+                .HasMany(e => e.PODRAZDELORG1)
+                .WithOptional(e => e.PODRAZDELORG2)
+                .HasForeignKey(e => e.PK_PODRAZDEL_PK_PODRAZDEL);
 
             modelBuilder.Entity<PODRAZDELORG>()
                 .HasMany(e => e.PRIEM)
@@ -514,11 +513,6 @@ namespace WindowsFormsApp1
                 .WithRequired(e => e.PODRAZDELORG)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<PODRAZDELORG>()
-                .HasMany(e => e.UVAL)
-                .WithRequired(e => e.PODRAZDELORG)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<PRIEM>()
                 .Property(e => e.REASON)
                 .IsUnicode(false);
@@ -526,7 +520,6 @@ namespace WindowsFormsApp1
             modelBuilder.Entity<PRIEM>()
                 .Property(e => e.PK_PODR)
                 .HasPrecision(38, 0);
-            
 
             modelBuilder.Entity<PRIEM>()
                 .Property(e => e.TESTPERIOD)
@@ -571,10 +564,6 @@ namespace WindowsFormsApp1
             modelBuilder.Entity<PRIKAZ>()
                 .Property(e => e.PK_OUR_ORG)
                 .HasPrecision(38, 0);
-            
-            modelBuilder.Entity<PRIKAZ>()
-                .Property(e => e.PK_PERSONCARD)
-                .HasPrecision(38, 0);
 
             modelBuilder.Entity<PRIKAZ>()
                 .Property(e => e.ISPROJECT)
@@ -586,12 +575,11 @@ namespace WindowsFormsApp1
                 .HasPrecision(38, 0);
 
             modelBuilder.Entity<PRIKAZ>()
-                .HasMany(e => e.PEREVOD)
-                .WithRequired(e => e.PRIKAZ)
-                .WillCascadeOnDelete(false);
+                .Property(e => e.PK_PERSONCARD)
+                .HasPrecision(38, 0);
 
             modelBuilder.Entity<PRIKAZ>()
-                .HasMany(e => e.TRIP)
+                .HasMany(e => e.PEREVOD)
                 .WithRequired(e => e.PRIKAZ)
                 .WillCascadeOnDelete(false);
 
@@ -807,6 +795,10 @@ namespace WindowsFormsApp1
                 .Property(e => e.DAY31)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<STR_TABEL>()
+                .Property(e => e.PK_PERSONCARD)
+                .HasPrecision(38, 0);
+
             modelBuilder.Entity<TABEL>()
                 .Property(e => e.PK_TABEL)
                 .HasPrecision(38, 0);
@@ -823,14 +815,6 @@ namespace WindowsFormsApp1
                 .HasMany(e => e.STR_TABEL)
                 .WithRequired(e => e.TABEL)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<TRIP>()
-                .Property(e => e.PK_TRIP)
-                .HasPrecision(38, 0);
-
-            modelBuilder.Entity<TRIP>()
-                .Property(e => e.GOAL)
-                .IsUnicode(false);
 
             modelBuilder.Entity<TRIP_ORG>()
                 .Property(e => e.PK_TRIP_ORG)
@@ -871,9 +855,8 @@ namespace WindowsFormsApp1
 
             modelBuilder.Entity<TYPE_PRIKAZ>()
                 .HasMany(e => e.PRIKAZ)
-                .WithRequired(e => e.TYPE_PRIKAZ)
-                .HasForeignKey(e => e.PK_TYPE_PRIKAZ)
-                .WillCascadeOnDelete(false);
+                .WithOptional(e => e.TYPE_PRIKAZ)
+                .HasForeignKey(e => e.PK_TYPE_PRIKAZ);
 
             modelBuilder.Entity<TYPE_WORK>()
                 .Property(e => e.PK_TYPE_WORK)
@@ -886,6 +869,16 @@ namespace WindowsFormsApp1
             modelBuilder.Entity<TYPE_WORK>()
                 .Property(e => e.NAME)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<UPDTRIP>()
+                .HasMany(e => e.PERSONCARD_IN_TRIP)
+                .WithOptional(e => e.UPDTRIP)
+                .WillCascadeOnDelete();
+
+            modelBuilder.Entity<UPDTRIP>()
+                .HasMany(e => e.TRIP_ORG)
+                .WithMany(e => e.UPDTRIP)
+                .Map(m => m.ToTable("TRIP_TRIPORG", "ADMIN").MapLeftKey("PK_TRIP").MapRightKey("PK_TRIP_ORG"));
 
             modelBuilder.Entity<UVAL>()
                 .Property(e => e.REASOM)

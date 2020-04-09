@@ -95,6 +95,7 @@
       <DependentUpon>EditPriemPrikaz.cs</DependentUpon>
     </Compile>
     <Compile Include="FAMILY_MEMBER.cs" />
+    <Compile Include="Model1.cs" />
     <Compile Include="PersonalCard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,11 +120,11 @@
       <DependentUpon>MainPrikaz.cs</DependentUpon>
     </Compile>
     <Compile Include="MARTIAL_STATUS.cs" />
-    <Compile Include="Model1.cs" />
     <Compile Include="ONE_EDU.cs" />
     <Compile Include="OUR_ORG.cs" />
     <Compile Include="PEREVOD.cs" />
     <Compile Include="PERSONCARD.cs" />
+    <Compile Include="PERSONCARD_IN_TRIP.cs" />
     <Compile Include="PLACE_EDU.cs" />
     <Compile Include="PLACE_TRIP.cs" />
     <Compile Include="PODRAZDELORG.cs" />
@@ -155,11 +156,11 @@
     <Compile Include="STR_SHTAT_RASP.cs" />
     <Compile Include="STR_TABEL.cs" />
     <Compile Include="TABEL.cs" />
-    <Compile Include="TRIP.cs" />
     <Compile Include="TRIP_ORG.cs" />
     <Compile Include="TYPE_EDU.cs" />
     <Compile Include="TYPE_PRIKAZ.cs" />
     <Compile Include="TYPE_WORK.cs" />
+    <Compile Include="UPDTRIP.cs" />
     <Compile Include="UVAL.cs" />
     <EmbeddedResource Include="DelWorkPrikaz.resx">
       <DependentUpon>DelWorkPrikaz.cs</DependentUpon>

@@ -15,9 +15,9 @@ namespace WindowsFormsApp1
             FAMILY_MEMBER = new HashSet<FAMILY_MEMBER>();
             ONE_EDU = new HashSet<ONE_EDU>();
             PEREVOD = new HashSet<PEREVOD>();
+            PERSONCARD_IN_TRIP = new HashSet<PERSONCARD_IN_TRIP>();
+            STR_TABEL = new HashSet<STR_TABEL>();
             UVAL = new HashSet<UVAL>();
-            TRIP = new HashSet<TRIP>();
-            PRIKAZ = new HashSet<PRIKAZ>();
         }
 
         [Key]
@@ -53,9 +53,6 @@ namespace WindowsFormsApp1
 
         [StringLength(1000)]
         public string PLACEREGISTER { get; set; }
-        
-        [StringLength(300)]
-        public String PLACE_VIDACHI_PASSPORT { get; set; }
 
         [StringLength(1000)]
         public string PLACEBIRTH { get; set; }
@@ -101,6 +98,9 @@ namespace WindowsFormsApp1
 
         public decimal? LANGUAGE_PK_LANG { get; set; }
 
+        [StringLength(300)]
+        public string PLACE_VIDACHI_PASSPORT { get; set; }
+
         public virtual CHARACTER_WORK CHARACTER_WORK { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -124,6 +124,9 @@ namespace WindowsFormsApp1
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PEREVOD> PEREVOD { get; set; }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PERSONCARD_IN_TRIP> PERSONCARD_IN_TRIP { get; set; }
+
         public virtual PROFESSION PROFESSION { get; set; }
 
         public virtual TABEL TABEL { get; set; }
@@ -131,12 +134,9 @@ namespace WindowsFormsApp1
         public virtual TYPE_WORK TYPE_WORK { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UVAL> UVAL { get; set; }
+        public virtual ICollection<STR_TABEL> STR_TABEL { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TRIP> TRIP { get; set; }
-        
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PRIKAZ> PRIKAZ { get; set; }
+        public virtual ICollection<UVAL> UVAL { get; set; }
     }
 }
