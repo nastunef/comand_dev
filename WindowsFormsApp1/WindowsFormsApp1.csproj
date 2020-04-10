@@ -105,7 +105,6 @@
       <DependentUpon>EditPriemPrikaz.cs</DependentUpon>
     </Compile>
     <Compile Include="FAMILY_MEMBER.cs" />
-    <Compile Include="Model1.cs" />
     <Compile Include="PersonalCard.cs">
       <SubType>Form</SubType>
     </Compile>
