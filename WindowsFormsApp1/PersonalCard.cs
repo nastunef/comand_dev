@@ -172,11 +172,14 @@ namespace WindowsFormsApp1
 
             personcard.NAME = textBox_name.Text;
             personcard.SURNAME = textBox_secondName.Text;
+            personcard.ALPHABET = personcard.SURNAME[0].ToString();
             personcard.MIDDLENAME = textBox_otch.Text;
             personcard.MOBTEL = textBox_telephone.Text;
             personcard.DOPTEL = textBox_telephone2.Text;
             personcard.TABEL_NUM = Convert.ToInt32(textBox_tabelNumber.Text);
 
+            personcard.DATECREATE = DateTime.Now;
+            
             personcard.GENDER = model.GENDER.First(g => g.NAME == comboBox_gender.Text);
 
             personcard.GRAZDAN = model.GRAZDAN.First(g => g.NAME == comboBox_grazdan.Text);
@@ -189,12 +192,16 @@ namespace WindowsFormsApp1
             personcard.BIRTHDATE = Convert.ToDateTime(dateTimePicker_birthday.Text);
             personcard.PLACEBIRTH = richTextBox_birthdayPlace.Text;
 
+            personcard.PLACELIVE = richTextBox_livingPlace.Text;
+            personcard.PLACEREGISTER = richTextBox_livingPlaceFact.Text;
+
             personcard.INN = textBox_inn.Text;
             personcard.SNILS = textBox_strah.Text;
 
             personcard.MARTIAL_STATUS = model.MARTIAL_STATUS.First(m => m.NAME == comboBobx_brak.Text);
 
-            personcard.PROFESSION = model.PROFESSION.First(p => p.NAME == comboBox_profession.Text);
+            if (comboBox_profession.Text != "")
+                personcard.PROFESSION = model.PROFESSION.First(p => p.NAME == comboBox_profession.Text);
 
             if (dataGridView_languages.Rows[0].Cells[0].Value != null)
                 personcard.LANGUAGE =
@@ -204,8 +211,11 @@ namespace WindowsFormsApp1
             saveFamily(personcard, model);
             saveEducation(personcard, model);
 
+            personcard.PK_PERSONCARD = model.PERSONCARD.Max(p => p.PK_PERSONCARD) + 1;
+            if (id == -1)
+                model.PERSONCARD.Add(personcard);
             model.SaveChanges();
-            this.id = Convert.ToInt64(personcard.PK_PERSONCARD);
+            id = Convert.ToInt64(personcard.PK_PERSONCARD);
         }
 
         private void saveFamily(PERSONCARD personcard, Model1 model)
