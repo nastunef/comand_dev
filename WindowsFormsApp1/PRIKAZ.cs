@@ -14,16 +14,18 @@ namespace WindowsFormsApp1
         {
             PEREVOD = new HashSet<PEREVOD>();
             PRIEM = new HashSet<PRIEM>();
-            TRIP2 = new HashSet<UpdatedTRIP>();
+            UPDTRIP = new HashSet<UPDTRIP>();
             UVAL = new HashSet<UVAL>();
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long PK_PRIKAZ { get; set; }
 
+        [StringLength(100)]
         public string OKUD { get; set; }
 
+        [StringLength(100)]
         public string OKPO { get; set; }
 
         [StringLength(200)]
@@ -32,20 +34,18 @@ namespace WindowsFormsApp1
         [StringLength(300)]
         public string PATH { get; set; }
 
-        public decimal PK_OUR_ORG { get; set; }
-        
-        public decimal PK_PERSONCARD { get; set; }
+        public decimal? PK_OUR_ORG { get; set; }
 
         public DateTime? CREATEDATE { get; set; }
 
         [StringLength(1)]
         public string ISPROJECT { get; set; }
 
-        public decimal PK_TYPE_PRIKAZ { get; set; }
+        public decimal? PK_TYPE_PRIKAZ { get; set; }
+
+        public decimal? PK_PERSONCARD { get; set; }
 
         public virtual OUR_ORG OUR_ORG { get; set; }
-        
-        public virtual PERSONCARD PERSONCARD { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PEREVOD> PEREVOD { get; set; }
@@ -53,11 +53,10 @@ namespace WindowsFormsApp1
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PRIEM> PRIEM { get; set; }
 
-        public virtual TYPE_PRIKAZ TYPE_PRIKAZ { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UpdatedTRIP> TRIP2 { get; set; }
+        public virtual ICollection<UPDTRIP> UPDTRIP { get; set; }
 
+        public virtual TYPE_PRIKAZ TYPE_PRIKAZ { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UVAL> UVAL { get; set; }

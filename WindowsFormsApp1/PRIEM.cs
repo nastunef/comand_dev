@@ -17,8 +17,7 @@ namespace WindowsFormsApp1
         public DateTime? ENDWORKDATE { get; set; }
 
         public decimal PK_PODR { get; set; }
-        
-        
+
         public decimal? TESTPERIOD { get; set; }
 
         public long? PK_PRIKAZ { get; set; }
@@ -33,12 +32,12 @@ namespace WindowsFormsApp1
 
         public decimal PK_CHAR_WORK { get; set; }
 
-        public decimal PODRAZDELORG_PK_PODRAZDEL { get; set; }
+        public decimal? PODRAZDELORG_PK_PODRAZDEL { get; set; }
 
         public virtual CHARACTER_WORK CHARACTER_WORK { get; set; }
 
         public virtual JOB_POSITION JOB_POSITION { get; set; }
-        
+
         public virtual PODRAZDELORG PODRAZDELORG { get; set; }
 
         public virtual PRIKAZ PRIKAZ { get; set; }
