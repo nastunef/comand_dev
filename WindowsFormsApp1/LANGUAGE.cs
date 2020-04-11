@@ -12,10 +12,8 @@ namespace WindowsFormsApp1
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public LANGUAGE()
         {
-            PERSONCARD = new HashSet<PERSONCARD>();
+            UNION_LANGUAGE_PERSONCARD = new HashSet<UNION_LANGUAGE_PERSONCARD>();
         }
-
-        public decimal PK_LANG_LVL { get; set; }
 
         [StringLength(255)]
         public string CIPHER { get; set; }
@@ -26,9 +24,7 @@ namespace WindowsFormsApp1
         [Key]
         public decimal PK_LANG { get; set; }
 
-        public virtual LANGUAGE_LVL LANGUAGE_LVL { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PERSONCARD> PERSONCARD { get; set; }
+        public virtual ICollection<UNION_LANGUAGE_PERSONCARD> UNION_LANGUAGE_PERSONCARD { get; set; }
     }
 }

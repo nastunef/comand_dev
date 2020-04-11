@@ -40,6 +40,7 @@ namespace WindowsFormsApp1
         public virtual DbSet<TYPE_EDU> TYPE_EDU { get; set; }
         public virtual DbSet<TYPE_PRIKAZ> TYPE_PRIKAZ { get; set; }
         public virtual DbSet<TYPE_WORK> TYPE_WORK { get; set; }
+        public virtual DbSet<UNION_LANGUAGE_PERSONCARD> UNION_LANGUAGE_PERSONCARD { get; set; }
         public virtual DbSet<UPDTRIP> UPDTRIP { get; set; }
         public virtual DbSet<UVAL> UVAL { get; set; }
 
@@ -156,10 +157,6 @@ namespace WindowsFormsApp1
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<LANGUAGE>()
-                .Property(e => e.PK_LANG_LVL)
-                .HasPrecision(38, 0);
-
-            modelBuilder.Entity<LANGUAGE>()
                 .Property(e => e.CIPHER)
                 .IsUnicode(false);
 
@@ -172,9 +169,10 @@ namespace WindowsFormsApp1
                 .HasPrecision(38, 0);
 
             modelBuilder.Entity<LANGUAGE>()
-                .HasMany(e => e.PERSONCARD)
-                .WithOptional(e => e.LANGUAGE)
-                .HasForeignKey(e => e.LANGUAGE_PK_LANG);
+                .HasMany(e => e.UNION_LANGUAGE_PERSONCARD)
+                .WithRequired(e => e.LANGUAGE)
+                .HasForeignKey(e => e.PK_LANGUAGE)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<LANGUAGE_LVL>()
                 .Property(e => e.PK_LANG_LVL)
@@ -189,8 +187,9 @@ namespace WindowsFormsApp1
                 .IsUnicode(false);
 
             modelBuilder.Entity<LANGUAGE_LVL>()
-                .HasMany(e => e.LANGUAGE)
+                .HasMany(e => e.UNION_LANGUAGE_PERSONCARD)
                 .WithRequired(e => e.LANGUAGE_LVL)
+                .HasForeignKey(e => e.PK_LANGUAGE_LVL)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<MARTIAL_STATUS>()
@@ -403,10 +402,6 @@ namespace WindowsFormsApp1
                 .HasPrecision(38, 0);
 
             modelBuilder.Entity<PERSONCARD>()
-                .Property(e => e.LANGUAGE_PK_LANG)
-                .HasPrecision(38, 0);
-
-            modelBuilder.Entity<PERSONCARD>()
                 .Property(e => e.PLACE_VIDACHI_PASSPORT)
                 .IsUnicode(false);
 
@@ -427,6 +422,11 @@ namespace WindowsFormsApp1
 
             modelBuilder.Entity<PERSONCARD>()
                 .HasMany(e => e.PERSONCARD_IN_TRIP)
+                .WithRequired(e => e.PERSONCARD)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PERSONCARD>()
+                .HasMany(e => e.UNION_LANGUAGE_PERSONCARD)
                 .WithRequired(e => e.PERSONCARD)
                 .WillCascadeOnDelete(false);
 
@@ -869,6 +869,22 @@ namespace WindowsFormsApp1
             modelBuilder.Entity<TYPE_WORK>()
                 .Property(e => e.NAME)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<UNION_LANGUAGE_PERSONCARD>()
+                .Property(e => e.PK_UNION)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<UNION_LANGUAGE_PERSONCARD>()
+                .Property(e => e.PK_LANGUAGE)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<UNION_LANGUAGE_PERSONCARD>()
+                .Property(e => e.PK_LANGUAGE_LVL)
+                .HasPrecision(38, 0);
+
+            modelBuilder.Entity<UNION_LANGUAGE_PERSONCARD>()
+                .Property(e => e.PK_PERSONCARD)
+                .HasPrecision(38, 0);
 
             modelBuilder.Entity<UPDTRIP>()
                 .HasMany(e => e.PERSONCARD_IN_TRIP)

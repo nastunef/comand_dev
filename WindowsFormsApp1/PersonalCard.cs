@@ -96,8 +96,10 @@ namespace WindowsFormsApp1
                     member.BIRTHYEAR);
             }
 
-            if (card.LANGUAGE != null)
-                dataGridView_languages.Rows.Add(card.LANGUAGE.NAME, card.LANGUAGE.LANGUAGE_LVL.NAME);
+            foreach (var lang in card.UNION_LANGUAGE_PERSONCARD)
+            {
+                dataGridView_languages.Rows.Add(lang.LANGUAGE.NAME, lang.LANGUAGE_LVL.NAME);
+            }
 
             comboBox_profession.Text = card.PROFESSION.NAME;
 
@@ -202,14 +204,10 @@ namespace WindowsFormsApp1
 
             if (comboBox_profession.Text != "")
                 personcard.PROFESSION = model.PROFESSION.First(p => p.NAME == comboBox_profession.Text);
-
-            if (dataGridView_languages.Rows[0].Cells[0].Value != null)
-                personcard.LANGUAGE =
-                    model.LANGUAGE.First(l => l.NAME == dataGridView_languages.Rows[0].Cells[0].Value.ToString());
-
-            //todo finish
+            
             saveFamily(personcard, model);
             saveEducation(personcard, model);
+            saveLanguage(personcard, model);
 
             personcard.PK_PERSONCARD = model.PERSONCARD.Max(p => p.PK_PERSONCARD) + 1;
             if (id == -1)
@@ -218,6 +216,25 @@ namespace WindowsFormsApp1
             id = Convert.ToInt64(personcard.PK_PERSONCARD);
         }
 
+        private void saveLanguage(PERSONCARD personcard, Model1 model)
+        {
+            foreach (var lang in model.UNION_LANGUAGE_PERSONCARD.Where(m => m.PK_PERSONCARD == personcard.PK_PERSONCARD))
+            {
+                model.UNION_LANGUAGE_PERSONCARD.Remove(lang);
+            }
+
+            for (int i = 0; i < dataGridView_languages.Rows.Count - 1; i++)
+            {
+                var row = dataGridView_languages.Rows[i];
+                var lang = new UNION_LANGUAGE_PERSONCARD();
+                lang.PERSONCARD = personcard;
+                lang.LANGUAGE = model.LANGUAGE.First(l => l.NAME == row.Cells[0].Value.ToString());
+                lang.LANGUAGE_LVL = model.LANGUAGE_LVL.First(l => l.NAME == row.Cells[1].Value.ToString());
+                model.UNION_LANGUAGE_PERSONCARD.Add(lang);
+            }
+            
+        }
+        
         private void saveFamily(PERSONCARD personcard, Model1 model)
         {
             foreach (var familyMember in model.FAMILY_MEMBER.Where(m => m.PK_PERSONCARD == personcard.PK_PERSONCARD))
@@ -255,6 +272,7 @@ namespace WindowsFormsApp1
                 edu.TYPE_EDU = model.TYPE_EDU.First(t => t.NAME == row.Cells[1].Value.ToString());
                 edu.PLACE_EDU = model.PLACE_EDU.First(t => t.NAME == row.Cells[2].Value.ToString());
                 edu.SPECIALTY = model.SPECIALTY.First(s => s.NAME == row.Cells[3].Value.ToString());
+                model.ONE_EDU.Add(edu);
             }
         }
 

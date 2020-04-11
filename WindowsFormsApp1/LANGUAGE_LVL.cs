@@ -12,7 +12,7 @@ namespace WindowsFormsApp1
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public LANGUAGE_LVL()
         {
-            LANGUAGE = new HashSet<LANGUAGE>();
+            UNION_LANGUAGE_PERSONCARD = new HashSet<UNION_LANGUAGE_PERSONCARD>();
         }
 
         [Key]
@@ -25,6 +25,6 @@ namespace WindowsFormsApp1
         public string NAME { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LANGUAGE> LANGUAGE { get; set; }
+        public virtual ICollection<UNION_LANGUAGE_PERSONCARD> UNION_LANGUAGE_PERSONCARD { get; set; }
     }
 }
