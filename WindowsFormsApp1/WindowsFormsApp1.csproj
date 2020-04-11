@@ -105,23 +105,27 @@
       <DependentUpon>EditPriemPrikaz.cs</DependentUpon>
     </Compile>
     <Compile Include="FAMILY_MEMBER.cs" />
+    <Compile Include="GENDER.cs" />
+    <Compile Include="GRAZDAN.cs" />
+    <Compile Include="JOB_POSITION.cs" />
+    <Compile Include="LANGUAGE.cs" />
+    <Compile Include="LANGUAGE_LVL.cs" />
+    <Compile Include="Model1.cs" />
+    <Compile Include="ONE_EDU.cs" />
+    <Compile Include="OUR_ORG.cs" />
+    <Compile Include="PEREVOD.cs" />
     <Compile Include="PersonalCard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PersonalCard.Designer.cs">
       <DependentUpon>PersonalCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="GENDER.cs" />
-    <Compile Include="GRAZDAN.cs" />
-    <Compile Include="JOB_POSITION.cs" />
     <Compile Include="KomandirovkaForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="KomandirovkaForm.Designer.cs">
       <DependentUpon>KomandirovkaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LANGUAGE.cs" />
-    <Compile Include="LANGUAGE_LVL.cs" />
     <Compile Include="MainPagePrikaz.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,11 +139,7 @@
       <DependentUpon>MainPrikaz.cs</DependentUpon>
     </Compile>
     <Compile Include="MARTIAL_STATUS.cs" />
-    <Compile Include="Model1.cs" />
     <Compile Include="MyMsgBox.cs" />
-    <Compile Include="ONE_EDU.cs" />
-    <Compile Include="OUR_ORG.cs" />
-    <Compile Include="PEREVOD.cs" />
     <Compile Include="PERSONCARD.cs" />
     <Compile Include="PERSONCARD_IN_TRIP.cs" />
     <Compile Include="PLACE_EDU.cs" />
@@ -183,6 +183,8 @@
     <Compile Include="TYPE_EDU.cs" />
     <Compile Include="TYPE_PRIKAZ.cs" />
     <Compile Include="TYPE_WORK.cs" />
+    <Compile Include="UNION_LANGUAGE_PERSONCARD.cs" />
+    <Compile Include="UpdatedTRIP.cs" />
     <Compile Include="UPDTRIP.cs" />
     <Compile Include="UVAL.cs" />
     <EmbeddedResource Include="AddPlaceKomandForm.resx">

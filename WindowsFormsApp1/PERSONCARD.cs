@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
             PEREVOD = new HashSet<PEREVOD>();
             PERSONCARD_IN_TRIP = new HashSet<PERSONCARD_IN_TRIP>();
             STR_TABEL = new HashSet<STR_TABEL>();
+            UNION_LANGUAGE_PERSONCARD = new HashSet<UNION_LANGUAGE_PERSONCARD>();
             UVAL = new HashSet<UVAL>();
         }
 
@@ -96,8 +97,6 @@ namespace WindowsFormsApp1
 
         public decimal? JOB_POSITION_PK_JOB_POS { get; set; }
 
-        public decimal? LANGUAGE_PK_LANG { get; set; }
-
         [StringLength(300)]
         public string PLACE_VIDACHI_PASSPORT { get; set; }
 
@@ -111,8 +110,6 @@ namespace WindowsFormsApp1
         public virtual GRAZDAN GRAZDAN { get; set; }
 
         public virtual JOB_POSITION JOB_POSITION { get; set; }
-
-        public virtual LANGUAGE LANGUAGE { get; set; }
 
         public virtual MARTIAL_STATUS MARTIAL_STATUS { get; set; }
 
@@ -135,6 +132,9 @@ namespace WindowsFormsApp1
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<STR_TABEL> STR_TABEL { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UNION_LANGUAGE_PERSONCARD> UNION_LANGUAGE_PERSONCARD { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UVAL> UVAL { get; set; }
