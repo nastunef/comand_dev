@@ -516,6 +516,7 @@ namespace WindowsFormsApp1
             this.buttonConfirm.TabIndex = 28;
             this.buttonConfirm.Text = "Подписать";
             this.buttonConfirm.UseVisualStyleBackColor = true;
+            this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);
             // 
             // textBox11
             // 
@@ -632,6 +633,7 @@ namespace WindowsFormsApp1
             this.buttonEdit.TabIndex = 44;
             this.buttonEdit.Text = "Редактировать приказ";
             this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonDel
             // 
@@ -642,9 +644,11 @@ namespace WindowsFormsApp1
             this.buttonDel.TabIndex = 45;
             this.buttonDel.Text = "Удалить приказ";
             this.buttonDel.UseVisualStyleBackColor = true;
+            this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
             // 
             // checkBox1
             // 
+            this.checkBox1.Enabled = false;
             this.checkBox1.Location = new System.Drawing.Point(626, 207);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(129, 18);

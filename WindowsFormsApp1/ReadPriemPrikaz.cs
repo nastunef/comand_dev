@@ -6,6 +6,7 @@ namespace WindowsFormsApp1
 {
     public partial class ReadPriemPrikaz : Form
     {
+        private long idPrikaz;
         public ReadPriemPrikaz()
         {
             InitializeComponent();
@@ -13,6 +14,7 @@ namespace WindowsFormsApp1
         
         public ReadPriemPrikaz(long id)
         {
+            idPrikaz = id;
             InitializeComponent();
             initData(id);
         }
@@ -58,11 +60,48 @@ namespace WindowsFormsApp1
             }
             
             numericUpDown4.Value = priem.TESTPERIOD.Value;
+            if (prikaz.ISPROJECT == "1")
+            {
+                buttonConfirm.Enabled = false;
+            }
+            else
+            {
+                buttonConfirm.Enabled = true;
+            }
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void buttonConfirm_Click(object sender, EventArgs e)
+        {
+            Model1 model = new Model1();
+            var prikaz = model.PRIKAZ.FirstOrDefault(p => p.PK_PRIKAZ == idPrikaz);
+            if (prikaz == null ) return;
+            prikaz.ISPROJECT = "1";
+            model.SaveChanges();
+            // закрываем форму
+            Close();
+        }
+
+        private void buttonDel_Click(object sender, EventArgs e)
+        {
+            Model1 model = new Model1();
+            var priem = model.PRIEM.FirstOrDefault(p => p.PK_PRIKAZ == idPrikaz);
+            if (priem != null) model.PRIEM.Remove(model.PRIEM.FirstOrDefault(p => p.PK_PRIKAZ == idPrikaz));
+            var prikaz = model.PRIKAZ.FirstOrDefault(p => p.PK_PRIKAZ == idPrikaz);
+            if (priem != null) model.PRIKAZ.Remove(model.PRIKAZ.FirstOrDefault(p => p.PK_PRIKAZ == idPrikaz));
+            model.SaveChanges();
+            // закрываем форму
+            Close();
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            EditPriemPrikaz editPriemPrikaz = new EditPriemPrikaz(idPrikaz);
+            editPriemPrikaz.Show();
         }
     }
 }
