@@ -32,6 +32,11 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox_genderValue = new System.Windows.Forms.ComboBox();
+            this.comboBox_genderCmp = new System.Windows.Forms.ComboBox();
+            this.checkBox_genderQuery = new System.Windows.Forms.CheckBox();
+            this.checkBox_genderResult = new System.Windows.Forms.CheckBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.textBox_middleNameValue = new System.Windows.Forms.TextBox();
             this.textBox_nameValue = new System.Windows.Forms.TextBox();
             this.textBox_secondNameValue = new System.Windows.Forms.TextBox();
@@ -56,11 +61,6 @@ namespace WindowsFormsApp1
             this.dataGridView_result = new System.Windows.Forms.DataGridView();
             this.label_resultCount = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.checkBox_genderResult = new System.Windows.Forms.CheckBox();
-            this.checkBox_genderQuery = new System.Windows.Forms.CheckBox();
-            this.comboBox_genderCmp = new System.Windows.Forms.ComboBox();
-            this.comboBox_genderValue = new System.Windows.Forms.ComboBox();
             this.button_run = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -100,23 +100,65 @@ namespace WindowsFormsApp1
             this.panel1.Size = new System.Drawing.Size(591, 628);
             this.panel1.TabIndex = 0;
             // 
+            // comboBox_genderValue
+            // 
+            this.comboBox_genderValue.FormattingEnabled = true;
+            this.comboBox_genderValue.Location = new System.Drawing.Point(416, 102);
+            this.comboBox_genderValue.Name = "comboBox_genderValue";
+            this.comboBox_genderValue.Size = new System.Drawing.Size(165, 23);
+            this.comboBox_genderValue.TabIndex = 25;
+            // 
+            // comboBox_genderCmp
+            // 
+            this.comboBox_genderCmp.FormattingEnabled = true;
+            this.comboBox_genderCmp.Items.AddRange(new object[] {"=", "!=", ">", ">=", "<", "<="});
+            this.comboBox_genderCmp.Location = new System.Drawing.Point(323, 102);
+            this.comboBox_genderCmp.Name = "comboBox_genderCmp";
+            this.comboBox_genderCmp.Size = new System.Drawing.Size(88, 23);
+            this.comboBox_genderCmp.TabIndex = 24;
+            // 
+            // checkBox_genderQuery
+            // 
+            this.checkBox_genderQuery.Location = new System.Drawing.Point(267, 102);
+            this.checkBox_genderQuery.Name = "checkBox_genderQuery";
+            this.checkBox_genderQuery.Size = new System.Drawing.Size(28, 24);
+            this.checkBox_genderQuery.TabIndex = 23;
+            this.checkBox_genderQuery.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_genderResult
+            // 
+            this.checkBox_genderResult.Location = new System.Drawing.Point(133, 102);
+            this.checkBox_genderResult.Name = "checkBox_genderResult";
+            this.checkBox_genderResult.Size = new System.Drawing.Size(20, 24);
+            this.checkBox_genderResult.TabIndex = 22;
+            this.checkBox_genderResult.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.Location = new System.Drawing.Point(3, 105);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(89, 23);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "Пол";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // textBox_middleNameValue
             // 
-            this.textBox_middleNameValue.Location = new System.Drawing.Point(417, 78);
+            this.textBox_middleNameValue.Location = new System.Drawing.Point(416, 78);
             this.textBox_middleNameValue.Name = "textBox_middleNameValue";
             this.textBox_middleNameValue.Size = new System.Drawing.Size(165, 23);
             this.textBox_middleNameValue.TabIndex = 20;
             // 
             // textBox_nameValue
             // 
-            this.textBox_nameValue.Location = new System.Drawing.Point(417, 57);
+            this.textBox_nameValue.Location = new System.Drawing.Point(416, 57);
             this.textBox_nameValue.Name = "textBox_nameValue";
             this.textBox_nameValue.Size = new System.Drawing.Size(165, 23);
             this.textBox_nameValue.TabIndex = 19;
             // 
             // textBox_secondNameValue
             // 
-            this.textBox_secondNameValue.Location = new System.Drawing.Point(417, 33);
+            this.textBox_secondNameValue.Location = new System.Drawing.Point(416, 33);
             this.textBox_secondNameValue.Name = "textBox_secondNameValue";
             this.textBox_secondNameValue.Size = new System.Drawing.Size(165, 23);
             this.textBox_secondNameValue.TabIndex = 18;
@@ -225,7 +267,7 @@ namespace WindowsFormsApp1
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(417, 0);
+            this.label5.Location = new System.Drawing.Point(416, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(87, 36);
             this.label5.TabIndex = 5;
@@ -301,48 +343,6 @@ namespace WindowsFormsApp1
             this.label9.Size = new System.Drawing.Size(149, 23);
             this.label9.TabIndex = 0;
             this.label9.Text = "Количество результатов: ";
-            // 
-            // label11
-            // 
-            this.label11.Location = new System.Drawing.Point(3, 105);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(89, 23);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "Пол";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // checkBox_genderResult
-            // 
-            this.checkBox_genderResult.Location = new System.Drawing.Point(133, 101);
-            this.checkBox_genderResult.Name = "checkBox_genderResult";
-            this.checkBox_genderResult.Size = new System.Drawing.Size(20, 24);
-            this.checkBox_genderResult.TabIndex = 22;
-            this.checkBox_genderResult.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_genderQuery
-            // 
-            this.checkBox_genderQuery.Location = new System.Drawing.Point(267, 101);
-            this.checkBox_genderQuery.Name = "checkBox_genderQuery";
-            this.checkBox_genderQuery.Size = new System.Drawing.Size(28, 24);
-            this.checkBox_genderQuery.TabIndex = 23;
-            this.checkBox_genderQuery.UseVisualStyleBackColor = true;
-            // 
-            // comboBox_genderCmp
-            // 
-            this.comboBox_genderCmp.FormattingEnabled = true;
-            this.comboBox_genderCmp.Items.AddRange(new object[] {"=", "!=", ">", ">=", "<", "<="});
-            this.comboBox_genderCmp.Location = new System.Drawing.Point(323, 101);
-            this.comboBox_genderCmp.Name = "comboBox_genderCmp";
-            this.comboBox_genderCmp.Size = new System.Drawing.Size(88, 23);
-            this.comboBox_genderCmp.TabIndex = 24;
-            // 
-            // comboBox_genderValue
-            // 
-            this.comboBox_genderValue.FormattingEnabled = true;
-            this.comboBox_genderValue.Location = new System.Drawing.Point(417, 102);
-            this.comboBox_genderValue.Name = "comboBox_genderValue";
-            this.comboBox_genderValue.Size = new System.Drawing.Size(165, 23);
-            this.comboBox_genderValue.TabIndex = 25;
             // 
             // button_run
             // 
