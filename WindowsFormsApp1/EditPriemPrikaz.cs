@@ -19,7 +19,7 @@ namespace WindowsFormsApp1
             initData(id);
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
         {
             if (checkBox1.Checked == true)
             {
@@ -38,7 +38,7 @@ namespace WindowsFormsApp1
             var priem = model.PRIEM.FirstOrDefault(p => p.PK_PRIKAZ == id);
             if (priem == null ) return;
 
-            dateTimePicker4.Value = priem.STARTWORKDATE.Value;
+            dateTimePicker1.Value = prikaz.CREATEDATE.Value;
             if (priem.ENDWORKDATE != null)
                 dateTimePicker2.Value = priem.ENDWORKDATE.Value;
             textBox11.Text = prikaz.OUR_ORG.NAME;
@@ -101,7 +101,7 @@ namespace WindowsFormsApp1
             var priem = model.PRIEM.FirstOrDefault(p => p.PK_PRIKAZ == idPrikaz);
             if (priem == null) return;
             priem.STARTWORKDATE = dateTimePicker4.Value;
-            if (checkBox1.Checked) priem.ENDWORKDATE = dateTimePicker2.Value;
+            priem.ENDWORKDATE = dateTimePicker2.Value;
             priem.TESTPERIOD = numericUpDown4.Value;
             priem.CONDITIONS = textBox9.Text;
             // TODO

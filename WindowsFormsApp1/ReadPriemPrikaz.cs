@@ -32,6 +32,8 @@ namespace WindowsFormsApp1
             if (priem.ENDWORKDATE != null)
                 dateTimePicker2.Value = priem.ENDWORKDATE.Value;
             if (prikaz.ISPROJECT == "1") buttonConfirm.Enabled = false;
+
+            dateTimePicker1.Value = prikaz.CREATEDATE.Value;
             
             textBox11.Text = prikaz.OUR_ORG.NAME;
             textBox12.Text = "0301001";
