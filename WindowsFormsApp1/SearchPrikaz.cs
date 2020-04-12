@@ -89,8 +89,8 @@ namespace WindowsFormsApp1
             
             if (selectedPrikaz.TYPE_PRIKAZ.PK_TYPE == 3)
             {
-                DelWorkPrikaz delWorkPrikaz = new DelWorkPrikaz();
-                delWorkPrikaz.Show();
+                ReadDelWorkPrikaz readDelWorkPrikaz = new ReadDelWorkPrikaz(selectedPrikaz.PK_PRIKAZ);
+                readDelWorkPrikaz.Show();
             }
         }
 

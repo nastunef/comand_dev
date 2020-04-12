@@ -250,7 +250,7 @@ private void InitializeComponent()
     // 
     // checkBox1
     // 
-    this.checkBox1.Font = new System.Drawing.Font("Kristen ITC", 8.25F);
+    this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
     this.checkBox1.Location = new System.Drawing.Point(626, 205);
     this.checkBox1.Name = "checkBox1";
     this.checkBox1.Size = new System.Drawing.Size(187, 23);
