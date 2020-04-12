@@ -85,30 +85,41 @@ namespace WindowsFormsApp1
         private void find()
         {
             Model1 model1 = new Model1();
-            var resultSet = model1.PERSONCARD.Where(personcard => true).ToList();
+            var resultSet = model1.PERSONCARD.Where(personcard => true);
 
             if (checkBox_nameQuery.Checked)
             {
-                resultSet = resultSet.Where(card => 
-                    compare(card.NAME, comboBox_nameCmp.Text, textBox_nameValue.Text)).ToList();
+                switch (comboBox_nameCmp.Text)
+                {
+                    case "=":
+                        resultSet = resultSet.Where(card => 
+                            card.NAME == textBox_nameValue.Text);
+                        break;
+                    case "!=":
+                        resultSet = resultSet.Where(card => 
+                            card.NAME != textBox_nameValue.Text);
+                        break;
+                }
+                /*resultSet = resultSet.Where(card => 
+                    compare(card.NAME, comboBox_nameCmp.Text, textBox_nameValue.Text));*/
             }
 
             if (checkBox_secondNameQuery.Checked)
             {
                 resultSet = resultSet.Where(card => 
-                    compare(card.SURNAME, comboBox_secondNameCmp.Text, textBox_secondNameValue.Text)).ToList();
+                    compare(card.SURNAME, comboBox_secondNameCmp.Text, textBox_secondNameValue.Text));
             }
 
             if (checkBox_middleNameQuery.Checked)
             {
                 resultSet = resultSet.Where(card => 
-                    compare(card.MIDDLENAME, comboBox_middleNameCmp.Text, textBox_middleNameValue.Text)).ToList();
+                    compare(card.MIDDLENAME, comboBox_middleNameCmp.Text, textBox_middleNameValue.Text));
             }
 
             if (checkBox_genderQuery.Checked)
             {
                 resultSet = resultSet.Where(card => 
-                    compare(card.GENDER.NAME, comboBox_genderCmp.Text, comboBox_genderValue.Text)).ToList();
+                    compare(card.GENDER.NAME, comboBox_genderCmp.Text, comboBox_genderValue.Text));
             }
 
             printResult(resultSet);
@@ -123,7 +134,7 @@ namespace WindowsFormsApp1
             return column;
         }
 
-        private void printResult(List<PERSONCARD> resultSet)
+        private void printResult(IQueryable<PERSONCARD> resultSet)
         {
             dataGridView_result.Columns.Clear();
             label_resultCount.Text = resultSet.Count().ToString();
