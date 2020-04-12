@@ -19,69 +19,6 @@ namespace WindowsFormsApp1
             comboBox_genderValue.Items.AddRange(model.GENDER.Select(g => g.NAME).ToArray());
         }
 
-        private bool compare(String value, String cmp, String target)
-        {
-            switch (cmp)
-            {
-                case "=":
-                    return value == target;
-                case "!=":
-                    return value != target;
-                case ">":
-                    return value.CompareTo(target) > 0;
-                case ">=":
-                    return value.CompareTo(target) >= 0;
-                case "<":
-                    return value.CompareTo(target) < 0;
-                case "<=":
-                    return value.CompareTo(target) <= 0;
-                default:
-                    return false;
-            }
-        }
-
-        private bool compare(int value, String cmp, int target)
-        {
-            switch (cmp)
-            {
-                case "=":
-                    return value == target;
-                case "!=":
-                    return value != target;
-                case ">":
-                    return value > target;
-                case ">=":
-                    return value >= target;
-                case "<":
-                    return value < target;
-                case "<=":
-                    return value <= target;
-                default:
-                    return false;
-            }
-        }
-
-        private bool compare(DateTime value, String cmp, DateTime target)
-        {
-            switch (cmp)
-            {
-                case "=":
-                    return value == target;
-                case "!=":
-                    return value != target;
-                case ">":
-                    return value > target;
-                case ">=":
-                    return value >= target;
-                case "<":
-                    return value < target;
-                case "<=":
-                    return value <= target;
-                default:
-                    return false;
-            }
-        }
-        
         private void find()
         {
             Model1 model1 = new Model1();
@@ -99,6 +36,22 @@ namespace WindowsFormsApp1
                         resultSet = resultSet.Where(card => 
                             card.NAME != textBox_nameValue.Text);
                         break;
+                    case ">":
+                        resultSet = resultSet.Where(card => 
+                            String.Compare(card.NAME, textBox_nameValue.Text, StringComparison.Ordinal) > 0);
+                        break;
+                    case ">=":
+                        resultSet = resultSet.Where(card => 
+                            String.Compare(card.NAME, textBox_nameValue.Text, StringComparison.Ordinal) >= 0);
+                        break;
+                    case "<":
+                        resultSet = resultSet.Where(card => 
+                            String.Compare(card.NAME, textBox_nameValue.Text, StringComparison.Ordinal) < 0);
+                        break;
+                    case "<=":
+                        resultSet = resultSet.Where(card => 
+                            String.Compare(card.NAME, textBox_nameValue.Text, StringComparison.Ordinal) <= 0);
+                        break;
                 }
                 /*resultSet = resultSet.Where(card => 
                     compare(card.NAME, comboBox_nameCmp.Text, textBox_nameValue.Text));*/
@@ -106,20 +59,101 @@ namespace WindowsFormsApp1
 
             if (checkBox_secondNameQuery.Checked)
             {
-                resultSet = resultSet.Where(card => 
-                    compare(card.SURNAME, comboBox_secondNameCmp.Text, textBox_secondNameValue.Text));
+                switch (comboBox_secondNameCmp.Text)
+                {
+                    case "=":
+                        resultSet = resultSet.Where(card => 
+                            card.SURNAME == textBox_secondNameValue.Text);
+                        break;
+                    case "!=":
+                        resultSet = resultSet.Where(card => 
+                            card.SURNAME != textBox_secondNameValue.Text);
+                        break;
+                    case ">":
+                        resultSet = resultSet.Where(card => 
+                            String.Compare(card.SURNAME, textBox_secondNameValue.Text, StringComparison.Ordinal) > 0);
+                        break;
+                    case ">=":
+                        resultSet = resultSet.Where(card => 
+                            String.Compare(card.SURNAME, textBox_secondNameValue.Text, StringComparison.Ordinal) >= 0);
+                        break;
+                    case "<":
+                        resultSet = resultSet.Where(card => 
+                            String.Compare(card.SURNAME, textBox_secondNameValue.Text, StringComparison.Ordinal) < 0);
+                        break;
+                    case "<=":
+                        resultSet = resultSet.Where(card => 
+                            String.Compare(card.SURNAME, textBox_secondNameValue.Text, StringComparison.Ordinal) <= 0);
+                        break;
+                }
+                /*resultSet = resultSet.Where(card => 
+                    compare(card.SURNAME, comboBox_secondNameCmp.Text, textBox_secondNameValue.Text));*/
             }
 
             if (checkBox_middleNameQuery.Checked)
             {
-                resultSet = resultSet.Where(card => 
-                    compare(card.MIDDLENAME, comboBox_middleNameCmp.Text, textBox_middleNameValue.Text));
+                switch (comboBox_middleNameCmp.Text)
+                {
+                    case "=":
+                        resultSet = resultSet.Where(card => 
+                            card.MIDDLENAME == textBox_middleNameValue.Text);
+                        break;
+                    case "!=":
+                        resultSet = resultSet.Where(card => 
+                            card.MIDDLENAME != textBox_middleNameValue.Text);
+                        break;
+                    case ">":
+                        resultSet = resultSet.Where(card => 
+                            String.Compare(card.MIDDLENAME, textBox_middleNameValue.Text, StringComparison.Ordinal) > 0);
+                        break;
+                    case ">=":
+                        resultSet = resultSet.Where(card => 
+                            String.Compare(card.MIDDLENAME, textBox_middleNameValue.Text, StringComparison.Ordinal) >= 0);
+                        break;
+                    case "<":
+                        resultSet = resultSet.Where(card => 
+                            String.Compare(card.MIDDLENAME, textBox_middleNameValue.Text, StringComparison.Ordinal) < 0);
+                        break;
+                    case "<=":
+                        resultSet = resultSet.Where(card => 
+                            String.Compare(card.MIDDLENAME, textBox_middleNameValue.Text, StringComparison.Ordinal) <= 0);
+                        break;
+                }
+                /*resultSet = resultSet.Where(card => 
+                    compare(card.MIDDLENAME, comboBox_middleNameCmp.Text, textBox_middleNameValue.Text));*/
             }
 
             if (checkBox_genderQuery.Checked)
             {
-                resultSet = resultSet.Where(card => 
-                    compare(card.GENDER.NAME, comboBox_genderCmp.Text, comboBox_genderValue.Text));
+                switch (comboBox_genderCmp.Text)
+                {
+                    case "=":
+                        resultSet = resultSet.Where(card => 
+                            card.GENDER.NAME == comboBox_genderValue.Text);
+                        break;
+                    case "!=":
+                        resultSet = resultSet.Where(card => 
+                            card.GENDER.NAME != comboBox_genderValue.Text);
+                        break;
+                    case ">":
+                        resultSet = resultSet.Where(card => 
+                            String.Compare(card.GENDER.NAME, comboBox_genderValue.Text, StringComparison.Ordinal) > 0);
+                        break;
+                    case ">=":
+                        resultSet = resultSet.Where(card => 
+                            String.Compare(card.GENDER.NAME, comboBox_genderValue.Text, StringComparison.Ordinal) >= 0);
+                        break;
+                    case "<":
+                        resultSet = resultSet.Where(card => 
+                            String.Compare(card.GENDER.NAME, comboBox_genderValue.Text, StringComparison.Ordinal) < 0);
+                        break;
+                    case "<=":
+                        resultSet = resultSet.Where(card => 
+                            String.Compare(card.GENDER.NAME, comboBox_genderValue.Text, StringComparison.Ordinal) <= 0);
+                        break;
+                }
+                /*resultSet = resultSet.Where(card => 
+                    compare(card.GENDER.NAME, comboBox_genderCmp.Text, comboBox_genderValue.Text));*/
             }
 
             printResult(resultSet);
