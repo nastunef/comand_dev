@@ -92,9 +92,7 @@
     </Compile>
     <Compile Include="CalendarColumn.cs" />
     <Compile Include="CHARACTER_WORK.cs" />
-    <Compile Include="DelWorkPrikaz.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="DelWorkPrikaz.cs" />
     <Compile Include="DelWorkPrikaz.Designer.cs">
       <DependentUpon>DelWorkPrikaz.cs</DependentUpon>
     </Compile>
@@ -126,15 +124,11 @@
     <Compile Include="KomandirovkaForm.Designer.cs">
       <DependentUpon>KomandirovkaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainPagePrikaz.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="MainPagePrikaz.cs" />
     <Compile Include="MainPagePrikaz.Designer.cs">
       <DependentUpon>MainPagePrikaz.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainPrikaz.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="MainPrikaz.cs" />
     <Compile Include="MainPrikaz.Designer.cs">
       <DependentUpon>MainPrikaz.cs</DependentUpon>
     </Compile>
@@ -146,9 +140,7 @@
     <Compile Include="PLACE_TRIP.cs" />
     <Compile Include="PODRAZDELORG.cs" />
     <Compile Include="PRIEM.cs" />
-    <Compile Include="PriemWorkPrikaz.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PriemWorkPrikaz.cs" />
     <Compile Include="PriemWorkPrikaz.Designer.cs">
       <DependentUpon>PriemWorkPrikaz.cs</DependentUpon>
     </Compile>
@@ -162,15 +154,11 @@
     <Compile Include="SearchWorkerForm.Designer.cs">
       <DependentUpon>SearchWorkerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReadPriemPrikaz.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="ReadPriemPrikaz.cs" />
     <Compile Include="ReadPriemPrikaz.Designer.cs">
       <DependentUpon>ReadPriemPrikaz.cs</DependentUpon>
     </Compile>
-    <Compile Include="SearchPrikaz.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="SearchPrikaz.cs" />
     <Compile Include="SearchPrikaz.Designer.cs">
       <DependentUpon>SearchPrikaz.cs</DependentUpon>
     </Compile>
@@ -184,7 +172,6 @@
     <Compile Include="TYPE_PRIKAZ.cs" />
     <Compile Include="TYPE_WORK.cs" />
     <Compile Include="UNION_LANGUAGE_PERSONCARD.cs" />
-    <Compile Include="UpdatedTRIP.cs" />
     <Compile Include="UPDTRIP.cs" />
     <Compile Include="UVAL.cs" />
     <EmbeddedResource Include="AddPlaceKomandForm.resx">

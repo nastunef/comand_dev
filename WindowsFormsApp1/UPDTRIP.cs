@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long PK_TRIP { get; set; }
 
         [StringLength(500)]

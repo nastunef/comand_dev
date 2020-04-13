@@ -19,7 +19,7 @@ namespace WindowsFormsApp1
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long PK_PRIKAZ { get; set; }
 
         [StringLength(100)]
