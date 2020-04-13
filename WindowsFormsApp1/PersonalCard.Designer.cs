@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_secondName = new System.Windows.Forms.TextBox();
             this.textBox_name = new System.Windows.Forms.TextBox();
@@ -822,6 +823,7 @@
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(915, 591);
+
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Образование";
             this.tabPage2.UseVisualStyleBackColor = true;

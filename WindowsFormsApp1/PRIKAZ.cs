@@ -60,5 +60,7 @@ namespace WindowsFormsApp1
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UVAL> UVAL { get; set; }
+        
+        public virtual PERSONCARD PERSONCARD { get; set; }
     }
 }

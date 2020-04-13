@@ -19,7 +19,10 @@ namespace WindowsFormsApp1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PersonalCard(999));
+
+            //Application.Run(new PersonalCard());
+            Application.Run(new MainWindow());
+
         }
     }
 }
