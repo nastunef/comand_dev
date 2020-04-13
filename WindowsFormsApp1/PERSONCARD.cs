@@ -19,6 +19,7 @@ namespace WindowsFormsApp1
             STR_TABEL = new HashSet<STR_TABEL>();
             UNION_LANGUAGE_PERSONCARD = new HashSet<UNION_LANGUAGE_PERSONCARD>();
             UVAL = new HashSet<UVAL>();
+            PRIKAZ = new HashSet<PRIKAZ>();   
         }
 
         [Key]
@@ -46,7 +47,6 @@ namespace WindowsFormsApp1
 
         [StringLength(6)]
         public string NUMPASSPORT { get; set; }
-
         public DateTime? PASSPORTGETDATE { get; set; }
 
         [StringLength(500)]
@@ -138,5 +138,7 @@ namespace WindowsFormsApp1
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UVAL> UVAL { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PRIKAZ> PRIKAZ { get; set; }
     }
 }
