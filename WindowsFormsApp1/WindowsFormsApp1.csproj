@@ -84,6 +84,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddPlaceKomandForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,9 +119,21 @@
     <Compile Include="FAMILY_MEMBER.cs" />
     <Compile Include="GENDER.cs" />
     <Compile Include="GRAZDAN.cs" />
+    <Compile Include="Instructions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Instructions.Designer.cs">
+      <DependentUpon>Instructions.cs</DependentUpon>
+    </Compile>
     <Compile Include="JOB_POSITION.cs" />
     <Compile Include="LANGUAGE.cs" />
     <Compile Include="LANGUAGE_LVL.cs" />
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model1.cs" />
     <Compile Include="ONE_EDU.cs" />
     <Compile Include="OUR_ORG.cs" />
@@ -162,6 +180,17 @@
     <Compile Include="PROFESSION.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Questions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Questions.Designer.cs">
+      <DependentUpon>Questions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
     <Compile Include="ReadDelWorkPrikaz.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +220,12 @@
     <Compile Include="STR_SHTAT_RASP.cs" />
     <Compile Include="STR_TABEL.cs" />
     <Compile Include="TABEL.cs" />
+    <Compile Include="Tabelu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tabelu.Designer.cs">
+      <DependentUpon>Tabelu.cs</DependentUpon>
+    </Compile>
     <Compile Include="TRIP_ORG.cs" />
     <Compile Include="TYPE_EDU.cs" />
     <Compile Include="TYPE_PRIKAZ.cs" />
@@ -199,6 +234,9 @@
     <Compile Include="UpdatedTRIP.cs" />
     <Compile Include="UPDTRIP.cs" />
     <Compile Include="UVAL.cs" />
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddPlaceKomandForm.resx">
       <DependentUpon>AddPlaceKomandForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditPriemPrikaz.resx">
       <DependentUpon>EditPriemPrikaz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonalCard.resx">
       <DependentUpon>PersonalCard.cs</DependentUpon>
@@ -235,6 +276,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Questions.resx">
+      <DependentUpon>Questions.cs</DependentUpon>
     <EmbeddedResource Include="ReadDelWorkPrikaz.resx">
       <DependentUpon>ReadDelWorkPrikaz.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SearchPrikaz.resx">
       <DependentUpon>SearchPrikaz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tabelu.resx">
+      <DependentUpon>Tabelu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\TRIP_ORG.datasource" />
