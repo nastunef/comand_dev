@@ -104,6 +104,12 @@
     <Compile Include="DelWorkPrikaz.Designer.cs">
       <DependentUpon>DelWorkPrikaz.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditDelWorkPrikaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditDelWorkPrikaz.Designer.cs">
+      <DependentUpon>EditDelWorkPrikaz.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditPriemPrikaz.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,11 @@
     </Compile>
     <Compile Include="Reports.Designer.cs">
       <DependentUpon>Reports.cs</DependentUpon>
+    <Compile Include="ReadDelWorkPrikaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReadDelWorkPrikaz.Designer.cs">
+      <DependentUpon>ReadDelWorkPrikaz.cs</DependentUpon>
     </Compile>
     <Compile Include="SearchWorkerForm.cs">
       <SubType>Form</SubType>
@@ -232,6 +243,9 @@
     <EmbeddedResource Include="DelWorkPrikaz.resx">
       <DependentUpon>DelWorkPrikaz.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditDelWorkPrikaz.resx">
+      <DependentUpon>EditDelWorkPrikaz.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditPriemPrikaz.resx">
       <DependentUpon>EditPriemPrikaz.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,6 +278,8 @@
     </Compile>
     <EmbeddedResource Include="Questions.resx">
       <DependentUpon>Questions.cs</DependentUpon>
+    <EmbeddedResource Include="ReadDelWorkPrikaz.resx">
+      <DependentUpon>ReadDelWorkPrikaz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchWorkerForm.resx">
       <DependentUpon>SearchWorkerForm.cs</DependentUpon>
