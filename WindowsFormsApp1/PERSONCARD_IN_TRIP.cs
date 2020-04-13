@@ -10,7 +10,7 @@ namespace WindowsFormsApp1
     public partial class PERSONCARD_IN_TRIP
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PK { get; set; }
 
         [StringLength(500)]
@@ -30,5 +30,29 @@ namespace WindowsFormsApp1
         public virtual PERSONCARD PERSONCARD { get; set; }
 
         public virtual UPDTRIP UPDTRIP { get; set; }
+        
+        /**
+         *
+         * Для вывода в таблицу
+         * 
+         */
+        [NotMapped]
+        public String SURNAME => (PERSONCARD == null) ? null : PERSONCARD.SURNAME;
+
+        [NotMapped]
+        public String NAME => (PERSONCARD == null) ? null : PERSONCARD.NAME;
+
+        [NotMapped] 
+        public String MIDDLENAME => (PERSONCARD == null) ? null : PERSONCARD.MIDDLENAME;
+
+        [NotMapped]
+        public decimal? TABEL_NUM => (PERSONCARD == null) ? null : PERSONCARD.TABEL_NUM;
+
+
+        [NotMapped]
+        public JOB_POSITION JOB_POS => (PERSONCARD == null) ? null : PERSONCARD.JOB_POSITION;
+
+        [NotMapped]
+        public PODRAZDELORG PODRAZDELORG => (PERSONCARD == null || PERSONCARD.TABEL == null || PERSONCARD.TABEL.PODRAZDELORG == null) ? null : PERSONCARD.TABEL.PODRAZDELORG;
     }
 }

@@ -135,17 +135,7 @@ namespace WindowsFormsApp1
                 );
             }
 
-            dataGridView_comand.Rows.Clear();
-            //todo командировки найти
-            foreach (var trip in card.PERSONCARD_IN_TRIP)
-            {
-                dataGridView_comand.Rows.Add(
-                    trip.STARTDATE,
-                    trip.ENDDATE,
-                    trip.UPDTRIP.TRIP_ORG.First().NAME,
-                    trip.GOAL
-                );
-            }
+            showKomandirovki(card);
 
             richTextBox_dopSved.Text = card.DOPINFO;
 
@@ -160,6 +150,23 @@ namespace WindowsFormsApp1
             catch (Exception e)
             {
                 // значит там наверное пусто и нам поебать
+            }
+        }
+        
+        // Отобразить командировки работника
+        private void showKomandirovki(PERSONCARD card)
+        {
+            dataGridView_comand.Rows.Clear();
+            foreach (var trip in card.PERSONCARD_IN_TRIP)
+            {
+                dataGridView_comand.Rows.Add(
+                    // Первичный ключ в скрытое поле, чтобы потом открыть подробную инфу
+                    trip.PK,
+                    trip.STARTDATE.Value.ToString("dd.MM.yyyy"),
+                    trip.ENDDATE.Value.ToString("dd.MM.yyyy"),
+                    trip.UPDTRIP.TRIP_ORG.First().PLACE_TRIP.NAME,
+                    trip.GOAL
+                );
             }
         }
 
@@ -284,6 +291,65 @@ namespace WindowsFormsApp1
         private void dataGridView_education_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             Console.WriteLine(e);
+        }
+
+        /*
+         * Показ командировки по даблклику на любую ячейку строки нужной командировки
+         * **/
+        private void dataGridView_comand_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var row = dataGridView_comand.Rows[e.RowIndex];
+            decimal pk;
+            // Пытаемся вытянуть 
+            // Вдруг тыкнули по пустой строке или ещё что, поэтому try-catch
+            try
+            {
+                pk = Convert.ToDecimal(row.Cells[0].Value);
+                if (pk < 1)
+                    throw new Exception();
+            }
+            catch (Exception except)
+            {
+                Console.Error.WriteLine("Не удалось вытянуть pk_personcard_in_trip с таблицы");
+                return;
+            }
+
+            var pers = new Model1().PERSONCARD_IN_TRIP.Find(pk);
+            if(pers == null)
+            {
+                Console.WriteLine("PERSONCARD_IN_TRIP не найдено для этой строки");
+                return;
+            }
+            if(pers.PK_TRIP == null)
+            {
+                Console.WriteLine("Не указана командировка");
+                return;
+            }
+            var form = new Komandirovki.KomandirovkaForm((decimal)pers.PK_TRIP);
+            form.ShowDialog();
+            //Обновляем
+            showKomandirovki(new Model1().PERSONCARD.Find(pers.PK_PERSONCARD));
+        }
+
+        private void AddKomandButton_Click(object sender, EventArgs e)
+        {
+            if (id < 1)
+                return;
+            /*
+            try { 
+                card = new Model1().PERSONCARD.AsNoTracking().First(p => p.PK_PERSONCARD == id); 
+            }
+            catch(Exception except)
+            {
+                Console.Error.WriteLine(except.Message);
+                Console.Error.WriteLine("Не удалось добавить командировку с текущим работником");
+                return;
+            }
+            */
+            var form = new Komandirovki.KomandirovkaForm(id);
+            form.ShowDialog();
+            //Обновляем
+            showKomandirovki(new Model1().PERSONCARD.Find(id));
         }
     }
 }
