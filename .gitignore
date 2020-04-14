@@ -2,3 +2,7 @@
 /WindowsFormsApp1/obj
 /WindowsFormsApp1/bin
 /.vs
+/packages/cef.redist.x64.79.1.36
+/packages/cef.redist.x86.79.1.36
+/packages/CefSharp.Common.79.1.360
+/packages/CefSharp.WinForms.79.1.360

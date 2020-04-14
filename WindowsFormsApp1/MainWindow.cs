@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
@@ -44,7 +45,8 @@ namespace WindowsFormsApp1
         private void button2_Click(object sender, EventArgs e)
         {
             Tabelu ownedForm = new Tabelu();
-            ownedForm.Show();
+            Process.Start("http://e328e289.ngrok.io/#/tabel/1");
+            // ownedForm.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
