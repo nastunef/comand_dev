@@ -80,8 +80,8 @@ namespace ShtatnoeRasp
             FIORuc = "";
             //Запрос для таблицы
             IQueryable<STR_SHTAT_RASP> query = model.STR_SHTAT_RASP;
-            //query = query.Where(STR_SHTAT_RASP => STR_SHTAT_RASP.PODRAZDELORG.PK_PODRAZDEL_PK_PODRAZDEL == null);
-            List<StringShtatRasp> stringShtatRasps = new List<StringShtatRasp>();
+            
+            strginShtatRasps = new List<StringShtatRasp>();
             
             //Запрос для заполнения полей номер документа и дата составления
             IQueryable<SHTAT_RASP> query1 = model.SHTAT_RASP;
@@ -89,7 +89,7 @@ namespace ShtatnoeRasp
             //Заполняем список для таблицы
             foreach (STR_SHTAT_RASP strShtatRasp in query)
             {
-                stringShtatRasps.Add(setDataInString(new StringShtatRasp(), Convert.ToInt32(strShtatRasp.PK_STROKA),strShtatRasp.PODRAZDELORG.NAME,
+                strginShtatRasps.Add(setDataInString(new StringShtatRasp(), Convert.ToInt32(strShtatRasp.PK_STROKA),strShtatRasp.PODRAZDELORG.NAME,
                     strShtatRasp.PODRAZDELORG.CODE, strShtatRasp.JOB_POSITION.NAME, strShtatRasp.COUNT_STUFF.ToString(),
                     Convert.ToDouble(strShtatRasp.TARIFF), Convert.ToDouble(strShtatRasp.NADBAVKA1),Convert.ToDouble(strShtatRasp.NADBAVKA2),Convert.ToDouble(strShtatRasp.NADBAVKA3),
                     strShtatRasp.NOTE)
@@ -99,7 +99,7 @@ namespace ShtatnoeRasp
             
             //Редачим чтобы нормально/чотко выводилось
             dataGridView1.DataSource = null;
-            dataGridView1.DataSource = stringShtatRasps;
+            dataGridView1.DataSource = strginShtatRasps;
             dataGridView1.Columns[1].Width = 150;
             dataGridView1.Columns[2].Width = 65;
             dataGridView1.Columns[3].Width = 165;

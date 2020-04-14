@@ -68,8 +68,8 @@ namespace WindowsFormsApp1
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Shtatka shtatnoeRasp = new Shtatka();
-            shtatnoeRasp.Show();
+            Shtatka shtatnoeRaspisanie = new Shtatka();
+            shtatnoeRaspisanie.Show();
         }
     }
 }
