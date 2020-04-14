@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using ShtatnoeRasp;
 
 namespace WindowsFormsApp1
 {
@@ -63,6 +64,12 @@ namespace WindowsFormsApp1
         {
             Tabelu ownedForm = new Tabelu();
             ownedForm.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Shtatka shtatnoeRasp = new Shtatka();
+            shtatnoeRasp.Show();
         }
     }
 }
