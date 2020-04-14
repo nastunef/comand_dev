@@ -206,6 +206,8 @@
     <Compile Include="PERSONCARD_IN_TRIP.cs" />
     <Compile Include="PLACE_EDU.cs" />
     <Compile Include="PLACE_TRIP.cs" />
+    <Compile Include="Podrazdelenie.cs" />
+    <Compile Include="Podrazdelenie.Designer.cs" />
     <Compile Include="PODRAZDELORG.cs" />
     <Compile Include="PRIEM.cs" />
     <Compile Include="PriemWorkPrikaz.cs" />
@@ -248,8 +250,12 @@
     <Compile Include="SearchPrikaz.Designer.cs">
       <DependentUpon>SearchPrikaz.cs</DependentUpon>
     </Compile>
+    <Compile Include="Shtatka.cs" />
+    <Compile Include="Shtatka.Designer.cs" />
     <Compile Include="SHTAT_RASP.cs" />
     <Compile Include="SPECIALTY.cs" />
+    <Compile Include="StringJobPosition.cs" />
+    <Compile Include="StringShtatRasp.cs" />
     <Compile Include="STR_SHTAT_RASP.cs" />
     <Compile Include="STR_TABEL.cs" />
     <Compile Include="TABEL.cs" />
@@ -296,6 +302,7 @@
     <EmbeddedResource Include="MainPrikaz.resx">
       <DependentUpon>MainPrikaz.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Podrazdelenie.resx" />
     <EmbeddedResource Include="PriemWorkPrikaz.resx">
       <DependentUpon>PriemWorkPrikaz.cs</DependentUpon>
     </EmbeddedResource>
@@ -323,6 +330,7 @@
     <EmbeddedResource Include="SearchPrikaz.resx">
       <DependentUpon>SearchPrikaz.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Shtatka.resx" />
     <EmbeddedResource Include="Tabelu.resx">
       <DependentUpon>Tabelu.cs</DependentUpon>
     </EmbeddedResource>
