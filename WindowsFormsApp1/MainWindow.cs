@@ -45,7 +45,7 @@ namespace WindowsFormsApp1
         private void button2_Click(object sender, EventArgs e)
         {
             Tabelu ownedForm = new Tabelu();
-            Process.Start("http://e328e289.ngrok.io/#/tabel/1");
+            Process.Start("https://v9gel.github.io/tabel/dist/index.html");
             // ownedForm.Show();
         }
 
