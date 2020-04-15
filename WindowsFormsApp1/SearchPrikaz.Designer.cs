@@ -32,6 +32,7 @@ namespace WindowsFormsApp1
          /// </summary>
          private void InitializeComponent()
          {
+             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
              this.fullname = new System.Windows.Forms.TextBox();
              this.firstname = new System.Windows.Forms.TextBox();
              this.otchestvo = new System.Windows.Forms.TextBox();

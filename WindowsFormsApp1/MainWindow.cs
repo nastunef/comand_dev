@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Windows.Forms;
+using Komandirovki;
 using ShtatnoeRasp;
 
 namespace WindowsFormsApp1
@@ -39,15 +40,13 @@ namespace WindowsFormsApp1
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Tabelu ownedForm = new Tabelu();
+            Form ownedForm = new Form();
             ownedForm.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Tabelu ownedForm = new Tabelu();
             Process.Start("https://v9gel.github.io/tabel/dist/index.html");
-            // ownedForm.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -58,13 +57,13 @@ namespace WindowsFormsApp1
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Form ownedForm = new Form();
+            KomandirovkaForm ownedForm = new KomandirovkaForm();
             ownedForm.Show();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Tabelu ownedForm = new Tabelu();
+            MainPagePrikaz ownedForm = new MainPagePrikaz();
             ownedForm.Show();
         }
 

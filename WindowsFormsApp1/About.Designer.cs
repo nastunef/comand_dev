@@ -31,6 +31,7 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -73,7 +74,6 @@ namespace WindowsFormsApp1
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(229, 244);
             this.listBox1.TabIndex = 3;
-     
             // 
             // About
             // 
