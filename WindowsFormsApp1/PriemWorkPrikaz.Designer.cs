@@ -32,6 +32,7 @@ namespace WindowsFormsApp1
 /// </summary>
 private void InitializeComponent()
 {
+    this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
     this.label1 = new System.Windows.Forms.Label();
     this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
     this.label2 = new System.Windows.Forms.Label();

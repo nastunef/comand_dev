@@ -259,12 +259,6 @@
     <Compile Include="STR_SHTAT_RASP.cs" />
     <Compile Include="STR_TABEL.cs" />
     <Compile Include="TABEL.cs" />
-    <Compile Include="Tabelu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Tabelu.Designer.cs">
-      <DependentUpon>Tabelu.cs</DependentUpon>
-    </Compile>
     <Compile Include="TRIP_ORG.cs" />
     <Compile Include="TYPE_EDU.cs" />
     <Compile Include="TYPE_PRIKAZ.cs" />
@@ -331,9 +325,6 @@
       <DependentUpon>SearchPrikaz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Shtatka.resx" />
-    <EmbeddedResource Include="Tabelu.resx">
-      <DependentUpon>Tabelu.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\TRIP_ORG.datasource" />
     <None Include="Properties\Settings.settings">

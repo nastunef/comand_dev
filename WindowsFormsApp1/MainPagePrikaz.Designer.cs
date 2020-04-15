@@ -31,6 +31,7 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.label1 = new System.Windows.Forms.Label();
             this.createPrikaz = new System.Windows.Forms.Button();
             this.searchPrikaz = new System.Windows.Forms.Button();
@@ -79,8 +80,8 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label1);
             this.Name = "MainPagePrikaz";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "MainPagePrikaz";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Text = "Приказы";
+            //this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
         }
 
