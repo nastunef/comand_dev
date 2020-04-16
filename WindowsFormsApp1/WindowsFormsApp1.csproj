@@ -50,6 +50,50 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
@@ -84,6 +128,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddPlaceKomandForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,11 +142,15 @@
     </Compile>
     <Compile Include="CalendarColumn.cs" />
     <Compile Include="CHARACTER_WORK.cs" />
-    <Compile Include="DelWorkPrikaz.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="DelWorkPrikaz.cs" />
     <Compile Include="DelWorkPrikaz.Designer.cs">
       <DependentUpon>DelWorkPrikaz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditDelWorkPrikaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditDelWorkPrikaz.Designer.cs">
+      <DependentUpon>EditDelWorkPrikaz.cs</DependentUpon>
     </Compile>
     <Compile Include="EditPriemPrikaz.cs">
       <SubType>Form</SubType>
@@ -107,9 +161,21 @@
     <Compile Include="FAMILY_MEMBER.cs" />
     <Compile Include="GENDER.cs" />
     <Compile Include="GRAZDAN.cs" />
+    <Compile Include="Instructions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Instructions.Designer.cs">
+      <DependentUpon>Instructions.cs</DependentUpon>
+    </Compile>
     <Compile Include="JOB_POSITION.cs" />
     <Compile Include="LANGUAGE.cs" />
     <Compile Include="LANGUAGE_LVL.cs" />
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model1.cs" />
     <Compile Include="ONE_EDU.cs" />
     <Compile Include="OUR_ORG.cs" />
@@ -126,15 +192,11 @@
     <Compile Include="KomandirovkaForm.Designer.cs">
       <DependentUpon>KomandirovkaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainPagePrikaz.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="MainPagePrikaz.cs" />
     <Compile Include="MainPagePrikaz.Designer.cs">
       <DependentUpon>MainPagePrikaz.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainPrikaz.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="MainPrikaz.cs" />
     <Compile Include="MainPrikaz.Designer.cs">
       <DependentUpon>MainPrikaz.cs</DependentUpon>
     </Compile>
@@ -144,11 +206,11 @@
     <Compile Include="PERSONCARD_IN_TRIP.cs" />
     <Compile Include="PLACE_EDU.cs" />
     <Compile Include="PLACE_TRIP.cs" />
+    <Compile Include="Podrazdelenie.cs" />
+    <Compile Include="Podrazdelenie.Designer.cs" />
     <Compile Include="PODRAZDELORG.cs" />
     <Compile Include="PRIEM.cs" />
-    <Compile Include="PriemWorkPrikaz.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PriemWorkPrikaz.cs" />
     <Compile Include="PriemWorkPrikaz.Designer.cs">
       <DependentUpon>PriemWorkPrikaz.cs</DependentUpon>
     </Compile>
@@ -156,6 +218,24 @@
     <Compile Include="PROFESSION.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Questions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Questions.Designer.cs">
+      <DependentUpon>Questions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReadDelWorkPrikaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReadDelWorkPrikaz.Designer.cs">
+      <DependentUpon>ReadDelWorkPrikaz.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchPersonCard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,20 +248,20 @@
     <Compile Include="SearchWorkerForm.Designer.cs">
       <DependentUpon>SearchWorkerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReadPriemPrikaz.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="ReadPriemPrikaz.cs" />
     <Compile Include="ReadPriemPrikaz.Designer.cs">
       <DependentUpon>ReadPriemPrikaz.cs</DependentUpon>
     </Compile>
-    <Compile Include="SearchPrikaz.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="SearchPrikaz.cs" />
     <Compile Include="SearchPrikaz.Designer.cs">
       <DependentUpon>SearchPrikaz.cs</DependentUpon>
     </Compile>
+    <Compile Include="Shtatka.cs" />
+    <Compile Include="Shtatka.Designer.cs" />
     <Compile Include="SHTAT_RASP.cs" />
     <Compile Include="SPECIALTY.cs" />
+    <Compile Include="StringJobPosition.cs" />
+    <Compile Include="StringShtatRasp.cs" />
     <Compile Include="STR_SHTAT_RASP.cs" />
     <Compile Include="STR_TABEL.cs" />
     <Compile Include="TABEL.cs" />
@@ -190,17 +270,25 @@
     <Compile Include="TYPE_PRIKAZ.cs" />
     <Compile Include="TYPE_WORK.cs" />
     <Compile Include="UNION_LANGUAGE_PERSONCARD.cs" />
-    <Compile Include="UpdatedTRIP.cs" />
     <Compile Include="UPDTRIP.cs" />
     <Compile Include="UVAL.cs" />
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddPlaceKomandForm.resx">
       <DependentUpon>AddPlaceKomandForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DelWorkPrikaz.resx">
       <DependentUpon>DelWorkPrikaz.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditDelWorkPrikaz.resx">
+      <DependentUpon>EditDelWorkPrikaz.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditPriemPrikaz.resx">
       <DependentUpon>EditPriemPrikaz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonalCard.resx">
       <DependentUpon>PersonalCard.cs</DependentUpon>
@@ -214,6 +302,7 @@
     <EmbeddedResource Include="MainPrikaz.resx">
       <DependentUpon>MainPrikaz.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Podrazdelenie.resx" />
     <EmbeddedResource Include="PriemWorkPrikaz.resx">
       <DependentUpon>PriemWorkPrikaz.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,6 +315,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Questions.resx">
+      <DependentUpon>Questions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReadDelWorkPrikaz.resx">
+      <DependentUpon>ReadDelWorkPrikaz.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SearchPersonCard.resx">
       <DependentUpon>SearchPersonCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -238,6 +333,7 @@
     <EmbeddedResource Include="SearchPrikaz.resx">
       <DependentUpon>SearchPrikaz.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Shtatka.resx" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\TRIP_ORG.datasource" />
     <None Include="Properties\Settings.settings">

@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
         [StringLength(100)]
         public string NUMWORKDOGOVOR { get; set; }
 
-        public long? PK_PODRAZDEL { get; set; }
+        public decimal? PK_PODRAZDEL { get; set; }
 
         public decimal PK_JOB_POS { get; set; }
 

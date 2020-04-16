@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Komandirovki;
 
 // using Komandirovki;
 
@@ -18,7 +19,10 @@ namespace WindowsFormsApp1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SearchPersonCard());
+
+            //Application.Run(new PersonalCard());
+            Application.Run(new MainWindow());
+
         }
     }
 }

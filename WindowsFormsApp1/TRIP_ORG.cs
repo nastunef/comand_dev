@@ -16,6 +16,7 @@ namespace WindowsFormsApp1
         }
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public decimal PK_TRIP_ORG { get; set; }
 
         [StringLength(255)]
