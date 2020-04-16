@@ -12,7 +12,8 @@ namespace WindowsFormsApp1
         private Model1 model = new Model1();
         //Таблица должностей
         private List<StringJobPosition> stringJobPositions { get; set; }
-        
+
+        public PODRAZDELORG podrazdelorg;
         //Всего в подразделении по штату
         private int totalCount;
         //Всего заместителей
@@ -49,8 +50,22 @@ namespace WindowsFormsApp1
 
         }
 
+        private void AddNode(IQueryable<PODRAZDELORG> query,TreeNode parentNode, TreeNode childNode)
+        {
+            foreach (PODRAZDELORG podrazdelorg in query)
+            {
+                parentNode.Nodes.Add(podrazdelorg.NAME);
+            }
+        }
+        
         private void Podrazdelenie_Load(object sender, EventArgs e)
         {
+            this.Podrazdels.Nodes.Add(this.namePodrazdel.Text);
+            TreeNode parentNode = Podrazdels.Nodes[0];
+            IQueryable<PODRAZDELORG> query1 = model.PODRAZDELORG;
+            query1 = query1.Where(podrazdelorg1 => podrazdelorg1.PK_PODRAZDEL_PK_PODRAZDEL == podrazdelorg.PK_PODRAZDEL);
+            TreeNode node = new TreeNode(query1.FirstOrDefault().NAME);
+            AddNode(query1,parentNode, node);
             totalCount = 0;
             totalZam = 0;
             stringJobPositions = new List<StringJobPosition>();

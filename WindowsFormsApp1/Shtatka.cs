@@ -173,6 +173,7 @@ namespace ShtatnoeRasp
             string dataCreate = "";
             foreach (PODRAZDELORG podrazdelorg in query)
             {
+                podrazdelenie.podrazdelorg = podrazdelorg;
                 dataCreate = podrazdelorg.DATECREATE.ToString();
             }
 
