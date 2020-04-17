@@ -21,7 +21,7 @@ namespace WindowsFormsApp1
             Application.SetCompatibleTextRenderingDefault(false);
 
             //Application.Run(new PersonalCard());
-            Application.Run(new MainWindow());
+            Application.Run(new SearchPersonCard());
 
         }
     }

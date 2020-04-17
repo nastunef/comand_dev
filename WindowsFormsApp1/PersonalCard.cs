@@ -12,7 +12,7 @@ namespace WindowsFormsApp1
 {
     public partial class PersonalCard : Form
     {
-        private long id = -1;
+        private decimal id = -1;
 
         public PersonalCard()
         {
@@ -21,7 +21,7 @@ namespace WindowsFormsApp1
             richTextBox_dopSved.ReadOnly = true;
         }
 
-        public PersonalCard(long id)
+        public PersonalCard(decimal id)
         {
             InitializeComponent();
             initCatalogs();
@@ -59,7 +59,7 @@ namespace WindowsFormsApp1
                 : "Выключить режим редактирования";
         }
 
-        private void initData(long id)
+        private void initData(decimal id)
         {
             Model1 model = new Model1();
             var card = model.PERSONCARD.First(c => c.PK_PERSONCARD == id);
