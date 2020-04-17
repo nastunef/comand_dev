@@ -10,8 +10,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1;
+  using Microsoft.Office.Interop.Excel;
+  using Application = Microsoft.Office.Interop.Excel.Application;
 
-namespace ShtatnoeRasp
+  namespace ShtatnoeRasp
 {
     public partial class Shtatka : Form
     {
@@ -75,13 +77,13 @@ namespace ShtatnoeRasp
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
+        {/*
             numerusPeople = 0;
             FIORuc = "";
             //Запрос для таблицы
             IQueryable<STR_SHTAT_RASP> query = model.STR_SHTAT_RASP;
             
-            strginShtatRasps = new List<StringShtatRasp>();
+            
             
             //Запрос для заполнения полей номер документа и дата составления
             IQueryable<SHTAT_RASP> query1 = model.SHTAT_RASP;
@@ -96,7 +98,9 @@ namespace ShtatnoeRasp
                     );
                 numerusPeople += Convert.ToInt32(strShtatRasp.COUNT_STUFF);
             }
+           */
             
+            /*
             //Редачим чтобы нормально/чотко выводилось
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = strginShtatRasps;
@@ -110,8 +114,9 @@ namespace ShtatnoeRasp
             dataGridView1.Columns[8].Width = 92;
             dataGridView1.Columns[9].Width = 151;
             dataGridView1.Columns[10].Width = 145;
+            //dataGridView1.Columns[11].Visible = false;
             dataGridView1.Columns["stringId"].Visible = false;
-
+            /*
             //Заполняем поля номер документа и дата составления
             numDoc = "";
             _dateTime = new DateTime();
@@ -160,7 +165,8 @@ namespace ShtatnoeRasp
             }
 
             textBox24.Text = personcards[0].SURNAME + " " + personcards[0].NAME + " " + personcards[0].MIDDLENAME;
-
+            */
+            
         }
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -180,6 +186,63 @@ namespace ShtatnoeRasp
             podrazdelenie.dataCreate.Text = dataCreate;
             
             podrazdelenie.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            strginShtatRasps = new List<StringShtatRasp>();
+            Application exApp = new Application();
+            exApp.Visible = false;
+            string PATH_TO_ST = "C:\\Users\\Gerbert\\Documents\\GitHub\\comand_dev\\shtatnoeraspisanie.xlsx";
+            Workbook excelappworkbooks;
+            try
+            {
+                excelappworkbooks = exApp.Workbooks.Open(PATH_TO_ST, Type.Missing, true, Type.Missing, Type.Missing,
+                    Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+            }catch (Exception except)
+            {
+                Console.Error.WriteLine(except.Message);
+                MyMsgBox.showError("Не удалось открыть шаблон");
+                return;
+            }
+            if (excelappworkbooks == null) {
+                MyMsgBox.showError("Не удалось открыть шаблон");
+                return;
+            }
+
+            Worksheet excelsheets = excelappworkbooks.Worksheets.Item[1];
+            int indexRow = 16;
+            for (int i = 0; i < 131; i++)
+            {
+                strginShtatRasps.Add(setDataInString(new StringShtatRasp(), i+1, 
+                    excelsheets.Cells[indexRow,1].Value.ToString(), ((excelsheets.Cells[indexRow,21]).Value ?? string.Empty).ToString(),
+                    ((excelsheets.Cells[indexRow,31]).Value ?? string.Empty).ToString(),excelsheets.Cells[indexRow,64].Value.ToString(),
+                    Convert.ToDouble((excelsheets.Cells[indexRow,79]).Value ?? string.Empty),Convert.ToDouble((excelsheets.Cells[indexRow,94]).Value ?? string.Empty),
+                    Convert.ToDouble((excelsheets.Cells[indexRow,105]).Value ?? string.Empty),Convert.ToDouble((excelsheets.Cells[indexRow,116]).Value ?? string.Empty),""));
+                indexRow++;
+            }
+            excelappworkbooks.Close();
+            exApp.Quit();
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = strginShtatRasps;
+            dataGridView1.Columns[1].Width = 150;
+            dataGridView1.Columns[2].Width = 65;
+            dataGridView1.Columns[3].Width = 165;
+            dataGridView1.Columns[4].Width = 72;
+            dataGridView1.Columns[5].Width = 85;
+            dataGridView1.Columns[6].Width = 92;
+            dataGridView1.Columns[7].Width = 92;
+            dataGridView1.Columns[8].Width = 92;
+            dataGridView1.Columns[9].Width = 151;
+            dataGridView1.Columns[10].Width = 145;
+            //dataGridView1.Columns[11].Visible = false;
+            dataGridView1.Columns["stringId"].Visible = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SearchPodrazdel searchPodrazdel = new SearchPodrazdel();
+            searchPodrazdel.Show();
         }
     }
 }
