@@ -358,8 +358,7 @@ namespace WindowsFormsApp1
 				/*resultSet = resultSet.Where(card => 
 					compare(card.MARTIAL_STATUS.NAME, comboBox_maritalCmp.Text, comboBox_maritalValue.Text));*/
 			}
-
-			//todo то же, что и у birthdate
+			
 			if (checkBox_tabelnumQuery.Checked)
 			{
 				Decimal tabelNumVal = Convert.ToDecimal(textBox_tabelnumValue.Text);
@@ -460,7 +459,6 @@ namespace WindowsFormsApp1
 					compare(card.TYPE_WORK.NAME, comboBox_typeworkCmp.Text, comboBox_typeworkValue.Text));*/
 			}
 
-			//todo не пропускает попытку найти записи при введенной дате
 			if (checkBox_birthQuery.Checked)
 			{
 				switch (comboBox_birthCmp.Text)

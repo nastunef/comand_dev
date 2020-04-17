@@ -149,7 +149,7 @@ namespace WindowsFormsApp1
             }
             catch (Exception e)
             {
-                // значит там наверное пусто и нам поебать
+                // значит там наверное пусто и нам все равно
             }
         }
 
@@ -368,6 +368,39 @@ namespace WindowsFormsApp1
             form.ShowDialog();
             //Обновляем
             showKomandirovki(new Model1().PERSONCARD.Find(id));
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (id >= 0)
+                initData(id);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            saveData();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (id >= 0)
+                initData(id);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            saveData();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (id >= 0)
+                initData(id);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            saveData();
         }
     }
 }
