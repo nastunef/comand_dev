@@ -12,7 +12,7 @@ namespace WindowsFormsApp1
 {
     public partial class PersonalCard : Form
     {
-        private long id = -1;
+        private decimal id = -1;
 
         public PersonalCard()
         {
@@ -21,7 +21,7 @@ namespace WindowsFormsApp1
             richTextBox_dopSved.ReadOnly = true;
         }
 
-        public PersonalCard(long id)
+        public PersonalCard(decimal id)
         {
             InitializeComponent();
             initCatalogs();
@@ -59,7 +59,7 @@ namespace WindowsFormsApp1
                 : "Выключить режим редактирования";
         }
 
-        private void initData(long id)
+        private void initData(decimal id)
         {
             Model1 model = new Model1();
             var card = model.PERSONCARD.First(c => c.PK_PERSONCARD == id);
@@ -149,7 +149,7 @@ namespace WindowsFormsApp1
             }
             catch (Exception e)
             {
-                // значит там наверное пусто и нам поебать
+                // значит там наверное пусто и нам все равно
             }
         }
 
@@ -368,6 +368,39 @@ namespace WindowsFormsApp1
             form.ShowDialog();
             //Обновляем
             showKomandirovki(new Model1().PERSONCARD.Find(id));
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (id >= 0)
+                initData(id);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            saveData();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (id >= 0)
+                initData(id);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            saveData();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (id >= 0)
+                initData(id);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            saveData();
         }
     }
 }

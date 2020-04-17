@@ -236,6 +236,12 @@
     <Compile Include="ReadDelWorkPrikaz.Designer.cs">
       <DependentUpon>ReadDelWorkPrikaz.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchPersonCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchPersonCard.Designer.cs">
+      <DependentUpon>SearchPersonCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchWorkerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -314,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReadDelWorkPrikaz.resx">
       <DependentUpon>ReadDelWorkPrikaz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchPersonCard.resx">
+      <DependentUpon>SearchPersonCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchWorkerForm.resx">
       <DependentUpon>SearchWorkerForm.cs</DependentUpon>
