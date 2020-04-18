@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Linq;
 using System.Windows.Forms;
+using Komandirovki;
 
 namespace WindowsFormsApp1
 {
@@ -84,7 +85,9 @@ namespace WindowsFormsApp1
             
             if (selectedPrikaz.TYPE_PRIKAZ.PK_TYPE == 2)
             {
-                
+                KomandirovkaForm form = new KomandirovkaForm();
+                form.SetPrikaz(selectedPrikaz.PK_PRIKAZ);
+                form.Show();
             }
             
             if (selectedPrikaz.TYPE_PRIKAZ.PK_TYPE == 3)
