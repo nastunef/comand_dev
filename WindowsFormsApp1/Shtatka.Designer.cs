@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.nameOrganization = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox22 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.numberDoc = new System.Windows.Forms.TextBox();
+            this.dataCreate = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
@@ -55,16 +55,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.mainDolgnost = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.rashPodpis = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.rashPodBuh = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -72,12 +72,18 @@
             this.label16 = new System.Windows.Forms.Label();
             this.textBox26 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.numerusEd = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.period = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.day = new System.Windows.Forms.TextBox();
+            this.month = new System.Windows.Forms.TextBox();
+            this.year = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,13 +98,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Штатное расписание";
             // 
-            // textBox1
+            // nameOrganization
             // 
-            this.textBox1.Location = new System.Drawing.Point(73, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(915, 22);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nameOrganization.Location = new System.Drawing.Point(73, 64);
+            this.nameOrganization.Name = "nameOrganization";
+            this.nameOrganization.Size = new System.Drawing.Size(915, 22);
+            this.nameOrganization.TabIndex = 1;
+            this.nameOrganization.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -146,13 +152,13 @@
             this.textBox2.Text = "0301017";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox3
+            // textBox22
             // 
-            this.textBox3.Location = new System.Drawing.Point(1223, 58);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 7;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox22.Location = new System.Drawing.Point(1223, 58);
+            this.textBox22.Name = "textBox22";
+            this.textBox22.Size = new System.Drawing.Size(100, 22);
+            this.textBox22.TabIndex = 7;
+            this.textBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox4
             // 
@@ -170,21 +176,21 @@
             this.textBox5.TabIndex = 9;
             this.textBox5.Text = "Дата составления";
             // 
-            // textBox6
+            // numberDoc
             // 
-            this.textBox6.Location = new System.Drawing.Point(735, 137);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(129, 22);
-            this.textBox6.TabIndex = 10;
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numberDoc.Location = new System.Drawing.Point(735, 137);
+            this.numberDoc.Name = "numberDoc";
+            this.numberDoc.Size = new System.Drawing.Size(129, 22);
+            this.numberDoc.TabIndex = 10;
+            this.numberDoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox7
+            // dataCreate
             // 
-            this.textBox7.Location = new System.Drawing.Point(859, 137);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(129, 22);
-            this.textBox7.TabIndex = 11;
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.dataCreate.Location = new System.Drawing.Point(859, 137);
+            this.dataCreate.Name = "dataCreate";
+            this.dataCreate.Size = new System.Drawing.Size(129, 22);
+            this.dataCreate.TabIndex = 11;
+            this.dataCreate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox8
             // 
@@ -337,7 +343,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 123F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 124F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 217F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 225F));
             this.tableLayoutPanel2.Location = new System.Drawing.Point(509, 563);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
@@ -345,13 +351,13 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(779, 26);
             this.tableLayoutPanel2.TabIndex = 27;
             // 
-            // textBox20
+            // mainDolgnost
             // 
-            this.textBox20.Location = new System.Drawing.Point(347, 614);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(372, 22);
-            this.textBox20.TabIndex = 28;
-            this.textBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mainDolgnost.Location = new System.Drawing.Point(347, 614);
+            this.mainDolgnost.Name = "mainDolgnost";
+            this.mainDolgnost.Size = new System.Drawing.Size(372, 22);
+            this.mainDolgnost.TabIndex = 28;
+            this.mainDolgnost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
             // 
@@ -379,13 +385,13 @@
             this.label9.TabIndex = 31;
             this.label9.Text = "(личная подпись)";
             // 
-            // textBox22
+            // rashPodpis
             // 
-            this.textBox22.Location = new System.Drawing.Point(987, 613);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(301, 22);
-            this.textBox22.TabIndex = 32;
-            this.textBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.rashPodpis.Location = new System.Drawing.Point(987, 613);
+            this.rashPodpis.Name = "rashPodpis";
+            this.rashPodpis.Size = new System.Drawing.Size(301, 22);
+            this.rashPodpis.TabIndex = 32;
+            this.rashPodpis.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label10
             // 
@@ -423,13 +429,13 @@
             this.label12.TabIndex = 36;
             this.label12.Text = "(личная подпись)";
             // 
-            // textBox24
+            // rashPodBuh
             // 
-            this.textBox24.Location = new System.Drawing.Point(587, 687);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(324, 22);
-            this.textBox24.TabIndex = 37;
-            this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.rashPodBuh.Location = new System.Drawing.Point(587, 687);
+            this.rashPodBuh.Name = "rashPodBuh";
+            this.rashPodBuh.Size = new System.Drawing.Size(324, 22);
+            this.rashPodBuh.TabIndex = 37;
+            this.rashPodBuh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label13
             // 
@@ -492,13 +498,13 @@
             this.label17.TabIndex = 44;
             this.label17.Text = "Штат в количестве";
             // 
-            // textBox27
+            // numerusEd
             // 
-            this.textBox27.Location = new System.Drawing.Point(1200, 187);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(148, 22);
-            this.textBox27.TabIndex = 45;
-            this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numerusEd.Location = new System.Drawing.Point(1200, 187);
+            this.numerusEd.Name = "numerusEd";
+            this.numerusEd.Size = new System.Drawing.Size(148, 22);
+            this.numerusEd.TabIndex = 45;
+            this.numerusEd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label18
             // 
@@ -545,17 +551,67 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label19
+            // 
+            this.label19.Location = new System.Drawing.Point(245, 199);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(100, 23);
+            this.label19.TabIndex = 50;
+            this.label19.Text = "на период";
+            // 
+            // period
+            // 
+            this.period.Location = new System.Drawing.Point(326, 196);
+            this.period.Name = "period";
+            this.period.Size = new System.Drawing.Size(96, 22);
+            this.period.TabIndex = 51;
+            // 
+            // label20
+            // 
+            this.label20.Location = new System.Drawing.Point(428, 199);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(100, 23);
+            this.label20.TabIndex = 52;
+            this.label20.Text = "c";
+            // 
+            // day
+            // 
+            this.day.Location = new System.Drawing.Point(463, 196);
+            this.day.Name = "day";
+            this.day.Size = new System.Drawing.Size(48, 22);
+            this.day.TabIndex = 53;
+            // 
+            // month
+            // 
+            this.month.Location = new System.Drawing.Point(522, 196);
+            this.month.Name = "month";
+            this.month.Size = new System.Drawing.Size(115, 22);
+            this.month.TabIndex = 54;
+            // 
+            // year
+            // 
+            this.year.Location = new System.Drawing.Point(643, 196);
+            this.year.Name = "year";
+            this.year.Size = new System.Drawing.Size(83, 22);
+            this.year.TabIndex = 55;
+            // 
             // Shtatka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1455, 738);
+            this.Controls.Add(this.year);
+            this.Controls.Add(this.month);
+            this.Controls.Add(this.day);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.period);
+            this.Controls.Add(this.label19);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.textBox27);
+            this.Controls.Add(this.numerusEd);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.textBox26);
             this.Controls.Add(this.label16);
@@ -563,16 +619,16 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBox24);
+            this.Controls.Add(this.rashPodBuh);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.textBox23);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox22);
+            this.Controls.Add(this.rashPodpis);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBox21);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox20);
+            this.Controls.Add(this.mainDolgnost);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -588,20 +644,21 @@
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.dataCreate);
+            this.Controls.Add(this.numberDoc);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox22);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.nameOrganization);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Shtatka";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Штатное расписание";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).EndInit();
@@ -612,7 +669,9 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox dataCreate;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox day;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -623,7 +682,9 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -631,8 +692,15 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox mainDolgnost;
+        private System.Windows.Forms.TextBox month;
+        private System.Windows.Forms.TextBox nameOrganization;
+        private System.Windows.Forms.TextBox numberDoc;
+        private System.Windows.Forms.TextBox numerusEd;
+        private System.Windows.Forms.TextBox period;
+        private System.Windows.Forms.TextBox rashPodBuh;
+        private System.Windows.Forms.TextBox rashPodpis;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox12;
@@ -644,21 +712,16 @@
         private System.Windows.Forms.TextBox textBox18;
         private System.Windows.Forms.TextBox textBox19;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox20;
         private System.Windows.Forms.TextBox textBox21;
         private System.Windows.Forms.TextBox textBox22;
         private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.TextBox textBox24;
         private System.Windows.Forms.TextBox textBox25;
         private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.TextBox textBox27;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox year;
 
         #endregion
     }

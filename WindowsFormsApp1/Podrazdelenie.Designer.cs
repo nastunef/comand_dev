@@ -52,9 +52,9 @@ namespace WindowsFormsApp1
             // namePodrazdel
             // 
             this.namePodrazdel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.namePodrazdel.Location = new System.Drawing.Point(236, 18);
+            this.namePodrazdel.Location = new System.Drawing.Point(1, 18);
             this.namePodrazdel.Name = "namePodrazdel";
-            this.namePodrazdel.Size = new System.Drawing.Size(327, 43);
+            this.namePodrazdel.Size = new System.Drawing.Size(620, 43);
             this.namePodrazdel.TabIndex = 0;
             this.namePodrazdel.Text = "Подразделение";
             this.namePodrazdel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -170,6 +170,7 @@ namespace WindowsFormsApp1
             this.Podrazdels.Name = "Podrazdels";
             this.Podrazdels.Size = new System.Drawing.Size(283, 462);
             this.Podrazdels.TabIndex = 13;
+            this.Podrazdels.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.Podrazdels_AfterSelect);
             // 
             // Podrazdelenie
             // 
@@ -191,6 +192,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.namePodrazdel);
             this.Name = "Podrazdelenie";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Podrazdelenie";
             this.Load += new System.EventHandler(this.Podrazdelenie_Load);
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).EndInit();
