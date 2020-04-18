@@ -585,6 +585,7 @@
             this.isDateReasonCheckBox.Size = new System.Drawing.Size(24, 23);
             this.isDateReasonCheckBox.TabIndex = 40;
             this.isDateReasonCheckBox.UseVisualStyleBackColor = true;
+            this.isDateReasonCheckBox.Enabled = false;
             this.isDateReasonCheckBox.CheckedChanged +=
                 new System.EventHandler(this.isDateReasonCheckBox_CheckedChanged);
             // 
