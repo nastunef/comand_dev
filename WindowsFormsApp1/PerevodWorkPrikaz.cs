@@ -106,6 +106,7 @@ namespace WindowsFormsApp1
                 newPrikaz.PERSONCARD = model.PERSONCARD.FirstOrDefault(men => men.PK_PERSONCARD == idSelectMen);
                 newPrikaz.OUR_ORG = model.OUR_ORG.FirstOrDefault(ourOrg => ourOrg.NAME == textBox11.Text);
                 newPrikaz.ISPROJECT = "0";
+                newPrikaz.PK_TYPE_PRIKAZ = 4;
                 newPrikaz.TYPE_PRIKAZ = model.TYPE_PRIKAZ.FirstOrDefault(type => type.PK_TYPE == 4);
                 model.PRIKAZ.Add(newPrikaz);
                 model.SaveChanges();

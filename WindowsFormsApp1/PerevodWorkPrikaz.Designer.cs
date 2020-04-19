@@ -220,6 +220,7 @@ namespace WindowsFormsApp1
             // 
             // textBox4
             // 
+            this.textBox4.Enabled = false;
             this.textBox4.Location = new System.Drawing.Point(1099, 253);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(135, 23);
@@ -287,6 +288,7 @@ namespace WindowsFormsApp1
             this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.textBox6);
+            this.panel3.Enabled = false;
             this.panel3.Location = new System.Drawing.Point(415, 442);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(610, 39);
@@ -320,6 +322,7 @@ namespace WindowsFormsApp1
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.comboBoxVid);
             this.panel4.Controls.Add(this.label15);
+            this.panel4.Enabled = false;
             this.panel4.Location = new System.Drawing.Point(234, 330);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(789, 44);
@@ -471,6 +474,7 @@ namespace WindowsFormsApp1
             // 
             // textBox11
             // 
+            this.textBox11.Enabled = false;
             this.textBox11.Location = new System.Drawing.Point(462, 88);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(426, 23);
@@ -502,6 +506,7 @@ namespace WindowsFormsApp1
             // 
             // textBox12
             // 
+            this.textBox12.Enabled = false;
             this.textBox12.Location = new System.Drawing.Point(1099, 65);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(104, 23);
@@ -509,6 +514,7 @@ namespace WindowsFormsApp1
             // 
             // textBox13
             // 
+            this.textBox13.Enabled = false;
             this.textBox13.Location = new System.Drawing.Point(1099, 90);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(104, 23);
@@ -524,6 +530,7 @@ namespace WindowsFormsApp1
             // 
             // textBox14
             // 
+            this.textBox14.Enabled = false;
             this.textBox14.Location = new System.Drawing.Point(1099, 132);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(135, 23);
@@ -557,6 +564,7 @@ namespace WindowsFormsApp1
             // 
             // dateTimePicker4
             // 
+            this.dateTimePicker4.Enabled = false;
             this.dateTimePicker4.Location = new System.Drawing.Point(547, 162);
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(150, 23);
@@ -564,6 +572,7 @@ namespace WindowsFormsApp1
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Location = new System.Drawing.Point(1099, 162);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(135, 23);
@@ -591,6 +600,7 @@ namespace WindowsFormsApp1
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.label9);
             this.panel6.Controls.Add(this.textBoxPrichinaPerevoda);
+            this.panel6.Enabled = false;
             this.panel6.Location = new System.Drawing.Point(234, 493);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(791, 60);

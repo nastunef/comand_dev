@@ -230,11 +230,11 @@
     <Compile Include="Questions.Designer.cs">
       <DependentUpon>Questions.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReadPerevodToWorkPrikaz.cs">
+    <Compile Include="ReadPerevodWork.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReadPerevodToWorkPrikaz.Designer.cs">
-      <DependentUpon>ReadPerevodToWorkPrikaz.cs</DependentUpon>
+    <Compile Include="ReadPerevodWork.Designer.cs">
+      <DependentUpon>ReadPerevodWork.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports.cs">
       <SubType>Form</SubType>
@@ -336,8 +336,8 @@
     <EmbeddedResource Include="ReadDelWorkPrikaz.resx">
       <DependentUpon>ReadDelWorkPrikaz.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReadPerevodToWorkPrikaz.resx">
-      <DependentUpon>ReadPerevodToWorkPrikaz.cs</DependentUpon>
+    <EmbeddedResource Include="ReadPerevodWork.resx">
+      <DependentUpon>ReadPerevodWork.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchPersonCard.resx">
       <DependentUpon>SearchPersonCard.cs</DependentUpon>

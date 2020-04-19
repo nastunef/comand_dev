@@ -2,7 +2,7 @@
 
 namespace WindowsFormsApp1
 {
-    partial class ReadPerevodToWorkPrikaz
+    partial class ReadPerevodWork
     {
         /// <summary>
         /// Required designer variable.
@@ -70,7 +70,6 @@ namespace WindowsFormsApp1
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.label24 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -91,15 +90,19 @@ namespace WindowsFormsApp1
             this.panel8 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.buttonNewPlaceWork = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.textBoxNewPodr = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
+            this.comboBoxPodr = new System.Windows.Forms.ComboBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.textBoxNewProf = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.textBoxNewDolzhn = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.buttonDel = new System.Windows.Forms.Button();
+            this.buttonEdit = new System.Windows.Forms.Button();
+            this.buttonConfirm = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -219,6 +222,7 @@ namespace WindowsFormsApp1
             // 
             // textBox4
             // 
+            this.textBox4.Enabled = false;
             this.textBox4.Location = new System.Drawing.Point(1099, 253);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(135, 23);
@@ -275,7 +279,7 @@ namespace WindowsFormsApp1
             this.panel2.Enabled = false;
             this.panel2.Location = new System.Drawing.Point(415, 396);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(610, 91);
+            this.panel2.Size = new System.Drawing.Size(610, 89);
             this.panel2.TabIndex = 21;
             // 
             // panel3
@@ -285,7 +289,8 @@ namespace WindowsFormsApp1
             this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.textBox6);
-            this.panel3.Location = new System.Drawing.Point(415, 444);
+            this.panel3.Enabled = false;
+            this.panel3.Location = new System.Drawing.Point(415, 442);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(610, 39);
             this.panel3.TabIndex = 22;
@@ -307,7 +312,7 @@ namespace WindowsFormsApp1
             // 
             // label12
             // 
-            this.label12.Location = new System.Drawing.Point(91, 3);
+            this.label12.Location = new System.Drawing.Point(90, 3);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(125, 20);
             this.label12.TabIndex = 21;
@@ -352,6 +357,7 @@ namespace WindowsFormsApp1
             this.panel5.Controls.Add(this.numericUrerpDownTarifStavk);
             this.panel5.Controls.Add(this.label16);
             this.panel5.Controls.Add(this.label17);
+            this.panel5.Enabled = false;
             this.panel5.Location = new System.Drawing.Point(234, 654);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(792, 45);
@@ -376,6 +382,7 @@ namespace WindowsFormsApp1
             // numericUpDownNadbavk
             // 
             this.numericUpDownNadbavk.Location = new System.Drawing.Point(647, 12);
+            this.numericUpDownNadbavk.Maximum = new decimal(new int[] {1000000, 0, 0, 0});
             this.numericUpDownNadbavk.Name = "numericUpDownNadbavk";
             this.numericUpDownNadbavk.Size = new System.Drawing.Size(110, 23);
             this.numericUpDownNadbavk.TabIndex = 25;
@@ -383,6 +390,7 @@ namespace WindowsFormsApp1
             // numericUrerpDownTarifStavk
             // 
             this.numericUrerpDownTarifStavk.Location = new System.Drawing.Point(404, 10);
+            this.numericUrerpDownTarifStavk.Maximum = new decimal(new int[] {1000000, 0, 0, 0});
             this.numericUrerpDownTarifStavk.Name = "numericUrerpDownTarifStavk";
             this.numericUrerpDownTarifStavk.Size = new System.Drawing.Size(110, 23);
             this.numericUrerpDownTarifStavk.TabIndex = 24;
@@ -411,6 +419,7 @@ namespace WindowsFormsApp1
             this.panel7.Controls.Add(this.dateTimePicker3);
             this.panel7.Controls.Add(this.label24);
             this.panel7.Controls.Add(this.label22);
+            this.panel7.Enabled = false;
             this.panel7.Location = new System.Drawing.Point(234, 705);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(792, 46);
@@ -456,17 +465,9 @@ namespace WindowsFormsApp1
             this.label22.TabIndex = 21;
             this.label22.Text = "Основание";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1065, 718);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(169, 33);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Отдать на распоряжение";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // textBox11
             // 
+            this.textBox11.Enabled = false;
             this.textBox11.Location = new System.Drawing.Point(462, 88);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(426, 23);
@@ -498,6 +499,7 @@ namespace WindowsFormsApp1
             // 
             // textBox12
             // 
+            this.textBox12.Enabled = false;
             this.textBox12.Location = new System.Drawing.Point(1099, 65);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(104, 23);
@@ -505,6 +507,7 @@ namespace WindowsFormsApp1
             // 
             // textBox13
             // 
+            this.textBox13.Enabled = false;
             this.textBox13.Location = new System.Drawing.Point(1099, 90);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(104, 23);
@@ -520,6 +523,7 @@ namespace WindowsFormsApp1
             // 
             // textBox14
             // 
+            this.textBox14.Enabled = false;
             this.textBox14.Location = new System.Drawing.Point(1099, 132);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(135, 23);
@@ -553,13 +557,17 @@ namespace WindowsFormsApp1
             // 
             // dateTimePicker4
             // 
+            this.dateTimePicker4.Enabled = false;
             this.dateTimePicker4.Location = new System.Drawing.Point(547, 162);
+            this.dateTimePicker4.MaxDate = new System.DateTime(3000, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker4.MinDate = new System.DateTime(1753, 1, 25, 0, 0, 0, 0);
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(150, 23);
             this.dateTimePicker4.TabIndex = 42;
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Location = new System.Drawing.Point(1099, 162);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(135, 23);
@@ -573,6 +581,7 @@ namespace WindowsFormsApp1
             this.buttonBack.TabIndex = 44;
             this.buttonBack.Text = "назад";
             this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // textBoxPrichinaPerevoda
             // 
@@ -586,6 +595,7 @@ namespace WindowsFormsApp1
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.label9);
             this.panel6.Controls.Add(this.textBoxPrichinaPerevoda);
+            this.panel6.Enabled = false;
             this.panel6.Location = new System.Drawing.Point(234, 493);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(791, 60);
@@ -619,44 +629,62 @@ namespace WindowsFormsApp1
             // panel9
             // 
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel9.Controls.Add(this.buttonNewPlaceWork);
             this.panel9.Controls.Add(this.label21);
+            this.panel9.Enabled = false;
             this.panel9.Location = new System.Drawing.Point(234, 558);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(169, 87);
             this.panel9.TabIndex = 48;
             // 
+            // buttonNewPlaceWork
+            // 
+            this.buttonNewPlaceWork.Anchor =
+                ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top |
+                                                         System.Windows.Forms.AnchorStyles.Bottom) |
+                                                        System.Windows.Forms.AnchorStyles.Left) |
+                                                       System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonNewPlaceWork.Location = new System.Drawing.Point(28, 47);
+            this.buttonNewPlaceWork.Name = "buttonNewPlaceWork";
+            this.buttonNewPlaceWork.Size = new System.Drawing.Size(114, 35);
+            this.buttonNewPlaceWork.TabIndex = 25;
+            this.buttonNewPlaceWork.Text = "Внести данные";
+            this.buttonNewPlaceWork.UseVisualStyleBackColor = true;
+            // 
             // label21
             // 
-            this.label21.Location = new System.Drawing.Point(44, 16);
+            this.label21.Location = new System.Drawing.Point(44, 6);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(87, 48);
+            this.label21.Size = new System.Drawing.Size(87, 31);
             this.label21.TabIndex = 0;
             this.label21.Text = "Новое место работы";
             // 
             // panel10
             // 
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel10.Controls.Add(this.textBoxNewPodr);
+            this.panel10.Controls.Add(this.comboBoxPodr);
+            this.panel10.Controls.Add(this.panel11);
             this.panel10.Controls.Add(this.label23);
+            this.panel10.Enabled = false;
             this.panel10.Location = new System.Drawing.Point(416, 558);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(610, 46);
+            this.panel10.Size = new System.Drawing.Size(610, 87);
             this.panel10.TabIndex = 22;
             // 
-            // textBoxNewPodr
+            // comboBoxPodr
             // 
-            this.textBoxNewPodr.Location = new System.Drawing.Point(216, -2);
-            this.textBoxNewPodr.Name = "textBoxNewPodr";
-            this.textBoxNewPodr.Size = new System.Drawing.Size(135, 23);
-            this.textBoxNewPodr.TabIndex = 14;
-            // 
-            // label23
-            // 
-            this.label23.Location = new System.Drawing.Point(90, 1);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(96, 36);
-            this.label23.TabIndex = 17;
-            this.label23.Text = "структурное подразделение";
+            this.comboBoxPodr.FormattingEnabled = true;
+            this.comboBoxPodr.Items.AddRange(new object[]
+            {
+                "Главный отдел", "Отдел разработки информационных систем", "Отдел информационной безопасности",
+                "Отдел электронных образовательных ресурсов", "Отдел международного сотрудничества", "Сектор 1С систем",
+                "Студенческий бизнес-инкубатор", "Отдел сопровождения научных договоров, проектов и программ",
+                "Отдел сопровождения подготовки кадров высшей квалификации", "Учебно-методический отдел"
+            });
+            this.comboBoxPodr.Location = new System.Drawing.Point(216, 8);
+            this.comboBoxPodr.Name = "comboBoxPodr";
+            this.comboBoxPodr.Size = new System.Drawing.Size(135, 23);
+            this.comboBoxPodr.TabIndex = 25;
             // 
             // panel11
             // 
@@ -665,7 +693,8 @@ namespace WindowsFormsApp1
             this.panel11.Controls.Add(this.label32);
             this.panel11.Controls.Add(this.label33);
             this.panel11.Controls.Add(this.textBoxNewDolzhn);
-            this.panel11.Location = new System.Drawing.Point(416, 607);
+            this.panel11.Enabled = false;
+            this.panel11.Location = new System.Drawing.Point(-1, 43);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(610, 39);
             this.panel11.TabIndex = 24;
@@ -700,14 +729,54 @@ namespace WindowsFormsApp1
             this.textBoxNewDolzhn.Size = new System.Drawing.Size(135, 23);
             this.textBoxNewDolzhn.TabIndex = 20;
             // 
-            // ReadPerevodToWorkPrikaz
+            // label23
+            // 
+            this.label23.Location = new System.Drawing.Point(90, 1);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(96, 36);
+            this.label23.TabIndex = 17;
+            this.label23.Text = "структурное подразделение";
+            // 
+            // buttonDel
+            // 
+            this.buttonDel.ForeColor = System.Drawing.Color.Red;
+            this.buttonDel.Location = new System.Drawing.Point(1099, 567);
+            this.buttonDel.Name = "buttonDel";
+            this.buttonDel.Size = new System.Drawing.Size(169, 33);
+            this.buttonDel.TabIndex = 81;
+            this.buttonDel.Text = "Удалить приказ";
+            this.buttonDel.UseVisualStyleBackColor = true;
+            this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
+            // 
+            // buttonEdit
+            // 
+            this.buttonEdit.ForeColor = System.Drawing.Color.Blue;
+            this.buttonEdit.Location = new System.Drawing.Point(1099, 642);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(169, 33);
+            this.buttonEdit.TabIndex = 80;
+            this.buttonEdit.Text = "Редактировать приказ";
+            this.buttonEdit.UseVisualStyleBackColor = true;
+            // 
+            // buttonConfirm
+            // 
+            this.buttonConfirm.Location = new System.Drawing.Point(1099, 720);
+            this.buttonConfirm.Name = "buttonConfirm";
+            this.buttonConfirm.Size = new System.Drawing.Size(169, 33);
+            this.buttonConfirm.TabIndex = 79;
+            this.buttonConfirm.Text = "Подписать";
+            this.buttonConfirm.UseVisualStyleBackColor = true;
+            this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);
+            // 
+            // ReadPerevodWork
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 749);
-            this.Controls.Add(this.panel11);
+            this.Controls.Add(this.buttonDel);
+            this.Controls.Add(this.buttonEdit);
+            this.Controls.Add(this.buttonConfirm);
             this.Controls.Add(this.panel10);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel6);
@@ -725,10 +794,10 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label26);
             this.Controls.Add(this.label25);
             this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label8);
@@ -740,7 +809,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Name = "ReadPerevodToWorkPrikaz";
+            this.Name = "ReadPerevodWork";
             this.Text = "Приказ о приеме на работу";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -759,7 +828,6 @@ namespace WindowsFormsApp1
             this.panel8.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.ResumeLayout(false);
@@ -804,7 +872,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label26;
@@ -833,10 +900,14 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.ComboBox comboBoxVid;
-        private System.Windows.Forms.TextBox textBoxNewPodr;
         private System.Windows.Forms.TextBox textBoxNewProf;
         private System.Windows.Forms.TextBox textBoxNewDolzhn;
         private System.Windows.Forms.NumericUpDown numericUrerpDownTarifStavk;
         private System.Windows.Forms.NumericUpDown numericUpDownNadbavk;
+        private System.Windows.Forms.Button buttonNewPlaceWork;
+        private System.Windows.Forms.ComboBox comboBoxPodr;
+        private System.Windows.Forms.Button buttonConfirm;
+        private System.Windows.Forms.Button buttonEdit;
+        private System.Windows.Forms.Button buttonDel;
     }
 }
