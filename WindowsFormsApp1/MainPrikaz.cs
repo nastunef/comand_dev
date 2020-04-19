@@ -56,6 +56,12 @@ namespace WindowsFormsApp1
                 DelWorkPrikaz delWorkPrikaz = new DelWorkPrikaz(tabNumber);
                 delWorkPrikaz.Show();
             }
+
+            if (perevod.Checked == true)
+            {
+                PerevodWorkPrikaz perevodWorkPrikaz = new PerevodWorkPrikaz(tabNumber);
+                perevodWorkPrikaz.Show();
+            }
         }
 
         private void buttonBack_Click(object sender, EventArgs e)

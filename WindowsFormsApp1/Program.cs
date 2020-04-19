@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
 
             //Application.Run(new PersonalCard());
             // Application.Run(new MainWindow());
-            Application.Run(new PerevodWorkPrikaz(10));
+            Application.Run(new MainPagePrikaz());
         }
     }
 }

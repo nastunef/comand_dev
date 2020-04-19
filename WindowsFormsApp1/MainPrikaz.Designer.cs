@@ -45,6 +45,7 @@ namespace WindowsFormsApp1
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.priem = new System.Windows.Forms.RadioButton();
+            this.perevod = new System.Windows.Forms.RadioButton();
             this.deletework = new System.Windows.Forms.RadioButton();
             this.comandirovka = new System.Windows.Forms.RadioButton();
             this.button2 = new System.Windows.Forms.Button();
@@ -176,6 +177,15 @@ namespace WindowsFormsApp1
             this.comandirovka.Text = "Приказ о командировке";
             this.comandirovka.UseVisualStyleBackColor = true;
             // 
+            // perevod
+            // 
+            this.perevod.Location = new System.Drawing.Point(932, 225);
+            this.perevod.Name = "perevod";
+            this.perevod.Size = new System.Drawing.Size(211, 52);
+            this.perevod.TabIndex = 27;
+            this.perevod.Text = "Приказ о переводе";
+            this.perevod.UseVisualStyleBackColor = true;
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(992, 420);
@@ -204,6 +214,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.comandirovka);
+            this.Controls.Add(this.perevod);
             this.Controls.Add(this.deletework);
             this.Controls.Add(this.priem);
             this.Controls.Add(this.button1);
@@ -241,6 +252,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.RadioButton comandirovka;
         private System.Windows.Forms.RadioButton deletework;
         private System.Windows.Forms.RadioButton priem;
+        private System.Windows.Forms.RadioButton perevod;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Button button2;
