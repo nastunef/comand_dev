@@ -131,7 +131,7 @@ using WindowsFormsApp1;
                 new WebClient().DownloadFile(new Uri("https://github.com/Th3Ch3shir3Cat/comand_dev/raw/master/shtatnoeraspisanie.xls"), PATH_TO_SHTATKA);
             }
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
+            openFileDialog.InitialDirectory = Directory.GetCurrentDirectory() + "Shtatnoe\\";
             openFileDialog.RestoreDirectory = true;
             var filePath = string.Empty;
             if (openFileDialog.ShowDialog() == DialogResult.OK)
