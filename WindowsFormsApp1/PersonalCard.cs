@@ -343,7 +343,8 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            var form = new Komandirovki.KomandirovkaForm((decimal) pers.PK_TRIP);
+            var form = new Komandirovki.KomandirovkaForm();
+            form.SetTrip((decimal) pers.PK_TRIP);
             form.ShowDialog();
             //Обновляем
             showKomandirovki(new Model1().PERSONCARD.Find(pers.PK_PERSONCARD));
@@ -351,20 +352,12 @@ namespace WindowsFormsApp1
 
         private void AddKomandButton_Click(object sender, EventArgs e)
         {
-            if (id < 1)
-                return;
-            /*
-            try { 
-                card = new Model1().PERSONCARD.AsNoTracking().First(p => p.PK_PERSONCARD == id); 
-            }
-            catch(Exception except)
-            {
-                Console.Error.WriteLine(except.Message);
-                Console.Error.WriteLine("Не удалось добавить командировку с текущим работником");
+            if (id < 1){
+                MyMsgBox.showError("Такого работника нет в базе.");
                 return;
             }
-            */
-            var form = new Komandirovki.KomandirovkaForm(id);
+            var form = new Komandirovki.KomandirovkaForm();
+            form.SetOneWorker(id);
             form.ShowDialog();
             //Обновляем
             showKomandirovki(new Model1().PERSONCARD.Find(id));
