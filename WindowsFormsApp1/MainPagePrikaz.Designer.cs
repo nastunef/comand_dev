@@ -38,8 +38,7 @@ namespace WindowsFormsApp1
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.label1.Location = new System.Drawing.Point(428, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(476, 54);
@@ -48,8 +47,7 @@ namespace WindowsFormsApp1
             // 
             // createPrikaz
             // 
-            this.createPrikaz.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.createPrikaz.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.createPrikaz.Location = new System.Drawing.Point(190, 151);
             this.createPrikaz.Name = "createPrikaz";
             this.createPrikaz.Size = new System.Drawing.Size(274, 73);
@@ -60,8 +58,7 @@ namespace WindowsFormsApp1
             // 
             // searchPrikaz
             // 
-            this.searchPrikaz.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.searchPrikaz.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.searchPrikaz.Location = new System.Drawing.Point(770, 151);
             this.searchPrikaz.Name = "searchPrikaz";
             this.searchPrikaz.Size = new System.Drawing.Size(274, 73);
@@ -77,18 +74,19 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.searchPrikaz);
             this.Controls.Add(this.createPrikaz);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "MainPagePrikaz";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "MainPagePrikaz";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Text = "Приказы";
             this.ResumeLayout(false);
         }
 
-        #endregion
-
+        private System.Windows.Forms.Button createPrikaz;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button searchPrikaz;
-        private System.Windows.Forms.Button createPrikaz;
+
+        #endregion
+
         private WindowsFormsApp1.SearchPrikaz _searchPrikaz;
         private WindowsFormsApp1.MainPrikaz _mainPrikaz;
     }

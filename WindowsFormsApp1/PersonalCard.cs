@@ -12,7 +12,7 @@ namespace WindowsFormsApp1
 {
     public partial class PersonalCard : Form
     {
-        private long id = -1;
+        private decimal id = -1;
 
         public PersonalCard()
         {
@@ -21,7 +21,7 @@ namespace WindowsFormsApp1
             richTextBox_dopSved.ReadOnly = true;
         }
 
-        public PersonalCard(long id)
+        public PersonalCard(decimal id)
         {
             InitializeComponent();
             initCatalogs();
@@ -59,7 +59,7 @@ namespace WindowsFormsApp1
                 : "Выключить режим редактирования";
         }
 
-        private void initData(long id)
+        private void initData(decimal id)
         {
             Model1 model = new Model1();
             var card = model.PERSONCARD.First(c => c.PK_PERSONCARD == id);
@@ -149,10 +149,10 @@ namespace WindowsFormsApp1
             }
             catch (Exception e)
             {
-                // значит там наверное пусто и нам поебать
+                // значит там наверное пусто и нам все равно
             }
         }
-        
+
         // Отобразить командировки работника
         private void showKomandirovki(PERSONCARD card)
         {
@@ -188,7 +188,7 @@ namespace WindowsFormsApp1
             personcard.TABEL_NUM = Convert.ToInt32(textBox_tabelNumber.Text);
 
             personcard.DATECREATE = DateTime.Now;
-            
+
             personcard.GENDER = model.GENDER.First(g => g.NAME == comboBox_gender.Text);
 
             personcard.GRAZDAN = model.GRAZDAN.First(g => g.NAME == comboBox_grazdan.Text);
@@ -211,21 +211,33 @@ namespace WindowsFormsApp1
 
             if (comboBox_profession.Text != "")
                 personcard.PROFESSION = model.PROFESSION.First(p => p.NAME == comboBox_profession.Text);
-            
+
             saveFamily(personcard, model);
             saveEducation(personcard, model);
             saveLanguage(personcard, model);
 
-            personcard.PK_PERSONCARD = model.PERSONCARD.Max(p => p.PK_PERSONCARD) + 1;
-            if (id == -1)
-                model.PERSONCARD.Add(personcard);
-            model.SaveChanges();
-            id = Convert.ToInt64(personcard.PK_PERSONCARD);
+            try
+            {
+                personcard.PK_PERSONCARD = model.PERSONCARD.Max(p => p.PK_PERSONCARD) + 1;
+                if (id == -1)
+                    model.PERSONCARD.Add(personcard);
+                model.SaveChanges();
+                id = Convert.ToInt64(personcard.PK_PERSONCARD);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Ошибка при сохранении карточки {}", e);
+                DialogResult dialog = MessageBox.Show(
+                    "Непредвиденная ошибка при сохранении личной карточки " + e.ToString(), "Ошибка",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            }
         }
 
         private void saveLanguage(PERSONCARD personcard, Model1 model)
         {
-            foreach (var lang in model.UNION_LANGUAGE_PERSONCARD.Where(m => m.PK_PERSONCARD == personcard.PK_PERSONCARD))
+            decimal max = model.UNION_LANGUAGE_PERSONCARD.Max(u => u.PK_UNION);
+            foreach (var lang in model.UNION_LANGUAGE_PERSONCARD.Where(m => m.PK_PERSONCARD == personcard.PK_PERSONCARD)
+            )
             {
                 model.UNION_LANGUAGE_PERSONCARD.Remove(lang);
             }
@@ -234,16 +246,17 @@ namespace WindowsFormsApp1
             {
                 var row = dataGridView_languages.Rows[i];
                 var lang = new UNION_LANGUAGE_PERSONCARD();
+                lang.PK_UNION = ++max;
                 lang.PERSONCARD = personcard;
                 lang.LANGUAGE = model.LANGUAGE.First(l => l.NAME == row.Cells[0].Value.ToString());
                 lang.LANGUAGE_LVL = model.LANGUAGE_LVL.First(l => l.NAME == row.Cells[1].Value.ToString());
                 model.UNION_LANGUAGE_PERSONCARD.Add(lang);
             }
-            
         }
-        
+
         private void saveFamily(PERSONCARD personcard, Model1 model)
         {
+            decimal max = model.FAMILY_MEMBER.Max(m => m.PK_MEMBER_FAMILY);
             foreach (var familyMember in model.FAMILY_MEMBER.Where(m => m.PK_PERSONCARD == personcard.PK_PERSONCARD))
             {
                 model.FAMILY_MEMBER.Remove(familyMember);
@@ -253,6 +266,7 @@ namespace WindowsFormsApp1
             {
                 String name = dataGridView_family.Rows[i].Cells[0].Value.ToString();
                 FAMILY_MEMBER member = new FAMILY_MEMBER();
+                member.PK_MEMBER_FAMILY = ++max;
                 member.SURNAME = name.Split(' ')[0];
                 member.NAME = name.Split(' ')[1];
                 member.MIDDLENAME = name.Split(' ')[2];
@@ -264,6 +278,7 @@ namespace WindowsFormsApp1
 
         private void saveEducation(PERSONCARD personcard, Model1 model)
         {
+            decimal max = model.ONE_EDU.Max(e => e.PK_ONE_EDU);
             foreach (var edu in model.ONE_EDU.Where(m => m.PK_PERSONCARD == personcard.PK_PERSONCARD))
             {
                 model.ONE_EDU.Remove(edu);
@@ -273,6 +288,7 @@ namespace WindowsFormsApp1
             {
                 var row = dataGridView_education.Rows[i];
                 ONE_EDU edu = new ONE_EDU();
+                edu.PK_ONE_EDU = ++max;
                 edu.NUMDOC = row.Cells[0].Value.ToString();
                 edu.ENDDATE = Convert.ToDateTime(row.Cells[0].Value.ToString());
                 edu.PERSONCARD = personcard;
@@ -315,17 +331,20 @@ namespace WindowsFormsApp1
             }
 
             var pers = new Model1().PERSONCARD_IN_TRIP.Find(pk);
-            if(pers == null)
+            if (pers == null)
             {
                 Console.WriteLine("PERSONCARD_IN_TRIP не найдено для этой строки");
                 return;
             }
-            if(pers.PK_TRIP == null)
+
+            if (pers.PK_TRIP == null)
             {
                 Console.WriteLine("Не указана командировка");
                 return;
             }
-            var form = new Komandirovki.KomandirovkaForm((decimal)pers.PK_TRIP);
+
+            var form = new Komandirovki.KomandirovkaForm();
+            form.SetTrip((decimal) pers.PK_TRIP);
             form.ShowDialog();
             //Обновляем
             showKomandirovki(new Model1().PERSONCARD.Find(pers.PK_PERSONCARD));
@@ -333,23 +352,48 @@ namespace WindowsFormsApp1
 
         private void AddKomandButton_Click(object sender, EventArgs e)
         {
-            if (id < 1)
-                return;
-            /*
-            try { 
-                card = new Model1().PERSONCARD.AsNoTracking().First(p => p.PK_PERSONCARD == id); 
-            }
-            catch(Exception except)
-            {
-                Console.Error.WriteLine(except.Message);
-                Console.Error.WriteLine("Не удалось добавить командировку с текущим работником");
+            if (id < 1){
+                MyMsgBox.showError("Такого работника нет в базе.");
                 return;
             }
-            */
-            var form = new Komandirovki.KomandirovkaForm(id);
+            var form = new Komandirovki.KomandirovkaForm();
+            form.SetOneWorker(id);
             form.ShowDialog();
             //Обновляем
             showKomandirovki(new Model1().PERSONCARD.Find(id));
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (id >= 0)
+                initData(id);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            saveData();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (id >= 0)
+                initData(id);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            saveData();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (id >= 0)
+                initData(id);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            saveData();
         }
     }
 }

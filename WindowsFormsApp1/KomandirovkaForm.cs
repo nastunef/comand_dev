@@ -42,7 +42,7 @@ namespace Komandirovki
         /*
          * Для получения инфы по командировке UPDTRIP c перв.ключом == pk_UPDTRIP, её редактирования и удаления
          * **/
-        public KomandirovkaForm(decimal pkUpdtrip) : this()
+        public void SetTrip(decimal pkUpdtrip)
         {
             try
             {
@@ -79,18 +79,65 @@ namespace Komandirovki
                 isDateReasonCheckBox.Checked = false;
 
             }
-            NoteTextBox.Text = trip.NOTE != null ? trip.NOTE : "";
+            NoteTextBox.Text = trip.NOTE ?? "";
         }
 
         /*
          * Для добавления командировки из личной карточки сотрудника
          * **/
-        public KomandirovkaForm(long pkPerson) : this() {
+        public void SetOneWorker(decimal pkPerson) {
             // Нужно найти именно текущей моделью
-            SetWorkers(new List<PERSONCARD>() { model.PERSONCARD.Find(pkPerson) });
+            try
+            {
+                SetWorkers(new List<PERSONCARD> {model.PERSONCARD.Find(pkPerson)});
+            }
+            catch (Exception exception)
+            {
+                Console.Error.WriteLine(exception.Message);
+                MyMsgBox.showError("Не удалось открыть форму. Скорее всего, такого работника нет в базе");
+            }
         }
 
-
+        /*
+         * Для добавления командировки из личной карточки сотрудника
+         * **/
+        public void SetOneWorkerByTabelNumber(decimal tabNumber)
+        {
+            PERSONCARD personcard;
+            try
+            {
+                 personcard = model.PERSONCARD.First(p => p.TABEL_NUM == tabNumber);
+                if (personcard == null)
+                    throw new NullReferenceException("personcard == null");
+            }
+            catch (Exception exception)
+            {
+                Console.Error.WriteLine(exception.Message);
+                MyMsgBox.showError("Не удалось открыть форму. Скорее всего, такого работника нет в базе");
+                return;
+            }
+            SetWorkers(new List<PERSONCARD> {personcard});
+        }
+        
+        /*
+         * Для открытия командировки по приказу 
+         * **/
+        public void SetPrikaz(long selectedPrikazPkPrikaz)
+        {
+            UPDTRIP trip = null;
+            try{
+                trip = model.UPDTRIP.First(t => t.PK_PRIKAZ == selectedPrikazPkPrikaz);
+                if(trip == null)
+                    throw new NullReferenceException("С этим приказом не связано ни одной командировки");
+            }
+            catch (Exception exception)
+            {
+                MyMsgBox.showError(exception.Message);
+                return;
+            }
+            SetTrip(trip.PK_TRIP);
+        }
+        
         public void UpdatePlaces()
         {
             organizations = new Dictionary<String, HashSet<TRIP_ORG>>();
@@ -260,6 +307,7 @@ namespace Komandirovki
             String numPrikaz, reason, note;
             DateTime datePrikaz;
 
+            // Основание
             reason = ReasonTextBox.Text;
             if (!checkString(reason, "Основание - пустая строка")) return false;
             trip.OSNOVANIE = reason;
@@ -271,27 +319,11 @@ namespace Komandirovki
                     return false;
             }
 
+            // Примечание
             note = NoteTextBox.Text;
             trip.NOTE = note;
-
-            datePrikaz = DatePrikaz.Value;
-            if (trip.PRIKAZ == null)
-            {
-                trip.PRIKAZ = new PRIKAZ();
-                trip.PRIKAZ.PK_TYPE_PRIKAZ = 2;
-                trip.PRIKAZ.PK_OUR_ORG = 1;
-                trip.PRIKAZ.ISPROJECT = "0";
-                //Хз, если несколько
-                trip.PRIKAZ.PK_PERSONCARD = 0;
-            }
-            if (checkDateOnNull(DatePrikaz.Value, "Дата приказа"))
-                trip.PRIKAZ.CREATEDATE = datePrikaz;
-            else
-                return false;
-
-            numPrikaz = NumPrikazTextBox.Text;
-            if (!checkString(numPrikaz, "Номер приказа - пустая строка")) return false;
-            trip.PRIKAZ.NUMDOC = numPrikaz;
+            
+            // Организации
             List<TRIP_ORG> addedOrgs = new List<TRIP_ORG>();
             foreach (DataGridViewRow row in placesView.Rows)
             {
@@ -327,6 +359,9 @@ namespace Komandirovki
             }
             DeleteFromList<TRIP_ORG>(addedOrgs, trip.TRIP_ORG);
 
+            //Люди
+            //Костылёк
+            PERSONCARD workerForAddInPrikaz = null; 
             List<PERSONCARD_IN_TRIP> addedWorkers = new List<PERSONCARD_IN_TRIP>();
             foreach (PERSONCARD_IN_TRIP worker in pERSONCARDINTRIPBindingSource)
             {
@@ -345,6 +380,8 @@ namespace Komandirovki
                 }
                 if (checkWorker(worker))
                 {
+                    if (workerForAddInPrikaz == null)
+                        workerForAddInPrikaz = worker.PERSONCARD;
                     addedWorkers.Add(worker);
                     if (trip.PERSONCARD_IN_TRIP.Contains<PERSONCARD_IN_TRIP>(worker) == false)
                         trip.PERSONCARD_IN_TRIP.Add(worker);
@@ -356,7 +393,33 @@ namespace Komandirovki
                 }
             }
             DeleteFromList<PERSONCARD_IN_TRIP>(addedWorkers, trip.PERSONCARD_IN_TRIP);
-
+            
+            //Приказ
+            datePrikaz = DatePrikaz.Value;
+            if (trip.PRIKAZ == null)
+            {
+                trip.PRIKAZ = new PRIKAZ();
+                trip.PRIKAZ.PK_TYPE_PRIKAZ = 2;
+                trip.PRIKAZ.PK_OUR_ORG = 1;
+                trip.PRIKAZ.ISPROJECT = "0";
+                //Костылёк
+                if(workerForAddInPrikaz != null)
+                    trip.PRIKAZ.PK_PERSONCARD = workerForAddInPrikaz.PK_PERSONCARD;
+                if (trip.PERSONCARD_IN_TRIP.Count > 1)
+                    trip.PRIKAZ.OKUD = "0301023";
+                else
+                    trip.PRIKAZ.OKUD = "0301022";
+                trip.PRIKAZ.OKPO = model.OUR_ORG.First().OKPO ?? "";
+            }
+            if (checkDateOnNull(DatePrikaz.Value, "Дата приказа"))
+                trip.PRIKAZ.CREATEDATE = datePrikaz;
+            else
+                return false;
+            numPrikaz = NumPrikazTextBox.Text;
+            if (!checkString(numPrikaz, "Номер приказа - пустая строка")) return false;
+            trip.PRIKAZ.NUMDOC = numPrikaz;
+            
+            //Новая или старая
             if (trip.PK_TRIP != 0)
             {
                 model.Entry<UPDTRIP>(trip).State = EntityState.Modified;
@@ -522,7 +585,7 @@ namespace Komandirovki
         {
             Application exApp = new Application();
             string PATH_TO_T9 = "templates\\T-9.xls";
-            string PATH_TO_T9A = "templates\\T-9AAA.xls";
+            string PATH_TO_T9A = "templates\\T-9A.xls";
             if (!Directory.Exists("templates"))
                 Directory.CreateDirectory("templates");
             if (!File.Exists(PATH_TO_T9))
@@ -590,15 +653,18 @@ namespace Komandirovki
                         if(person.PODRAZDELORG != null)
                             excelsheets.Cells[17, 44 + 22 * i].Value = person.PODRAZDELORG.NAME;
                         excelsheets.Cells[18, 44 + 22 * i].Value = person.JOB_POS.NAME;
-                        //Костыль
-                        excelsheets.Cells[19, 44 + 22 * i].Value = trip.TRIP_ORG.First<TRIP_ORG>().PLACE_TRIP.NAME;
-                        excelsheets.Cells[20, 44 + 22 * i].Value = trip.TRIP_ORG.First<TRIP_ORG>().NAME;
                         excelsheets.Cells[21, 44 + 22 * i].Value = person.STARTDATE.Value.ToString("dd.MM.yyyy");
                         excelsheets.Cells[22, 44 + 22 * i].Value = person.ENDDATE.Value.ToString("dd.MM.yyyy");
                         excelsheets.Cells[23, 44 + 22 * i].Value = (int)person.ENDDATE.Value.Subtract(person.STARTDATE.Value).TotalDays;
                         excelsheets.Cells[24, 44 + 22 * i].Value = person.GOAL;
                         excelsheets.Cells[25, 44 + 22 * i].Value = person.FINANCE;
                         i++;
+                    }
+                    
+                    foreach(TRIP_ORG tripOrg in trip.TRIP_ORG) {
+                        excelsheets.Cells[19, 44].Value += tripOrg.PLACE_TRIP.NAME;
+                        excelsheets.Cells[19, 44].Value += ", " + tripOrg.NAME;
+                        excelsheets.Cells[19, 44].Value += ";  ";
                     }
                     
                     if (trip.OSNOVANIEDATE != null)

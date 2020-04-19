@@ -50,6 +50,50 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
@@ -142,6 +186,12 @@
     <Compile Include="ONE_EDU.cs" />
     <Compile Include="OUR_ORG.cs" />
     <Compile Include="PEREVOD.cs" />
+    <Compile Include="PerevodWorkPrikaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerevodWorkPrikaz.Designer.cs">
+      <DependentUpon>PerevodWorkPrikaz.cs</DependentUpon>
+    </Compile>
     <Compile Include="PersonalCard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +236,12 @@
     <Compile Include="Questions.Designer.cs">
       <DependentUpon>Questions.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReadPerevodWork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReadPerevodWork.Designer.cs">
+      <DependentUpon>ReadPerevodWork.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,11 +254,19 @@
     <Compile Include="ReadDelWorkPrikaz.Designer.cs">
       <DependentUpon>ReadDelWorkPrikaz.cs</DependentUpon>
     </Compile>
+
     <Compile Include="SearchPodrazdel.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SearchPodrazdel.Designer.cs">
       <DependentUpon>SearchPodrazdel.cs</DependentUpon>
+
+    <Compile Include="SearchPersonCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchPersonCard.Designer.cs">
+      <DependentUpon>SearchPersonCard.cs</DependentUpon>
+
     </Compile>
     <Compile Include="SearchWorkerForm.cs">
       <SubType>Form</SubType>
@@ -227,12 +291,6 @@
     <Compile Include="STR_SHTAT_RASP.cs" />
     <Compile Include="STR_TABEL.cs" />
     <Compile Include="TABEL.cs" />
-    <Compile Include="Tabelu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Tabelu.Designer.cs">
-      <DependentUpon>Tabelu.cs</DependentUpon>
-    </Compile>
     <Compile Include="TRIP_ORG.cs" />
     <Compile Include="TYPE_EDU.cs" />
     <Compile Include="TYPE_PRIKAZ.cs" />
@@ -260,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerevodWorkPrikaz.resx">
+      <DependentUpon>PerevodWorkPrikaz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonalCard.resx">
       <DependentUpon>PersonalCard.cs</DependentUpon>
@@ -292,11 +353,16 @@
     <EmbeddedResource Include="ReadDelWorkPrikaz.resx">
       <DependentUpon>ReadDelWorkPrikaz.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports.resx">
-      <DependentUpon>Reports.cs</DependentUpon>
-    </EmbeddedResource>
+
     <EmbeddedResource Include="SearchPodrazdel.resx">
       <DependentUpon>SearchPodrazdel.cs</DependentUpon>
+
+    <EmbeddedResource Include="ReadPerevodWork.resx">
+      <DependentUpon>ReadPerevodWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchPersonCard.resx">
+      <DependentUpon>SearchPersonCard.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="SearchWorkerForm.resx">
       <DependentUpon>SearchWorkerForm.cs</DependentUpon>
@@ -308,9 +374,6 @@
       <DependentUpon>SearchPrikaz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Shtatka.resx" />
-    <EmbeddedResource Include="Tabelu.resx">
-      <DependentUpon>Tabelu.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\TRIP_ORG.datasource" />
     <None Include="Properties\Settings.settings">

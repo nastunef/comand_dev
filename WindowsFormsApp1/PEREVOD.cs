@@ -34,6 +34,10 @@ namespace WindowsFormsApp1
         public decimal PK_NEW_JOB_POS { get; set; }
 
         public decimal PK_NEW_PODRAZDEL { get; set; }
+        
+        public decimal PK_OLD_PROF { get; set; }
+        
+        public decimal PK_NEW_PROF { get; set; }
 
         public virtual JOB_POSITION JOB_POSITION { get; set; }
 

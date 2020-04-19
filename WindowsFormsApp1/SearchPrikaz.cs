@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Linq;
 using System.Windows.Forms;
+using Komandirovki;
 
 namespace WindowsFormsApp1
 {
@@ -43,8 +44,7 @@ namespace WindowsFormsApp1
                 men.CREATEDATE.Value.CompareTo(dateDo) <= 0);
             
             selectMens.FirstOrDefault();
-            if (selectMens == null) 
-                return;
+            if (selectMens == null) return;
 
             selectMens.ToArray();
             foreach (var item in selectMens)
@@ -54,7 +54,8 @@ namespace WindowsFormsApp1
                     isProject = true;
                 if ((checkBoxPriem.Checked && item.PK_TYPE_PRIKAZ == 1) ||
                     (checkBoxKomand.Checked && item.PK_TYPE_PRIKAZ == 2) ||
-                    (checkBoxDelWork.Checked && item.PK_TYPE_PRIKAZ == 3))
+                    (checkBoxDelWork.Checked && item.PK_TYPE_PRIKAZ == 3) || 
+                    (checkBoxPerevod.Checked && item.PK_TYPE_PRIKAZ == 4))
                 {
                     dataGridView_family.Rows.Add(item.PERSONCARD.SURNAME + " " + item.PERSONCARD.NAME + " " + item.PERSONCARD.MIDDLENAME,
                         item.CREATEDATE,  item.TYPE_PRIKAZ.NAME, isProject);
@@ -84,13 +85,21 @@ namespace WindowsFormsApp1
             
             if (selectedPrikaz.TYPE_PRIKAZ.PK_TYPE == 2)
             {
-                
+                KomandirovkaForm form = new KomandirovkaForm();
+                form.SetPrikaz(selectedPrikaz.PK_PRIKAZ);
+                form.Show();
             }
             
             if (selectedPrikaz.TYPE_PRIKAZ.PK_TYPE == 3)
             {
                 ReadDelWorkPrikaz readDelWorkPrikaz = new ReadDelWorkPrikaz(selectedPrikaz.PK_PRIKAZ);
                 readDelWorkPrikaz.Show();
+            }
+
+            if (selectedPrikaz.TYPE_PRIKAZ.PK_TYPE == 4)
+            {
+                ReadPerevodWork readPerevodPrikaz = new ReadPerevodWork(selectedPrikaz.PK_PRIKAZ);
+                readPerevodPrikaz.Show();
             }
         }
 

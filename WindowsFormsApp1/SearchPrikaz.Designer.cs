@@ -32,6 +32,7 @@ namespace WindowsFormsApp1
          /// </summary>
          private void InitializeComponent()
          {
+             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
              this.fullname = new System.Windows.Forms.TextBox();
              this.firstname = new System.Windows.Forms.TextBox();
              this.otchestvo = new System.Windows.Forms.TextBox();
@@ -49,6 +50,7 @@ namespace WindowsFormsApp1
              this.checkBoxPriem = new System.Windows.Forms.CheckBox();
              this.checkBoxDelWork = new System.Windows.Forms.CheckBox();
              this.checkBoxKomand = new System.Windows.Forms.CheckBox();
+             this.checkBoxPerevod = new System.Windows.Forms.CheckBox();
              this.dateTimePickerOt = new System.Windows.Forms.DateTimePicker();
              this.dateTimePickerDo = new System.Windows.Forms.DateTimePicker();
              this.label5 = new System.Windows.Forms.Label();
@@ -172,7 +174,7 @@ namespace WindowsFormsApp1
              // 
              // checkBoxPriem
              // 
-             this.checkBoxPriem.Location = new System.Drawing.Point(258, 93);
+             this.checkBoxPriem.Location = new System.Drawing.Point(258, 63);
              this.checkBoxPriem.Name = "checkBoxPriem";
              this.checkBoxPriem.Size = new System.Drawing.Size(197, 48);
              this.checkBoxPriem.TabIndex = 29;
@@ -181,7 +183,7 @@ namespace WindowsFormsApp1
              // 
              // checkBoxDelWork
              // 
-             this.checkBoxDelWork.Location = new System.Drawing.Point(258, 198);
+             this.checkBoxDelWork.Location = new System.Drawing.Point(258, 168);
              this.checkBoxDelWork.Name = "checkBoxDelWork";
              this.checkBoxDelWork.Size = new System.Drawing.Size(211, 48);
              this.checkBoxDelWork.TabIndex = 30;
@@ -190,12 +192,21 @@ namespace WindowsFormsApp1
              // 
              // checkBoxKomand
              // 
-             this.checkBoxKomand.Location = new System.Drawing.Point(258, 142);
+             this.checkBoxKomand.Location = new System.Drawing.Point(258, 112);
              this.checkBoxKomand.Name = "checkBoxKomand";
              this.checkBoxKomand.Size = new System.Drawing.Size(174, 48);
              this.checkBoxKomand.TabIndex = 31;
              this.checkBoxKomand.Text = "Приказ о командировке";
              this.checkBoxKomand.UseVisualStyleBackColor = true;
+             // 
+             // checkBoxPerevod
+             // 
+             this.checkBoxPerevod.Location = new System.Drawing.Point(258, 224);
+             this.checkBoxPerevod.Name = "checkBoxPerevod";
+             this.checkBoxPerevod.Size = new System.Drawing.Size(174, 48);
+             this.checkBoxPerevod.TabIndex = 32;
+             this.checkBoxPerevod.Text = "Приказ о переводе";
+             this.checkBoxPerevod.UseVisualStyleBackColor = true;
              // 
              // dateTimePickerOt
              // 
@@ -267,6 +278,7 @@ namespace WindowsFormsApp1
              this.Controls.Add(this.dateTimePickerDo);
              this.Controls.Add(this.dateTimePickerOt);
              this.Controls.Add(this.checkBoxKomand);
+             this.Controls.Add(this.checkBoxPerevod);
              this.Controls.Add(this.checkBoxDelWork);
              this.Controls.Add(this.checkBoxPriem);
              this.Controls.Add(this.button2);
@@ -314,6 +326,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.CheckBox checkBoxPriem;
         private System.Windows.Forms.CheckBox checkBoxDelWork;
         private System.Windows.Forms.CheckBox checkBoxKomand;
+        private System.Windows.Forms.CheckBox checkBoxPerevod;
         private System.Windows.Forms.Label label7;
         private System.Collections.ArrayList _list;
         private System.Windows.Forms.Button buttonBack;
