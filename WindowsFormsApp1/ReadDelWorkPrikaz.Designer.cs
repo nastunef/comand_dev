@@ -31,7 +31,6 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.label25 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -475,6 +474,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "ReadDelWorkPrikaz";
             this.Text = "DeleteWork";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
