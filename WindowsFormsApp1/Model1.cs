@@ -294,7 +294,15 @@ namespace WindowsFormsApp1
             modelBuilder.Entity<PEREVOD>()
                 .Property(e => e.PK_NEW_PODRAZDEL)
                 .HasPrecision(38, 0);
-
+            
+            modelBuilder.Entity<PEREVOD>()
+                .Property(e => e.PK_OLD_PROF)
+                .HasPrecision(38, 0);
+            
+            modelBuilder.Entity<PEREVOD>()
+                .Property(e => e.PK_NEW_PROF)
+                .HasPrecision(38, 0);
+            
             modelBuilder.Entity<PERSONCARD>()
                 .Property(e => e.PK_PERSONCARD)
                 .HasPrecision(38, 0);
@@ -491,7 +499,7 @@ namespace WindowsFormsApp1
                 .WithRequired(e => e.PODRAZDELORG1)
                 .HasForeignKey(e => e.PK_NEW_PODRAZDEL)
                 .WillCascadeOnDelete(false);
-
+            
             modelBuilder.Entity<PODRAZDELORG>()
                 .HasMany(e => e.PODRAZDELORG1)
                 .WithOptional(e => e.PODRAZDELORG2)

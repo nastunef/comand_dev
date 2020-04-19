@@ -180,6 +180,12 @@
     <Compile Include="ONE_EDU.cs" />
     <Compile Include="OUR_ORG.cs" />
     <Compile Include="PEREVOD.cs" />
+    <Compile Include="PerevodWorkPrikaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerevodWorkPrikaz.Designer.cs">
+      <DependentUpon>PerevodWorkPrikaz.cs</DependentUpon>
+    </Compile>
     <Compile Include="PersonalCard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +229,12 @@
     </Compile>
     <Compile Include="Questions.Designer.cs">
       <DependentUpon>Questions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReadPerevodToWorkPrikaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReadPerevodToWorkPrikaz.Designer.cs">
+      <DependentUpon>ReadPerevodToWorkPrikaz.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports.cs">
       <SubType>Form</SubType>
@@ -290,6 +302,9 @@
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PerevodWorkPrikaz.resx">
+      <DependentUpon>PerevodWorkPrikaz.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PersonalCard.resx">
       <DependentUpon>PersonalCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -320,6 +335,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReadDelWorkPrikaz.resx">
       <DependentUpon>ReadDelWorkPrikaz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReadPerevodToWorkPrikaz.resx">
+      <DependentUpon>ReadPerevodToWorkPrikaz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchPersonCard.resx">
       <DependentUpon>SearchPersonCard.cs</DependentUpon>
