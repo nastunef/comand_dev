@@ -146,6 +146,12 @@
     <Compile Include="DelWorkPrikaz.Designer.cs">
       <DependentUpon>DelWorkPrikaz.cs</DependentUpon>
     </Compile>
+    <Compile Include="Donloading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Donloading.Designer.cs">
+      <DependentUpon>Donloading.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditDelWorkPrikaz.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,11 +254,19 @@
     <Compile Include="ReadDelWorkPrikaz.Designer.cs">
       <DependentUpon>ReadDelWorkPrikaz.cs</DependentUpon>
     </Compile>
+
+    <Compile Include="SearchPodrazdel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchPodrazdel.Designer.cs">
+      <DependentUpon>SearchPodrazdel.cs</DependentUpon>
+
     <Compile Include="SearchPersonCard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SearchPersonCard.Designer.cs">
       <DependentUpon>SearchPersonCard.cs</DependentUpon>
+
     </Compile>
     <Compile Include="SearchWorkerForm.cs">
       <SubType>Form</SubType>
@@ -292,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DelWorkPrikaz.resx">
       <DependentUpon>DelWorkPrikaz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Donloading.resx">
+      <DependentUpon>Donloading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditDelWorkPrikaz.resx">
       <DependentUpon>EditDelWorkPrikaz.cs</DependentUpon>
@@ -336,11 +353,16 @@
     <EmbeddedResource Include="ReadDelWorkPrikaz.resx">
       <DependentUpon>ReadDelWorkPrikaz.cs</DependentUpon>
     </EmbeddedResource>
+
+    <EmbeddedResource Include="SearchPodrazdel.resx">
+      <DependentUpon>SearchPodrazdel.cs</DependentUpon>
+
     <EmbeddedResource Include="ReadPerevodWork.resx">
       <DependentUpon>ReadPerevodWork.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchPersonCard.resx">
       <DependentUpon>SearchPersonCard.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="SearchWorkerForm.resx">
       <DependentUpon>SearchWorkerForm.cs</DependentUpon>
