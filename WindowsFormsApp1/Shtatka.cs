@@ -123,12 +123,12 @@ using WindowsFormsApp1;
         {
             exApp = new Application();
             exApp.Visible = false;
-            string PATH_TO_SHTATKA = "Shtatnoe\\shtatnoeraspisanie.xlsx";
+            string PATH_TO_SHTATKA = "Shtatnoe\\shtatnoeraspisanie.xls";
             if (!Directory.Exists("Shtatnoe"))
                 Directory.CreateDirectory("Shtatnoe");
             if (!File.Exists(PATH_TO_SHTATKA))
             {
-                new WebClient().DownloadFile(new Uri("https://github.com/Th3Ch3shir3Cat/comand_dev/blob/master/shtatnoeraspisanie.xlsx"), PATH_TO_SHTATKA);
+                new WebClient().DownloadFile(new Uri("https://github.com/Th3Ch3shir3Cat/comand_dev/raw/master/shtatnoeraspisanie.xls"), PATH_TO_SHTATKA);
             }
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
