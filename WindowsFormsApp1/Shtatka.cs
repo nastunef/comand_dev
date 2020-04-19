@@ -5,8 +5,10 @@ using System.Data;
 using System.Data.Common;
 using System.Data.Entity;
 using System.Drawing;
-using System.Linq;
-using System.Text;
+  using System.IO;
+  using System.Linq;
+  using System.Net;
+  using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1;
@@ -121,9 +123,15 @@ using WindowsFormsApp1;
         {
             exApp = new Application();
             exApp.Visible = false;
-            string PATH_TO_ST = "C:\\Users\\Gerbert\\Documents\\GitHub\\comand_dev\\shtatnoeraspisanie.xlsx";
+            string PATH_TO_SHTATKA = "Shtatnoe\\shtatnoeraspisanie.xlsx";
+            if (!Directory.Exists("Shtatnoe"))
+                Directory.CreateDirectory("Shtatnoe");
+            if (!File.Exists(PATH_TO_SHTATKA))
+            {
+                new WebClient().DownloadFile(new Uri("https://github.com/Th3Ch3shir3Cat/comand_dev/blob/master/shtatnoeraspisanie.xlsx"), PATH_TO_SHTATKA);
+            }
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = "C:\\Users\\Gerbert\\Documents\\GitHub\\comand_dev\\";
+            openFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
             openFileDialog.RestoreDirectory = true;
             var filePath = string.Empty;
             if (openFileDialog.ShowDialog() == DialogResult.OK)
