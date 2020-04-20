@@ -228,7 +228,7 @@ using WindowsFormsApp1;
                     model.SaveChanges();
                     MessageBox.Show("Добавленно");
                 }
-                
+                //
             }
 
         }
