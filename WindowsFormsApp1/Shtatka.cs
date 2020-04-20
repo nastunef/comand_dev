@@ -228,10 +228,7 @@ using WindowsFormsApp1;
                     model.SaveChanges();
                     MessageBox.Show("Добавленно");
                 }
-                else
-                {
-                    MessageBox.Show("Я тебе говорю зря зря", "Учтока говорит кря кря", MessageBoxButtons.OK);
-                }
+                
             }
 
         }
