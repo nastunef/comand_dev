@@ -164,7 +164,7 @@ namespace WindowsFormsApp1
                     trip.PK,
                     trip.STARTDATE.Value.ToString("dd.MM.yyyy"),
                     trip.ENDDATE.Value.ToString("dd.MM.yyyy"),
-                    trip.UPDTRIP.TRIP_ORG.First().PLACE_TRIP.NAME,
+                    trip.UPDTRIP.TRIP_ORG.Count != 0 ? trip.UPDTRIP.TRIP_ORG.First().PLACE_TRIP.NAME : "",
                     trip.GOAL
                 );
             }
