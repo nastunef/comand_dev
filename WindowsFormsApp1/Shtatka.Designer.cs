@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.label1 = new System.Windows.Forms.Label();
             this.nameOrganization = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -77,15 +76,19 @@
             this.label18 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.period = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.day = new System.Windows.Forms.TextBox();
             this.month = new System.Windows.Forms.TextBox();
             this.year = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.открытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.действующееToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.поискПодразделенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -344,7 +347,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 123F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 124F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 225F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 238F));
             this.tableLayoutPanel2.Location = new System.Drawing.Point(509, 563);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
@@ -532,26 +535,6 @@
             this.dataGridView1.TabIndex = 47;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1, -1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 31);
-            this.button1.TabIndex = 48;
-            this.button1.Text = "Открыть";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(108, -1);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(182, 31);
-            this.button2.TabIndex = 49;
-            this.button2.Text = "Поиск подразделения";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // label19
             // 
             this.label19.Location = new System.Drawing.Point(245, 199);
@@ -596,6 +579,44 @@
             this.year.Size = new System.Drawing.Size(83, 22);
             this.year.TabIndex = 55;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {this.открытьToolStripMenuItem, this.поискПодразделенияToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1455, 28);
+            this.menuStrip1.TabIndex = 56;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // открытьToolStripMenuItem
+            // 
+            this.открытьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {this.действующееToolStripMenuItem, this.файлToolStripMenuItem});
+            this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
+            this.открытьToolStripMenuItem.Text = "Открыть";
+            // 
+            // действующееToolStripMenuItem
+            // 
+            this.действующееToolStripMenuItem.Name = "действующееToolStripMenuItem";
+            this.действующееToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
+            this.действующееToolStripMenuItem.Text = "Существующее";
+            this.действующееToolStripMenuItem.Click += new System.EventHandler(this.действующееToolStripMenuItem_Click);
+            // 
+            // файлToolStripMenuItem
+            // 
+            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
+            this.файлToolStripMenuItem.Text = "Файл";
+            this.файлToolStripMenuItem.Click += new System.EventHandler(this.файлToolStripMenuItem_Click);
+            // 
+            // поискПодразделенияToolStripMenuItem
+            // 
+            this.поискПодразделенияToolStripMenuItem.Name = "поискПодразделенияToolStripMenuItem";
+            this.поискПодразделенияToolStripMenuItem.Size = new System.Drawing.Size(176, 24);
+            this.поискПодразделенияToolStripMenuItem.Text = "Поиск подразделения";
+            this.поискПодразделенияToolStripMenuItem.Click += new System.EventHandler(this.поискПодразделенияToolStripMenuItem_Click);
+            // 
             // Shtatka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -608,8 +629,6 @@
             this.Controls.Add(this.label20);
             this.Controls.Add(this.period);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.numerusEd);
@@ -657,19 +676,22 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.nameOrganization);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Shtatka";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Штатное расписание";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
 
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox dataCreate;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox day;
@@ -694,6 +716,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox mainDolgnost;
+        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.TextBox month;
         private System.Windows.Forms.TextBox nameOrganization;
         private System.Windows.Forms.TextBox numberDoc;
@@ -723,6 +746,10 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox year;
+        private System.Windows.Forms.ToolStripMenuItem действующееToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem открытьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem поискПодразделенияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
 
         #endregion
     }

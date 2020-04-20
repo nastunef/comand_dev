@@ -142,6 +142,12 @@
     </Compile>
     <Compile Include="CalendarColumn.cs" />
     <Compile Include="CHARACTER_WORK.cs" />
+    <Compile Include="ChooseST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChooseST.Designer.cs">
+      <DependentUpon>ChooseST.cs</DependentUpon>
+    </Compile>
     <Compile Include="DelWorkPrikaz.cs" />
     <Compile Include="DelWorkPrikaz.Designer.cs">
       <DependentUpon>DelWorkPrikaz.cs</DependentUpon>
@@ -303,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddPlaceKomandForm.resx">
       <DependentUpon>AddPlaceKomandForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChooseST.resx">
+      <DependentUpon>ChooseST.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DelWorkPrikaz.resx">
       <DependentUpon>DelWorkPrikaz.cs</DependentUpon>
