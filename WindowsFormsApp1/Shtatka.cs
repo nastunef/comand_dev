@@ -33,6 +33,7 @@ using WindowsFormsApp1;
         //Наименование организации
         private string nameOraganization;
         //Код по ОКПО
+        private string okpo;
         //Руководитель кадровой службы
         private string FIORuc;
         
@@ -50,6 +51,8 @@ using WindowsFormsApp1;
         private Application exApp;
         private int countShtat;
         private int countShtatRaspAfter;
+
+        public int numDocFromChoose;
         
         public Shtatka()
         {
@@ -119,7 +122,76 @@ using WindowsFormsApp1;
             podrazdelenie.Show();
         }
         
-        private async void button1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private async Task Run()
+        {
+            numerusPeople = 0;
+            var form = new Donloading();
+            form.Show();
+            strginShtatRasps = new List<StringShtatRasp>();
+             Worksheet excelsheets = excelappworkbooks.Worksheets.Item[1];
+            nameOrganization.Text = ((excelsheets.Cells[5, 1]).Value ?? string.Empty).ToString();
+            numberDoc.Text = ((excelsheets.Cells[9, 69]).Value ?? string.Empty).ToString();
+            dataCreate.Text = ((excelsheets.Cells[9, 87]).Value ?? string.Empty).ToString();
+            period.Text = ((excelsheets.Cells[11, 36]).Value ?? string.Empty).ToString();
+            day.Text = ((excelsheets.Cells[11, 52]).Value ?? string.Empty).ToString();
+            month.Text = ((excelsheets.Cells[11, 57]).Value ?? string.Empty).ToString();
+            year.Text = ((excelsheets.Cells[11, 69]).Value ?? string.Empty).ToString();
+            textBox22.Text = ((excelsheets.Cells[5, 152]).Value ?? string.Empty).ToString();
+            textBox25.Text = ((excelsheets.Cells[9, 87]).Value ?? string.Empty).ToString();
+            mainDolgnost.Text = ((excelsheets.Cells[151, 36]).Value ?? string.Empty).ToString();
+            rashPodpis.Text = ((excelsheets.Cells[151, 109]).Value ?? string.Empty).ToString();
+            rashPodBuh.Text = ((excelsheets.Cells[154, 62]).Value ?? string.Empty).ToString();
+            int indexRow = 16;
+            for (int i = 0; i < 131; i++)
+            {
+                strginShtatRasps.Add(setDataInString(new StringShtatRasp(), i+1, 
+                    excelsheets.Cells[indexRow,1].Value.ToString(), ((excelsheets.Cells[indexRow,21]).Value ?? string.Empty).ToString(),
+                    ((excelsheets.Cells[indexRow,31]).Value ?? string.Empty).ToString(),excelsheets.Cells[indexRow,64].Value.ToString(),
+                    Convert.ToDouble((excelsheets.Cells[indexRow,79]).Value ?? string.Empty),Convert.ToDouble((excelsheets.Cells[indexRow,94]).Value ?? string.Empty),
+                    Convert.ToDouble((excelsheets.Cells[indexRow,105]).Value ?? string.Empty),Convert.ToDouble((excelsheets.Cells[indexRow,116]).Value ?? string.Empty),""));
+                indexRow++;
+                numerusPeople += Convert.ToInt32(excelsheets.Cells[indexRow,64].Value.ToString());
+            }
+            excelappworkbooks.Close();
+            exApp.Quit();
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = strginShtatRasps;
+            dataGridView1.Columns[1].Width = 150;
+            dataGridView1.Columns[2].Width = 65;
+            dataGridView1.Columns[3].Width = 165;
+            dataGridView1.Columns[4].Width = 72;
+            dataGridView1.Columns[5].Width = 85;
+            dataGridView1.Columns[6].Width = 92;
+            dataGridView1.Columns[7].Width = 92;
+            dataGridView1.Columns[8].Width = 92;
+            dataGridView1.Columns[9].Width = 151;
+            dataGridView1.Columns[10].Width = 145;
+            dataGridView1.Columns[11].Visible = false;
+            dataGridView1.Columns["stringId"].Visible = false;
+            
+            numerusEd.Text = numerusPeople.ToString();
+            
+            IQueryable<SHTAT_RASP> query = model.SHTAT_RASP;
+            countShtat = query.Count();
+            query = query.Where(rasp => rasp.number == numberDoc.Text);
+            countShtatRaspAfter = query.Count();
+            if (countShtatRaspAfter != 0)
+            {
+                foreach (SHTAT_RASP shtat in query)
+                {
+                    PK_ST = Convert.ToInt32(shtat.PK_SHTAT_RASP);
+                }
+            }
+            form.Close();
+            MessageBox.Show("Данные загружены","", MessageBoxButtons.OK);
+        }
+
+        private async void файлToolStripMenuItem_Click(object sender, EventArgs e)
         {
             exApp = new Application();
             exApp.Visible = false;
@@ -131,7 +203,8 @@ using WindowsFormsApp1;
                 new WebClient().DownloadFile(new Uri("https://github.com/Th3Ch3shir3Cat/comand_dev/raw/master/shtatnoeraspisanie.xls"), PATH_TO_SHTATKA);
             }
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = Directory.GetCurrentDirectory() + "Shtatnoe\\";
+            openFileDialog.InitialDirectory = Directory.GetCurrentDirectory() + "\\Shtatnoe\\";
+            MessageBox.Show(openFileDialog.InitialDirectory, "", MessageBoxButtons.OK);
             openFileDialog.RestoreDirectory = true;
             var filePath = string.Empty;
             if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -230,74 +303,120 @@ using WindowsFormsApp1;
                 }
                 //
             }
-
-        }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            SearchPodrazdel searchPodrazdel = new SearchPodrazdel(this);
-            searchPodrazdel.keySt = PK_ST;
-            searchPodrazdel.Show();
         }
 
-        private async Task Run()
+        private void поискПодразделенияToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new Donloading();
-            form.Show();
-            strginShtatRasps = new List<StringShtatRasp>();
-             Worksheet excelsheets = excelappworkbooks.Worksheets.Item[1];
-            nameOrganization.Text = ((excelsheets.Cells[5, 1]).Value ?? string.Empty).ToString();
-            numberDoc.Text = ((excelsheets.Cells[9, 69]).Value ?? string.Empty).ToString();
-            dataCreate.Text = ((excelsheets.Cells[9, 87]).Value ?? string.Empty).ToString();
-            period.Text = ((excelsheets.Cells[11, 36]).Value ?? string.Empty).ToString();
-            day.Text = ((excelsheets.Cells[11, 52]).Value ?? string.Empty).ToString();
-            month.Text = ((excelsheets.Cells[11, 57]).Value ?? string.Empty).ToString();
-            year.Text = ((excelsheets.Cells[11, 69]).Value ?? string.Empty).ToString();
-            textBox22.Text = ((excelsheets.Cells[5, 152]).Value ?? string.Empty).ToString();
-            textBox25.Text = ((excelsheets.Cells[9, 87]).Value ?? string.Empty).ToString();
-            mainDolgnost.Text = ((excelsheets.Cells[151, 36]).Value ?? string.Empty).ToString();
-            rashPodpis.Text = ((excelsheets.Cells[151, 109]).Value ?? string.Empty).ToString();
-            rashPodBuh.Text = ((excelsheets.Cells[154, 62]).Value ?? string.Empty).ToString();
-            int indexRow = 16;
-            for (int i = 0; i < 131; i++)
+            if (strginShtatRasps == null)
             {
-                strginShtatRasps.Add(setDataInString(new StringShtatRasp(), i+1, 
-                    excelsheets.Cells[indexRow,1].Value.ToString(), ((excelsheets.Cells[indexRow,21]).Value ?? string.Empty).ToString(),
-                    ((excelsheets.Cells[indexRow,31]).Value ?? string.Empty).ToString(),excelsheets.Cells[indexRow,64].Value.ToString(),
-                    Convert.ToDouble((excelsheets.Cells[indexRow,79]).Value ?? string.Empty),Convert.ToDouble((excelsheets.Cells[indexRow,94]).Value ?? string.Empty),
-                    Convert.ToDouble((excelsheets.Cells[indexRow,105]).Value ?? string.Empty),Convert.ToDouble((excelsheets.Cells[indexRow,116]).Value ?? string.Empty),""));
-                indexRow++;
+                MessageBox.Show("Загрузите данные", "Отсутствие данных", MessageBoxButtons.OK);
             }
-            excelappworkbooks.Close();
-            exApp.Quit();
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = strginShtatRasps;
-            dataGridView1.Columns[1].Width = 150;
-            dataGridView1.Columns[2].Width = 65;
-            dataGridView1.Columns[3].Width = 165;
-            dataGridView1.Columns[4].Width = 72;
-            dataGridView1.Columns[5].Width = 85;
-            dataGridView1.Columns[6].Width = 92;
-            dataGridView1.Columns[7].Width = 92;
-            dataGridView1.Columns[8].Width = 92;
-            dataGridView1.Columns[9].Width = 151;
-            dataGridView1.Columns[10].Width = 145;
-            dataGridView1.Columns[11].Visible = false;
-            dataGridView1.Columns["stringId"].Visible = false;
-            
-            IQueryable<SHTAT_RASP> query = model.SHTAT_RASP;
-            countShtat = query.Count();
-            query = query.Where(rasp => rasp.number == numberDoc.Text);
-            countShtatRaspAfter = query.Count();
-            if (countShtatRaspAfter != 0)
+            else
             {
-                foreach (SHTAT_RASP shtat in query)
-                {
-                    PK_ST = Convert.ToInt32(shtat.PK_SHTAT_RASP);
-                }
+                SearchPodrazdel searchPodrazdel = new SearchPodrazdel(this);
+                searchPodrazdel.keySt = PK_ST;
+                searchPodrazdel.Show();
             }
-            form.Close();
-            MessageBox.Show("Данные загружены","", MessageBoxButtons.OK);
         }
+    private void действующееToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        ChooseST chooseSt = new ChooseST(this);
+        chooseSt.Show();
+    }
+
+    public async void setStrginRasps()
+    {
+        await RunLoad();
+        MessageBox.Show("Данные загружены", "Выполнено" ,MessageBoxButtons.OK);
+    }
+
+    public async Task RunLoad()
+    {
+        var form = new Donloading();
+        form.Show();
+        numerusPeople = 0;
+        strginShtatRasps = new List<StringShtatRasp>();
+        IQueryable<STR_SHTAT_RASP> strShtatRasps = model.STR_SHTAT_RASP;
+        string numdoc = numDocFromChoose.ToString();
+        strShtatRasps = strShtatRasps.Where(rasp => rasp.SHTAT_RASP.number == numdoc);
+       
+        foreach (STR_SHTAT_RASP strShtatRasp in strShtatRasps)
+        {
+            strginShtatRasps.Add(setDataInString(new StringShtatRasp(), Convert.ToInt32(strShtatRasp.PK_STROKA),strShtatRasp.PODRAZDELORG.NAME,
+                strShtatRasp.PODRAZDELORG.CODE, strShtatRasp.JOB_POSITION.NAME, strShtatRasp.COUNT_STUFF.ToString(),
+                Convert.ToDouble(strShtatRasp.TARIFF), Convert.ToDouble(strShtatRasp.NADBAVKA1),Convert.ToDouble(strShtatRasp.NADBAVKA2),Convert.ToDouble(strShtatRasp.NADBAVKA3),
+                strShtatRasp.NOTE));
+            numerusPeople += Convert.ToInt32(strShtatRasp.COUNT_STUFF);
+        }
+        dataGridView1.DataSource = null;
+        dataGridView1.DataSource = strginShtatRasps;
+        dataGridView1.Columns[1].Width = 150;
+        dataGridView1.Columns[2].Width = 65;
+        dataGridView1.Columns[3].Width = 165;
+        dataGridView1.Columns[4].Width = 72;
+        dataGridView1.Columns[5].Width = 85;
+        dataGridView1.Columns[6].Width = 92;
+        dataGridView1.Columns[7].Width = 92;
+        dataGridView1.Columns[8].Width = 92;
+        dataGridView1.Columns[9].Width = 151;
+        dataGridView1.Columns[10].Width = 145;
+        dataGridView1.Columns[11].Visible = false;
+        dataGridView1.Columns["stringId"].Visible = false;
         
+        //Запрос для заполнения полей номер документа и дата составления
+        IQueryable<SHTAT_RASP> query1 = model.SHTAT_RASP;
+        query1 = query1.Where(rasp => rasp.number == numdoc);
+        //Заполняем поля номер документа и дата составления
+        numDoc = "";
+        _dateTime = new DateTime();
+        foreach (SHTAT_RASP ourOrg in query1)
+        {
+            numDoc = ourOrg.number;
+            _dateTime = Convert.ToDateTime(ourOrg.CREATEDATE);
+            PK_ST = Convert.ToInt32(ourOrg.PK_SHTAT_RASP);
+        }
+
+        numberDoc.Text = numDoc;
+        dataCreate.Text = _dateTime.ToString();
+
+        //Заполним нэйм организации
+        IQueryable<OUR_ORG> query3 = model.OUR_ORG;
+
+        List<OUR_ORG> ourOrgs = new List<OUR_ORG>();
+
+        foreach (OUR_ORG ourOrg in query3)
+        {
+            ourOrgs.Add(ourOrg);
+        }
+
+        nameOraganization = ourOrgs[query3.Count() - 1].NAME;
+        okpo = ourOrgs[query3.Count() - 1].OKPO;
+        nameOrganization.Text = nameOraganization;
+        textBox22.Text = okpo;
+        numerusEd.Text = numerusPeople.ToString();
+
+        IQueryable<PERSONCARD> query4 = model.PERSONCARD;
+        query4 = query4.Where(personcard => personcard.JOB_POSITION_PK_JOB_POS == 147);
+        List<PERSONCARD> personcards = new List<PERSONCARD>();
+        foreach (PERSONCARD personcard in query4)
+        {
+            personcards.Add(personcard);
+        }
+
+        rashPodpis.Text = personcards[0].SURNAME + " " + personcards[0].NAME + " " + personcards[0].MIDDLENAME;
+        mainDolgnost.Text = personcards[0].JOB_POSITION.NAME;
+        personcards = new List<PERSONCARD>();
+        query4 = model.PERSONCARD;
+        query4 = query4.Where(personcard => personcard.JOB_POSITION_PK_JOB_POS == 91);
+        foreach (PERSONCARD personcard in query4)
+        {
+            personcards.Add(personcard);
+        }
+
+        rashPodBuh.Text = personcards[0].SURNAME + " " + personcards[0].NAME + " " + personcards[0].MIDDLENAME;
+        
+        form.Close();
+    }
+    
     }
 }
