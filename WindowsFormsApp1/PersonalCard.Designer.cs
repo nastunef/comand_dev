@@ -513,9 +513,9 @@
             // 
             this.tabPage5.Controls.Add(this.panel6);
             this.tabPage5.Controls.Add(this.label28);
-            this.tabPage5.Location = new System.Drawing.Point(4, 24);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1069, 684);
+            this.tabPage5.Size = new System.Drawing.Size(1069, 686);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Дополнительные сведения";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -575,9 +575,9 @@
             this.tabPage4.Controls.Add(this.AddKomandButton);
             this.tabPage4.Controls.Add(this.label38);
             this.tabPage4.Controls.Add(this.dataGridView_comand);
-            this.tabPage4.Location = new System.Drawing.Point(4, 24);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1069, 684);
+            this.tabPage4.Size = new System.Drawing.Size(1069, 686);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Сведения о командировках";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -672,9 +672,9 @@
             this.tabPage3.Controls.Add(this.label31);
             this.tabPage3.Controls.Add(this.label27);
             this.tabPage3.Controls.Add(this.label26);
-            this.tabPage3.Location = new System.Drawing.Point(4, 24);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1069, 684);
+            this.tabPage3.Size = new System.Drawing.Size(1069, 686);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Сведения о работе";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -829,10 +829,10 @@
             this.tabPage2.Controls.Add(this.comboBox_profession);
             this.tabPage2.Controls.Add(this.label25);
             this.tabPage2.Controls.Add(this.dataGridView_education);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1069, 684);
+            this.tabPage2.Size = new System.Drawing.Size(1069, 686);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Образование";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1319,6 +1319,7 @@
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "PersonalCard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Личная карточка";
             this.tabPage6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
