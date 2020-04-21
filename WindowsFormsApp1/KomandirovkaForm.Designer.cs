@@ -29,7 +29,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 =
                 new System.Windows.Forms.DataGridViewCellStyle();
@@ -219,7 +218,7 @@
             this.TabNumColumn.HeaderText = "Таб.номер";
             this.TabNumColumn.Name = "TabNumColumn";
             this.TabNumColumn.ReadOnly = true;
-            this.TabNumColumn.Width = 90;
+            this.TabNumColumn.Width = 91;
             // 
             // PodrazdelColumn
             // 
@@ -585,7 +584,6 @@
             this.isDateReasonCheckBox.Size = new System.Drawing.Size(24, 23);
             this.isDateReasonCheckBox.TabIndex = 40;
             this.isDateReasonCheckBox.UseVisualStyleBackColor = true;
-            this.isDateReasonCheckBox.Enabled = false;
             this.isDateReasonCheckBox.CheckedChanged +=
                 new System.EventHandler(this.isDateReasonCheckBox_CheckedChanged);
             // 
@@ -717,6 +715,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "KomandirovkaForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Командировка";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.KomandirovkaForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize) (this.placesView)).EndInit();
