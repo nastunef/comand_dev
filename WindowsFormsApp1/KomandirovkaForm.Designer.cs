@@ -30,14 +30,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 =
-                new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 =
-                new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 =
-                new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 =
-                new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.placesView = new System.Windows.Forms.DataGridView();
             this.CounrtyColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -104,6 +100,8 @@
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GenNumPrikaz = new System.Windows.Forms.CheckBox();
+            this.IsProject = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize) (this.placesView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.tRIPORGBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.WorkersGridView)).BeginInit();
@@ -448,6 +446,7 @@
             // 
             // DateReason
             // 
+            this.DateReason.Enabled = false;
             this.DateReason.Location = new System.Drawing.Point(1022, 527);
             this.DateReason.MaxDate = new System.DateTime(2030, 1, 1, 0, 0, 0, 0);
             this.DateReason.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
@@ -584,8 +583,7 @@
             this.isDateReasonCheckBox.Size = new System.Drawing.Size(24, 23);
             this.isDateReasonCheckBox.TabIndex = 40;
             this.isDateReasonCheckBox.UseVisualStyleBackColor = true;
-            this.isDateReasonCheckBox.CheckedChanged +=
-                new System.EventHandler(this.isDateReasonCheckBox_CheckedChanged);
+            this.isDateReasonCheckBox.CheckedChanged += new System.EventHandler(this.isDateReasonCheckBox_CheckedChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -678,11 +676,34 @@
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.Width = 114;
             // 
+            // GenNumPrikaz
+            // 
+            this.GenNumPrikaz.Checked = true;
+            this.GenNumPrikaz.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.GenNumPrikaz.Location = new System.Drawing.Point(366, 422);
+            this.GenNumPrikaz.Name = "GenNumPrikaz";
+            this.GenNumPrikaz.Size = new System.Drawing.Size(206, 19);
+            this.GenNumPrikaz.TabIndex = 41;
+            this.GenNumPrikaz.Text = "Сгенерировать номер приказа";
+            this.GenNumPrikaz.UseVisualStyleBackColor = true;
+            this.GenNumPrikaz.CheckedChanged += new System.EventHandler(this.GenNumPrikaz_CheckedChanged);
+            // 
+            // IsProject
+            // 
+            this.IsProject.Location = new System.Drawing.Point(578, 421);
+            this.IsProject.Name = "IsProject";
+            this.IsProject.Size = new System.Drawing.Size(194, 19);
+            this.IsProject.TabIndex = 42;
+            this.IsProject.Text = "Это проект приказа";
+            this.IsProject.UseVisualStyleBackColor = true;
+            // 
             // KomandirovkaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1219, 730);
+            this.Controls.Add(this.IsProject);
+            this.Controls.Add(this.GenNumPrikaz);
             this.Controls.Add(this.isDateReasonCheckBox);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.ExitButton);
@@ -732,48 +753,13 @@
             this.PerformLayout();
         }
 
-        #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView WorkersGridView;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker finishDate;
-        private System.Windows.Forms.DateTimePicker startDate;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView placesView;
-        private System.Windows.Forms.Panel panelDates;
-        private System.Windows.Forms.CheckBox isSameDatesCheckBox;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panelPurpose;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panelFinance;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button DeletePlaceButton;
         private System.Windows.Forms.Button AddPlaceButton;
         private System.Windows.Forms.Button AddWorkerButton;
-        private System.Windows.Forms.Button DeleteWorkerButton;
-        private System.Windows.Forms.CheckBox isDateReasonCheckBox;
-        private System.Windows.Forms.Button DeleteButton;
-        private System.Windows.Forms.Button ExportButton;
-        private System.Windows.Forms.Button ExitButton;
-        private System.Windows.Forms.Button SaveButton;
-        private System.Windows.Forms.TextBox NoteTextBox;
-        private System.Windows.Forms.DateTimePicker DateReason;
-        private System.Windows.Forms.TextBox ReasonTextBox;
-        private System.Windows.Forms.DateTimePicker DatePrikaz;
-        private System.Windows.Forms.TextBox NumPrikazTextBox;
-        private System.Windows.Forms.CheckBox FinanceCheckBox;
-        private System.Windows.Forms.TextBox FinanceTextBox;
-        private System.Windows.Forms.TextBox PurposeTextBox;
-        private System.Windows.Forms.CheckBox PurposeCheckBox;
-        private System.Windows.Forms.BindingSource TripBindingSource;
+        private System.Windows.Forms.DataGridViewComboBoxColumn CityColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn CounrtyColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
@@ -782,23 +768,60 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.BindingSource pERSONCARDINTRIPBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SurnameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MidNameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TabNumColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PodrazdelColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn JobPosColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StartDateColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FinishDateColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PurposeColumn;
+        private System.Windows.Forms.DateTimePicker DatePrikaz;
+        private System.Windows.Forms.DateTimePicker DateReason;
+        private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.Button DeletePlaceButton;
+        private System.Windows.Forms.Button DeleteWorkerButton;
+        private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.Button ExportButton;
+        private System.Windows.Forms.CheckBox FinanceCheckBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn FinanceColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn CounrtyColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn CityColumn;
+        private System.Windows.Forms.TextBox FinanceTextBox;
+        private System.Windows.Forms.DateTimePicker finishDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FinishDateColumn;
+        private System.Windows.Forms.CheckBox GenNumPrikaz;
+        private System.Windows.Forms.CheckBox isDateReasonCheckBox;
+        private System.Windows.Forms.CheckBox IsProject;
+        private System.Windows.Forms.CheckBox isSameDatesCheckBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn JobPosColumn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MidNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
+        private System.Windows.Forms.TextBox NoteTextBox;
+        private System.Windows.Forms.TextBox NumPrikazTextBox;
         private System.Windows.Forms.DataGridViewComboBoxColumn OrganizationColumn;
-        private System.Windows.Forms.BindingSource tRIPORGBindingSource;
+        private System.Windows.Forms.Panel panelDates;
+        private System.Windows.Forms.Panel panelFinance;
+        private System.Windows.Forms.Panel panelPurpose;
+        private System.Windows.Forms.BindingSource pERSONCARDINTRIPBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn PK_ORG;
+        private System.Windows.Forms.DataGridView placesView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PodrazdelColumn;
+        private System.Windows.Forms.CheckBox PurposeCheckBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PurposeColumn;
+        private System.Windows.Forms.TextBox PurposeTextBox;
+        private System.Windows.Forms.TextBox ReasonTextBox;
+        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.DateTimePicker startDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StartDateColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SurnameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TabNumColumn;
+        private System.Windows.Forms.BindingSource TripBindingSource;
+        private System.Windows.Forms.BindingSource tRIPORGBindingSource;
+        private System.Windows.Forms.DataGridView WorkersGridView;
+
+        #endregion
     }
 }
