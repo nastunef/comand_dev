@@ -44,7 +44,7 @@ namespace WindowsFormsApp1
             // textBox1
             // 
             this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.textBox1.Location = new System.Drawing.Point(83, 25);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -64,8 +64,8 @@ namespace WindowsFormsApp1
             this.Load += new System.EventHandler(this.Donloading_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
+
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Timer timer1;
 

@@ -32,7 +32,6 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.namePodrazdel = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
@@ -109,6 +108,7 @@ namespace WindowsFormsApp1
             // 
             this.dataCreate.Location = new System.Drawing.Point(627, 39);
             this.dataCreate.Name = "dataCreate";
+            this.dataCreate.ReadOnly = true;
             this.dataCreate.Size = new System.Drawing.Size(160, 22);
             this.dataCreate.TabIndex = 5;
             // 
@@ -133,6 +133,7 @@ namespace WindowsFormsApp1
             // 
             this.totalCnt.Location = new System.Drawing.Point(539, 380);
             this.totalCnt.Name = "totalCnt";
+            this.totalCnt.ReadOnly = true;
             this.totalCnt.Size = new System.Drawing.Size(126, 22);
             this.totalCnt.TabIndex = 8;
             // 
@@ -140,6 +141,7 @@ namespace WindowsFormsApp1
             // 
             this.totalZm.Location = new System.Drawing.Point(665, 380);
             this.totalZm.Name = "totalZm";
+            this.totalZm.ReadOnly = true;
             this.totalZm.Size = new System.Drawing.Size(122, 22);
             this.totalZm.TabIndex = 9;
             // 
@@ -192,6 +194,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.namePodrazdel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Podrazdelenie";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Podrazdelenie";
