@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.Windows.Forms;
 using Komandirovki;
 using ShtatnoeRasp;
@@ -21,8 +22,15 @@ namespace WindowsFormsApp1
         
         private void инструкцияToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Instructions ownedForm = new Instructions();
-            ownedForm.Show();
+            string helpFileName = Directory.GetCurrentDirectory() + "\\help.chm";
+            if (File.Exists(helpFileName))
+            {
+                Help.ShowHelp(this, helpFileName);
+            }
+            else
+            {
+                MessageBox.Show("Файл справки не найден. Ожидался по пути " + helpFileName);
+            }
         }
 
         private void вопросыИПредложенияToolStripMenuItem_Click(object sender, EventArgs e)
@@ -40,7 +48,7 @@ namespace WindowsFormsApp1
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Form ownedForm = new Form();
+            SearchPersonCard ownedForm = new SearchPersonCard();
             ownedForm.Show();
         }
 
