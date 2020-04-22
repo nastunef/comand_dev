@@ -54,7 +54,6 @@
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.mainDolgnost = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox21 = new System.Windows.Forms.TextBox();
@@ -87,6 +86,8 @@
             this.действующееToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.поискПодразделенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.totalEdtx = new System.Windows.Forms.TextBox();
+            this.totalInMoth = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -104,8 +105,10 @@
             // 
             // nameOrganization
             // 
+            this.nameOrganization.Enabled = false;
             this.nameOrganization.Location = new System.Drawing.Point(73, 64);
             this.nameOrganization.Name = "nameOrganization";
+            this.nameOrganization.ReadOnly = true;
             this.nameOrganization.Size = new System.Drawing.Size(915, 22);
             this.nameOrganization.TabIndex = 1;
             this.nameOrganization.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -149,8 +152,10 @@
             // 
             // textBox2
             // 
+            this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(1223, 37);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(100, 22);
             this.textBox2.TabIndex = 6;
             this.textBox2.Text = "0301017";
@@ -158,40 +163,50 @@
             // 
             // textBox22
             // 
+            this.textBox22.Enabled = false;
             this.textBox22.Location = new System.Drawing.Point(1223, 58);
             this.textBox22.Name = "textBox22";
+            this.textBox22.ReadOnly = true;
             this.textBox22.Size = new System.Drawing.Size(100, 22);
             this.textBox22.TabIndex = 7;
             this.textBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox4
             // 
+            this.textBox4.Enabled = false;
             this.textBox4.Location = new System.Drawing.Point(735, 115);
             this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(129, 22);
             this.textBox4.TabIndex = 8;
             this.textBox4.Text = "Номер документа";
             // 
             // textBox5
             // 
+            this.textBox5.Enabled = false;
             this.textBox5.Location = new System.Drawing.Point(859, 115);
             this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(129, 22);
             this.textBox5.TabIndex = 9;
             this.textBox5.Text = "Дата составления";
             // 
             // numberDoc
             // 
+            this.numberDoc.Enabled = false;
             this.numberDoc.Location = new System.Drawing.Point(735, 137);
             this.numberDoc.Name = "numberDoc";
+            this.numberDoc.ReadOnly = true;
             this.numberDoc.Size = new System.Drawing.Size(129, 22);
             this.numberDoc.TabIndex = 10;
             this.numberDoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dataCreate
             // 
+            this.dataCreate.Enabled = false;
             this.dataCreate.Location = new System.Drawing.Point(859, 137);
             this.dataCreate.Name = "dataCreate";
+            this.dataCreate.ReadOnly = true;
             this.dataCreate.Size = new System.Drawing.Size(129, 22);
             this.dataCreate.TabIndex = 11;
             this.dataCreate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -203,6 +218,7 @@
             this.textBox8.Location = new System.Drawing.Point(1, 240);
             this.textBox8.Multiline = true;
             this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(289, 32);
             this.textBox8.TabIndex = 13;
             this.textBox8.Text = "Структурное подразделение";
@@ -214,6 +230,7 @@
             this.textBox9.Location = new System.Drawing.Point(1, 269);
             this.textBox9.Multiline = true;
             this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
             this.textBox9.Size = new System.Drawing.Size(203, 28);
             this.textBox9.TabIndex = 14;
             this.textBox9.Text = "наименование";
@@ -225,6 +242,7 @@
             this.textBox10.Location = new System.Drawing.Point(203, 269);
             this.textBox10.Multiline = true;
             this.textBox10.Name = "textBox10";
+            this.textBox10.ReadOnly = true;
             this.textBox10.Size = new System.Drawing.Size(87, 28);
             this.textBox10.TabIndex = 15;
             this.textBox10.Text = "код";
@@ -236,6 +254,7 @@
             this.textBox11.Location = new System.Drawing.Point(289, 240);
             this.textBox11.Multiline = true;
             this.textBox11.Name = "textBox11";
+            this.textBox11.ReadOnly = true;
             this.textBox11.Size = new System.Drawing.Size(222, 57);
             this.textBox11.TabIndex = 16;
             this.textBox11.Text = "Должность(специальность, \r\nпрофессия), разряд, класс\r\nкатегория квалификации";
@@ -247,6 +266,7 @@
             this.textBox12.Location = new System.Drawing.Point(509, 240);
             this.textBox12.Multiline = true;
             this.textBox12.Name = "textBox12";
+            this.textBox12.ReadOnly = true;
             this.textBox12.Size = new System.Drawing.Size(98, 57);
             this.textBox12.TabIndex = 17;
             this.textBox12.Text = "Количество\r\nштатных\r\nединиц";
@@ -259,6 +279,7 @@
             this.textBox13.Location = new System.Drawing.Point(605, 240);
             this.textBox13.Multiline = true;
             this.textBox13.Name = "textBox13";
+            this.textBox13.ReadOnly = true;
             this.textBox13.Size = new System.Drawing.Size(114, 57);
             this.textBox13.TabIndex = 18;
             this.textBox13.Text = "Тарифная\r\nставка(оклад)\r\nи пр., руб.";
@@ -269,6 +290,7 @@
             this.textBox14.Enabled = false;
             this.textBox14.Location = new System.Drawing.Point(719, 240);
             this.textBox14.Name = "textBox14";
+            this.textBox14.ReadOnly = true;
             this.textBox14.Size = new System.Drawing.Size(369, 22);
             this.textBox14.TabIndex = 19;
             this.textBox14.Text = "Надбавки";
@@ -276,25 +298,31 @@
             // 
             // textBox15
             // 
+            this.textBox15.Enabled = false;
             this.textBox15.Location = new System.Drawing.Point(719, 262);
             this.textBox15.Multiline = true;
             this.textBox15.Name = "textBox15";
+            this.textBox15.ReadOnly = true;
             this.textBox15.Size = new System.Drawing.Size(123, 35);
             this.textBox15.TabIndex = 20;
             // 
             // textBox16
             // 
+            this.textBox16.Enabled = false;
             this.textBox16.Location = new System.Drawing.Point(841, 262);
             this.textBox16.Multiline = true;
             this.textBox16.Name = "textBox16";
+            this.textBox16.ReadOnly = true;
             this.textBox16.Size = new System.Drawing.Size(124, 35);
             this.textBox16.TabIndex = 21;
             // 
             // textBox17
             // 
+            this.textBox17.Enabled = false;
             this.textBox17.Location = new System.Drawing.Point(964, 262);
             this.textBox17.Multiline = true;
             this.textBox17.Name = "textBox17";
+            this.textBox17.ReadOnly = true;
             this.textBox17.Size = new System.Drawing.Size(124, 35);
             this.textBox17.TabIndex = 22;
             // 
@@ -304,6 +332,7 @@
             this.textBox18.Location = new System.Drawing.Point(1087, 240);
             this.textBox18.Multiline = true;
             this.textBox18.Name = "textBox18";
+            this.textBox18.ReadOnly = true;
             this.textBox18.Size = new System.Drawing.Size(201, 57);
             this.textBox18.TabIndex = 23;
             this.textBox18.Text = "Всего в месяц, руб.\r\n(( гр.5 + гр.6 + гр.7 + гр.8)х\r\nгр.4)";
@@ -315,6 +344,7 @@
             this.textBox19.Location = new System.Drawing.Point(1288, 240);
             this.textBox19.Multiline = true;
             this.textBox19.Name = "textBox19";
+            this.textBox19.ReadOnly = true;
             this.textBox19.Size = new System.Drawing.Size(145, 57);
             this.textBox19.TabIndex = 24;
             this.textBox19.Text = "Примечание";
@@ -333,32 +363,18 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(465, 563);
+            this.label7.Location = new System.Drawing.Point(432, 563);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 17);
             this.label7.TabIndex = 26;
             this.label7.Text = "Итого";
             // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 6;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.37681F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.62319F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 123F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 124F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 238F));
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(509, 563);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(779, 26);
-            this.tableLayoutPanel2.TabIndex = 27;
-            // 
             // mainDolgnost
             // 
+            this.mainDolgnost.Enabled = false;
             this.mainDolgnost.Location = new System.Drawing.Point(347, 614);
             this.mainDolgnost.Name = "mainDolgnost";
+            this.mainDolgnost.ReadOnly = true;
             this.mainDolgnost.Size = new System.Drawing.Size(372, 22);
             this.mainDolgnost.TabIndex = 28;
             this.mainDolgnost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -374,8 +390,10 @@
             // 
             // textBox21
             // 
+            this.textBox21.Enabled = false;
             this.textBox21.Location = new System.Drawing.Point(763, 613);
             this.textBox21.Name = "textBox21";
+            this.textBox21.ReadOnly = true;
             this.textBox21.Size = new System.Drawing.Size(148, 22);
             this.textBox21.TabIndex = 30;
             this.textBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -391,8 +409,10 @@
             // 
             // rashPodpis
             // 
+            this.rashPodpis.Enabled = false;
             this.rashPodpis.Location = new System.Drawing.Point(987, 613);
             this.rashPodpis.Name = "rashPodpis";
+            this.rashPodpis.ReadOnly = true;
             this.rashPodpis.Size = new System.Drawing.Size(301, 22);
             this.rashPodpis.TabIndex = 32;
             this.rashPodpis.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -418,8 +438,10 @@
             // 
             // textBox23
             // 
+            this.textBox23.Enabled = false;
             this.textBox23.Location = new System.Drawing.Point(289, 687);
             this.textBox23.Name = "textBox23";
+            this.textBox23.ReadOnly = true;
             this.textBox23.Size = new System.Drawing.Size(189, 22);
             this.textBox23.TabIndex = 35;
             this.textBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -435,8 +457,10 @@
             // 
             // rashPodBuh
             // 
+            this.rashPodBuh.Enabled = false;
             this.rashPodBuh.Location = new System.Drawing.Point(587, 687);
             this.rashPodBuh.Name = "rashPodBuh";
+            this.rashPodBuh.ReadOnly = true;
             this.rashPodBuh.Size = new System.Drawing.Size(324, 22);
             this.rashPodBuh.TabIndex = 37;
             this.rashPodBuh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -470,8 +494,10 @@
             // 
             // textBox25
             // 
+            this.textBox25.Enabled = false;
             this.textBox25.Location = new System.Drawing.Point(1244, 155);
             this.textBox25.Name = "textBox25";
+            this.textBox25.ReadOnly = true;
             this.textBox25.Size = new System.Drawing.Size(104, 22);
             this.textBox25.TabIndex = 41;
             this.textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -487,8 +513,10 @@
             // 
             // textBox26
             // 
+            this.textBox26.Enabled = false;
             this.textBox26.Location = new System.Drawing.Point(1383, 154);
             this.textBox26.Name = "textBox26";
+            this.textBox26.ReadOnly = true;
             this.textBox26.Size = new System.Drawing.Size(50, 22);
             this.textBox26.TabIndex = 43;
             this.textBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -504,8 +532,10 @@
             // 
             // numerusEd
             // 
+            this.numerusEd.Enabled = false;
             this.numerusEd.Location = new System.Drawing.Point(1200, 187);
             this.numerusEd.Name = "numerusEd";
+            this.numerusEd.ReadOnly = true;
             this.numerusEd.Size = new System.Drawing.Size(148, 22);
             this.numerusEd.TabIndex = 45;
             this.numerusEd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -545,8 +575,10 @@
             // 
             // period
             // 
+            this.period.Enabled = false;
             this.period.Location = new System.Drawing.Point(326, 196);
             this.period.Name = "period";
+            this.period.ReadOnly = true;
             this.period.Size = new System.Drawing.Size(96, 22);
             this.period.TabIndex = 51;
             // 
@@ -560,22 +592,28 @@
             // 
             // day
             // 
+            this.day.Enabled = false;
             this.day.Location = new System.Drawing.Point(463, 196);
             this.day.Name = "day";
+            this.day.ReadOnly = true;
             this.day.Size = new System.Drawing.Size(48, 22);
             this.day.TabIndex = 53;
             // 
             // month
             // 
+            this.month.Enabled = false;
             this.month.Location = new System.Drawing.Point(522, 196);
             this.month.Name = "month";
+            this.month.ReadOnly = true;
             this.month.Size = new System.Drawing.Size(115, 22);
             this.month.TabIndex = 54;
             // 
             // year
             // 
+            this.year.Enabled = false;
             this.year.Location = new System.Drawing.Point(643, 196);
             this.year.Name = "year";
+            this.year.ReadOnly = true;
             this.year.Size = new System.Drawing.Size(83, 22);
             this.year.TabIndex = 55;
             // 
@@ -617,12 +655,30 @@
             this.поискПодразделенияToolStripMenuItem.Text = "Поиск подразделения";
             this.поискПодразделенияToolStripMenuItem.Click += new System.EventHandler(this.поискПодразделенияToolStripMenuItem_Click);
             // 
+            // totalEdtx
+            // 
+            this.totalEdtx.Enabled = false;
+            this.totalEdtx.Location = new System.Drawing.Point(509, 560);
+            this.totalEdtx.Name = "totalEdtx";
+            this.totalEdtx.Size = new System.Drawing.Size(98, 22);
+            this.totalEdtx.TabIndex = 57;
+            // 
+            // totalInMoth
+            // 
+            this.totalInMoth.Enabled = false;
+            this.totalInMoth.Location = new System.Drawing.Point(1087, 560);
+            this.totalInMoth.Name = "totalInMoth";
+            this.totalInMoth.Size = new System.Drawing.Size(208, 22);
+            this.totalInMoth.TabIndex = 59;
+            // 
             // Shtatka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1455, 738);
+            this.Controls.Add(this.totalInMoth);
+            this.Controls.Add(this.totalEdtx);
             this.Controls.Add(this.year);
             this.Controls.Add(this.month);
             this.Controls.Add(this.day);
@@ -649,7 +705,6 @@
             this.Controls.Add(this.textBox21);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.mainDolgnost);
-            this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox19);
@@ -724,7 +779,6 @@
         private System.Windows.Forms.TextBox period;
         private System.Windows.Forms.TextBox rashPodBuh;
         private System.Windows.Forms.TextBox rashPodpis;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox12;
@@ -745,6 +799,8 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox totalEdtx;
+        private System.Windows.Forms.TextBox totalInMoth;
         private System.Windows.Forms.TextBox year;
         private System.Windows.Forms.ToolStripMenuItem действующееToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem открытьToolStripMenuItem;

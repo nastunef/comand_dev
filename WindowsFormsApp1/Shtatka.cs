@@ -30,6 +30,8 @@ using WindowsFormsApp1;
         private DateTime _dateTime;
         //Кол-во штатных единиц всего
         private int numerusPeople;
+        //Итого по расходам 
+        private double totalInMonth1;
         //Наименование организации
         private string nameOraganization;
         //Код по ОКПО
@@ -130,6 +132,7 @@ using WindowsFormsApp1;
         private async Task Run()
         {
             numerusPeople = 0;
+            totalInMonth1 = 0;
             var form = new Donloading();
             form.Show();
             strginShtatRasps = new List<StringShtatRasp>();
@@ -156,6 +159,10 @@ using WindowsFormsApp1;
                     Convert.ToDouble((excelsheets.Cells[indexRow,105]).Value ?? string.Empty),Convert.ToDouble((excelsheets.Cells[indexRow,116]).Value ?? string.Empty),""));
                 indexRow++;
                 numerusPeople += Convert.ToInt32(excelsheets.Cells[indexRow,64].Value.ToString());
+                totalInMonth1 += Convert.ToDouble((excelsheets.Cells[indexRow, 79]).Value ?? string.Empty) +
+                                 Convert.ToDouble((excelsheets.Cells[indexRow, 94]).Value ?? string.Empty) +
+                                 Convert.ToDouble((excelsheets.Cells[indexRow, 105]).Value ?? string.Empty) +
+                                 Convert.ToDouble((excelsheets.Cells[indexRow, 116]).Value ?? string.Empty);
             }
             excelappworkbooks.Close();
             exApp.Quit();
@@ -170,11 +177,13 @@ using WindowsFormsApp1;
             dataGridView1.Columns[7].Width = 92;
             dataGridView1.Columns[8].Width = 92;
             dataGridView1.Columns[9].Width = 151;
-            dataGridView1.Columns[10].Width = 145;
+            dataGridView1.Columns[10].Width = 90;
             dataGridView1.Columns[11].Visible = false;
             dataGridView1.Columns["stringId"].Visible = false;
             
             numerusEd.Text = numerusPeople.ToString();
+            totalEdtx.Text = numerusPeople.ToString();
+            totalInMoth.Text = totalInMonth1.ToString();
             
             IQueryable<SHTAT_RASP> query = model.SHTAT_RASP;
             countShtat = query.Count();
@@ -204,7 +213,6 @@ using WindowsFormsApp1;
             }
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = Directory.GetCurrentDirectory() + "\\Shtatnoe\\";
-            MessageBox.Show(openFileDialog.InitialDirectory, "", MessageBoxButtons.OK);
             openFileDialog.RestoreDirectory = true;
             var filePath = string.Empty;
             if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -218,12 +226,12 @@ using WindowsFormsApp1;
                     Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
             }catch (Exception except)
             {
-                Console.Error.WriteLine(except.Message);
-                MyMsgBox.showError("Не удалось открыть шаблон");
+                //Console.Error.WriteLine(except.Message);
+                MessageBox.Show("Файл не был выбран", "Внимание", MessageBoxButtons.OK);
                 return;
             }
             if (excelappworkbooks == null) {
-                MyMsgBox.showError("Не удалось открыть шаблон");
+                MessageBox.Show("Файл не был выбран", "Внимание", MessageBoxButtons.OK);
                 return;
             }
 
@@ -335,9 +343,10 @@ using WindowsFormsApp1;
         var form = new Donloading();
         form.Show();
         numerusPeople = 0;
+        totalInMonth1 = 0;
         strginShtatRasps = new List<StringShtatRasp>();
-        IQueryable<STR_SHTAT_RASP> strShtatRasps = model.STR_SHTAT_RASP;
         string numdoc = numDocFromChoose.ToString();
+        IQueryable<STR_SHTAT_RASP> strShtatRasps = model.STR_SHTAT_RASP;
         strShtatRasps = strShtatRasps.Where(rasp => rasp.SHTAT_RASP.number == numdoc);
        
         foreach (STR_SHTAT_RASP strShtatRasp in strShtatRasps)
@@ -347,6 +356,8 @@ using WindowsFormsApp1;
                 Convert.ToDouble(strShtatRasp.TARIFF), Convert.ToDouble(strShtatRasp.NADBAVKA1),Convert.ToDouble(strShtatRasp.NADBAVKA2),Convert.ToDouble(strShtatRasp.NADBAVKA3),
                 strShtatRasp.NOTE));
             numerusPeople += Convert.ToInt32(strShtatRasp.COUNT_STUFF);
+            totalInMonth1 += Convert.ToDouble(strShtatRasp.TARIFF) + Convert.ToDouble(strShtatRasp.NADBAVKA1) +
+                             Convert.ToDouble(strShtatRasp.NADBAVKA2) + Convert.ToDouble(strShtatRasp.NADBAVKA3);
         }
         dataGridView1.DataSource = null;
         dataGridView1.DataSource = strginShtatRasps;
@@ -359,7 +370,7 @@ using WindowsFormsApp1;
         dataGridView1.Columns[7].Width = 92;
         dataGridView1.Columns[8].Width = 92;
         dataGridView1.Columns[9].Width = 151;
-        dataGridView1.Columns[10].Width = 145;
+        dataGridView1.Columns[10].Width = 90;
         dataGridView1.Columns[11].Visible = false;
         dataGridView1.Columns["stringId"].Visible = false;
         
@@ -394,7 +405,9 @@ using WindowsFormsApp1;
         nameOrganization.Text = nameOraganization;
         textBox22.Text = okpo;
         numerusEd.Text = numerusPeople.ToString();
-
+        totalEdtx.Text = numerusPeople.ToString();
+        totalInMoth.Text = totalInMonth1.ToString();
+        
         IQueryable<PERSONCARD> query4 = model.PERSONCARD;
         query4 = query4.Where(personcard => personcard.JOB_POSITION_PK_JOB_POS == 147);
         List<PERSONCARD> personcards = new List<PERSONCARD>();
