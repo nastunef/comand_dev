@@ -13,7 +13,7 @@ namespace Komandirovki
 {
     public partial class KomandirovkaForm : Form
     {
-        private Model1 model = new Model1();
+        private Model1 model;
         //Country -> cities
         private Dictionary<String, HashSet<String>> cities;
         //City -> orgs
@@ -29,6 +29,9 @@ namespace Komandirovki
          * **/
         public KomandirovkaForm()
         {
+            Donloading waitForm = new Donloading();
+            waitForm.Show(this);
+            model = new Model1();
             allOrgs = model.TRIP_ORG;
             InitializeComponent();
 
@@ -37,6 +40,7 @@ namespace Komandirovki
             OrganizationColumn.DisplayMember = "NAME";
             OrganizationColumn.ValueMember = "PK_TRIP_ORG";
             OrganizationColumn.ValueType = typeof(TRIP_ORG);
+            waitForm.Close();
          }
 
         /*
@@ -65,6 +69,20 @@ namespace Komandirovki
             {
                 NumPrikazTextBox.Text = trip.PRIKAZ.NUMDOC;
                 DatePrikaz.Value = trip.PRIKAZ.CREATEDATE ?? _nullDateTime;
+                IsProject.Checked = trip.PRIKAZ.ISPROJECT.Equals("1"); 
+             
+                // По-умолчанию для режима редактирования
+                GenNumPrikaz.Checked = false;
+                try
+                {
+                    // Если мы сами генерировали
+                    GenNumPrikaz.Checked = Decimal.Parse(trip.PRIKAZ.NUMDOC) == trip.PRIKAZ.PK_PRIKAZ;
+                }
+                catch (Exception)
+                {
+                    // Забить
+                }
+                GenNumPrikaz_CheckedChanged(null, null);
             }
 
             ReasonTextBox.Text = trip.OSNOVANIE ?? "";
@@ -72,6 +90,7 @@ namespace Komandirovki
             if(trip.OSNOVANIEDATE != null)
             {
                 isDateReasonCheckBox.Checked = true;
+                isDateReasonCheckBox_CheckedChanged(null,null);
                 DateReason.Value = (DateTime)trip.OSNOVANIEDATE;
             }
             else
@@ -401,21 +420,34 @@ namespace Komandirovki
                 trip.PRIKAZ = new PRIKAZ();
                 trip.PRIKAZ.PK_TYPE_PRIKAZ = 2;
                 trip.PRIKAZ.PK_OUR_ORG = 1;
-                trip.PRIKAZ.ISPROJECT = "0";
-                //Костылёк
-                if(workerForAddInPrikaz != null)
-                    trip.PRIKAZ.PK_PERSONCARD = workerForAddInPrikaz.PK_PERSONCARD;
                 if (trip.PERSONCARD_IN_TRIP.Count > 1)
                     trip.PRIKAZ.OKUD = "0301023";
                 else
                     trip.PRIKAZ.OKUD = "0301022";
                 trip.PRIKAZ.OKPO = model.OUR_ORG.First().OKPO ?? "";
             }
+            //Костылёк
+            if (workerForAddInPrikaz != null)
+                trip.PRIKAZ.PK_PERSONCARD = workerForAddInPrikaz.PK_PERSONCARD;
             if (checkDateOnNull(DatePrikaz.Value, "Дата приказа"))
                 trip.PRIKAZ.CREATEDATE = datePrikaz;
             else
                 return false;
-            numPrikaz = NumPrikazTextBox.Text;
+            trip.PRIKAZ.ISPROJECT = IsProject.Checked ? "1" : "0";
+            if(GenNumPrikaz.Checked){
+                if(trip.PRIKAZ.PK_PRIKAZ != 0)
+                    numPrikaz = trip.PRIKAZ.PK_PRIKAZ.ToString();
+                else
+                {
+                    long sequenceGen = model.Database.SqlQuery<long>("Select ADMIN.prikaz_seq.NEXTVAL from dual")
+                        .SingleOrDefault();
+                    numPrikaz = sequenceGen.ToString();
+                    trip.PRIKAZ.PK_PRIKAZ = sequenceGen;
+                }
+            }
+            else
+                numPrikaz = NumPrikazTextBox.Text;
+            
             if (!checkString(numPrikaz, "Номер приказа - пустая строка")) return false;
             trip.PRIKAZ.NUMDOC = numPrikaz;
             
@@ -563,6 +595,11 @@ namespace Komandirovki
         {
             DateReason.Enabled = isDateReasonCheckBox.Checked;
         }
+        
+        private void GenNumPrikaz_CheckedChanged(object sender, EventArgs e)
+        {
+            NumPrikazTextBox.Enabled = !GenNumPrikaz.Checked;
+        }
 
         private void DeleteWorkerButton_Click(object sender, EventArgs e)
         {
@@ -636,6 +673,15 @@ namespace Komandirovki
                 {
                     Worksheet excelsheets = excelappworkbooks.Worksheets.Item[1];
                     OUR_ORG org = model.OUR_ORG.First<OUR_ORG>();
+                    if (trip.PRIKAZ.ISPROJECT.Equals("1")){
+                        excelsheets.Cells[9, 34].Value = "ПРОЕКТ ПРИКАЗА";
+                        excelsheets.Cells[10, 34].Value = "(распоряжения)";
+                    }
+                    else
+                    {
+                        excelsheets.Cells[9, 34].Value = "ПРИКАЗ";
+                        excelsheets.Cells[10, 34].Value = "(распоряжение)";
+                    }
                     excelsheets.Cells[5,1].Value = org.NAME;
                     excelsheets.Cells[5, 93] = org.OKPO;
                     excelsheets.Cells[9, 61] = trip.PRIKAZ.NUMDOC;
@@ -676,6 +722,16 @@ namespace Komandirovki
                 {
                     Worksheet excelsheets = excelappworkbooks.Worksheets.Item[1];
                     OUR_ORG org = model.OUR_ORG.First();
+                    if (trip.PRIKAZ.ISPROJECT.Equals("1")){
+                        excelsheets.Cells[13, 19].Value = "ПРОЕКТ ПРИКАЗА";
+                        excelsheets.Cells[14, 19].Value = "(распоряжения)";
+                    }
+                    else
+                    {
+                        excelsheets.Cells[13, 19].Value = "ПРИКАЗ";
+                        excelsheets.Cells[14, 19].Value = "(распоряжение)";
+                    }
+
                     excelsheets.Cells[7, 1].Value = org.NAME;
                     excelsheets.Cells[7, 45] = org.OKPO;
                     excelsheets.Cells[13, 35] = trip.PRIKAZ.NUMDOC;

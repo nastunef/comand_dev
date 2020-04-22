@@ -129,6 +129,7 @@ namespace Komandirovki
             this.Controls.Add(this.label1);
             this.Name = "AddPlaceKomandForm";
             this.Text = "Добавить место назначения";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddPlaceKomandForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize) (this.pLACETRIPBindingSource)).EndInit();
             this.ResumeLayout(false);
