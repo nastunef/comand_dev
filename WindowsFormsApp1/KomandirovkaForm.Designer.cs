@@ -30,10 +30,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 =
+                new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 =
+                new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 =
+                new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 =
+                new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.placesView = new System.Windows.Forms.DataGridView();
             this.CounrtyColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -583,7 +587,8 @@
             this.isDateReasonCheckBox.Size = new System.Drawing.Size(24, 23);
             this.isDateReasonCheckBox.TabIndex = 40;
             this.isDateReasonCheckBox.UseVisualStyleBackColor = true;
-            this.isDateReasonCheckBox.CheckedChanged += new System.EventHandler(this.isDateReasonCheckBox_CheckedChanged);
+            this.isDateReasonCheckBox.CheckedChanged +=
+                new System.EventHandler(this.isDateReasonCheckBox_CheckedChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -682,7 +687,7 @@
             this.GenNumPrikaz.CheckState = System.Windows.Forms.CheckState.Checked;
             this.GenNumPrikaz.Location = new System.Drawing.Point(366, 422);
             this.GenNumPrikaz.Name = "GenNumPrikaz";
-            this.GenNumPrikaz.Size = new System.Drawing.Size(206, 19);
+            this.GenNumPrikaz.Size = new System.Drawing.Size(206, 18);
             this.GenNumPrikaz.TabIndex = 41;
             this.GenNumPrikaz.Text = "Сгенерировать номер приказа";
             this.GenNumPrikaz.UseVisualStyleBackColor = true;
@@ -690,9 +695,9 @@
             // 
             // IsProject
             // 
-            this.IsProject.Location = new System.Drawing.Point(578, 421);
+            this.IsProject.Location = new System.Drawing.Point(577, 421);
             this.IsProject.Name = "IsProject";
-            this.IsProject.Size = new System.Drawing.Size(194, 19);
+            this.IsProject.Size = new System.Drawing.Size(194, 18);
             this.IsProject.TabIndex = 42;
             this.IsProject.Text = "Это проект приказа";
             this.IsProject.UseVisualStyleBackColor = true;
