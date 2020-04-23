@@ -208,9 +208,12 @@ namespace WindowsFormsApp1
             // 
             // MainPrikaz
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ClientSize = new System.Drawing.Size(1455, 738);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.comandirovka);
@@ -227,9 +230,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.firstname);
             this.Controls.Add(this.fullname);
             this.Name = "MainPrikaz";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "MainPrikaz";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView_family)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -669,9 +669,12 @@ namespace WindowsFormsApp1
             // 
             // ReadPriemPrikaz
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 749);
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ClientSize = new System.Drawing.Size(1455, 788);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.buttonDel);
@@ -705,9 +708,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label1);
             this.Name = "ReadPriemPrikaz";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Приказ о приеме на работу";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

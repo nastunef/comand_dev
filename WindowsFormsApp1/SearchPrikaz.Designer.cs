@@ -267,9 +267,12 @@ namespace WindowsFormsApp1
              // 
              // SearchPrikaz
              // 
-             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
              this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-             this.ClientSize = new System.Drawing.Size(1350, 729);
+             this.BackColor = System.Drawing.SystemColors.ControlLight;
+             this.ClientSize = new System.Drawing.Size(1455, 738);
+             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+             
              this.Controls.Add(this.buttonBack);
              this.Controls.Add(this.label7);
              this.Controls.Add(this.checkBox_Confirm);
@@ -292,9 +295,7 @@ namespace WindowsFormsApp1
              this.Controls.Add(this.firstname);
              this.Controls.Add(this.fullname);
              this.Name = "SearchPrikaz";
-             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
              this.Text = "MainPrikaz";
-             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
              ((System.ComponentModel.ISupportInitialize) (this.dataGridView_family)).EndInit();
              this.ResumeLayout(false);
              this.PerformLayout();

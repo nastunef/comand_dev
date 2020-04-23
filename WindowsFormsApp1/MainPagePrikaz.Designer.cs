@@ -41,7 +41,7 @@ namespace WindowsFormsApp1
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.label1.Location = new System.Drawing.Point(428, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(476, 54);
+            this.label1.Size = new System.Drawing.Size(600, 54);
             this.label1.TabIndex = 0;
             this.label1.Text = "Модуль работы с приказами";
             // 
@@ -69,14 +69,17 @@ namespace WindowsFormsApp1
             // 
             // MainPagePrikaz
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ClientSize = new System.Drawing.Size(1455, 788);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            
             this.Controls.Add(this.searchPrikaz);
             this.Controls.Add(this.createPrikaz);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "MainPagePrikaz";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Приказы";
             this.ResumeLayout(false);
         }
