@@ -203,7 +203,7 @@ namespace WindowsFormsApp1
           // 
           this.button1.Location = new System.Drawing.Point(976, 546);
           this.button1.Name = "button1";
-          this.button1.Size = new System.Drawing.Size(169, 33);
+          this.button1.Size = new System.Drawing.Size(200, 50);
           this.button1.TabIndex = 59;
           this.button1.Text = "Отдать на распоряжение";
           this.button1.UseVisualStyleBackColor = true;
@@ -409,9 +409,12 @@ namespace WindowsFormsApp1
           // 
           // DelWorkPrikaz
           // 
-          this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+          this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
           this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-          this.ClientSize = new System.Drawing.Size(1350, 729);
+          this.BackColor = System.Drawing.SystemColors.ControlLight;
+          this.ClientSize = new System.Drawing.Size(1455, 738);
+          this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+          
           this.Controls.Add(this.buttonBack);
           this.Controls.Add(this.label2);
           this.Controls.Add(this.label25);
@@ -439,7 +442,6 @@ namespace WindowsFormsApp1
           this.Controls.Add(this.label1);
           this.Name = "DelWorkPrikaz";
           this.Text = "DeleteWork";
-          this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
           this.panel7.ResumeLayout(false);
           this.panel7.PerformLayout();
           this.panel3.ResumeLayout(false);

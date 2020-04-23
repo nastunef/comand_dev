@@ -38,25 +38,28 @@ namespace WindowsFormsApp1
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(72, 66);
+            this.textBox1.Location = new System.Drawing.Point(63, 62);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(443, 39);
+            this.textBox1.Size = new System.Drawing.Size(388, 36);
             this.textBox1.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(153, 25);
+            this.label1.Location = new System.Drawing.Point(134, 23);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(294, 28);
+            this.label1.Size = new System.Drawing.Size(257, 27);
             this.label1.TabIndex = 1;
             this.label1.Text = "Введите наименование подразделения";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(204, 125);
+            this.button1.Location = new System.Drawing.Point(178, 118);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 35);
+            this.button1.Size = new System.Drawing.Size(145, 32);
             this.button1.TabIndex = 2;
             this.button1.Text = "Найти";
             this.button1.UseVisualStyleBackColor = true;
@@ -64,12 +67,13 @@ namespace WindowsFormsApp1
             // 
             // SearchPodrazdel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(575, 172);
+            this.ClientSize = new System.Drawing.Size(503, 162);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SearchPodrazdel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Поиск подразделения";

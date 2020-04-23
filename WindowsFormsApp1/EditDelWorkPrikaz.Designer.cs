@@ -409,9 +409,12 @@ namespace WindowsFormsApp1
             // 
             // EditDelWorkPrikaz
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ClientSize = new System.Drawing.Size(1455, 738);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            
             this.Controls.Add(this.buttonConfirm);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.label2);
@@ -439,7 +442,6 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label1);
             this.Name = "EditDelWorkPrikaz";
             this.Text = "DeleteWork";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel3.ResumeLayout(false);
