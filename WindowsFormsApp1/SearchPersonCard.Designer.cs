@@ -935,7 +935,8 @@ namespace WindowsFormsApp1
 	        this.Controls.Add(this.panel3);
 	        this.Controls.Add(this.panel1);
 	        this.Name = "SearchPersonCard";
-	        this.Text = "SearchPersonCard";
+	        this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+	        this.Text = "Поиск и просмотр личных карточек";
 	        this.panel1.ResumeLayout(false);
 	        this.panel1.PerformLayout();
 	        this.panel3.ResumeLayout(false);

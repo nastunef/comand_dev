@@ -38,12 +38,12 @@ namespace WindowsFormsApp1
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.menuStrip1.SuspendLayout();
@@ -117,11 +117,11 @@ namespace WindowsFormsApp1
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.button6);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
             this.flowLayoutPanel1.Controls.Add(this.button4);
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.button5);
+            this.flowLayoutPanel1.Controls.Add(this.button6);
+            this.flowLayoutPanel1.Controls.Add(this.button3);
             this.flowLayoutPanel1.Controls.Add(this.button2);
             this.flowLayoutPanel1.Controls.Add(this.button7);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 72);
@@ -130,9 +130,42 @@ namespace WindowsFormsApp1
             this.flowLayoutPanel1.Size = new System.Drawing.Size(285, 345);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(2, 141);
+            this.button6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(271, 40);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "Приказы";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(2, 187);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(271, 40);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Справки и отчеты";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(2, 3);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(271, 40);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Поиск и просмотр личных карточек";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(2, 141);
+            this.button1.Location = new System.Drawing.Point(2, 49);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(271, 40);
@@ -140,6 +173,17 @@ namespace WindowsFormsApp1
             this.button1.Text = "Добавить личную карточку";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(2, 95);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(271, 40);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Добавить командировку";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button2
             // 
@@ -151,50 +195,6 @@ namespace WindowsFormsApp1
             this.button2.Text = "Табель учета рабочего времени";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(2, 49);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(271, 40);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Справки и отчеты";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(2, 95);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(271, 40);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Поиск личных карточек";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(2, 187);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(271, 40);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Добавить командировку";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(2, 3);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(271, 40);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Приказы";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
