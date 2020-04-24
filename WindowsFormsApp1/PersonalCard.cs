@@ -226,16 +226,19 @@ namespace WindowsFormsApp1
 
             try
             {
-                personcard.PK_PERSONCARD = model.PERSONCARD.Max(p => p.PK_PERSONCARD) + 1;
+                
                 if (id == -1)
+                {
+                    personcard.PK_PERSONCARD = model.PERSONCARD.Max(p => p.PK_PERSONCARD) + 1;
                     model.PERSONCARD.Add(personcard);
+                }
+
                 model.SaveChanges();
                 id = Convert.ToInt64(personcard.PK_PERSONCARD);
                 button3.Enabled = true;
             }
             catch (Exception e)
             {
-                Console.WriteLine("Ошибка при сохранении карточки {}", e);
                 DialogResult dialog = MessageBox.Show(
                     "Непредвиденная ошибка при сохранении личной карточки " + e.ToString(), "Ошибка",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -257,8 +260,10 @@ namespace WindowsFormsApp1
                 var lang = new UNION_LANGUAGE_PERSONCARD();
                 lang.PK_UNION = ++max;
                 lang.PERSONCARD = personcard;
-                lang.LANGUAGE = model.LANGUAGE.First(l => l.NAME == row.Cells[0].Value.ToString());
-                lang.LANGUAGE_LVL = model.LANGUAGE_LVL.First(l => l.NAME == row.Cells[1].Value.ToString());
+                string name = row.Cells[0].Value.ToString();
+                string lvl = row.Cells[1].Value.ToString();
+                lang.LANGUAGE = model.LANGUAGE.First(l => l.NAME == name);
+                lang.LANGUAGE_LVL = model.LANGUAGE_LVL.First(l => l.NAME == lvl);
                 model.UNION_LANGUAGE_PERSONCARD.Add(lang);
             }
         }
@@ -280,7 +285,7 @@ namespace WindowsFormsApp1
                 member.NAME = name.Split(' ')[1];
                 member.MIDDLENAME = name.Split(' ')[2];
                 member.PERSONCARD = personcard;
-                member.BIRTHYEAR = Convert.ToDateTime(dataGridView_family.Rows[i].Cells[0].Value.ToString());
+                member.BIRTHYEAR = Convert.ToDateTime(dataGridView_family.Rows[i].Cells[1].Value);
                 model.FAMILY_MEMBER.Add(member);
             }
         }
@@ -299,11 +304,12 @@ namespace WindowsFormsApp1
                 ONE_EDU edu = new ONE_EDU();
                 edu.PK_ONE_EDU = ++max;
                 edu.NUMDOC = row.Cells[0].Value.ToString();
-                edu.ENDDATE = Convert.ToDateTime(row.Cells[0].Value.ToString());
+                edu.ENDDATE = Convert.ToDateTime(row.Cells[4].Value);
                 edu.PERSONCARD = personcard;
-                edu.TYPE_EDU = model.TYPE_EDU.First(t => t.NAME == row.Cells[1].Value.ToString());
-                edu.PLACE_EDU = model.PLACE_EDU.First(t => t.NAME == row.Cells[2].Value.ToString());
-                edu.SPECIALTY = model.SPECIALTY.First(s => s.NAME == row.Cells[3].Value.ToString());
+                String type = row.Cells[1].Value.ToString(), place = row.Cells[2].Value.ToString(), specialyty = row.Cells[3].Value.ToString();
+                edu.TYPE_EDU = model.TYPE_EDU.First(t => t.NAME == type);
+                edu.PLACE_EDU = model.PLACE_EDU.First(t => t.NAME == place);
+                edu.SPECIALTY = model.SPECIALTY.First(s => s.NAME == specialyty);
                 model.ONE_EDU.Add(edu);
             }
         }
