@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using Komandirovki;
 
 namespace WindowsFormsApp1
 {
@@ -55,6 +56,19 @@ namespace WindowsFormsApp1
             {
                 DelWorkPrikaz delWorkPrikaz = new DelWorkPrikaz(tabNumber);
                 delWorkPrikaz.Show();
+            }
+
+            if (perevod.Checked == true)
+            {
+                PerevodWorkPrikaz perevodWorkPrikaz = new PerevodWorkPrikaz(tabNumber);
+                perevodWorkPrikaz.Show();
+            }
+            
+            if (comandirovka.Checked == true)
+            {
+                KomandirovkaForm form = new KomandirovkaForm();
+                form.SetOneWorkerByTabelNumber(tabNumber);
+                form.Show();
             }
         }
 

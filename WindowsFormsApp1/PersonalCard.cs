@@ -19,6 +19,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
             initCatalogs();
             richTextBox_dopSved.ReadOnly = true;
+            button3.Enabled = false;
         }
 
         public PersonalCard(decimal id)
@@ -157,16 +158,23 @@ namespace WindowsFormsApp1
         private void showKomandirovki(PERSONCARD card)
         {
             dataGridView_comand.Rows.Clear();
-            foreach (var trip in card.PERSONCARD_IN_TRIP)
+            try
             {
-                dataGridView_comand.Rows.Add(
-                    // Первичный ключ в скрытое поле, чтобы потом открыть подробную инфу
-                    trip.PK,
-                    trip.STARTDATE.Value.ToString("dd.MM.yyyy"),
-                    trip.ENDDATE.Value.ToString("dd.MM.yyyy"),
-                    trip.UPDTRIP.TRIP_ORG.First().PLACE_TRIP.NAME,
-                    trip.GOAL
-                );
+                foreach (var trip in card.PERSONCARD_IN_TRIP)
+                {
+                    dataGridView_comand.Rows.Add(
+                        // Первичный ключ в скрытое поле, чтобы потом открыть подробную инфу
+                        trip.PK,
+                        trip.STARTDATE.Value.ToString("dd.MM.yyyy"),
+                        trip.ENDDATE.Value.ToString("dd.MM.yyyy"),
+                        trip.UPDTRIP.TRIP_ORG.Count != 0 ? trip.UPDTRIP.TRIP_ORG.First().PLACE_TRIP.NAME : "",
+                        trip.GOAL
+                    );
+                }
+            }
+            catch (Exception e)
+            {
+                // ну нет и нет, чего бубнить то
             }
         }
 
@@ -223,6 +231,7 @@ namespace WindowsFormsApp1
                     model.PERSONCARD.Add(personcard);
                 model.SaveChanges();
                 id = Convert.ToInt64(personcard.PK_PERSONCARD);
+                button3.Enabled = true;
             }
             catch (Exception e)
             {
@@ -343,7 +352,8 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            var form = new Komandirovki.KomandirovkaForm((decimal) pers.PK_TRIP);
+            var form = new Komandirovki.KomandirovkaForm();
+            form.SetTrip((decimal) pers.PK_TRIP);
             form.ShowDialog();
             //Обновляем
             showKomandirovki(new Model1().PERSONCARD.Find(pers.PK_PERSONCARD));
@@ -351,20 +361,12 @@ namespace WindowsFormsApp1
 
         private void AddKomandButton_Click(object sender, EventArgs e)
         {
-            if (id < 1)
-                return;
-            /*
-            try { 
-                card = new Model1().PERSONCARD.AsNoTracking().First(p => p.PK_PERSONCARD == id); 
-            }
-            catch(Exception except)
-            {
-                Console.Error.WriteLine(except.Message);
-                Console.Error.WriteLine("Не удалось добавить командировку с текущим работником");
+            if (id < 1){
+                MyMsgBox.showError("Такого работника нет в базе.");
                 return;
             }
-            */
-            var form = new Komandirovki.KomandirovkaForm(id);
+            var form = new Komandirovki.KomandirovkaForm();
+            form.SetOneWorker(id);
             form.ShowDialog();
             //Обновляем
             showKomandirovki(new Model1().PERSONCARD.Find(id));
@@ -401,6 +403,21 @@ namespace WindowsFormsApp1
         private void button5_Click(object sender, EventArgs e)
         {
             saveData();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Model1 model = new Model1();
+                var card = model.PERSONCARD.Find(id);
+                DelWorkPrikaz delWorkPrikaz = new DelWorkPrikaz(card.TABEL_NUM.Value);
+                delWorkPrikaz.Show();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ошибка при создании приказа об увольнении для карточки с id={} {}", id, ex);
+            }
         }
     }
 }

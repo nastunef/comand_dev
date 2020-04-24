@@ -39,7 +39,7 @@ namespace WindowsFormsApp1
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(63, 62);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(388, 36);
@@ -57,7 +57,7 @@ namespace WindowsFormsApp1
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(178, 118);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(145, 32);
             this.button1.TabIndex = 2;
@@ -73,7 +73,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SearchPodrazdel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Поиск подразделения";

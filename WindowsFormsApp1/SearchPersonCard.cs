@@ -13,6 +13,22 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             initCatalogs();
+
+            comboBox_birthCmp.SelectedIndex = 0;
+            comboBox_eduCmp.SelectedIndex = 0;
+            comboBox_genderCmp.SelectedIndex = 0;
+            comboBox_grazdanCmp.SelectedIndex = 0;
+            comboBox_innCmp.SelectedIndex = 0;
+            comboBox_maritalCmp.SelectedIndex = 0;
+            comboBox_mobtelCmp.SelectedIndex = 0;
+            comboBox_nameCmp.SelectedIndex = 0;
+            comboBox_middleNameCmp.SelectedIndex = 0;
+            comboBox_secondNameCmp.SelectedIndex = 0;
+            comboBox_professionCmp.SelectedIndex = 0;
+            comboBox_tabelnumCmp.SelectedIndex = 0;
+            comboBox_typeworkCmp.SelectedIndex = 0;
+            comboBox_snilsCmp.SelectedIndex = 0;
+            comboBox_uvalCmp.SelectedIndex = 0;
         }
 
         private void initCatalogs()

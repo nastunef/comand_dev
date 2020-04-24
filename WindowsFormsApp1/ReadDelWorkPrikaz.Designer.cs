@@ -31,7 +31,6 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.label25 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -445,9 +444,12 @@ namespace WindowsFormsApp1
             // 
             // ReadDelWorkPrikaz
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ClientSize = new System.Drawing.Size(1455, 738);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            
             this.Controls.Add(this.buttonDel);
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.buttonConfirm);
@@ -475,9 +477,9 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "ReadDelWorkPrikaz";
             this.Text = "DeleteWork";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel3.ResumeLayout(false);

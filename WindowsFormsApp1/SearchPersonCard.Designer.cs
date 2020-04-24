@@ -207,7 +207,7 @@ namespace WindowsFormsApp1
 	        this.panel1.Controls.Add(this.label1);
 	        this.panel1.Location = new System.Drawing.Point(12, 12);
 	        this.panel1.Name = "panel1";
-	        this.panel1.Size = new System.Drawing.Size(591, 628);
+	        this.panel1.Size = new System.Drawing.Size(591, 543);
 	        this.panel1.TabIndex = 0;
 	        // 
 	        // comboBox_eduValue
@@ -227,6 +227,7 @@ namespace WindowsFormsApp1
 	        // 
 	        // comboBox_eduCmp
 	        // 
+	        this.comboBox_eduCmp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 	        this.comboBox_eduCmp.FormattingEnabled = true;
 	        this.comboBox_eduCmp.Items.AddRange(new object[] {"=", "!=", ">", ">=", "<", "<="});
 	        this.comboBox_eduCmp.Location = new System.Drawing.Point(321, 488);
@@ -261,6 +262,7 @@ namespace WindowsFormsApp1
 	        // 
 	        // comboBox_birthCmp
 	        // 
+	        this.comboBox_birthCmp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 	        this.comboBox_birthCmp.FormattingEnabled = true;
 	        this.comboBox_birthCmp.Items.AddRange(new object[] {"=", "!=", ">", ">=", "<", "<="});
 	        this.comboBox_birthCmp.Location = new System.Drawing.Point(321, 448);
@@ -303,6 +305,7 @@ namespace WindowsFormsApp1
 	        // 
 	        // comboBox_typeworkCmp
 	        // 
+	        this.comboBox_typeworkCmp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 	        this.comboBox_typeworkCmp.FormattingEnabled = true;
 	        this.comboBox_typeworkCmp.Items.AddRange(new object[] {"=", "!=", ">", ">=", "<", "<="});
 	        this.comboBox_typeworkCmp.Location = new System.Drawing.Point(321, 413);
@@ -344,6 +347,7 @@ namespace WindowsFormsApp1
 	        // 
 	        // comboBox_uvalCmp
 	        // 
+	        this.comboBox_uvalCmp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 	        this.comboBox_uvalCmp.FormattingEnabled = true;
 	        this.comboBox_uvalCmp.Items.AddRange(new object[] {"=", "!=", ">", ">=", "<", "<="});
 	        this.comboBox_uvalCmp.Location = new System.Drawing.Point(321, 378);
@@ -385,6 +389,7 @@ namespace WindowsFormsApp1
 	        // 
 	        // comboBox_tabelnumCmp
 	        // 
+	        this.comboBox_tabelnumCmp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 	        this.comboBox_tabelnumCmp.FormattingEnabled = true;
 	        this.comboBox_tabelnumCmp.Items.AddRange(new object[] {"=", "!=", ">", ">=", "<", "<="});
 	        this.comboBox_tabelnumCmp.Location = new System.Drawing.Point(321, 338);
@@ -427,6 +432,7 @@ namespace WindowsFormsApp1
 	        // 
 	        // comboBox_maritalCmp
 	        // 
+	        this.comboBox_maritalCmp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 	        this.comboBox_maritalCmp.FormattingEnabled = true;
 	        this.comboBox_maritalCmp.Items.AddRange(new object[] {"=", "!=", ">", ">=", "<", "<="});
 	        this.comboBox_maritalCmp.Location = new System.Drawing.Point(321, 298);
@@ -488,6 +494,7 @@ namespace WindowsFormsApp1
 	        // 
 	        // comboBox_professionCmp
 	        // 
+	        this.comboBox_professionCmp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 	        this.comboBox_professionCmp.FormattingEnabled = true;
 	        this.comboBox_professionCmp.Items.AddRange(new object[] {"=", "!=", ">", ">=", "<", "<="});
 	        this.comboBox_professionCmp.Location = new System.Drawing.Point(322, 205);
@@ -497,6 +504,7 @@ namespace WindowsFormsApp1
 	        // 
 	        // comboBox_innCmp
 	        // 
+	        this.comboBox_innCmp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 	        this.comboBox_innCmp.FormattingEnabled = true;
 	        this.comboBox_innCmp.Items.AddRange(new object[] {"=", "!=", ">", ">=", "<", "<="});
 	        this.comboBox_innCmp.Location = new System.Drawing.Point(322, 234);
@@ -506,6 +514,7 @@ namespace WindowsFormsApp1
 	        // 
 	        // comboBox_snilsCmp
 	        // 
+	        this.comboBox_snilsCmp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 	        this.comboBox_snilsCmp.FormattingEnabled = true;
 	        this.comboBox_snilsCmp.Items.AddRange(new object[] {"=", "!=", ">", ">=", "<", "<="});
 	        this.comboBox_snilsCmp.Location = new System.Drawing.Point(322, 263);
@@ -604,6 +613,7 @@ namespace WindowsFormsApp1
 	        // 
 	        // comboBox_mobtelCmp
 	        // 
+	        this.comboBox_mobtelCmp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 	        this.comboBox_mobtelCmp.FormattingEnabled = true;
 	        this.comboBox_mobtelCmp.Items.AddRange(new object[] {"=", "!=", ">", ">=", "<", "<="});
 	        this.comboBox_mobtelCmp.Location = new System.Drawing.Point(322, 177);
@@ -613,6 +623,7 @@ namespace WindowsFormsApp1
 	        // 
 	        // comboBox_grazdanCmp
 	        // 
+	        this.comboBox_grazdanCmp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 	        this.comboBox_grazdanCmp.FormattingEnabled = true;
 	        this.comboBox_grazdanCmp.Items.AddRange(new object[] {"=", "!=", ">", ">=", "<", "<="});
 	        this.comboBox_grazdanCmp.Location = new System.Drawing.Point(322, 148);
@@ -680,6 +691,7 @@ namespace WindowsFormsApp1
 	        // 
 	        // comboBox_genderCmp
 	        // 
+	        this.comboBox_genderCmp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 	        this.comboBox_genderCmp.FormattingEnabled = true;
 	        this.comboBox_genderCmp.Items.AddRange(new object[] {"=", "!=", ">", ">=", "<", "<="});
 	        this.comboBox_genderCmp.Location = new System.Drawing.Point(323, 119);
@@ -735,6 +747,7 @@ namespace WindowsFormsApp1
 	        // 
 	        // comboBox_middleNameCmp
 	        // 
+	        this.comboBox_middleNameCmp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 	        this.comboBox_middleNameCmp.FormattingEnabled = true;
 	        this.comboBox_middleNameCmp.Items.AddRange(new object[] {"=", "!=", ">", ">=", "<", "<="});
 	        this.comboBox_middleNameCmp.Location = new System.Drawing.Point(323, 90);
@@ -744,6 +757,7 @@ namespace WindowsFormsApp1
 	        // 
 	        // comboBox_nameCmp
 	        // 
+	        this.comboBox_nameCmp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 	        this.comboBox_nameCmp.FormattingEnabled = true;
 	        this.comboBox_nameCmp.Items.AddRange(new object[] {"=", "!=", ">", ">=", "<", "<="});
 	        this.comboBox_nameCmp.Location = new System.Drawing.Point(322, 61);
@@ -753,6 +767,7 @@ namespace WindowsFormsApp1
 	        // 
 	        // comboBox_secondNameCmp
 	        // 
+	        this.comboBox_secondNameCmp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 	        this.comboBox_secondNameCmp.FormattingEnabled = true;
 	        this.comboBox_secondNameCmp.Items.AddRange(new object[] {"=", "!=", ">", ">=", "<", "<="});
 	        this.comboBox_secondNameCmp.Location = new System.Drawing.Point(323, 32);
@@ -855,9 +870,9 @@ namespace WindowsFormsApp1
 	        // 
 	        // label3
 	        // 
-	        this.label3.Location = new System.Drawing.Point(226, 0);
+	        this.label3.Location = new System.Drawing.Point(219, 0);
 	        this.label3.Name = "label3";
-	        this.label3.Size = new System.Drawing.Size(90, 36);
+	        this.label3.Size = new System.Drawing.Size(97, 36);
 	        this.label3.TabIndex = 3;
 	        this.label3.Text = "Использовать в запросе";
 	        this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -918,11 +933,12 @@ namespace WindowsFormsApp1
 	        // 
 	        // button_run
 	        // 
-	        this.button_run.Location = new System.Drawing.Point(12, 646);
+	        this.button_run.Font = new System.Drawing.Font("Segoe UI", 12F);
+	        this.button_run.Location = new System.Drawing.Point(191, 573);
 	        this.button_run.Name = "button_run";
-	        this.button_run.Size = new System.Drawing.Size(92, 23);
+	        this.button_run.Size = new System.Drawing.Size(246, 55);
 	        this.button_run.TabIndex = 3;
-	        this.button_run.Text = "Выполнить";
+	        this.button_run.Text = "Выполнить поиск";
 	        this.button_run.UseVisualStyleBackColor = true;
 	        this.button_run.Click += new System.EventHandler(this.button_run_Click);
 	        // 
@@ -935,7 +951,8 @@ namespace WindowsFormsApp1
 	        this.Controls.Add(this.panel3);
 	        this.Controls.Add(this.panel1);
 	        this.Name = "SearchPersonCard";
-	        this.Text = "SearchPersonCard";
+	        this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+	        this.Text = "Поиск и просмотр личных карточек";
 	        this.panel1.ResumeLayout(false);
 	        this.panel1.PerformLayout();
 	        this.panel3.ResumeLayout(false);

@@ -515,7 +515,7 @@ private void InitializeComponent()
     // 
     this.button1.Location = new System.Drawing.Point(1065, 718);
     this.button1.Name = "button1";
-    this.button1.Size = new System.Drawing.Size(169, 33);
+    this.button1.Size = new System.Drawing.Size(200, 33);
     this.button1.TabIndex = 28;
     this.button1.Text = "Отдать на распоряжение";
     this.button1.UseVisualStyleBackColor = true;
@@ -633,9 +633,12 @@ private void InitializeComponent()
     // 
     // PriemWorkPrikaz
     // 
-    this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+    this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
     this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-    this.ClientSize = new System.Drawing.Size(1350, 749);
+    this.BackColor = System.Drawing.SystemColors.ControlLight;
+    this.ClientSize = new System.Drawing.Size(1455, 788);
+    this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+    
     this.Controls.Add(this.buttonBack);
     this.Controls.Add(this.dateTimePicker1);
     this.Controls.Add(this.dateTimePicker4);
