@@ -19,6 +19,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
             initCatalogs();
             richTextBox_dopSved.ReadOnly = true;
+            button3.Enabled = false;
         }
 
         public PersonalCard(decimal id)
@@ -157,16 +158,23 @@ namespace WindowsFormsApp1
         private void showKomandirovki(PERSONCARD card)
         {
             dataGridView_comand.Rows.Clear();
-            foreach (var trip in card.PERSONCARD_IN_TRIP)
+            try
             {
-                dataGridView_comand.Rows.Add(
-                    // Первичный ключ в скрытое поле, чтобы потом открыть подробную инфу
-                    trip.PK,
-                    trip.STARTDATE.Value.ToString("dd.MM.yyyy"),
-                    trip.ENDDATE.Value.ToString("dd.MM.yyyy"),
-                    trip.UPDTRIP.TRIP_ORG.Count != 0 ? trip.UPDTRIP.TRIP_ORG.First().PLACE_TRIP.NAME : "",
-                    trip.GOAL
-                );
+                foreach (var trip in card.PERSONCARD_IN_TRIP)
+                {
+                    dataGridView_comand.Rows.Add(
+                        // Первичный ключ в скрытое поле, чтобы потом открыть подробную инфу
+                        trip.PK,
+                        trip.STARTDATE.Value.ToString("dd.MM.yyyy"),
+                        trip.ENDDATE.Value.ToString("dd.MM.yyyy"),
+                        trip.UPDTRIP.TRIP_ORG.Count != 0 ? trip.UPDTRIP.TRIP_ORG.First().PLACE_TRIP.NAME : "",
+                        trip.GOAL
+                    );
+                }
+            }
+            catch (Exception e)
+            {
+                // ну нет и нет, чего бубнить то
             }
         }
 
@@ -223,6 +231,7 @@ namespace WindowsFormsApp1
                     model.PERSONCARD.Add(personcard);
                 model.SaveChanges();
                 id = Convert.ToInt64(personcard.PK_PERSONCARD);
+                button3.Enabled = true;
             }
             catch (Exception e)
             {
@@ -394,6 +403,21 @@ namespace WindowsFormsApp1
         private void button5_Click(object sender, EventArgs e)
         {
             saveData();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Model1 model = new Model1();
+                var card = model.PERSONCARD.Find(id);
+                DelWorkPrikaz delWorkPrikaz = new DelWorkPrikaz(card.TABEL_NUM.Value);
+                delWorkPrikaz.Show();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ошибка при создании приказа об увольнении для карточки с id={} {}", id, ex);
+            }
         }
     }
 }

@@ -336,9 +336,9 @@
             // 
             this.tabPage6.Controls.Add(this.panel7);
             this.tabPage6.Controls.Add(this.LabelNameVkladka);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Location = new System.Drawing.Point(4, 24);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1069, 686);
+            this.tabPage6.Size = new System.Drawing.Size(1069, 684);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Сведения об увольнении";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -376,7 +376,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(610, 78);
             this.panel4.TabIndex = 15;
-            this.panel4.UseWaitCursor = true;
             // 
             // textBox_orderDate
             // 
@@ -386,7 +385,6 @@
             this.textBox_orderDate.ReadOnly = true;
             this.textBox_orderDate.Size = new System.Drawing.Size(140, 23);
             this.textBox_orderDate.TabIndex = 20;
-            this.textBox_orderDate.UseWaitCursor = true;
             // 
             // textBox_orderNumber
             // 
@@ -396,7 +394,6 @@
             this.textBox_orderNumber.ReadOnly = true;
             this.textBox_orderNumber.Size = new System.Drawing.Size(61, 23);
             this.textBox_orderNumber.TabIndex = 19;
-            this.textBox_orderNumber.UseWaitCursor = true;
             // 
             // label37
             // 
@@ -405,7 +402,6 @@
             this.label37.Size = new System.Drawing.Size(184, 27);
             this.label37.TabIndex = 8;
             this.label37.Text = "Причина увольнения";
-            this.label37.UseWaitCursor = true;
             // 
             // label30
             // 
@@ -414,7 +410,6 @@
             this.label30.Size = new System.Drawing.Size(63, 20);
             this.label30.TabIndex = 1;
             this.label30.Text = "Приказ №";
-            this.label30.UseWaitCursor = true;
             // 
             // button3
             // 
@@ -424,7 +419,7 @@
             this.button3.TabIndex = 14;
             this.button3.Text = "Сформировать приказ";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.UseWaitCursor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label32
             // 
@@ -433,7 +428,6 @@
             this.label32.Size = new System.Drawing.Size(24, 20);
             this.label32.TabIndex = 3;
             this.label32.Text = "от";
-            this.label32.UseWaitCursor = true;
             // 
             // textBox_dateUval
             // 
