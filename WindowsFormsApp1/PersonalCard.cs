@@ -158,16 +158,23 @@ namespace WindowsFormsApp1
         private void showKomandirovki(PERSONCARD card)
         {
             dataGridView_comand.Rows.Clear();
-            foreach (var trip in card.PERSONCARD_IN_TRIP)
+            try
             {
-                dataGridView_comand.Rows.Add(
-                    // Первичный ключ в скрытое поле, чтобы потом открыть подробную инфу
-                    trip.PK,
-                    trip.STARTDATE.Value.ToString("dd.MM.yyyy"),
-                    trip.ENDDATE.Value.ToString("dd.MM.yyyy"),
-                    trip.UPDTRIP.TRIP_ORG.Count != 0 ? trip.UPDTRIP.TRIP_ORG.First().PLACE_TRIP.NAME : "",
-                    trip.GOAL
-                );
+                foreach (var trip in card.PERSONCARD_IN_TRIP)
+                {
+                    dataGridView_comand.Rows.Add(
+                        // Первичный ключ в скрытое поле, чтобы потом открыть подробную инфу
+                        trip.PK,
+                        trip.STARTDATE.Value.ToString("dd.MM.yyyy"),
+                        trip.ENDDATE.Value.ToString("dd.MM.yyyy"),
+                        trip.UPDTRIP.TRIP_ORG.Count != 0 ? trip.UPDTRIP.TRIP_ORG.First().PLACE_TRIP.NAME : "",
+                        trip.GOAL
+                    );
+                }
+            }
+            catch (Exception e)
+            {
+                // ну нет и нет, чего бубнить то
             }
         }
 
