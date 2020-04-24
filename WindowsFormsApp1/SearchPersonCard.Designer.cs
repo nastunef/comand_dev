@@ -870,9 +870,9 @@ namespace WindowsFormsApp1
 	        // 
 	        // label3
 	        // 
-	        this.label3.Location = new System.Drawing.Point(226, 0);
+	        this.label3.Location = new System.Drawing.Point(219, 0);
 	        this.label3.Name = "label3";
-	        this.label3.Size = new System.Drawing.Size(90, 36);
+	        this.label3.Size = new System.Drawing.Size(97, 36);
 	        this.label3.TabIndex = 3;
 	        this.label3.Text = "Использовать в запросе";
 	        this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -934,7 +934,7 @@ namespace WindowsFormsApp1
 	        // button_run
 	        // 
 	        this.button_run.Font = new System.Drawing.Font("Segoe UI", 12F);
-	        this.button_run.Location = new System.Drawing.Point(191, 574);
+	        this.button_run.Location = new System.Drawing.Point(191, 573);
 	        this.button_run.Name = "button_run";
 	        this.button_run.Size = new System.Drawing.Size(246, 55);
 	        this.button_run.TabIndex = 3;
