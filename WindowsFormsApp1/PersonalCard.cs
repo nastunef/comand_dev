@@ -180,67 +180,79 @@ namespace WindowsFormsApp1
 
         private void saveData()
         {
-            Model1 model = new Model1();
-            PERSONCARD personcard;
-            if (id != -1)
-                personcard = model.PERSONCARD.First(x => x.PK_PERSONCARD == id);
-            else
-                personcard = new PERSONCARD();
-
-            personcard.NAME = textBox_name.Text;
-            personcard.SURNAME = textBox_secondName.Text;
-            personcard.ALPHABET = personcard.SURNAME[0].ToString();
-            personcard.MIDDLENAME = textBox_otch.Text;
-            personcard.MOBTEL = textBox_telephone.Text;
-            personcard.DOPTEL = textBox_telephone2.Text;
-            personcard.TABEL_NUM = Convert.ToInt32(textBox_tabelNumber.Text);
-
-            personcard.DATECREATE = DateTime.Now;
-
-            personcard.GENDER = model.GENDER.First(g => g.NAME == comboBox_gender.Text);
-
-            personcard.GRAZDAN = model.GRAZDAN.First(g => g.NAME == comboBox_grazdan.Text);
-
-            personcard.SERPASSPORT = textBox_passportSerial.Text;
-            personcard.NUMPASSPORT = textBox_passportNumber.Text;
-            personcard.PLACE_VIDACHI_PASSPORT = richTextBox_vidan.Text;
-            personcard.PASSPORTGETDATE = Convert.ToDateTime(dateTimePicker_dateVidan.Text);
-
-            personcard.BIRTHDATE = Convert.ToDateTime(dateTimePicker_birthday.Text);
-            personcard.PLACEBIRTH = richTextBox_birthdayPlace.Text;
-
-            personcard.PLACELIVE = richTextBox_livingPlace.Text;
-            personcard.PLACEREGISTER = richTextBox_livingPlaceFact.Text;
-
-            personcard.INN = textBox_inn.Text;
-            personcard.SNILS = textBox_strah.Text;
-
-            personcard.MARTIAL_STATUS = model.MARTIAL_STATUS.First(m => m.NAME == comboBobx_brak.Text);
-
-            if (comboBox_profession.Text != "")
-                personcard.PROFESSION = model.PROFESSION.First(p => p.NAME == comboBox_profession.Text);
-
-            saveFamily(personcard, model);
-            saveEducation(personcard, model);
-            saveLanguage(personcard, model);
-
             try
             {
-                
-                if (id == -1)
-                {
-                    personcard.PK_PERSONCARD = model.PERSONCARD.Max(p => p.PK_PERSONCARD) + 1;
-                    model.PERSONCARD.Add(personcard);
-                }
 
-                model.SaveChanges();
-                id = Convert.ToInt64(personcard.PK_PERSONCARD);
-                button3.Enabled = true;
+                Model1 model = new Model1();
+                PERSONCARD personcard;
+                if (id != -1)
+                    personcard = model.PERSONCARD.First(x => x.PK_PERSONCARD == id);
+                else
+                    personcard = new PERSONCARD();
+
+                personcard.NAME = textBox_name.Text;
+                personcard.SURNAME = textBox_secondName.Text;
+                personcard.ALPHABET = personcard.SURNAME[0].ToString();
+                personcard.MIDDLENAME = textBox_otch.Text;
+                personcard.MOBTEL = textBox_telephone.Text;
+                personcard.DOPTEL = textBox_telephone2.Text;
+                personcard.TABEL_NUM = Convert.ToInt32(textBox_tabelNumber.Text);
+
+                personcard.DATECREATE = DateTime.Now;
+
+                personcard.GENDER = model.GENDER.First(g => g.NAME == comboBox_gender.Text);
+
+                personcard.GRAZDAN = model.GRAZDAN.First(g => g.NAME == comboBox_grazdan.Text);
+
+                personcard.SERPASSPORT = textBox_passportSerial.Text;
+                personcard.NUMPASSPORT = textBox_passportNumber.Text;
+                personcard.PLACE_VIDACHI_PASSPORT = richTextBox_vidan.Text;
+                personcard.PASSPORTGETDATE = Convert.ToDateTime(dateTimePicker_dateVidan.Text);
+
+                personcard.BIRTHDATE = Convert.ToDateTime(dateTimePicker_birthday.Text);
+                personcard.PLACEBIRTH = richTextBox_birthdayPlace.Text;
+
+                personcard.PLACELIVE = richTextBox_livingPlace.Text;
+                personcard.PLACEREGISTER = richTextBox_livingPlaceFact.Text;
+
+                personcard.INN = textBox_inn.Text;
+                personcard.SNILS = textBox_strah.Text;
+
+                personcard.MARTIAL_STATUS = model.MARTIAL_STATUS.First(m => m.NAME == comboBobx_brak.Text);
+
+                if (comboBox_profession.Text != "")
+                    personcard.PROFESSION = model.PROFESSION.First(p => p.NAME == comboBox_profession.Text);
+
+                saveFamily(personcard, model);
+                saveEducation(personcard, model);
+                saveLanguage(personcard, model);
+
+                try
+                {
+
+                    if (id == -1)
+                    {
+                        personcard.PK_PERSONCARD = model.PERSONCARD.Max(p => p.PK_PERSONCARD) + 1;
+                        model.PERSONCARD.Add(personcard);
+                    }
+
+                    personcard.TABEL_NUM = personcard.PK_PERSONCARD;
+                    model.SaveChanges();
+                    id = Convert.ToInt64(personcard.PK_PERSONCARD);
+                    button3.Enabled = true;
+                    textBox_tabelNumber.Text = personcard.TABEL_NUM.ToString();
+                }
+                catch (Exception e)
+                {
+                    DialogResult dialog = MessageBox.Show(
+                        "Непредвиденная ошибка при сохранении личной карточки " + e.ToString(), "Ошибка",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                }
             }
             catch (Exception e)
             {
                 DialogResult dialog = MessageBox.Show(
-                    "Непредвиденная ошибка при сохранении личной карточки " + e.ToString(), "Ошибка",
+                    "Ошибка при заполнении данных", "Ошибка",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             }
         }
