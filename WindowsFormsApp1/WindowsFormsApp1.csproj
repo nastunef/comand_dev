@@ -148,7 +148,9 @@
     <Compile Include="ChooseST.Designer.cs">
       <DependentUpon>ChooseST.cs</DependentUpon>
     </Compile>
-    <Compile Include="DelWorkPrikaz.cs" />
+    <Compile Include="DelWorkPrikaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DelWorkPrikaz.Designer.cs">
       <DependentUpon>DelWorkPrikaz.cs</DependentUpon>
     </Compile>
@@ -176,6 +178,18 @@
     <Compile Include="JOB_POSITION.cs" />
     <Compile Include="LANGUAGE.cs" />
     <Compile Include="LANGUAGE_LVL.cs" />
+    <Compile Include="MainPagePrikaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainPagePrikaz.Designer.cs">
+      <DependentUpon>MainPagePrikaz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainPrikaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainPrikaz.Designer.cs">
+      <DependentUpon>MainPrikaz.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,14 +218,6 @@
     <Compile Include="KomandirovkaForm.Designer.cs">
       <DependentUpon>KomandirovkaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainPagePrikaz.cs" />
-    <Compile Include="MainPagePrikaz.Designer.cs">
-      <DependentUpon>MainPagePrikaz.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainPrikaz.cs" />
-    <Compile Include="MainPrikaz.Designer.cs">
-      <DependentUpon>MainPrikaz.cs</DependentUpon>
-    </Compile>
     <Compile Include="MARTIAL_STATUS.cs" />
     <Compile Include="MyMsgBox.cs" />
     <Compile Include="PERSONCARD.cs" />
@@ -222,7 +228,9 @@
     <Compile Include="Podrazdelenie.Designer.cs" />
     <Compile Include="PODRAZDELORG.cs" />
     <Compile Include="PRIEM.cs" />
-    <Compile Include="PriemWorkPrikaz.cs" />
+    <Compile Include="PriemWorkPrikaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PriemWorkPrikaz.Designer.cs">
       <DependentUpon>PriemWorkPrikaz.cs</DependentUpon>
     </Compile>
@@ -241,6 +249,12 @@
     </Compile>
     <Compile Include="ReadPerevodWork.Designer.cs">
       <DependentUpon>ReadPerevodWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReadPriemPrikaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReadPriemPrikaz.Designer.cs">
+      <DependentUpon>ReadPriemPrikaz.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports.cs">
       <SubType>Form</SubType>
@@ -268,19 +282,17 @@
       <DependentUpon>SearchPersonCard.cs</DependentUpon>
 	
     </Compile>
+    <Compile Include="SearchPrikaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchPrikaz.Designer.cs">
+      <DependentUpon>SearchPrikaz.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchWorkerForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SearchWorkerForm.Designer.cs">
       <DependentUpon>SearchWorkerForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ReadPriemPrikaz.cs" />
-    <Compile Include="ReadPriemPrikaz.Designer.cs">
-      <DependentUpon>ReadPriemPrikaz.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SearchPrikaz.cs" />
-    <Compile Include="SearchPrikaz.Designer.cs">
-      <DependentUpon>SearchPrikaz.cs</DependentUpon>
     </Compile>
     <Compile Include="Shtatka.cs" />
     <Compile Include="Shtatka.Designer.cs" />
@@ -319,6 +331,9 @@
     <EmbeddedResource Include="EditPriemPrikaz.resx">
       <DependentUpon>EditPriemPrikaz.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainPrikaz.resx">
+      <DependentUpon>MainPrikaz.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -331,16 +346,7 @@
     <EmbeddedResource Include="KomandirovkaForm.resx">
       <DependentUpon>KomandirovkaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainPagePrikaz.resx">
-      <DependentUpon>MainPagePrikaz.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainPrikaz.resx">
-      <DependentUpon>MainPrikaz.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Podrazdelenie.resx" />
-    <EmbeddedResource Include="PriemWorkPrikaz.resx">
-      <DependentUpon>PriemWorkPrikaz.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -372,12 +378,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SearchWorkerForm.resx">
       <DependentUpon>SearchWorkerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReadPriemPrikaz.resx">
-      <DependentUpon>ReadPriemPrikaz.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SearchPrikaz.resx">
-      <DependentUpon>SearchPrikaz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Shtatka.resx" />
     <None Include="packages.config" />
