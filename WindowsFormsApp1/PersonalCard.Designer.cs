@@ -223,6 +223,7 @@
             // 
             this.textBox_tabelNumber.Location = new System.Drawing.Point(33, 33);
             this.textBox_tabelNumber.Name = "textBox_tabelNumber";
+            this.textBox_tabelNumber.ReadOnly = true;
             this.textBox_tabelNumber.Size = new System.Drawing.Size(189, 23);
             this.textBox_tabelNumber.TabIndex = 8;
             // 
@@ -336,9 +337,9 @@
             // 
             this.tabPage6.Controls.Add(this.panel7);
             this.tabPage6.Controls.Add(this.LabelNameVkladka);
-            this.tabPage6.Location = new System.Drawing.Point(4, 24);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1069, 684);
+            this.tabPage6.Size = new System.Drawing.Size(1069, 686);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Сведения об увольнении";
             this.tabPage6.UseVisualStyleBackColor = true;
