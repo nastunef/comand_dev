@@ -212,21 +212,21 @@ namespace WindowsFormsApp1
              // 
              this.dateTimePickerOt.Location = new System.Drawing.Point(530, 132);
              this.dateTimePickerOt.Name = "dateTimePickerOt";
-             this.dateTimePickerOt.Size = new System.Drawing.Size(126, 23);
+             this.dateTimePickerOt.Size = new System.Drawing.Size(160, 23);
              this.dateTimePickerOt.TabIndex = 32;
              // 
              // dateTimePickerDo
              // 
              this.dateTimePickerDo.Location = new System.Drawing.Point(530, 166);
              this.dateTimePickerDo.Name = "dateTimePickerDo";
-             this.dateTimePickerDo.Size = new System.Drawing.Size(126, 23);
+             this.dateTimePickerDo.Size = new System.Drawing.Size(160, 23);
              this.dateTimePickerDo.TabIndex = 33;
              // 
              // label5
              // 
              this.label5.Location = new System.Drawing.Point(491, 135);
              this.label5.Name = "label5";
-             this.label5.Size = new System.Drawing.Size(22, 18);
+             this.label5.Size = new System.Drawing.Size(30, 18);
              this.label5.TabIndex = 34;
              this.label5.Text = "от";
              // 
@@ -234,7 +234,7 @@ namespace WindowsFormsApp1
              // 
              this.label6.Location = new System.Drawing.Point(492, 166);
              this.label6.Name = "label6";
-             this.label6.Size = new System.Drawing.Size(22, 18);
+             this.label6.Size = new System.Drawing.Size(30, 18);
              this.label6.TabIndex = 35;
              this.label6.Text = "до";
              // 
@@ -242,7 +242,7 @@ namespace WindowsFormsApp1
              // 
              this.checkBox_Confirm.Location = new System.Drawing.Point(539, 224);
              this.checkBox_Confirm.Name = "checkBox_Confirm";
-             this.checkBox_Confirm.Size = new System.Drawing.Size(118, 22);
+             this.checkBox_Confirm.Size = new System.Drawing.Size(150, 22);
              this.checkBox_Confirm.TabIndex = 36;
              this.checkBox_Confirm.Text = "Подтвержден";
              this.checkBox_Confirm.UseVisualStyleBackColor = true;

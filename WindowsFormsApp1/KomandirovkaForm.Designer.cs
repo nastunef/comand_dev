@@ -220,7 +220,7 @@
             this.TabNumColumn.HeaderText = "Таб.номер";
             this.TabNumColumn.Name = "TabNumColumn";
             this.TabNumColumn.ReadOnly = true;
-            this.TabNumColumn.Width = 91;
+            this.TabNumColumn.Width = 90;
             // 
             // PodrazdelColumn
             // 
