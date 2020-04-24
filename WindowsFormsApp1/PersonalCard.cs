@@ -19,6 +19,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
             initCatalogs();
             richTextBox_dopSved.ReadOnly = true;
+            button3.Enabled = false;
         }
 
         public PersonalCard(decimal id)
@@ -223,6 +224,7 @@ namespace WindowsFormsApp1
                     model.PERSONCARD.Add(personcard);
                 model.SaveChanges();
                 id = Convert.ToInt64(personcard.PK_PERSONCARD);
+                button3.Enabled = true;
             }
             catch (Exception e)
             {
@@ -394,6 +396,21 @@ namespace WindowsFormsApp1
         private void button5_Click(object sender, EventArgs e)
         {
             saveData();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Model1 model = new Model1();
+                var card = model.PERSONCARD.Find(id);
+                DelWorkPrikaz delWorkPrikaz = new DelWorkPrikaz(card.TABEL_NUM.Value);
+                delWorkPrikaz.Show();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ошибка при создании приказа об увольнении для карточки с id={} {}", id, ex);
+            }
         }
     }
 }
