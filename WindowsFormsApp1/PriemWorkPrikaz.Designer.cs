@@ -515,7 +515,7 @@ private void InitializeComponent()
     // 
     this.button1.Location = new System.Drawing.Point(1065, 718);
     this.button1.Name = "button1";
-    this.button1.Size = new System.Drawing.Size(169, 33);
+    this.button1.Size = new System.Drawing.Size(200, 33);
     this.button1.TabIndex = 28;
     this.button1.Text = "Отдать на распоряжение";
     this.button1.UseVisualStyleBackColor = true;
