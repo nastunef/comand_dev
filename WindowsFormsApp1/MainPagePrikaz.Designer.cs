@@ -31,26 +31,19 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.createPrikaz = new System.Windows.Forms.Button();
             this.searchPrikaz = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label1.Location = new System.Drawing.Point(428, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(600, 54);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Модуль работы с приказами";
             // 
             // createPrikaz
             // 
-            this.createPrikaz.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.createPrikaz.Location = new System.Drawing.Point(190, 151);
+            this.createPrikaz.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.createPrikaz.Location = new System.Drawing.Point(88, 204);
+            this.createPrikaz.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.createPrikaz.Name = "createPrikaz";
-            this.createPrikaz.Size = new System.Drawing.Size(274, 73);
+            this.createPrikaz.Size = new System.Drawing.Size(542, 68);
             this.createPrikaz.TabIndex = 1;
             this.createPrikaz.Text = "Составление приказов";
             this.createPrikaz.UseVisualStyleBackColor = true;
@@ -58,29 +51,41 @@ namespace WindowsFormsApp1
             // 
             // searchPrikaz
             // 
-            this.searchPrikaz.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.searchPrikaz.Location = new System.Drawing.Point(770, 151);
+            this.searchPrikaz.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.searchPrikaz.Location = new System.Drawing.Point(88, 102);
+            this.searchPrikaz.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.searchPrikaz.Name = "searchPrikaz";
-            this.searchPrikaz.Size = new System.Drawing.Size(274, 73);
+            this.searchPrikaz.Size = new System.Drawing.Size(542, 68);
             this.searchPrikaz.TabIndex = 2;
             this.searchPrikaz.Text = "Поиск приказов";
             this.searchPrikaz.UseVisualStyleBackColor = true;
             this.searchPrikaz.Click += new System.EventHandler(this.searchPrikaz_Click);
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.label1.Location = new System.Drawing.Point(238, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(284, 36);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Меню модуля приказов";
+            // 
             // MainPagePrikaz
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1455, 738);
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            
+            this.ClientSize = new System.Drawing.Size(728, 353);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.searchPrikaz);
             this.Controls.Add(this.createPrikaz);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainPagePrikaz";
-            this.Text = "Приказы";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Модуль приказов";
             this.ResumeLayout(false);
         }
 
