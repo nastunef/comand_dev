@@ -150,19 +150,22 @@ using WindowsFormsApp1;
             rashPodpis.Text = ((excelsheets.Cells[151, 109]).Value ?? string.Empty).ToString();
             rashPodBuh.Text = ((excelsheets.Cells[154, 62]).Value ?? string.Empty).ToString();
             int indexRow = 16;
-            for (int i = 0; i < 131; i++)
+            int i = 0;
+            while(!(excelsheets.Cells[indexRow, 1].Value ?? string.Empty).Equals(""))
             {
                 strginShtatRasps.Add(setDataInString(new StringShtatRasp(), i+1, 
                     excelsheets.Cells[indexRow,1].Value.ToString(), ((excelsheets.Cells[indexRow,21]).Value ?? string.Empty).ToString(),
                     ((excelsheets.Cells[indexRow,31]).Value ?? string.Empty).ToString(),excelsheets.Cells[indexRow,64].Value.ToString(),
                     Convert.ToDouble((excelsheets.Cells[indexRow,79]).Value ?? string.Empty),Convert.ToDouble((excelsheets.Cells[indexRow,94]).Value ?? string.Empty),
                     Convert.ToDouble((excelsheets.Cells[indexRow,105]).Value ?? string.Empty),Convert.ToDouble((excelsheets.Cells[indexRow,116]).Value ?? string.Empty),""));
-                indexRow++;
+                
                 numerusPeople += Convert.ToInt32(excelsheets.Cells[indexRow,64].Value.ToString());
                 totalInMonth1 += Convert.ToDouble((excelsheets.Cells[indexRow, 79]).Value ?? string.Empty) +
                                  Convert.ToDouble((excelsheets.Cells[indexRow, 94]).Value ?? string.Empty) +
                                  Convert.ToDouble((excelsheets.Cells[indexRow, 105]).Value ?? string.Empty) +
                                  Convert.ToDouble((excelsheets.Cells[indexRow, 116]).Value ?? string.Empty);
+                indexRow++;
+                i++;
             }
             excelappworkbooks.Close();
             exApp.Quit();
