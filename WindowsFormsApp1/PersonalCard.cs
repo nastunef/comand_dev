@@ -236,9 +236,11 @@ namespace WindowsFormsApp1
                         model.PERSONCARD.Add(personcard);
                     }
 
+                    personcard.TABEL_NUM = personcard.PK_PERSONCARD;
                     model.SaveChanges();
                     id = Convert.ToInt64(personcard.PK_PERSONCARD);
                     button3.Enabled = true;
+                    textBox_tabelNumber.Text = personcard.TABEL_NUM.ToString();
                 }
                 catch (Exception e)
                 {
