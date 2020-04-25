@@ -71,7 +71,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.NumPrikazTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.DatePrikaz = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.DateReason = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
@@ -102,14 +101,15 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GenNumPrikaz = new System.Windows.Forms.CheckBox();
             this.IsProject = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize) (this.placesView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.tRIPORGBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.WorkersGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pERSONCARDINTRIPBindingSource)).BeginInit();
+            this.DatePrikaz = new System.Windows.Forms.DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.placesView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tRIPORGBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WorkersGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pERSONCARDINTRIPBindingSource)).BeginInit();
             this.panelDates.SuspendLayout();
             this.panelPurpose.SuspendLayout();
             this.panelFinance.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.TripBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TripBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -123,7 +123,11 @@
             // placesView
             // 
             this.placesView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.placesView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.CounrtyColumn, this.CityColumn, this.OrganizationColumn, this.PK_ORG});
+            this.placesView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CounrtyColumn,
+            this.CityColumn,
+            this.OrganizationColumn,
+            this.PK_ORG});
             this.placesView.Location = new System.Drawing.Point(9, 28);
             this.placesView.MultiSelect = false;
             this.placesView.Name = "placesView";
@@ -167,7 +171,17 @@
             // 
             this.WorkersGridView.AutoGenerateColumns = false;
             this.WorkersGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.WorkersGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.SurnameColumn, this.NameColumn, this.MidNameColumn, this.TabNumColumn, this.PodrazdelColumn, this.JobPosColumn, this.StartDateColumn, this.FinishDateColumn, this.PurposeColumn, this.FinanceColumn});
+            this.WorkersGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SurnameColumn,
+            this.NameColumn,
+            this.MidNameColumn,
+            this.TabNumColumn,
+            this.PodrazdelColumn,
+            this.JobPosColumn,
+            this.StartDateColumn,
+            this.FinishDateColumn,
+            this.PurposeColumn,
+            this.FinanceColumn});
             this.WorkersGridView.DataSource = this.pERSONCARDINTRIPBindingSource;
             this.WorkersGridView.Location = new System.Drawing.Point(8, 153);
             this.WorkersGridView.MultiSelect = false;
@@ -420,16 +434,6 @@
             this.label8.Size = new System.Drawing.Size(22, 15);
             this.label8.TabIndex = 22;
             this.label8.Text = "от";
-            // 
-            // DatePrikaz
-            // 
-            this.DatePrikaz.Location = new System.Drawing.Point(197, 422);
-            this.DatePrikaz.MaxDate = new System.DateTime(2030, 1, 1, 0, 0, 0, 0);
-            this.DatePrikaz.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
-            this.DatePrikaz.Name = "DatePrikaz";
-            this.DatePrikaz.Size = new System.Drawing.Size(147, 20);
-            this.DatePrikaz.TabIndex = 23;
-            this.DatePrikaz.Value = new System.DateTime(2020, 4, 25, 17, 54, 0, 0);
             // 
             // label9
             // 
@@ -692,11 +696,19 @@
             this.IsProject.Text = "Это проект приказа";
             this.IsProject.UseVisualStyleBackColor = true;
             // 
+            // DatePrikaz
+            // 
+            this.DatePrikaz.Location = new System.Drawing.Point(201, 422);
+            this.DatePrikaz.Name = "DatePrikaz";
+            this.DatePrikaz.Size = new System.Drawing.Size(159, 20);
+            this.DatePrikaz.TabIndex = 43;
+            // 
             // KomandirovkaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1045, 633);
+            this.Controls.Add(this.DatePrikaz);
             this.Controls.Add(this.IsProject);
             this.Controls.Add(this.GenNumPrikaz);
             this.Controls.Add(this.isDateReasonCheckBox);
@@ -715,7 +727,6 @@
             this.Controls.Add(this.DateReason);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.DatePrikaz);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.NumPrikazTextBox);
             this.Controls.Add(this.label7);
@@ -734,18 +745,19 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Командировка";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.KomandirovkaForm_FormClosing);
-            ((System.ComponentModel.ISupportInitialize) (this.placesView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.tRIPORGBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.WorkersGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pERSONCARDINTRIPBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.placesView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tRIPORGBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WorkersGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pERSONCARDINTRIPBindingSource)).EndInit();
             this.panelDates.ResumeLayout(false);
             this.panelPurpose.ResumeLayout(false);
             this.panelPurpose.PerformLayout();
             this.panelFinance.ResumeLayout(false);
             this.panelFinance.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.TripBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TripBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.Button AddPlaceButton;
@@ -763,7 +775,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DateTimePicker DatePrikaz;
         private System.Windows.Forms.DateTimePicker DateReason;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button DeletePlaceButton;
@@ -818,5 +829,7 @@
         private System.Windows.Forms.DataGridView WorkersGridView;
 
         #endregion
+
+        private System.Windows.Forms.DateTimePicker DatePrikaz;
     }
 }
