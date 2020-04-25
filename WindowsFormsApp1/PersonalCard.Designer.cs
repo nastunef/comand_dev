@@ -223,6 +223,7 @@
             // 
             this.textBox_tabelNumber.Location = new System.Drawing.Point(33, 33);
             this.textBox_tabelNumber.Name = "textBox_tabelNumber";
+            this.textBox_tabelNumber.ReadOnly = true;
             this.textBox_tabelNumber.Size = new System.Drawing.Size(189, 23);
             this.textBox_tabelNumber.TabIndex = 8;
             // 
