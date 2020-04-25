@@ -180,7 +180,8 @@ namespace Komandirovki
         private void AddWorkerButton_Click(object sender, EventArgs e)
         {
             SearchWorkerForm searchWorkerForm = new SearchWorkerForm(model, this);
-            searchWorkerForm.Show();
+            searchWorkerForm.ShowDialog();
+            this.Activate();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -191,7 +192,8 @@ namespace Komandirovki
         private void AddPlaceButton_Click(object sender, EventArgs e)
         {
             AddPlaceKomandForm addPlaceKomandForm = new AddPlaceKomandForm(model, this);
-            addPlaceKomandForm.Show();
+            addPlaceKomandForm.ShowDialog();
+            this.Activate();
         }
 
         private void placesView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
