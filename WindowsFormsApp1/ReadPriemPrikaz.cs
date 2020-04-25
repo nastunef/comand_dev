@@ -47,19 +47,20 @@ namespace WindowsFormsApp1
             
             textBox4.Text = selectedMen.TABEL_NUM.ToString();
             
-            textBox5.Text = selectedMen.TABEL == null ? null : selectedMen.TABEL.PODRAZDELORG.NAME;
-            textBox6.Text = selectedMen.JOB_POSITION == null ? null : selectedMen.JOB_POSITION.NAME;
-            textBox7.Text = selectedMen.PROFESSION == null ? null : selectedMen.PROFESSION.NAME;
+            var dolzhn = model.JOB_POSITION.FirstOrDefault(d => d.PK_JOB_POS == priem.PK_JOB_POS);
+            var podr = model.PODRAZDELORG.FirstOrDefault(po => po.PK_PODRAZDEL == priem.PK_PODR);
+            var prof = model.PROFESSION.FirstOrDefault(p => p.PK_PROF == selectedMen.PK_PROF);
+            comboBoxPodr.SelectedItem = podr.NAME;
+            textBoxNewDolzhn.Text = dolzhn.NAME;
+            textBoxNewProf.Text = prof.NAME;
+            
+            var strStat  = model.STR_SHTAT_RASP.FirstOrDefault(stat => stat.PK_JOB_POS == priem.PK_JOB_POS);
+            if (strStat == null) return;
+            numericUrerpDownTarifStavk.Value = Math.Round((decimal)strStat.TARIFF);
+            numericUpDownNadbavk.Value = Math.Round((decimal) strStat.NADBAVKA1);
+            
             textBox8.Text = selectedMen.CHARACTER_WORK == null ? null : selectedMen.CHARACTER_WORK.NAME;
             textBox9.Text = priem.CONDITIONS;
-            
-            if (selectedMen.JOB_POSITION != null)
-            {
-                var strStat  = model.STR_SHTAT_RASP.FirstOrDefault(stat => stat.PK_JOB_POS == selectedMen.JOB_POSITION.PK_JOB_POS);
-                if (strStat == null) return;
-                numericUrerpDown1.Value = (decimal) strStat.TARIFF;
-                numericUrerpDown1.Value = (decimal) strStat.NADBAVKA1;
-            }
             
             numericUpDown4.Value = priem.TESTPERIOD.Value;
             if (prikaz.ISPROJECT == "1")
@@ -83,6 +84,10 @@ namespace WindowsFormsApp1
             var prikaz = model.PRIKAZ.FirstOrDefault(p => p.PK_PRIKAZ == idPrikaz);
             if (prikaz == null ) return;
             prikaz.ISPROJECT = "1";
+            model.SaveChanges();
+            var priem = model.PRIEM.FirstOrDefault(u => u.PK_PRIKAZ == prikaz.PK_PRIKAZ);
+            var personcard = prikaz.PERSONCARD;
+            personcard.JOB_POSITION_PK_JOB_POS = priem.PK_JOB_POS;
             model.SaveChanges();
             // закрываем форму
             Close();

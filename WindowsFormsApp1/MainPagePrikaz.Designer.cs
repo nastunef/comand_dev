@@ -40,8 +40,8 @@ namespace WindowsFormsApp1
             // 
             this.createPrikaz.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.createPrikaz.Location = new System.Drawing.Point(88, 204);
-            this.createPrikaz.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.createPrikaz.Location = new System.Drawing.Point(87, 204);
+            this.createPrikaz.Margin = new System.Windows.Forms.Padding(2);
             this.createPrikaz.Name = "createPrikaz";
             this.createPrikaz.Size = new System.Drawing.Size(542, 68);
             this.createPrikaz.TabIndex = 1;
@@ -53,8 +53,8 @@ namespace WindowsFormsApp1
             // 
             this.searchPrikaz.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.searchPrikaz.Location = new System.Drawing.Point(88, 102);
-            this.searchPrikaz.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchPrikaz.Location = new System.Drawing.Point(87, 102);
+            this.searchPrikaz.Margin = new System.Windows.Forms.Padding(2);
             this.searchPrikaz.Name = "searchPrikaz";
             this.searchPrikaz.Size = new System.Drawing.Size(542, 68);
             this.searchPrikaz.TabIndex = 2;
@@ -68,7 +68,7 @@ namespace WindowsFormsApp1
                 System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.label1.Location = new System.Drawing.Point(238, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(284, 36);
+            this.label1.Size = new System.Drawing.Size(283, 36);
             this.label1.TabIndex = 3;
             this.label1.Text = "Меню модуля приказов";
             // 
@@ -82,7 +82,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.searchPrikaz);
             this.Controls.Add(this.createPrikaz);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainPagePrikaz";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Модуль приказов";
