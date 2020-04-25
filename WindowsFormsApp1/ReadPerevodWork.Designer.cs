@@ -189,7 +189,7 @@ namespace WindowsFormsApp1
             this.panel1.Location = new System.Drawing.Point(72, 213);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(768, 128);
+            this.panel1.Size = new System.Drawing.Size(768, 119);
             this.panel1.TabIndex = 11;
             // 
             // label7
@@ -242,7 +242,7 @@ namespace WindowsFormsApp1
             // 
             // label10
             // 
-            this.label10.Location = new System.Drawing.Point(15, 18);
+            this.label10.Location = new System.Drawing.Point(18, 3);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(122, 33);
@@ -251,7 +251,7 @@ namespace WindowsFormsApp1
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(148, 28);
+            this.textBox5.Location = new System.Drawing.Point(144, 13);
             this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(436, 23);
@@ -270,10 +270,10 @@ namespace WindowsFormsApp1
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(189, 18);
+            this.textBox6.Location = new System.Drawing.Point(140, 13);
             this.textBox6.Margin = new System.Windows.Forms.Padding(2);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(549, 23);
+            this.textBox6.Size = new System.Drawing.Size(450, 23);
             this.textBox6.TabIndex = 20;
             // 
             // panel2
@@ -282,10 +282,10 @@ namespace WindowsFormsApp1
             this.panel2.Controls.Add(this.textBox5);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Enabled = false;
-            this.panel2.Location = new System.Drawing.Point(224, 389);
+            this.panel2.Location = new System.Drawing.Point(224, 380);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(616, 84);
+            this.panel2.Size = new System.Drawing.Size(616, 49);
             this.panel2.TabIndex = 21;
             // 
             // panel3
@@ -294,10 +294,10 @@ namespace WindowsFormsApp1
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.textBox6);
             this.panel3.Enabled = false;
-            this.panel3.Location = new System.Drawing.Point(70, 537);
+            this.panel3.Location = new System.Drawing.Point(223, 433);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(768, 62);
+            this.panel3.Size = new System.Drawing.Size(618, 50);
             this.panel3.TabIndex = 22;
             // 
             // label12
@@ -311,15 +311,15 @@ namespace WindowsFormsApp1
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(188, 18);
+            this.textBox7.Location = new System.Drawing.Point(140, 13);
             this.textBox7.Margin = new System.Windows.Forms.Padding(2);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(550, 23);
+            this.textBox7.Size = new System.Drawing.Size(402, 23);
             this.textBox7.TabIndex = 23;
             // 
             // label13
             // 
-            this.label13.Location = new System.Drawing.Point(10, 23);
+            this.label13.Location = new System.Drawing.Point(19, 18);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(92, 18);
@@ -332,7 +332,7 @@ namespace WindowsFormsApp1
             this.panel4.Controls.Add(this.comboBoxVid);
             this.panel4.Controls.Add(this.label15);
             this.panel4.Enabled = false;
-            this.panel4.Location = new System.Drawing.Point(72, 345);
+            this.panel4.Location = new System.Drawing.Point(73, 336);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(768, 41);
@@ -369,10 +369,10 @@ namespace WindowsFormsApp1
             this.panel5.Controls.Add(this.label16);
             this.panel5.Controls.Add(this.label17);
             this.panel5.Enabled = false;
-            this.panel5.Location = new System.Drawing.Point(72, 870);
+            this.panel5.Location = new System.Drawing.Point(70, 783);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(766, 42);
+            this.panel5.Size = new System.Drawing.Size(771, 42);
             this.panel5.TabIndex = 25;
             // 
             // label19
@@ -436,11 +436,12 @@ namespace WindowsFormsApp1
             this.panel7.Controls.Add(this.label20);
             this.panel7.Controls.Add(this.dateTimePicker3);
             this.panel7.Controls.Add(this.label24);
+            this.panel7.Controls.Add(this.label22);
             this.panel7.Enabled = false;
-            this.panel7.Location = new System.Drawing.Point(73, 938);
+            this.panel7.Location = new System.Drawing.Point(70, 829);
             this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(768, 62);
+            this.panel7.Size = new System.Drawing.Size(771, 62);
             this.panel7.TabIndex = 27;
             // 
             // textBox10
@@ -481,7 +482,7 @@ namespace WindowsFormsApp1
             // 
             this.label22.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label22.Location = new System.Drawing.Point(84, 920);
+            this.label22.Location = new System.Drawing.Point(17, 9);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(80, 16);
@@ -545,7 +546,7 @@ namespace WindowsFormsApp1
             // textBox14
             // 
             this.textBox14.Enabled = false;
-            this.textBox14.Location = new System.Drawing.Point(801, 26);
+            this.textBox14.Location = new System.Drawing.Point(801, 27);
             this.textBox14.Margin = new System.Windows.Forms.Padding(2);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(118, 23);
@@ -582,7 +583,7 @@ namespace WindowsFormsApp1
             // 
             // buttonBack
             // 
-            this.buttonBack.Location = new System.Drawing.Point(995, 1018);
+            this.buttonBack.Location = new System.Drawing.Point(978, 919);
             this.buttonBack.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(99, 27);
@@ -605,7 +606,7 @@ namespace WindowsFormsApp1
             this.panel6.Controls.Add(this.label9);
             this.panel6.Controls.Add(this.textBoxPrichinaPerevoda);
             this.panel6.Enabled = false;
-            this.panel6.Location = new System.Drawing.Point(72, 477);
+            this.panel6.Location = new System.Drawing.Point(70, 542);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(768, 56);
@@ -624,10 +625,10 @@ namespace WindowsFormsApp1
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel8.Controls.Add(this.label11);
-            this.panel8.Location = new System.Drawing.Point(72, 390);
+            this.panel8.Location = new System.Drawing.Point(72, 381);
             this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(148, 82);
+            this.panel8.Size = new System.Drawing.Size(148, 157);
             this.panel8.TabIndex = 47;
             // 
             // label11
@@ -645,7 +646,7 @@ namespace WindowsFormsApp1
             this.panel9.Controls.Add(this.buttonNewPlaceWork);
             this.panel9.Controls.Add(this.label21);
             this.panel9.Enabled = false;
-            this.panel9.Location = new System.Drawing.Point(72, 675);
+            this.panel9.Location = new System.Drawing.Point(70, 602);
             this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(148, 176);
@@ -681,10 +682,10 @@ namespace WindowsFormsApp1
             this.panel10.Controls.Add(this.comboBoxPodr);
             this.panel10.Controls.Add(this.label23);
             this.panel10.Enabled = false;
-            this.panel10.Location = new System.Drawing.Point(224, 675);
+            this.panel10.Location = new System.Drawing.Point(222, 602);
             this.panel10.Margin = new System.Windows.Forms.Padding(2);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(612, 53);
+            this.panel10.Size = new System.Drawing.Size(616, 53);
             this.panel10.TabIndex = 22;
             // 
             // comboBoxPodr
@@ -718,10 +719,10 @@ namespace WindowsFormsApp1
             this.panel11.Controls.Add(this.label33);
             this.panel11.Controls.Add(this.textBoxNewDolzhn);
             this.panel11.Enabled = false;
-            this.panel11.Location = new System.Drawing.Point(224, 735);
+            this.panel11.Location = new System.Drawing.Point(222, 662);
             this.panel11.Margin = new System.Windows.Forms.Padding(2);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(612, 57);
+            this.panel11.Size = new System.Drawing.Size(619, 57);
             this.panel11.TabIndex = 24;
             // 
             // label33
@@ -761,10 +762,10 @@ namespace WindowsFormsApp1
             // buttonDel
             // 
             this.buttonDel.ForeColor = System.Drawing.Color.Red;
-            this.buttonDel.Location = new System.Drawing.Point(958, 277);
+            this.buttonDel.Location = new System.Drawing.Point(948, 859);
             this.buttonDel.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDel.Name = "buttonDel";
-            this.buttonDel.Size = new System.Drawing.Size(148, 31);
+            this.buttonDel.Size = new System.Drawing.Size(159, 31);
             this.buttonDel.TabIndex = 81;
             this.buttonDel.Text = "Удалить приказ";
             this.buttonDel.UseVisualStyleBackColor = true;
@@ -773,20 +774,20 @@ namespace WindowsFormsApp1
             // buttonEdit
             // 
             this.buttonEdit.ForeColor = System.Drawing.Color.Blue;
-            this.buttonEdit.Location = new System.Drawing.Point(958, 213);
+            this.buttonEdit.Location = new System.Drawing.Point(948, 811);
             this.buttonEdit.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(148, 57);
+            this.buttonEdit.Size = new System.Drawing.Size(159, 44);
             this.buttonEdit.TabIndex = 80;
             this.buttonEdit.Text = "Редактировать приказ";
             this.buttonEdit.UseVisualStyleBackColor = true;
             // 
             // buttonConfirm
             // 
-            this.buttonConfirm.Location = new System.Drawing.Point(336, 1018);
+            this.buttonConfirm.Location = new System.Drawing.Point(906, 213);
             this.buttonConfirm.Margin = new System.Windows.Forms.Padding(2);
             this.buttonConfirm.Name = "buttonConfirm";
-            this.buttonConfirm.Size = new System.Drawing.Size(251, 38);
+            this.buttonConfirm.Size = new System.Drawing.Size(231, 50);
             this.buttonConfirm.TabIndex = 79;
             this.buttonConfirm.Text = "Подписать";
             this.buttonConfirm.UseVisualStyleBackColor = true;
@@ -808,9 +809,9 @@ namespace WindowsFormsApp1
             this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel12.Controls.Add(this.textBox7);
             this.panel12.Controls.Add(this.label13);
-            this.panel12.Location = new System.Drawing.Point(70, 603);
+            this.panel12.Location = new System.Drawing.Point(223, 488);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(766, 62);
+            this.panel12.Size = new System.Drawing.Size(617, 50);
             this.panel12.TabIndex = 82;
             // 
             // panel13
@@ -818,9 +819,9 @@ namespace WindowsFormsApp1
             this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel13.Controls.Add(this.textBoxNewProf);
             this.panel13.Controls.Add(this.label32);
-            this.panel13.Location = new System.Drawing.Point(225, 798);
+            this.panel13.Location = new System.Drawing.Point(223, 725);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(611, 53);
+            this.panel13.Size = new System.Drawing.Size(618, 53);
             this.panel13.TabIndex = 83;
             // 
             // panel14
@@ -840,13 +841,12 @@ namespace WindowsFormsApp1
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1204, 1067);
+            this.ClientSize = new System.Drawing.Size(1204, 977);
             this.Controls.Add(this.panel14);
             this.Controls.Add(this.panel13);
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.panel11);
             this.Controls.Add(this.buttonDel);
-            this.Controls.Add(this.label22);
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.buttonConfirm);
@@ -875,7 +875,7 @@ namespace WindowsFormsApp1
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ReadPerevodWork";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Приказ о приеме на работу";
+            this.Text = "Приказ о переводе на  другую работу";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
