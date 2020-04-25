@@ -30,16 +30,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.placesView = new System.Windows.Forms.DataGridView();
             this.CounrtyColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.CityColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.OrganizationColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.tRIPORGBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PK_ORG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.WorkersGridView = new System.Windows.Forms.DataGridView();
             this.SurnameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,6 +87,9 @@
             this.DeleteButton = new System.Windows.Forms.Button();
             this.isDateReasonCheckBox = new System.Windows.Forms.CheckBox();
             this.TripBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.GenNumPrikaz = new System.Windows.Forms.CheckBox();
+            this.IsProject = new System.Windows.Forms.CheckBox();
+            this.DatePrikaz = new System.Windows.Forms.DateTimePicker();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,11 +101,7 @@
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GenNumPrikaz = new System.Windows.Forms.CheckBox();
-            this.IsProject = new System.Windows.Forms.CheckBox();
-            this.DatePrikaz = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.placesView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tRIPORGBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WorkersGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pERSONCARDINTRIPBindingSource)).BeginInit();
             this.panelDates.SuspendLayout();
@@ -152,7 +150,6 @@
             // OrganizationColumn
             // 
             this.OrganizationColumn.DataPropertyName = "NAME";
-            this.OrganizationColumn.DataSource = this.tRIPORGBindingSource;
             this.OrganizationColumn.HeaderText = "Организация";
             this.OrganizationColumn.Name = "OrganizationColumn";
             this.OrganizationColumn.Width = 200;
@@ -238,9 +235,9 @@
             // StartDateColumn
             // 
             this.StartDateColumn.DataPropertyName = "STARTDATE";
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = "##.##.####";
-            this.StartDateColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Format = "d";
+            dataGridViewCellStyle5.NullValue = "##.##.####";
+            this.StartDateColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.StartDateColumn.HeaderText = "Дата начала";
             this.StartDateColumn.Name = "StartDateColumn";
             this.StartDateColumn.Width = 96;
@@ -248,9 +245,9 @@
             // FinishDateColumn
             // 
             this.FinishDateColumn.DataPropertyName = "ENDDATE";
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = "##.##.####";
-            this.FinishDateColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Format = "d";
+            dataGridViewCellStyle6.NullValue = "##.##.####";
+            this.FinishDateColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.FinishDateColumn.HeaderText = "Дата окончания";
             this.FinishDateColumn.Name = "FinishDateColumn";
             this.FinishDateColumn.Width = 114;
@@ -581,6 +578,34 @@
             this.isDateReasonCheckBox.UseVisualStyleBackColor = true;
             this.isDateReasonCheckBox.CheckedChanged += new System.EventHandler(this.isDateReasonCheckBox_CheckedChanged);
             // 
+            // GenNumPrikaz
+            // 
+            this.GenNumPrikaz.Checked = true;
+            this.GenNumPrikaz.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.GenNumPrikaz.Location = new System.Drawing.Point(366, 424);
+            this.GenNumPrikaz.Name = "GenNumPrikaz";
+            this.GenNumPrikaz.Size = new System.Drawing.Size(177, 16);
+            this.GenNumPrikaz.TabIndex = 41;
+            this.GenNumPrikaz.Text = "Сгенерировать номер приказа";
+            this.GenNumPrikaz.UseVisualStyleBackColor = true;
+            this.GenNumPrikaz.CheckedChanged += new System.EventHandler(this.GenNumPrikaz_CheckedChanged);
+            // 
+            // IsProject
+            // 
+            this.IsProject.Location = new System.Drawing.Point(562, 422);
+            this.IsProject.Name = "IsProject";
+            this.IsProject.Size = new System.Drawing.Size(166, 16);
+            this.IsProject.TabIndex = 42;
+            this.IsProject.Text = "Это проект приказа";
+            this.IsProject.UseVisualStyleBackColor = true;
+            // 
+            // DatePrikaz
+            // 
+            this.DatePrikaz.Location = new System.Drawing.Point(201, 422);
+            this.DatePrikaz.Name = "DatePrikaz";
+            this.DatePrikaz.Size = new System.Drawing.Size(159, 20);
+            this.DatePrikaz.TabIndex = 43;
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "SURNAME";
@@ -641,9 +666,9 @@
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "STARTDATE";
-            dataGridViewCellStyle3.Format = "d";
-            dataGridViewCellStyle3.NullValue = "01.01.2020";
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Format = "d";
+            dataGridViewCellStyle7.NullValue = "01.01.2020";
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTextBoxColumn8.HeaderText = "Дата окончания";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.Width = 114;
@@ -651,9 +676,9 @@
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "TRIP";
-            dataGridViewCellStyle4.Format = "d";
-            dataGridViewCellStyle4.NullValue = "01.01.2020";
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Format = "d";
+            dataGridViewCellStyle8.NullValue = "01.01.2020";
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewTextBoxColumn9.HeaderText = "Цель";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.Width = 58;
@@ -671,34 +696,6 @@
             this.dataGridViewTextBoxColumn11.HeaderText = "За счёт средств";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.Width = 114;
-            // 
-            // GenNumPrikaz
-            // 
-            this.GenNumPrikaz.Checked = true;
-            this.GenNumPrikaz.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.GenNumPrikaz.Location = new System.Drawing.Point(366, 424);
-            this.GenNumPrikaz.Name = "GenNumPrikaz";
-            this.GenNumPrikaz.Size = new System.Drawing.Size(177, 16);
-            this.GenNumPrikaz.TabIndex = 41;
-            this.GenNumPrikaz.Text = "Сгенерировать номер приказа";
-            this.GenNumPrikaz.UseVisualStyleBackColor = true;
-            this.GenNumPrikaz.CheckedChanged += new System.EventHandler(this.GenNumPrikaz_CheckedChanged);
-            // 
-            // IsProject
-            // 
-            this.IsProject.Location = new System.Drawing.Point(562, 422);
-            this.IsProject.Name = "IsProject";
-            this.IsProject.Size = new System.Drawing.Size(166, 16);
-            this.IsProject.TabIndex = 42;
-            this.IsProject.Text = "Это проект приказа";
-            this.IsProject.UseVisualStyleBackColor = true;
-            // 
-            // DatePrikaz
-            // 
-            this.DatePrikaz.Location = new System.Drawing.Point(201, 422);
-            this.DatePrikaz.Name = "DatePrikaz";
-            this.DatePrikaz.Size = new System.Drawing.Size(159, 20);
-            this.DatePrikaz.TabIndex = 43;
             // 
             // KomandirovkaForm
             // 
@@ -741,9 +738,9 @@
             this.Name = "KomandirovkaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Командировка";
+            this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.KomandirovkaForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.placesView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tRIPORGBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WorkersGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pERSONCARDINTRIPBindingSource)).EndInit();
             this.panelDates.ResumeLayout(false);
@@ -759,8 +756,6 @@
 
         private System.Windows.Forms.Button AddPlaceButton;
         private System.Windows.Forms.Button AddWorkerButton;
-        private System.Windows.Forms.DataGridViewComboBoxColumn CityColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn CounrtyColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
@@ -804,12 +799,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
         private System.Windows.Forms.TextBox NoteTextBox;
         private System.Windows.Forms.TextBox NumPrikazTextBox;
-        private System.Windows.Forms.DataGridViewComboBoxColumn OrganizationColumn;
         private System.Windows.Forms.Panel panelDates;
         private System.Windows.Forms.Panel panelFinance;
         private System.Windows.Forms.Panel panelPurpose;
         private System.Windows.Forms.BindingSource pERSONCARDINTRIPBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PK_ORG;
         private System.Windows.Forms.DataGridView placesView;
         private System.Windows.Forms.DataGridViewTextBoxColumn PodrazdelColumn;
         private System.Windows.Forms.CheckBox PurposeCheckBox;
@@ -822,11 +815,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SurnameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn TabNumColumn;
         private System.Windows.Forms.BindingSource TripBindingSource;
-        private System.Windows.Forms.BindingSource tRIPORGBindingSource;
         private System.Windows.Forms.DataGridView WorkersGridView;
 
         #endregion
 
         private System.Windows.Forms.DateTimePicker DatePrikaz;
+        private System.Windows.Forms.DataGridViewComboBoxColumn CounrtyColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn CityColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn OrganizationColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PK_ORG;
     }
 }

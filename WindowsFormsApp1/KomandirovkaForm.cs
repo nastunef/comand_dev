@@ -37,9 +37,6 @@ namespace Komandirovki
 
             UpdatePlaces();
             CounrtyColumn.DataSource = cities.Keys.ToList();
-            OrganizationColumn.DisplayMember = "NAME";
-            OrganizationColumn.ValueMember = "PK_TRIP_ORG";
-            OrganizationColumn.ValueType = typeof(TRIP_ORG);
             waitForm.Close();
          }
 
@@ -174,6 +171,10 @@ namespace Komandirovki
                     organizations[city] = new HashSet<TRIP_ORG>();
                 organizations[city].Add(org);
             }
+            CounrtyColumn.DataSource = cities.Keys.ToList();
+            OrganizationColumn.ValueType = typeof(TRIP_ORG);
+            OrganizationColumn.DisplayMember = "NAME";
+            OrganizationColumn.ValueMember = "PK_TRIP_ORG";
         }
 
 
@@ -215,6 +216,9 @@ namespace Komandirovki
                     return;
                 }
                 organization.DataSource = organizations[row.Cells[1].Value as string].ToList();
+                organization.ValueType = typeof(TRIP_ORG);
+                organization.DisplayMember = "NAME";
+                organization.ValueMember = "PK_TRIP_ORG";
             }
 
             if (e.ColumnIndex == 0)

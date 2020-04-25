@@ -52,8 +52,8 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pERSONCARDBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pERSONCARDBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -135,7 +135,12 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.SurnameColumn, this.NameColumn, this.MidNameColumn, this.TabNumColumn, this.pk_personcardcolumn});
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SurnameColumn,
+            this.NameColumn,
+            this.MidNameColumn,
+            this.TabNumColumn,
+            this.pk_personcardcolumn});
             this.dataGridView1.DataSource = this.pERSONCARDBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(17, 158);
             this.dataGridView1.Name = "dataGridView1";
@@ -260,10 +265,12 @@
             this.Name = "SearchWorkerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Поиск сотрудников для командировки";
-            ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.pERSONCARDBindingSource)).EndInit();
+            this.TopMost = true;
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pERSONCARDBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.Button button1;
