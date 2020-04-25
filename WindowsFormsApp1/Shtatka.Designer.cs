@@ -88,6 +88,7 @@
             this.поискПодразделенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.totalEdtx = new System.Windows.Forms.TextBox();
             this.totalInMoth = new System.Windows.Forms.TextBox();
+            this.addPodrazdel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -671,12 +672,23 @@
             this.totalInMoth.Size = new System.Drawing.Size(208, 22);
             this.totalInMoth.TabIndex = 59;
             // 
+            // addPodrazdel
+            // 
+            this.addPodrazdel.Location = new System.Drawing.Point(31, 149);
+            this.addPodrazdel.Name = "addPodrazdel";
+            this.addPodrazdel.Size = new System.Drawing.Size(116, 23);
+            this.addPodrazdel.TabIndex = 60;
+            this.addPodrazdel.Text = "button1";
+            this.addPodrazdel.UseVisualStyleBackColor = true;
+            this.addPodrazdel.Click += new System.EventHandler(this.addPodrazdel_Click);
+            // 
             // Shtatka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1455, 738);
+            this.Controls.Add(this.addPodrazdel);
             this.Controls.Add(this.totalInMoth);
             this.Controls.Add(this.totalEdtx);
             this.Controls.Add(this.year);
@@ -746,6 +758,7 @@
             this.PerformLayout();
         }
 
+        private System.Windows.Forms.Button addPodrazdel;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.TextBox dataCreate;
         private System.Windows.Forms.DataGridView dataGridView1;

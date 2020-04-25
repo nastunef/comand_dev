@@ -248,7 +248,7 @@ using WindowsFormsApp1;
                 {
                     IQueryable<STR_SHTAT_RASP> queryForStrShtatRasp = model.STR_SHTAT_RASP;
                     int countStrInST = queryForStrShtatRasp.Count()+2;
-                    MessageBox.Show(" Строк в штатке" + countStrInST);
+                    //MessageBox.Show(" Строк в штатке" + countStrInST);
                     newShtat = new SHTAT_RASP();
                     newShtat.PK_SHTAT_RASP = countShtat+1;
                     newShtat.number = numberDoc.Text;
@@ -289,7 +289,9 @@ using WindowsFormsApp1;
                         }
                         catch (KeyNotFoundException)
                         {
-                            MessageBox.Show("Подразделения " + strginShtatRasps[i].stringName + " не найдено");
+                            MessageBox.Show("Подразделения " + strginShtatRasps[i].stringName + " не найдено.\nНеобходимо внести данные");
+                            AddPodrazdel addpodrazdel = new AddPodrazdel();
+                            addpodrazdel.Show();
                         }
 
                         try
@@ -297,7 +299,7 @@ using WindowsFormsApp1;
                             newStr.PK_JOB_POS = Convert.ToInt32(dolg_pk[strginShtatRasps[i].stringDolgnost]);
                         }catch (KeyNotFoundException)
                         {
-                            MessageBox.Show("Подразделения " + strginShtatRasps[i].stringDolgnost + " не найдено");
+                            MessageBox.Show("Должность " + strginShtatRasps[i].stringDolgnost + " не найдена.\nНеобходимо внести данные");
                         }
 
                         newStr.COUNT_STUFF = Convert.ToInt32(strginShtatRasps[i].stringKolEd);
@@ -433,6 +435,11 @@ using WindowsFormsApp1;
         
         form.Close();
     }
-    
+
+    private void addPodrazdel_Click(object sender, EventArgs e)
+    {
+        AddPodrazdel addpodrazdel = new AddPodrazdel();
+        addpodrazdel.Show();
+    }
     }
 }
