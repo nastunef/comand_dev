@@ -11,6 +11,7 @@ namespace WindowsFormsApp1
         private decimal pk_dolzhn = -1;
         private decimal pk_prof = -1;
         private decimal tab = -1;
+
         public PriemWorkPrikaz()
         {
             InitializeComponent();
@@ -28,13 +29,13 @@ namespace WindowsFormsApp1
             deleteWork.Show();
         }
 
-        
+
         private void initData(decimal tabNumber)
         {
             tab = tabNumber;
             Model1 model = new Model1();
             var org = model.OUR_ORG.FirstOrDefault(c => c.PK_OUR_ORG == 1);
-            if (org == null) 
+            if (org == null)
                 return;
             string numberDoc = "12345678";
             var prikaz = model.PRIKAZ.FirstOrDefault();
@@ -46,12 +47,13 @@ namespace WindowsFormsApp1
                 numberDocInt++;
                 numberDoc = numberDocInt.ToString();
             }
+
             textBox11.Text = org.NAME;
             textBox11.Enabled = false;
             textBox12.Text = "0301001";
             textBox13.Text = org.OKPO;
             textBox14.Text = numberDoc;
-            
+
             var selectedMen = model.PERSONCARD.FirstOrDefault(men => men.TABEL_NUM == tabNumber);
             if (selectedMen == null) return;
             idSelectMen = (long) selectedMen.PK_PERSONCARD;
@@ -71,10 +73,34 @@ namespace WindowsFormsApp1
             else
             {
                 dateTimePicker2.Enabled = false;
-            } 
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonNewPlaceWork_Click_1(object sender, EventArgs e)
+        {
+            Model1 model = new Model1();
+            var dolzhn = model.JOB_POSITION.FirstOrDefault(d => d.NAME == textBoxNewDolzhn.Text);
+            var prof = model.PROFESSION.FirstOrDefault(p => p.NAME == textBoxNewProf.Text);
+            var podr = model.PODRAZDELORG.FirstOrDefault(po => po.NAME == comboBoxPodr.SelectedItem.ToString());
+            if (dolzhn == null || prof == null || podr == null)
+            {
+                button1.Enabled = false;
+                return;
+            }
+
+            button1.Enabled = true;
+            pk_dolzhn = dolzhn.PK_JOB_POS;
+            pk_podr = podr.PK_PODRAZDEL;
+            pk_prof = prof.PK_PROF;
+
+            var strStat = model.STR_SHTAT_RASP.FirstOrDefault(stat => stat.PK_JOB_POS == pk_dolzhn);
+            if (strStat == null) return;
+            numericUrerpDownTarifStavk.Value = Math.Round((decimal) strStat.TARIFF);
+            numericUpDownNadbavk.Value = Math.Round((decimal) strStat.NADBAVKA1);
+            flagWork = true;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
             Model1 model = new Model1();
             long newId = 0;
@@ -92,11 +118,11 @@ namespace WindowsFormsApp1
             newPrikaz.TYPE_PRIKAZ = model.TYPE_PRIKAZ.FirstOrDefault(type => type.PK_TYPE == 1);
             model.PRIKAZ.Add(newPrikaz);
             model.SaveChanges();
-            
+
             // добавим сущность ПРИЕМ
             long newIdPriem = 0;
             // добавим сущность приказ в бд
-             newIdPriem = (long) (model.PRIEM.Max(pr => pr.PK_PRIEM) + 1);
+            newIdPriem = (long) (model.PRIEM.Max(pr => pr.PK_PRIEM) + 1);
             var newPriem = new PRIEM();
             newPriem.PK_PRIEM = newIdPriem;
             newPriem.STARTWORKDATE = dateTimePicker4.Value;
@@ -114,36 +140,14 @@ namespace WindowsFormsApp1
             //
             model.PRIEM.Add(newPriem);
             model.SaveChanges();
-            
+
             // закрываем форму
             Close();
         }
 
-        private void buttonBack_Click(object sender, EventArgs e)
+        private void buttonBack_Click_1(object sender, EventArgs e)
         {
             Close();
         }
-
-        private void buttonNewPlaceWork_Click_1(object sender, EventArgs e)
-        {
-            Model1 model = new Model1();
-            var dolzhn = model.JOB_POSITION.FirstOrDefault(d => d.NAME == textBoxNewDolzhn.Text);
-            var prof = model.PROFESSION.FirstOrDefault(p => p.NAME == textBoxNewProf.Text);
-            var podr = model.PODRAZDELORG.FirstOrDefault(po => po.NAME == comboBoxPodr.SelectedItem.ToString());
-            if (dolzhn == null || prof == null || podr == null)
-            {
-                button1.Enabled = false;
-                return;
-            }
-            button1.Enabled = true;
-            pk_dolzhn = dolzhn.PK_JOB_POS;
-            pk_podr = podr.PK_PODRAZDEL;
-            pk_prof = prof.PK_PROF;
-            
-            var strStat  = model.STR_SHTAT_RASP.FirstOrDefault(stat => stat.PK_JOB_POS == pk_dolzhn);
-            if (strStat == null) return;
-            numericUrerpDownTarifStavk.Value = Math.Round((decimal)strStat.TARIFF);
-            numericUpDownNadbavk.Value = Math.Round((decimal) strStat.NADBAVKA1);
-            flagWork = true;        }
     }
 }

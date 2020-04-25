@@ -349,6 +349,9 @@
       <DependentUpon>KomandirovkaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Podrazdelenie.resx" />
+    <EmbeddedResource Include="PriemWorkPrikaz.resx">
+      <DependentUpon>PriemWorkPrikaz.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="print_report.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -364,6 +367,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReadDelWorkPrikaz.resx">
       <DependentUpon>ReadDelWorkPrikaz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReadPriemPrikaz.resx">
+      <DependentUpon>ReadPriemPrikaz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports.resx">
       <DependentUpon>Reports.cs</DependentUpon>

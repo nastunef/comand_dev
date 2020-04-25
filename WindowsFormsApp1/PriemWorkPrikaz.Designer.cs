@@ -69,7 +69,6 @@ private void InitializeComponent()
     this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
     this.label24 = new System.Windows.Forms.Label();
     this.label22 = new System.Windows.Forms.Label();
-    this.button1 = new System.Windows.Forms.Button();
     this.textBox11 = new System.Windows.Forms.TextBox();
     this.label25 = new System.Windows.Forms.Label();
     this.label26 = new System.Windows.Forms.Label();
@@ -83,7 +82,6 @@ private void InitializeComponent()
     this.label31 = new System.Windows.Forms.Label();
     this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
     this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-    this.buttonBack = new System.Windows.Forms.Button();
     this.panel10 = new System.Windows.Forms.Panel();
     this.comboBoxPodr = new System.Windows.Forms.ComboBox();
     this.panel11 = new System.Windows.Forms.Panel();
@@ -95,6 +93,8 @@ private void InitializeComponent()
     this.panel9 = new System.Windows.Forms.Panel();
     this.buttonNewPlaceWork = new System.Windows.Forms.Button();
     this.label10 = new System.Windows.Forms.Label();
+    this.buttonBack = new System.Windows.Forms.Button();
+    this.button1 = new System.Windows.Forms.Button();
     this.panel1.SuspendLayout();
     this.panel4.SuspendLayout();
     this.panel5.SuspendLayout();
@@ -128,29 +128,29 @@ private void InitializeComponent()
     // 
     // label2
     // 
-    this.label2.Location = new System.Drawing.Point(380, 185);
+    this.label2.Location = new System.Drawing.Point(370, 185);
     this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
     this.label2.Name = "label2";
-    this.label2.Size = new System.Drawing.Size(17, 20);
+    this.label2.Size = new System.Drawing.Size(27, 20);
     this.label2.TabIndex = 5;
     this.label2.Text = "с";
     // 
     // label3
     // 
-    this.label3.Location = new System.Drawing.Point(380, 223);
+    this.label3.Location = new System.Drawing.Point(370, 223);
     this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
     this.label3.Name = "label3";
-    this.label3.Size = new System.Drawing.Size(19, 20);
+    this.label3.Size = new System.Drawing.Size(29, 20);
     this.label3.TabIndex = 6;
     this.label3.Text = "по";
     // 
     // label4
     // 
     this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-    this.label4.Location = new System.Drawing.Point(205, 193);
+    this.label4.Location = new System.Drawing.Point(172, 193);
     this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
     this.label4.Name = "label4";
-    this.label4.Size = new System.Drawing.Size(162, 24);
+    this.label4.Size = new System.Drawing.Size(195, 24);
     this.label4.TabIndex = 7;
     this.label4.Text = "Принять на работу";
     // 
@@ -268,7 +268,7 @@ private void InitializeComponent()
     // 
     // textBox8
     // 
-    this.textBox8.Location = new System.Drawing.Point(550, 12);
+    this.textBox8.Location = new System.Drawing.Point(549, 12);
     this.textBox8.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
     this.textBox8.Name = "textBox8";
     this.textBox8.Size = new System.Drawing.Size(118, 23);
@@ -337,6 +337,7 @@ private void InitializeComponent()
     // 
     this.numericUpDownNadbavk.Location = new System.Drawing.Point(404, 13);
     this.numericUpDownNadbavk.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+    this.numericUpDownNadbavk.Maximum = new decimal(new int[] {100000, 0, 0, 0});
     this.numericUpDownNadbavk.Name = "numericUpDownNadbavk";
     this.numericUpDownNadbavk.Size = new System.Drawing.Size(96, 23);
     this.numericUpDownNadbavk.TabIndex = 25;
@@ -345,6 +346,7 @@ private void InitializeComponent()
     // 
     this.numericUrerpDownTarifStavk.Location = new System.Drawing.Point(183, 13);
     this.numericUrerpDownTarifStavk.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+    this.numericUrerpDownTarifStavk.Maximum = new decimal(new int[] {100000, 0, 0, 0});
     this.numericUrerpDownTarifStavk.Name = "numericUrerpDownTarifStavk";
     this.numericUrerpDownTarifStavk.Size = new System.Drawing.Size(96, 23);
     this.numericUrerpDownTarifStavk.TabIndex = 24;
@@ -464,17 +466,6 @@ private void InitializeComponent()
     this.label22.TabIndex = 21;
     this.label22.Text = "Основание";
     // 
-    // button1
-    // 
-    this.button1.Location = new System.Drawing.Point(932, 770);
-    this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-    this.button1.Name = "button1";
-    this.button1.Size = new System.Drawing.Size(175, 36);
-    this.button1.TabIndex = 28;
-    this.button1.Text = "Отдать на распоряжение";
-    this.button1.UseVisualStyleBackColor = true;
-    this.button1.Click += new System.EventHandler(this.button1_Click);
-    // 
     // textBox11
     // 
     this.textBox11.Location = new System.Drawing.Point(404, 95);
@@ -565,10 +556,10 @@ private void InitializeComponent()
     // 
     this.label31.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold,
         System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-    this.label31.Location = new System.Drawing.Point(300, 48);
+    this.label31.Location = new System.Drawing.Point(160, 48);
     this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
     this.label31.Name = "label31";
-    this.label31.Size = new System.Drawing.Size(560, 43);
+    this.label31.Size = new System.Drawing.Size(700, 43);
     this.label31.TabIndex = 40;
     this.label31.Text = "Приказ (распоряжение) о приеме работника на работу";
     // 
@@ -587,17 +578,6 @@ private void InitializeComponent()
     this.dateTimePicker1.Name = "dateTimePicker1";
     this.dateTimePicker1.Size = new System.Drawing.Size(118, 23);
     this.dateTimePicker1.TabIndex = 43;
-    // 
-    // buttonBack
-    // 
-    this.buttonBack.Location = new System.Drawing.Point(1083, 1);
-    this.buttonBack.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-    this.buttonBack.Name = "buttonBack";
-    this.buttonBack.Size = new System.Drawing.Size(99, 30);
-    this.buttonBack.TabIndex = 44;
-    this.buttonBack.Text = "назад";
-    this.buttonBack.UseVisualStyleBackColor = true;
-    this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
     // 
     // panel10
     // 
@@ -719,15 +699,39 @@ private void InitializeComponent()
     this.label10.TabIndex = 0;
     this.label10.Text = "Новое место работы";
     // 
+    // buttonBack
+    // 
+    this.buttonBack.Location = new System.Drawing.Point(1010, 717);
+    this.buttonBack.Margin = new System.Windows.Forms.Padding(2);
+    this.buttonBack.Name = "buttonBack";
+    this.buttonBack.Size = new System.Drawing.Size(99, 27);
+    this.buttonBack.TabIndex = 77;
+    this.buttonBack.Text = "назад";
+    this.buttonBack.UseVisualStyleBackColor = true;
+    this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click_1);
+    // 
+    // button1
+    // 
+    this.button1.Enabled = false;
+    this.button1.Location = new System.Drawing.Point(940, 651);
+    this.button1.Margin = new System.Windows.Forms.Padding(2);
+    this.button1.Name = "button1";
+    this.button1.Size = new System.Drawing.Size(227, 52);
+    this.button1.TabIndex = 76;
+    this.button1.Text = "Отдать на распоряжение";
+    this.button1.UseVisualStyleBackColor = true;
+    this.button1.Click += new System.EventHandler(this.button1_Click_1);
+    // 
     // PriemWorkPrikaz
     // 
     this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
     this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
     this.BackColor = System.Drawing.SystemColors.ControlLight;
     this.ClientSize = new System.Drawing.Size(1204, 755);
+    this.Controls.Add(this.buttonBack);
+    this.Controls.Add(this.button1);
     this.Controls.Add(this.panel10);
     this.Controls.Add(this.panel9);
-    this.Controls.Add(this.buttonBack);
     this.Controls.Add(this.dateTimePicker1);
     this.Controls.Add(this.dateTimePicker4);
     this.Controls.Add(this.label31);
@@ -741,7 +745,6 @@ private void InitializeComponent()
     this.Controls.Add(this.label26);
     this.Controls.Add(this.label25);
     this.Controls.Add(this.textBox11);
-    this.Controls.Add(this.button1);
     this.Controls.Add(this.panel7);
     this.Controls.Add(this.panel6);
     this.Controls.Add(this.panel5);

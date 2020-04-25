@@ -178,7 +178,7 @@ namespace WindowsFormsApp1
             // 
             // buttonConfirm
             // 
-            this.buttonConfirm.Location = new System.Drawing.Point(932, 766);
+            this.buttonConfirm.Location = new System.Drawing.Point(971, 675);
             this.buttonConfirm.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buttonConfirm.Name = "buttonConfirm";
             this.buttonConfirm.Size = new System.Drawing.Size(148, 36);
@@ -309,7 +309,7 @@ namespace WindowsFormsApp1
             // buttonEdit
             // 
             this.buttonEdit.ForeColor = System.Drawing.Color.Blue;
-            this.buttonEdit.Location = new System.Drawing.Point(932, 683);
+            this.buttonEdit.Location = new System.Drawing.Point(972, 633);
             this.buttonEdit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(148, 36);
@@ -321,7 +321,7 @@ namespace WindowsFormsApp1
             // buttonDel
             // 
             this.buttonDel.ForeColor = System.Drawing.Color.Red;
-            this.buttonDel.Location = new System.Drawing.Point(932, 603);
+            this.buttonDel.Location = new System.Drawing.Point(972, 590);
             this.buttonDel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buttonDel.Name = "buttonDel";
             this.buttonDel.Size = new System.Drawing.Size(148, 36);
@@ -343,10 +343,10 @@ namespace WindowsFormsApp1
             // 
             // buttonBack
             // 
-            this.buttonBack.Location = new System.Drawing.Point(1084, 1);
+            this.buttonBack.Location = new System.Drawing.Point(1033, 728);
             this.buttonBack.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(99, 30);
+            this.buttonBack.Size = new System.Drawing.Size(86, 25);
             this.buttonBack.TabIndex = 47;
             this.buttonBack.Text = "назад";
             this.buttonBack.UseVisualStyleBackColor = true;
@@ -610,6 +610,7 @@ namespace WindowsFormsApp1
             // 
             this.numericUpDownNadbavk.Location = new System.Drawing.Point(404, 13);
             this.numericUpDownNadbavk.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.numericUpDownNadbavk.Maximum = new decimal(new int[] {100000, 0, 0, 0});
             this.numericUpDownNadbavk.Name = "numericUpDownNadbavk";
             this.numericUpDownNadbavk.Size = new System.Drawing.Size(96, 23);
             this.numericUpDownNadbavk.TabIndex = 25;
@@ -618,6 +619,7 @@ namespace WindowsFormsApp1
             // 
             this.numericUrerpDownTarifStavk.Location = new System.Drawing.Point(183, 13);
             this.numericUrerpDownTarifStavk.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.numericUrerpDownTarifStavk.Maximum = new decimal(new int[] {100000, 0, 0, 0});
             this.numericUrerpDownTarifStavk.Name = "numericUrerpDownTarifStavk";
             this.numericUrerpDownTarifStavk.Size = new System.Drawing.Size(96, 23);
             this.numericUrerpDownTarifStavk.TabIndex = 24;
@@ -758,10 +760,10 @@ namespace WindowsFormsApp1
             // 
             // ReadPriemPrikaz
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1204, 755);
+            this.ClientSize = new System.Drawing.Size(1455, 788);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel7);
