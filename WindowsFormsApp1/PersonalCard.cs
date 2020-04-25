@@ -196,7 +196,6 @@ namespace WindowsFormsApp1
                 personcard.MIDDLENAME = textBox_otch.Text;
                 personcard.MOBTEL = textBox_telephone.Text;
                 personcard.DOPTEL = textBox_telephone2.Text;
-                personcard.TABEL_NUM = Convert.ToInt32(textBox_tabelNumber.Text);
 
                 personcard.DATECREATE = DateTime.Now;
 
