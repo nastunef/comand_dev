@@ -115,5 +115,7 @@ namespace WindowsFormsApp1
             // закрываем форму
             Close();
         }
+
+       
     }
 }

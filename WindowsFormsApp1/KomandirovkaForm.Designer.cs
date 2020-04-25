@@ -71,7 +71,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.NumPrikazTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.DatePrikaz = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.DateReason = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
@@ -102,6 +101,7 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GenNumPrikaz = new System.Windows.Forms.CheckBox();
             this.IsProject = new System.Windows.Forms.CheckBox();
+            this.DatePrikaz = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.placesView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tRIPORGBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WorkersGridView)).BeginInit();
@@ -243,7 +243,7 @@
             // 
             this.StartDateColumn.DataPropertyName = "STARTDATE";
             dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = "01.01.2020";
+            dataGridViewCellStyle1.NullValue = "##.##.####";
             this.StartDateColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.StartDateColumn.HeaderText = "Дата начала";
             this.StartDateColumn.Name = "StartDateColumn";
@@ -253,7 +253,7 @@
             // 
             this.FinishDateColumn.DataPropertyName = "ENDDATE";
             dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = "01.01.2020";
+            dataGridViewCellStyle2.NullValue = "##.##.####";
             this.FinishDateColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.FinishDateColumn.HeaderText = "Дата окончания";
             this.FinishDateColumn.Name = "FinishDateColumn";
@@ -297,6 +297,8 @@
             // finishDate
             // 
             this.finishDate.Location = new System.Drawing.Point(121, 40);
+            this.finishDate.MaxDate = new System.DateTime(2030, 1, 1, 0, 0, 0, 0);
+            this.finishDate.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.finishDate.Name = "finishDate";
             this.finishDate.Size = new System.Drawing.Size(145, 20);
             this.finishDate.TabIndex = 13;
@@ -312,6 +314,8 @@
             // startDate
             // 
             this.startDate.Location = new System.Drawing.Point(121, 10);
+            this.startDate.MaxDate = new System.DateTime(2030, 1, 1, 0, 0, 0, 0);
+            this.startDate.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.startDate.Name = "startDate";
             this.startDate.Size = new System.Drawing.Size(145, 20);
             this.startDate.TabIndex = 11;
@@ -430,16 +434,6 @@
             this.label8.Size = new System.Drawing.Size(22, 15);
             this.label8.TabIndex = 22;
             this.label8.Text = "от";
-            // 
-            // DatePrikaz
-            // 
-            this.DatePrikaz.Location = new System.Drawing.Point(197, 422);
-            this.DatePrikaz.MaxDate = new System.DateTime(2030, 1, 1, 0, 0, 0, 0);
-            this.DatePrikaz.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
-            this.DatePrikaz.Name = "DatePrikaz";
-            this.DatePrikaz.Size = new System.Drawing.Size(147, 20);
-            this.DatePrikaz.TabIndex = 23;
-            this.DatePrikaz.Value = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             // 
             // label9
             // 
@@ -702,11 +696,19 @@
             this.IsProject.Text = "Это проект приказа";
             this.IsProject.UseVisualStyleBackColor = true;
             // 
+            // DatePrikaz
+            // 
+            this.DatePrikaz.Location = new System.Drawing.Point(201, 422);
+            this.DatePrikaz.Name = "DatePrikaz";
+            this.DatePrikaz.Size = new System.Drawing.Size(159, 20);
+            this.DatePrikaz.TabIndex = 43;
+            // 
             // KomandirovkaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1045, 633);
+            this.Controls.Add(this.DatePrikaz);
             this.Controls.Add(this.IsProject);
             this.Controls.Add(this.GenNumPrikaz);
             this.Controls.Add(this.isDateReasonCheckBox);
@@ -725,7 +727,6 @@
             this.Controls.Add(this.DateReason);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.DatePrikaz);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.NumPrikazTextBox);
             this.Controls.Add(this.label7);
@@ -774,7 +775,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DateTimePicker DatePrikaz;
         private System.Windows.Forms.DateTimePicker DateReason;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button DeletePlaceButton;
@@ -829,5 +829,7 @@
         private System.Windows.Forms.DataGridView WorkersGridView;
 
         #endregion
+
+        private System.Windows.Forms.DateTimePicker DatePrikaz;
     }
 }

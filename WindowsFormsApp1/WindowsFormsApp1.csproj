@@ -235,6 +235,8 @@
       <DependentUpon>PriemWorkPrikaz.cs</DependentUpon>
     </Compile>
     <Compile Include="PRIKAZ.cs" />
+    <Compile Include="print_report.cs" />
+    <Compile Include="print_report.Designer.cs" />
     <Compile Include="PROFESSION.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -331,9 +333,6 @@
     <EmbeddedResource Include="EditPriemPrikaz.resx">
       <DependentUpon>EditPriemPrikaz.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainPagePrikaz.resx">
-      <DependentUpon>MainPagePrikaz.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainPrikaz.resx">
       <DependentUpon>MainPrikaz.cs</DependentUpon>
     </EmbeddedResource>
@@ -350,9 +349,7 @@
       <DependentUpon>KomandirovkaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Podrazdelenie.resx" />
-    <EmbeddedResource Include="PriemWorkPrikaz.resx">
-      <DependentUpon>PriemWorkPrikaz.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="print_report.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -367,9 +364,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReadDelWorkPrikaz.resx">
       <DependentUpon>ReadDelWorkPrikaz.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReadPriemPrikaz.resx">
-      <DependentUpon>ReadPriemPrikaz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports.resx">
       <DependentUpon>Reports.cs</DependentUpon>
