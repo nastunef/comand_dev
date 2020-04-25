@@ -41,21 +41,21 @@ namespace WindowsFormsApp1
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -107,7 +107,7 @@ namespace WindowsFormsApp1
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(536, 162);
+            this.dateTimePicker2.Location = new System.Drawing.Point(535, 162);
             this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(167, 23);
@@ -152,7 +152,7 @@ namespace WindowsFormsApp1
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(466, 91);
+            this.textBox3.Location = new System.Drawing.Point(465, 91);
             this.textBox3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(226, 23);
@@ -173,12 +173,12 @@ namespace WindowsFormsApp1
             this.panel1.Location = new System.Drawing.Point(64, 217);
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(713, 131);
+            this.panel1.Size = new System.Drawing.Size(712, 131);
             this.panel1.TabIndex = 11;
             // 
             // label7
             // 
-            this.label7.Location = new System.Drawing.Point(466, 74);
+            this.label7.Location = new System.Drawing.Point(465, 74);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 14);
@@ -203,14 +203,6 @@ namespace WindowsFormsApp1
             this.label5.TabIndex = 11;
             this.label5.Text = "Фамилия";
             // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(537, 35);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(118, 23);
-            this.textBox4.TabIndex = 14;
-            // 
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular,
@@ -222,6 +214,14 @@ namespace WindowsFormsApp1
             this.label8.TabIndex = 15;
             this.label8.Text = "Табельный номер";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(537, 35);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(118, 23);
+            this.textBox4.TabIndex = 14;
             // 
             // label10
             // 
@@ -270,6 +270,15 @@ namespace WindowsFormsApp1
             this.panel3.Size = new System.Drawing.Size(712, 67);
             this.panel3.TabIndex = 22;
             // 
+            // label12
+            // 
+            this.label12.Location = new System.Drawing.Point(19, 18);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(99, 20);
+            this.label12.TabIndex = 21;
+            this.label12.Text = "Должность";
+            // 
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(184, 25);
@@ -286,16 +295,6 @@ namespace WindowsFormsApp1
             this.label13.Size = new System.Drawing.Size(99, 22);
             this.label13.TabIndex = 22;
             this.label13.Text = "Профессия";
-        
-            // 
-            // label12
-            // 
-            this.label12.Location = new System.Drawing.Point(19, 18);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(99, 20);
-            this.label12.TabIndex = 21;
-            this.label12.Text = "Должность";
             // 
             // panel4
             // 
@@ -308,9 +307,26 @@ namespace WindowsFormsApp1
             this.panel4.Size = new System.Drawing.Size(708, 75);
             this.panel4.TabIndex = 24;
             // 
+            // label15
+            // 
+            this.label15.Location = new System.Drawing.Point(12, 12);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(135, 52);
+            this.label15.TabIndex = 21;
+            this.label15.Text = "Условия приема на работу";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(181, 27);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(507, 23);
+            this.textBox9.TabIndex = 20;
+            // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(185, 19);
+            this.textBox8.Location = new System.Drawing.Point(185, 18);
             this.textBox8.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(503, 23);
@@ -321,26 +337,9 @@ namespace WindowsFormsApp1
             this.label14.Location = new System.Drawing.Point(12, 20);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(104, 40);
+            this.label14.Size = new System.Drawing.Size(117, 40);
             this.label14.TabIndex = 22;
             this.label14.Text = "Характер работы";
-            // 
-            // label15
-            // 
-            this.label15.Location = new System.Drawing.Point(12, 11);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(135, 52);
-            this.label15.TabIndex = 21;
-            this.label15.Text = "Условия приема на работу";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(181, 26);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(507, 23);
-            this.textBox9.TabIndex = 20;
             // 
             // panel5
             // 
@@ -393,7 +392,7 @@ namespace WindowsFormsApp1
             // 
             // label16
             // 
-            this.label16.Location = new System.Drawing.Point(399, 19);
+            this.label16.Location = new System.Drawing.Point(399, 18);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(66, 22);
@@ -418,7 +417,7 @@ namespace WindowsFormsApp1
             this.panel6.Location = new System.Drawing.Point(68, 828);
             this.panel6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(708, 73);
+            this.panel6.Size = new System.Drawing.Size(708, 74);
             this.panel6.TabIndex = 26;
             // 
             // label21
@@ -454,10 +453,10 @@ namespace WindowsFormsApp1
             this.panel7.Controls.Add(this.label20);
             this.panel7.Controls.Add(this.dateTimePicker3);
             this.panel7.Controls.Add(this.label24);
-            this.panel7.Location = new System.Drawing.Point(69, 940);
+            this.panel7.Location = new System.Drawing.Point(68, 934);
             this.panel7.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(708, 81);
+            this.panel7.Size = new System.Drawing.Size(708, 80);
             this.panel7.TabIndex = 27;
             // 
             // textBox10
@@ -470,7 +469,7 @@ namespace WindowsFormsApp1
             // 
             // label20
             // 
-            this.label20.Location = new System.Drawing.Point(438, 25);
+            this.label20.Location = new System.Drawing.Point(437, 25);
             this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(26, 24);
@@ -487,7 +486,7 @@ namespace WindowsFormsApp1
             // 
             // label24
             // 
-            this.label24.Location = new System.Drawing.Point(15, 26);
+            this.label24.Location = new System.Drawing.Point(15, 27);
             this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(110, 24);
@@ -496,9 +495,9 @@ namespace WindowsFormsApp1
             // 
             // label22
             // 
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular,
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label22.Location = new System.Drawing.Point(81, 913);
+            this.label22.Location = new System.Drawing.Point(73, 907);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(80, 24);
@@ -507,10 +506,10 @@ namespace WindowsFormsApp1
             // 
             // buttonConfirm
             // 
-            this.buttonConfirm.Location = new System.Drawing.Point(892, 939);
+            this.buttonConfirm.Location = new System.Drawing.Point(885, 962);
             this.buttonConfirm.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buttonConfirm.Name = "buttonConfirm";
-            this.buttonConfirm.Size = new System.Drawing.Size(190, 66);
+            this.buttonConfirm.Size = new System.Drawing.Size(195, 52);
             this.buttonConfirm.TabIndex = 28;
             this.buttonConfirm.Text = "Подтвердить изменения";
             this.buttonConfirm.UseVisualStyleBackColor = true;
@@ -569,7 +568,7 @@ namespace WindowsFormsApp1
             // 
             // textBox14
             // 
-            this.textBox14.Location = new System.Drawing.Point(658, 34);
+            this.textBox14.Location = new System.Drawing.Point(658, 33);
             this.textBox14.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(118, 23);
@@ -588,10 +587,10 @@ namespace WindowsFormsApp1
             // 
             this.label31.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold,
                 System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label31.Location = new System.Drawing.Point(48, 34);
+            this.label31.Location = new System.Drawing.Point(48, 33);
             this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(585, 43);
+            this.label31.Size = new System.Drawing.Size(584, 43);
             this.label31.TabIndex = 40;
             this.label31.Text = "Приказ (распоряжение) о приеме работника на работу №";
             // 
@@ -613,7 +612,7 @@ namespace WindowsFormsApp1
             // 
             // checkBox1
             // 
-            this.checkBox1.Location = new System.Drawing.Point(536, 191);
+            this.checkBox1.Location = new System.Drawing.Point(535, 192);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(113, 20);
@@ -659,9 +658,9 @@ namespace WindowsFormsApp1
             this.panel10.Controls.Add(this.textBox12);
             this.panel10.Controls.Add(this.label27);
             this.panel10.Controls.Add(this.label26);
-            this.panel10.Location = new System.Drawing.Point(850, 74);
+            this.panel10.Location = new System.Drawing.Point(862, 33);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(247, 88);
+            this.panel10.Size = new System.Drawing.Size(247, 89);
             this.panel10.TabIndex = 50;
             // 
             // EditPriemPrikaz
