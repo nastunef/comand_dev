@@ -102,14 +102,14 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GenNumPrikaz = new System.Windows.Forms.CheckBox();
             this.IsProject = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.placesView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tRIPORGBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WorkersGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pERSONCARDINTRIPBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.placesView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.tRIPORGBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.WorkersGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pERSONCARDINTRIPBindingSource)).BeginInit();
             this.panelDates.SuspendLayout();
             this.panelPurpose.SuspendLayout();
             this.panelFinance.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TripBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.TripBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -123,11 +123,7 @@
             // placesView
             // 
             this.placesView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.placesView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CounrtyColumn,
-            this.CityColumn,
-            this.OrganizationColumn,
-            this.PK_ORG});
+            this.placesView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.CounrtyColumn, this.CityColumn, this.OrganizationColumn, this.PK_ORG});
             this.placesView.Location = new System.Drawing.Point(9, 28);
             this.placesView.MultiSelect = false;
             this.placesView.Name = "placesView";
@@ -171,17 +167,7 @@
             // 
             this.WorkersGridView.AutoGenerateColumns = false;
             this.WorkersGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.WorkersGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.SurnameColumn,
-            this.NameColumn,
-            this.MidNameColumn,
-            this.TabNumColumn,
-            this.PodrazdelColumn,
-            this.JobPosColumn,
-            this.StartDateColumn,
-            this.FinishDateColumn,
-            this.PurposeColumn,
-            this.FinanceColumn});
+            this.WorkersGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.SurnameColumn, this.NameColumn, this.MidNameColumn, this.TabNumColumn, this.PodrazdelColumn, this.JobPosColumn, this.StartDateColumn, this.FinishDateColumn, this.PurposeColumn, this.FinanceColumn});
             this.WorkersGridView.DataSource = this.pERSONCARDINTRIPBindingSource;
             this.WorkersGridView.Location = new System.Drawing.Point(8, 153);
             this.WorkersGridView.MultiSelect = false;
@@ -243,7 +229,7 @@
             // 
             this.StartDateColumn.DataPropertyName = "STARTDATE";
             dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = "01.01.2020";
+            dataGridViewCellStyle1.NullValue = "##.##.####";
             this.StartDateColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.StartDateColumn.HeaderText = "Дата начала";
             this.StartDateColumn.Name = "StartDateColumn";
@@ -253,7 +239,7 @@
             // 
             this.FinishDateColumn.DataPropertyName = "ENDDATE";
             dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = "01.01.2020";
+            dataGridViewCellStyle2.NullValue = "##.##.####";
             this.FinishDateColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.FinishDateColumn.HeaderText = "Дата окончания";
             this.FinishDateColumn.Name = "FinishDateColumn";
@@ -297,6 +283,8 @@
             // finishDate
             // 
             this.finishDate.Location = new System.Drawing.Point(121, 40);
+            this.finishDate.MaxDate = new System.DateTime(2030, 1, 1, 0, 0, 0, 0);
+            this.finishDate.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.finishDate.Name = "finishDate";
             this.finishDate.Size = new System.Drawing.Size(145, 20);
             this.finishDate.TabIndex = 13;
@@ -312,6 +300,8 @@
             // startDate
             // 
             this.startDate.Location = new System.Drawing.Point(121, 10);
+            this.startDate.MaxDate = new System.DateTime(2030, 1, 1, 0, 0, 0, 0);
+            this.startDate.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.startDate.Name = "startDate";
             this.startDate.Size = new System.Drawing.Size(145, 20);
             this.startDate.TabIndex = 11;
@@ -439,7 +429,7 @@
             this.DatePrikaz.Name = "DatePrikaz";
             this.DatePrikaz.Size = new System.Drawing.Size(147, 20);
             this.DatePrikaz.TabIndex = 23;
-            this.DatePrikaz.Value = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
+            this.DatePrikaz.Value = new System.DateTime(2020, 4, 25, 17, 54, 0, 0);
             // 
             // label9
             // 
@@ -744,19 +734,18 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Командировка";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.KomandirovkaForm_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.placesView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tRIPORGBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.WorkersGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pERSONCARDINTRIPBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.placesView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.tRIPORGBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.WorkersGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pERSONCARDINTRIPBindingSource)).EndInit();
             this.panelDates.ResumeLayout(false);
             this.panelPurpose.ResumeLayout(false);
             this.panelPurpose.PerformLayout();
             this.panelFinance.ResumeLayout(false);
             this.panelFinance.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TripBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.TripBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         private System.Windows.Forms.Button AddPlaceButton;

@@ -68,7 +68,7 @@ namespace Komandirovki
             if(trip.PRIKAZ != null)
             {
                 NumPrikazTextBox.Text = trip.PRIKAZ.NUMDOC;
-                DatePrikaz.Value = trip.PRIKAZ.CREATEDATE ?? _nullDateTime;
+                DatePrikaz.Value = trip.PRIKAZ.CREATEDATE ?? DateTime.Now;
                 IsProject.Checked = trip.PRIKAZ.ISPROJECT.Equals("1"); 
              
                 // По-умолчанию для режима редактирования
@@ -344,6 +344,7 @@ namespace Komandirovki
             
             // Организации
             List<TRIP_ORG> addedOrgs = new List<TRIP_ORG>();
+            int countOrgs = 0;
             foreach (DataGridViewRow row in placesView.Rows)
             {
                 decimal pk_org;
@@ -375,6 +376,12 @@ namespace Komandirovki
                 addedOrgs.Add(org);
                 if (trip.TRIP_ORG.Contains(org) == false)
                     trip.TRIP_ORG.Add(org);
+                countOrgs++;
+            }
+            if(countOrgs == 0)
+            {
+                MyMsgBox.showError("Добавьте хотя бы 1 организацию");
+                return false;
             }
             DeleteFromList<TRIP_ORG>(addedOrgs, trip.TRIP_ORG);
 
@@ -410,6 +417,11 @@ namespace Komandirovki
                     if (!MyMsgBox.showAsk("Найдены работники с невалидными данными. Пропустить их(ДА) или остановить сохранение(НЕТ)"))
                         return false;
                 }
+            }
+            if(workerForAddInPrikaz == null)
+            {
+                MyMsgBox.showError("Добавьте хотя бы 1 человека");
+                return false;
             }
             DeleteFromList<PERSONCARD_IN_TRIP>(addedWorkers, trip.PERSONCARD_IN_TRIP);
             
@@ -518,7 +530,7 @@ namespace Komandirovki
         }
         public bool checkDateOnNull(DateTime? date, string nameDate)
         {
-            if (date == null || ((DateTime)date).Equals(_nullDateTime)) { 
+            if (date == null) { 
                 MyMsgBox.showError($"{nameDate} не установлена");
                 return false;
             }
