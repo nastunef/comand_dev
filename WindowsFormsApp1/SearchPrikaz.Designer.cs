@@ -161,7 +161,7 @@ namespace WindowsFormsApp1
              this.label4.Location = new System.Drawing.Point(248, 57);
              this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
              this.label4.Name = "label4";
-             this.label4.Size = new System.Drawing.Size(160, 36);
+             this.label4.Size = new System.Drawing.Size(266, 36);
              this.label4.TabIndex = 23;
              this.label4.Text = "Критерии поиска";
              // 
@@ -257,7 +257,7 @@ namespace WindowsFormsApp1
              this.checkBox_Confirm.Location = new System.Drawing.Point(180, 204);
              this.checkBox_Confirm.Margin = new System.Windows.Forms.Padding(2);
              this.checkBox_Confirm.Name = "checkBox_Confirm";
-             this.checkBox_Confirm.Size = new System.Drawing.Size(108, 22);
+             this.checkBox_Confirm.Size = new System.Drawing.Size(142, 22);
              this.checkBox_Confirm.TabIndex = 36;
              this.checkBox_Confirm.Text = "Подтвержден";
              this.checkBox_Confirm.UseVisualStyleBackColor = true;
@@ -326,7 +326,7 @@ namespace WindowsFormsApp1
                  System.Drawing.GraphicsUnit.Point, ((byte) (204)));
              this.label11.Location = new System.Drawing.Point(36, 243);
              this.label11.Name = "label11";
-             this.label11.Size = new System.Drawing.Size(352, 23);
+             this.label11.Size = new System.Drawing.Size(548, 23);
              this.label11.TabIndex = 41;
              this.label11.Text = "Выберите среди каких приказов искать (один или более)\r\n";
              // 
