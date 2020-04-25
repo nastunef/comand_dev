@@ -42,17 +42,17 @@ namespace WindowsFormsApp1
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.comboBoxVid = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -90,12 +90,12 @@ namespace WindowsFormsApp1
             this.label21 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.comboBoxPodr = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.textBoxNewProf = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.textBoxNewDolzhn = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
+            this.textBoxNewProf = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
             this.buttonDel = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonConfirm = new System.Windows.Forms.Button();
@@ -151,7 +151,7 @@ namespace WindowsFormsApp1
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(11, 83);
+            this.textBox1.Location = new System.Drawing.Point(10, 83);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(285, 23);
@@ -212,12 +212,24 @@ namespace WindowsFormsApp1
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(11, 68);
+            this.label5.Location = new System.Drawing.Point(10, 68);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 13);
             this.label5.TabIndex = 11;
             this.label5.Text = "Фамилия";
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.label8.Location = new System.Drawing.Point(566, 12);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(166, 21);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "Табельный номер";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // textBox4
             // 
@@ -227,18 +239,6 @@ namespace WindowsFormsApp1
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(118, 23);
             this.textBox4.TabIndex = 14;
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label8.Location = new System.Drawing.Point(566, 11);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(166, 21);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Табельный номер";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label10
             // 
@@ -300,6 +300,15 @@ namespace WindowsFormsApp1
             this.panel3.Size = new System.Drawing.Size(768, 62);
             this.panel3.TabIndex = 22;
             // 
+            // label12
+            // 
+            this.label12.Location = new System.Drawing.Point(13, 18);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(110, 18);
+            this.label12.TabIndex = 21;
+            this.label12.Text = "Должность";
+            // 
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(188, 18);
@@ -310,21 +319,12 @@ namespace WindowsFormsApp1
             // 
             // label13
             // 
-            this.label13.Location = new System.Drawing.Point(11, 23);
+            this.label13.Location = new System.Drawing.Point(10, 23);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(92, 18);
             this.label13.TabIndex = 22;
             this.label13.Text = "Профессия";
-            // 
-            // label12
-            // 
-            this.label12.Location = new System.Drawing.Point(13, 18);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(110, 18);
-            this.label12.TabIndex = 21;
-            this.label12.Text = "Должность";
             // 
             // panel4
             // 
@@ -395,7 +395,7 @@ namespace WindowsFormsApp1
             // 
             // numericUpDownNadbavk
             // 
-            this.numericUpDownNadbavk.Location = new System.Drawing.Point(508, 7);
+            this.numericUpDownNadbavk.Location = new System.Drawing.Point(507, 7);
             this.numericUpDownNadbavk.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDownNadbavk.Maximum = new decimal(new int[] {1000000, 0, 0, 0});
             this.numericUpDownNadbavk.Name = "numericUpDownNadbavk";
@@ -413,7 +413,7 @@ namespace WindowsFormsApp1
             // 
             // label16
             // 
-            this.label16.Location = new System.Drawing.Point(389, 10);
+            this.label16.Location = new System.Drawing.Point(388, 10);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(78, 18);
@@ -422,7 +422,7 @@ namespace WindowsFormsApp1
             // 
             // label17
             // 
-            this.label17.Location = new System.Drawing.Point(11, 9);
+            this.label17.Location = new System.Drawing.Point(10, 9);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(173, 22);
@@ -437,7 +437,7 @@ namespace WindowsFormsApp1
             this.panel7.Controls.Add(this.dateTimePicker3);
             this.panel7.Controls.Add(this.label24);
             this.panel7.Enabled = false;
-            this.panel7.Location = new System.Drawing.Point(74, 938);
+            this.panel7.Location = new System.Drawing.Point(73, 938);
             this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(768, 62);
@@ -462,7 +462,7 @@ namespace WindowsFormsApp1
             // 
             // dateTimePicker3
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(193, 22);
+            this.dateTimePicker3.Location = new System.Drawing.Point(192, 22);
             this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(185, 23);
@@ -470,7 +470,7 @@ namespace WindowsFormsApp1
             // 
             // label24
             // 
-            this.label24.Location = new System.Drawing.Point(18, 25);
+            this.label24.Location = new System.Drawing.Point(17, 25);
             this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(110, 22);
@@ -511,7 +511,7 @@ namespace WindowsFormsApp1
             this.label26.Location = new System.Drawing.Point(2, 17);
             this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(109, 24);
+            this.label26.Size = new System.Drawing.Size(108, 24);
             this.label26.TabIndex = 31;
             this.label26.Text = "Форма по ОКУД";
             // 
@@ -545,7 +545,7 @@ namespace WindowsFormsApp1
             // textBox14
             // 
             this.textBox14.Enabled = false;
-            this.textBox14.Location = new System.Drawing.Point(801, 21);
+            this.textBox14.Location = new System.Drawing.Point(801, 26);
             this.textBox14.Margin = new System.Windows.Forms.Padding(2);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(118, 23);
@@ -553,7 +553,7 @@ namespace WindowsFormsApp1
             // 
             // label30
             // 
-            this.label30.Location = new System.Drawing.Point(72, 64);
+            this.label30.Location = new System.Drawing.Point(72, 63);
             this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(168, 17);
@@ -582,7 +582,7 @@ namespace WindowsFormsApp1
             // 
             // buttonBack
             // 
-            this.buttonBack.Location = new System.Drawing.Point(1021, 1018);
+            this.buttonBack.Location = new System.Drawing.Point(995, 1018);
             this.buttonBack.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(99, 27);
@@ -613,7 +613,7 @@ namespace WindowsFormsApp1
             // 
             // label9
             // 
-            this.label9.Location = new System.Drawing.Point(11, 15);
+            this.label9.Location = new System.Drawing.Point(10, 15);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(142, 20);
@@ -632,7 +632,7 @@ namespace WindowsFormsApp1
             // 
             // label11
             // 
-            this.label11.Location = new System.Drawing.Point(11, 15);
+            this.label11.Location = new System.Drawing.Point(10, 15);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(100, 45);
@@ -658,7 +658,7 @@ namespace WindowsFormsApp1
                                                          System.Windows.Forms.AnchorStyles.Bottom) |
                                                         System.Windows.Forms.AnchorStyles.Left) |
                                                        System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonNewPlaceWork.Location = new System.Drawing.Point(11, 100);
+            this.buttonNewPlaceWork.Location = new System.Drawing.Point(10, 100);
             this.buttonNewPlaceWork.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNewPlaceWork.Name = "buttonNewPlaceWork";
             this.buttonNewPlaceWork.Size = new System.Drawing.Size(115, 33);
@@ -703,6 +703,15 @@ namespace WindowsFormsApp1
             this.comboBoxPodr.Size = new System.Drawing.Size(450, 23);
             this.comboBoxPodr.TabIndex = 25;
             // 
+            // label23
+            // 
+            this.label23.Location = new System.Drawing.Point(5, 7);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(115, 33);
+            this.label23.TabIndex = 17;
+            this.label23.Text = "Структурное подразделение";
+            // 
             // panel11
             // 
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -714,23 +723,6 @@ namespace WindowsFormsApp1
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(612, 57);
             this.panel11.TabIndex = 24;
-            // 
-            // textBoxNewProf
-            // 
-            this.textBoxNewProf.Location = new System.Drawing.Point(133, 12);
-            this.textBoxNewProf.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxNewProf.Name = "textBoxNewProf";
-            this.textBoxNewProf.Size = new System.Drawing.Size(450, 23);
-            this.textBoxNewProf.TabIndex = 23;
-            // 
-            // label32
-            // 
-            this.label32.Location = new System.Drawing.Point(4, 12);
-            this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(97, 18);
-            this.label32.TabIndex = 22;
-            this.label32.Text = "Профессия";
             // 
             // label33
             // 
@@ -749,19 +741,27 @@ namespace WindowsFormsApp1
             this.textBoxNewDolzhn.Size = new System.Drawing.Size(450, 23);
             this.textBoxNewDolzhn.TabIndex = 20;
             // 
-            // label23
+            // textBoxNewProf
             // 
-            this.label23.Location = new System.Drawing.Point(5, 7);
-            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(115, 33);
-            this.label23.TabIndex = 17;
-            this.label23.Text = "Структурное подразделение";
+            this.textBoxNewProf.Location = new System.Drawing.Point(133, 12);
+            this.textBoxNewProf.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxNewProf.Name = "textBoxNewProf";
+            this.textBoxNewProf.Size = new System.Drawing.Size(450, 23);
+            this.textBoxNewProf.TabIndex = 23;
+            // 
+            // label32
+            // 
+            this.label32.Location = new System.Drawing.Point(3, 12);
+            this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(97, 18);
+            this.label32.TabIndex = 22;
+            this.label32.Text = "Профессия";
             // 
             // buttonDel
             // 
             this.buttonDel.ForeColor = System.Drawing.Color.Red;
-            this.buttonDel.Location = new System.Drawing.Point(972, 794);
+            this.buttonDel.Location = new System.Drawing.Point(958, 277);
             this.buttonDel.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDel.Name = "buttonDel";
             this.buttonDel.Size = new System.Drawing.Size(148, 31);
@@ -773,10 +773,10 @@ namespace WindowsFormsApp1
             // buttonEdit
             // 
             this.buttonEdit.ForeColor = System.Drawing.Color.Blue;
-            this.buttonEdit.Location = new System.Drawing.Point(972, 730);
+            this.buttonEdit.Location = new System.Drawing.Point(958, 213);
             this.buttonEdit.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(148, 56);
+            this.buttonEdit.Size = new System.Drawing.Size(148, 57);
             this.buttonEdit.TabIndex = 80;
             this.buttonEdit.Text = "Редактировать приказ";
             this.buttonEdit.UseVisualStyleBackColor = true;
@@ -800,7 +800,7 @@ namespace WindowsFormsApp1
             this.dateTimePicker4.MaxDate = new System.DateTime(3000, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker4.MinDate = new System.DateTime(1753, 1, 25, 0, 0, 0, 0);
             this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(148, 23);
+            this.dateTimePicker4.Size = new System.Drawing.Size(147, 23);
             this.dateTimePicker4.TabIndex = 42;
             // 
             // panel12
@@ -808,7 +808,7 @@ namespace WindowsFormsApp1
             this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel12.Controls.Add(this.textBox7);
             this.panel12.Controls.Add(this.label13);
-            this.panel12.Location = new System.Drawing.Point(70, 604);
+            this.panel12.Location = new System.Drawing.Point(70, 603);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(766, 62);
             this.panel12.TabIndex = 82;
@@ -830,7 +830,7 @@ namespace WindowsFormsApp1
             this.panel14.Controls.Add(this.textBox12);
             this.panel14.Controls.Add(this.label27);
             this.panel14.Controls.Add(this.label26);
-            this.panel14.Location = new System.Drawing.Point(907, 91);
+            this.panel14.Location = new System.Drawing.Point(906, 91);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(231, 84);
             this.panel14.TabIndex = 84;
