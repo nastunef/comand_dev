@@ -157,10 +157,6 @@
             this.OrganizationColumn.Name = "OrganizationColumn";
             this.OrganizationColumn.Width = 200;
             // 
-            // tRIPORGBindingSource
-            // 
-            this.tRIPORGBindingSource.DataSource = typeof(WindowsFormsApp1.TRIP_ORG);
-            // 
             // PK_ORG
             // 
             this.PK_ORG.HeaderText = "PK_ORG";
@@ -422,6 +418,7 @@
             // 
             // NumPrikazTextBox
             // 
+            this.NumPrikazTextBox.Enabled = false;
             this.NumPrikazTextBox.Location = new System.Drawing.Point(79, 422);
             this.NumPrikazTextBox.Name = "NumPrikazTextBox";
             this.NumPrikazTextBox.Size = new System.Drawing.Size(84, 20);
