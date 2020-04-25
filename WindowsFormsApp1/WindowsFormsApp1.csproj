@@ -235,6 +235,8 @@
       <DependentUpon>PriemWorkPrikaz.cs</DependentUpon>
     </Compile>
     <Compile Include="PRIKAZ.cs" />
+    <Compile Include="print_report.cs" />
+    <Compile Include="print_report.Designer.cs" />
     <Compile Include="PROFESSION.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -347,6 +349,7 @@
       <DependentUpon>KomandirovkaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Podrazdelenie.resx" />
+    <EmbeddedResource Include="print_report.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
