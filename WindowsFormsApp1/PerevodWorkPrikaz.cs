@@ -111,7 +111,7 @@ namespace WindowsFormsApp1
                 model.PRIKAZ.Add(newPrikaz);
                 model.SaveChanges();
             
-                // добавим сущность ПРИЕМ
+                // добавим сущность Перевод
                 long newIdPerevod = 0;
                 // добавим сущность приказ в бд
                 newIdPerevod = (model.PEREVOD.Max(pr => pr.PK_PEREVOD) + 1);
