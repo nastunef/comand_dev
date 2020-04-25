@@ -541,12 +541,12 @@ private void InitializeComponent()
     // 
     // label25
     // 
-    this.label25.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold,
+    this.label25.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular,
         System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-    this.label25.Location = new System.Drawing.Point(37, 114);
+    this.label25.Location = new System.Drawing.Point(44, 110);
     this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
     this.label25.Name = "label25";
-    this.label25.Size = new System.Drawing.Size(198, 20);
+    this.label25.Size = new System.Drawing.Size(179, 20);
     this.label25.TabIndex = 30;
     this.label25.Text = "Наименование организации";
     // 
@@ -605,12 +605,12 @@ private void InitializeComponent()
     // 
     // label30
     // 
-    this.label30.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold,
+    this.label30.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular,
         System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-    this.label30.Location = new System.Drawing.Point(38, 72);
+    this.label30.Location = new System.Drawing.Point(45, 68);
     this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
     this.label30.Name = "label30";
-    this.label30.Size = new System.Drawing.Size(198, 23);
+    this.label30.Size = new System.Drawing.Size(150, 23);
     this.label30.TabIndex = 39;
     this.label30.Text = "Дата составления";
     // 
