@@ -58,10 +58,10 @@ namespace WindowsFormsApp1
              this.buttonBack = new System.Windows.Forms.Button();
              this.label9 = new System.Windows.Forms.Label();
              this.panel1 = new System.Windows.Forms.Panel();
-             this.label5 = new System.Windows.Forms.Label();
-             this.label8 = new System.Windows.Forms.Label();
-             this.label10 = new System.Windows.Forms.Label();
              this.label11 = new System.Windows.Forms.Label();
+             this.label10 = new System.Windows.Forms.Label();
+             this.label8 = new System.Windows.Forms.Label();
+             this.label5 = new System.Windows.Forms.Label();
              ((System.ComponentModel.ISupportInitialize) (this.dataGridView_family)).BeginInit();
              this.panel1.SuspendLayout();
              this.SuspendLayout();
@@ -69,15 +69,15 @@ namespace WindowsFormsApp1
              // fullname
              // 
              this.fullname.Location = new System.Drawing.Point(36, 76);
-             this.fullname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+             this.fullname.Margin = new System.Windows.Forms.Padding(2);
              this.fullname.Name = "fullname";
              this.fullname.Size = new System.Drawing.Size(177, 23);
              this.fullname.TabIndex = 0;
              // 
              // firstname
              // 
-             this.firstname.Location = new System.Drawing.Point(228, 76);
-             this.firstname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+             this.firstname.Location = new System.Drawing.Point(227, 76);
+             this.firstname.Margin = new System.Windows.Forms.Padding(2);
              this.firstname.Name = "firstname";
              this.firstname.Size = new System.Drawing.Size(171, 23);
              this.firstname.TabIndex = 1;
@@ -85,9 +85,9 @@ namespace WindowsFormsApp1
              // otchestvo
              // 
              this.otchestvo.Location = new System.Drawing.Point(422, 76);
-             this.otchestvo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+             this.otchestvo.Margin = new System.Windows.Forms.Padding(2);
              this.otchestvo.Name = "otchestvo";
-             this.otchestvo.Size = new System.Drawing.Size(176, 23);
+             this.otchestvo.Size = new System.Drawing.Size(175, 23);
              this.otchestvo.TabIndex = 2;
              // 
              // dataGridView_family
@@ -97,7 +97,7 @@ namespace WindowsFormsApp1
              this.dataGridView_family.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[]
                  {this.Column1, this.Column2, this.Column3, this.Column4});
              this.dataGridView_family.Location = new System.Drawing.Point(657, 96);
-             this.dataGridView_family.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+             this.dataGridView_family.Margin = new System.Windows.Forms.Padding(2);
              this.dataGridView_family.Name = "dataGridView_family";
              this.dataGridView_family.Size = new System.Drawing.Size(694, 436);
              this.dataGridView_family.TabIndex = 19;
@@ -161,14 +161,14 @@ namespace WindowsFormsApp1
              this.label4.Location = new System.Drawing.Point(248, 57);
              this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
              this.label4.Name = "label4";
-             this.label4.Size = new System.Drawing.Size(117, 36);
+             this.label4.Size = new System.Drawing.Size(160, 36);
              this.label4.TabIndex = 23;
              this.label4.Text = "Критерии поиска";
              // 
              // button1
              // 
              this.button1.Location = new System.Drawing.Point(252, 369);
-             this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+             this.button1.Margin = new System.Windows.Forms.Padding(2);
              this.button1.Name = "button1";
              this.button1.Size = new System.Drawing.Size(128, 33);
              this.button1.TabIndex = 24;
@@ -179,7 +179,7 @@ namespace WindowsFormsApp1
              // button2
              // 
              this.button2.Location = new System.Drawing.Point(889, 546);
-             this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+             this.button2.Margin = new System.Windows.Forms.Padding(2);
              this.button2.Name = "button2";
              this.button2.Size = new System.Drawing.Size(220, 42);
              this.button2.TabIndex = 28;
@@ -189,8 +189,8 @@ namespace WindowsFormsApp1
              // 
              // checkBoxPriem
              // 
-             this.checkBoxPriem.Location = new System.Drawing.Point(39, 282);
-             this.checkBoxPriem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+             this.checkBoxPriem.Location = new System.Drawing.Point(38, 282);
+             this.checkBoxPriem.Margin = new System.Windows.Forms.Padding(2);
              this.checkBoxPriem.Name = "checkBoxPriem";
              this.checkBoxPriem.Size = new System.Drawing.Size(148, 60);
              this.checkBoxPriem.TabIndex = 29;
@@ -199,8 +199,8 @@ namespace WindowsFormsApp1
              // 
              // checkBoxDelWork
              // 
-             this.checkBoxDelWork.Location = new System.Drawing.Point(324, 274);
-             this.checkBoxDelWork.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+             this.checkBoxDelWork.Location = new System.Drawing.Point(324, 273);
+             this.checkBoxDelWork.Margin = new System.Windows.Forms.Padding(2);
              this.checkBoxDelWork.Name = "checkBoxDelWork";
              this.checkBoxDelWork.Size = new System.Drawing.Size(141, 76);
              this.checkBoxDelWork.TabIndex = 30;
@@ -210,7 +210,7 @@ namespace WindowsFormsApp1
              // checkBoxKomand
              // 
              this.checkBoxKomand.Location = new System.Drawing.Point(191, 282);
-             this.checkBoxKomand.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+             this.checkBoxKomand.Margin = new System.Windows.Forms.Padding(2);
              this.checkBoxKomand.Name = "checkBoxKomand";
              this.checkBoxKomand.Size = new System.Drawing.Size(131, 60);
              this.checkBoxKomand.TabIndex = 31;
@@ -220,7 +220,7 @@ namespace WindowsFormsApp1
              // checkBoxPerevod
              // 
              this.checkBoxPerevod.Location = new System.Drawing.Point(469, 279);
-             this.checkBoxPerevod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+             this.checkBoxPerevod.Margin = new System.Windows.Forms.Padding(2);
              this.checkBoxPerevod.Name = "checkBoxPerevod";
              this.checkBoxPerevod.Size = new System.Drawing.Size(128, 67);
              this.checkBoxPerevod.TabIndex = 32;
@@ -230,17 +230,17 @@ namespace WindowsFormsApp1
              // dateTimePickerOt
              // 
              this.dateTimePickerOt.Location = new System.Drawing.Point(180, 159);
-             this.dateTimePickerOt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+             this.dateTimePickerOt.Margin = new System.Windows.Forms.Padding(2);
              this.dateTimePickerOt.Name = "dateTimePickerOt";
              this.dateTimePickerOt.Size = new System.Drawing.Size(175, 23);
              this.dateTimePickerOt.TabIndex = 32;
              // 
              // dateTimePickerDo
              // 
-             this.dateTimePickerDo.Location = new System.Drawing.Point(410, 159);
-             this.dateTimePickerDo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+             this.dateTimePickerDo.Location = new System.Drawing.Point(409, 159);
+             this.dateTimePickerDo.Margin = new System.Windows.Forms.Padding(2);
              this.dateTimePickerDo.Name = "dateTimePickerDo";
-             this.dateTimePickerDo.Size = new System.Drawing.Size(176, 23);
+             this.dateTimePickerDo.Size = new System.Drawing.Size(175, 23);
              this.dateTimePickerDo.TabIndex = 33;
              // 
              // label6
@@ -255,7 +255,7 @@ namespace WindowsFormsApp1
              // checkBox_Confirm
              // 
              this.checkBox_Confirm.Location = new System.Drawing.Point(180, 204);
-             this.checkBox_Confirm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+             this.checkBox_Confirm.Margin = new System.Windows.Forms.Padding(2);
              this.checkBox_Confirm.Name = "checkBox_Confirm";
              this.checkBox_Confirm.Size = new System.Drawing.Size(108, 22);
              this.checkBox_Confirm.TabIndex = 36;
@@ -273,8 +273,8 @@ namespace WindowsFormsApp1
              // 
              // buttonBack
              // 
-             this.buttonBack.Location = new System.Drawing.Point(1128, 727);
-             this.buttonBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+             this.buttonBack.Location = new System.Drawing.Point(1227, 666);
+             this.buttonBack.Margin = new System.Windows.Forms.Padding(2);
              this.buttonBack.Name = "buttonBack";
              this.buttonBack.Size = new System.Drawing.Size(124, 37);
              this.buttonBack.TabIndex = 45;
@@ -320,25 +320,15 @@ namespace WindowsFormsApp1
              this.panel1.Size = new System.Drawing.Size(628, 436);
              this.panel1.TabIndex = 49;
              // 
-             // label5
+             // label11
              // 
-             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular,
+             this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular,
                  System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-             this.label5.Location = new System.Drawing.Point(36, 12);
-             this.label5.Name = "label5";
-             this.label5.Size = new System.Drawing.Size(177, 23);
-             this.label5.TabIndex = 38;
-             this.label5.Text = "Данные о сотруднике:\r\n";
-             // 
-             // label8
-             // 
-             this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular,
-                 System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-             this.label8.Location = new System.Drawing.Point(36, 123);
-             this.label8.Name = "label8";
-             this.label8.Size = new System.Drawing.Size(169, 23);
-             this.label8.TabIndex = 39;
-             this.label8.Text = "Данные о приказе:\r\n";
+             this.label11.Location = new System.Drawing.Point(36, 243);
+             this.label11.Name = "label11";
+             this.label11.Size = new System.Drawing.Size(352, 23);
+             this.label11.TabIndex = 41;
+             this.label11.Text = "Выберите среди каких приказов искать (один или более)\r\n";
              // 
              // label10
              // 
@@ -350,22 +340,32 @@ namespace WindowsFormsApp1
              this.label10.TabIndex = 40;
              this.label10.Text = "Статус приказа:\r\n";
              // 
-             // label11
+             // label8
              // 
-             this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular,
+             this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular,
                  System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-             this.label11.Location = new System.Drawing.Point(36, 244);
-             this.label11.Name = "label11";
-             this.label11.Size = new System.Drawing.Size(352, 23);
-             this.label11.TabIndex = 41;
-             this.label11.Text = "Выберите среди каких приказов искать (один или более)\r\n";
+             this.label8.Location = new System.Drawing.Point(36, 123);
+             this.label8.Name = "label8";
+             this.label8.Size = new System.Drawing.Size(169, 23);
+             this.label8.TabIndex = 39;
+             this.label8.Text = "Данные о приказе:\r\n";
+             // 
+             // label5
+             // 
+             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular,
+                 System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+             this.label5.Location = new System.Drawing.Point(36, 12);
+             this.label5.Name = "label5";
+             this.label5.Size = new System.Drawing.Size(177, 23);
+             this.label5.TabIndex = 38;
+             this.label5.Text = "Данные о сотруднике:\r\n";
              // 
              // SearchPrikaz
              // 
              this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
              this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
              this.BackColor = System.Drawing.SystemColors.ControlLight;
-             this.ClientSize = new System.Drawing.Size(1373, 786);
+             this.ClientSize = new System.Drawing.Size(1373, 714);
              this.Controls.Add(this.panel1);
              this.Controls.Add(this.label9);
              this.Controls.Add(this.buttonBack);
@@ -373,7 +373,7 @@ namespace WindowsFormsApp1
              this.Controls.Add(this.label4);
              this.Controls.Add(this.dataGridView_family);
              this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+             this.Margin = new System.Windows.Forms.Padding(2);
              this.Name = "SearchPrikaz";
              this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
              this.Text = "Поиск приказов";
