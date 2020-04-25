@@ -55,7 +55,7 @@ namespace WindowsFormsApp1
             dateTimePicker2.Value = perevod.STARTWORKDATE == null ? new DateTime(2020, 1, 1) : perevod.STARTWORKDATE.Value;
             textBoxPrichinaPerevoda.Text = perevod.REASON;
             
-            // данные о старом месте работы
+            // данные о новом месте работы
             var dolzhn = model.JOB_POSITION.FirstOrDefault(d => d.PK_JOB_POS == perevod.PK_NEW_JOB_POS);
             var podr = model.PODRAZDELORG.FirstOrDefault(po => po.PK_PODRAZDEL == perevod.PK_NEW_PODRAZDEL);
             var prof = model.PROFESSION.FirstOrDefault(p => p.PK_PROF == perevod.PK_NEW_PROF);
@@ -87,6 +87,11 @@ namespace WindowsFormsApp1
             var prikaz = model.PRIKAZ.FirstOrDefault(p => p.PK_PRIKAZ == idPrikaz);
             if (prikaz == null ) return;
             prikaz.ISPROJECT = "1";
+            model.SaveChanges();
+            var perevod = model.PEREVOD.FirstOrDefault(u => u.PK_PRIKAZ == prikaz.PK_PRIKAZ);
+            var personcard = prikaz.PERSONCARD;
+            personcard.PK_PROF = perevod.PK_NEW_PROF;
+            personcard.JOB_POSITION_PK_JOB_POS = perevod.PK_NEW_JOB_POS;
             model.SaveChanges();
             // закрываем форму
             Close();

@@ -57,7 +57,7 @@ namespace WindowsFormsApp1
             // 
             // fullname
             // 
-            this.fullname.Location = new System.Drawing.Point(23, 49);
+            this.fullname.Location = new System.Drawing.Point(23, 48);
             this.fullname.Margin = new System.Windows.Forms.Padding(2);
             this.fullname.Name = "fullname";
             this.fullname.Size = new System.Drawing.Size(172, 23);
@@ -65,7 +65,7 @@ namespace WindowsFormsApp1
             // 
             // firstname
             // 
-            this.firstname.Location = new System.Drawing.Point(218, 49);
+            this.firstname.Location = new System.Drawing.Point(218, 48);
             this.firstname.Margin = new System.Windows.Forms.Padding(2);
             this.firstname.Name = "firstname";
             this.firstname.Size = new System.Drawing.Size(163, 23);
@@ -73,10 +73,10 @@ namespace WindowsFormsApp1
             // 
             // otchestvo
             // 
-            this.otchestvo.Location = new System.Drawing.Point(408, 49);
+            this.otchestvo.Location = new System.Drawing.Point(408, 48);
             this.otchestvo.Margin = new System.Windows.Forms.Padding(2);
             this.otchestvo.Name = "otchestvo";
-            this.otchestvo.Size = new System.Drawing.Size(169, 23);
+            this.otchestvo.Size = new System.Drawing.Size(168, 23);
             this.otchestvo.TabIndex = 2;
             // 
             // dataGridView_family
@@ -85,12 +85,11 @@ namespace WindowsFormsApp1
                 System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_family.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[]
                 {this.Column1, this.Column2, this.Column3});
-            this.dataGridView_family.Location = new System.Drawing.Point(25, 117);
+            this.dataGridView_family.Location = new System.Drawing.Point(24, 117);
             this.dataGridView_family.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView_family.Name = "dataGridView_family";
             this.dataGridView_family.Size = new System.Drawing.Size(554, 278);
             this.dataGridView_family.TabIndex = 19;
-           
             // 
             // Column1
             // 
@@ -145,7 +144,7 @@ namespace WindowsFormsApp1
             this.label4.Location = new System.Drawing.Point(23, 74);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(265, 26);
+            this.label4.Size = new System.Drawing.Size(265, 27);
             this.label4.TabIndex = 23;
             this.label4.Text = "*Введите данные для поиска сотрудника";
             // 
@@ -244,7 +243,7 @@ namespace WindowsFormsApp1
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(25, 397);
+            this.label5.Location = new System.Drawing.Point(24, 397);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(376, 23);
             this.label5.TabIndex = 25;
