@@ -242,7 +242,7 @@ namespace WindowsFormsApp1
             // 
             // label10
             // 
-            this.label10.Location = new System.Drawing.Point(18, 3);
+            this.label10.Location = new System.Drawing.Point(17, 3);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(122, 33);
@@ -251,7 +251,7 @@ namespace WindowsFormsApp1
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(144, 13);
+            this.textBox5.Location = new System.Drawing.Point(143, 13);
             this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(436, 23);
@@ -438,7 +438,7 @@ namespace WindowsFormsApp1
             this.panel7.Controls.Add(this.label24);
             this.panel7.Controls.Add(this.label22);
             this.panel7.Enabled = false;
-            this.panel7.Location = new System.Drawing.Point(70, 829);
+            this.panel7.Location = new System.Drawing.Point(70, 828);
             this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(771, 62);
@@ -583,7 +583,7 @@ namespace WindowsFormsApp1
             // 
             // buttonBack
             // 
-            this.buttonBack.Location = new System.Drawing.Point(978, 919);
+            this.buttonBack.Location = new System.Drawing.Point(978, 918);
             this.buttonBack.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(99, 27);
@@ -762,7 +762,7 @@ namespace WindowsFormsApp1
             // buttonDel
             // 
             this.buttonDel.ForeColor = System.Drawing.Color.Red;
-            this.buttonDel.Location = new System.Drawing.Point(948, 859);
+            this.buttonDel.Location = new System.Drawing.Point(948, 858);
             this.buttonDel.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDel.Name = "buttonDel";
             this.buttonDel.Size = new System.Drawing.Size(159, 31);
@@ -840,6 +840,8 @@ namespace WindowsFormsApp1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1204, 977);
             this.Controls.Add(this.panel14);
