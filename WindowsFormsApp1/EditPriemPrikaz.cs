@@ -6,6 +6,11 @@ namespace WindowsFormsApp1
 {
     public partial class EditPriemPrikaz : Form
     {
+        private bool flagWork = false;
+        private decimal pk_podr = -1;
+        private decimal pk_dolzhn = -1;
+        private decimal pk_prof = -1;
+        private decimal tab = -1;
         private long idPrikaz;
         public EditPriemPrikaz()
         {
@@ -38,9 +43,13 @@ namespace WindowsFormsApp1
             var priem = model.PRIEM.FirstOrDefault(p => p.PK_PRIKAZ == id);
             if (priem == null ) return;
 
-            dateTimePicker1.Value = prikaz.CREATEDATE.Value;
+            dateTimePicker4.Value = priem.STARTWORKDATE.Value;
             if (priem.ENDWORKDATE != null)
                 dateTimePicker2.Value = priem.ENDWORKDATE.Value;
+            if (prikaz.ISPROJECT == "1") buttonConfirm.Enabled = false;
+
+            dateTimePicker1.Value = prikaz.CREATEDATE.Value;
+            
             textBox11.Text = prikaz.OUR_ORG.NAME;
             textBox12.Text = "0301001";
             textBox13.Text = prikaz.OUR_ORG.OKPO;
@@ -53,29 +62,21 @@ namespace WindowsFormsApp1
             
             textBox4.Text = selectedMen.TABEL_NUM.ToString();
             
-            textBox5.Text = selectedMen.TABEL == null ? null : selectedMen.TABEL.PODRAZDELORG.NAME;
-            textBox6.Text = selectedMen.JOB_POSITION == null ? null : selectedMen.JOB_POSITION.NAME;
-            textBox7.Text = selectedMen.PROFESSION == null ? null : selectedMen.PROFESSION.NAME;
+            var dolzhn = model.JOB_POSITION.FirstOrDefault(d => d.PK_JOB_POS == priem.PK_JOB_POS);
+            var podr = model.PODRAZDELORG.FirstOrDefault(po => po.PK_PODRAZDEL == priem.PK_PODR);
+            var prof = model.PROFESSION.FirstOrDefault(p => p.PK_PROF == selectedMen.PK_PROF);
+            comboBoxPodr.SelectedItem = podr.NAME;
+            textBoxNewDolzhn.Text = dolzhn.NAME;
+            textBoxNewProf.Text = prof.NAME;
+            
+            var strStat  = model.STR_SHTAT_RASP.FirstOrDefault(stat => stat.PK_JOB_POS == priem.PK_JOB_POS);
+            if (strStat == null) return;
+            numericUrerpDownTarifStavk.Value = Math.Round((decimal)strStat.TARIFF);
+            numericUpDownNadbavk.Value = Math.Round((decimal) strStat.NADBAVKA1);
+            
             textBox8.Text = selectedMen.CHARACTER_WORK == null ? null : selectedMen.CHARACTER_WORK.NAME;
             textBox9.Text = priem.CONDITIONS;
-            
-            if (selectedMen.JOB_POSITION != null)
-            {
-                var strStat  = model.STR_SHTAT_RASP.FirstOrDefault(stat => stat.PK_JOB_POS == selectedMen.JOB_POSITION.PK_JOB_POS);
-                if (strStat == null) return;
-                numericUrerpDown1.Value = (decimal) strStat.TARIFF;
-                numericUrerpDown1.Value = (decimal) strStat.NADBAVKA1;
-            }
-            
             numericUpDown4.Value = priem.TESTPERIOD.Value;
-            if (prikaz.ISPROJECT == "1")
-            {
-                buttonConfirm.Enabled = false;
-            }
-            else
-            {
-                buttonConfirm.Enabled = true;
-            }
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
@@ -104,9 +105,9 @@ namespace WindowsFormsApp1
             priem.ENDWORKDATE = dateTimePicker2.Value;
             priem.TESTPERIOD = numericUpDown4.Value;
             priem.CONDITIONS = textBox9.Text;
-            // TODO
-            priem.PODRAZDELORG = model.PODRAZDELORG.FirstOrDefault(podr => podr.PK_PODRAZDEL == 1);
-            priem.JOB_POSITION = model.JOB_POSITION.FirstOrDefault(job => job.PK_JOB_POS == 1);
+            // данные о новом месте работы
+            priem.PK_PODR = pk_podr;
+            priem.PK_JOB_POS = pk_dolzhn;
             priem.CHARACTER_WORK = model.CHARACTER_WORK.FirstOrDefault(cha => cha.PK_CHAR_WORK == 1);
             priem.PODRAZDELORG_PK_PODRAZDEL = 1;
             
@@ -116,6 +117,29 @@ namespace WindowsFormsApp1
             Close();
         }
 
-       
+
+        private void buttonNewPlaceWork_Click(object sender, EventArgs e)
+        {
+            Model1 model = new Model1();
+            var dolzhn = model.JOB_POSITION.FirstOrDefault(d => d.NAME == textBoxNewDolzhn.Text);
+            var prof = model.PROFESSION.FirstOrDefault(p => p.NAME == textBoxNewProf.Text);
+            var podr = model.PODRAZDELORG.FirstOrDefault(po => po.NAME == comboBoxPodr.SelectedItem.ToString());
+            if (dolzhn == null || prof == null || podr == null)
+            {
+                buttonConfirm.Enabled = false;
+                return;
+            }
+
+            buttonConfirm.Enabled = true;
+            pk_dolzhn = dolzhn.PK_JOB_POS;
+            pk_podr = podr.PK_PODRAZDEL;
+            pk_prof = prof.PK_PROF;
+
+            var strStat = model.STR_SHTAT_RASP.FirstOrDefault(stat => stat.PK_JOB_POS == pk_dolzhn);
+            if (strStat == null) return;
+            numericUrerpDownTarifStavk.Value = Math.Round((decimal) strStat.TARIFF);
+            numericUpDownNadbavk.Value = Math.Round((decimal) strStat.NADBAVKA1);
+            flagWork = true;
+        }
     }
 }
