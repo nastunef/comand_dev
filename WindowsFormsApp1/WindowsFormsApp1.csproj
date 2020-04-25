@@ -134,11 +134,23 @@
     <Compile Include="About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddJobPosition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddJobPosition.Designer.cs">
+      <DependentUpon>AddJobPosition.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddPlaceKomandForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddPlaceKomandForm.Designer.cs">
       <DependentUpon>AddPlaceKomandForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddPodrazdel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPodrazdel.Designer.cs">
+      <DependentUpon>AddPodrazdel.cs</DependentUpon>
     </Compile>
     <Compile Include="CalendarColumn.cs" />
     <Compile Include="CHARACTER_WORK.cs" />
@@ -315,8 +327,14 @@
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddJobPosition.resx">
+      <DependentUpon>AddJobPosition.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddPlaceKomandForm.resx">
       <DependentUpon>AddPlaceKomandForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPodrazdel.resx">
+      <DependentUpon>AddPodrazdel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChooseST.resx">
       <DependentUpon>ChooseST.cs</DependentUpon>

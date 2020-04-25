@@ -289,9 +289,18 @@ using WindowsFormsApp1;
                         }
                         catch (KeyNotFoundException)
                         {
-                            MessageBox.Show("Подразделения " + strginShtatRasps[i].stringName + " не найдено.\nНеобходимо внести данные");
-                            AddPodrazdel addpodrazdel = new AddPodrazdel();
-                            addpodrazdel.Show();
+                            MessageBox.Show("Подразделения " + strginShtatRasps[i].stringName + " не найдено.\n           Необходимо внести данные");
+                            AddPodrazdel addpodrazdel = new AddPodrazdel(this,podrazd_pk,queryForPodr.Count()+1);
+                            addpodrazdel.NamePodrazdel.Text = strginShtatRasps[i].stringName;
+                            addpodrazdel.ShowDialog();
+                            try
+                            {
+                                newStr.PK_PODRAZDEL = Convert.ToInt32(podrazd_pk[strginShtatRasps[i].stringName]);
+                            }
+                            catch (KeyNotFoundException)
+                            {
+                                MessageBox.Show("Не вышло");
+                            }
                         }
 
                         try
@@ -299,7 +308,18 @@ using WindowsFormsApp1;
                             newStr.PK_JOB_POS = Convert.ToInt32(dolg_pk[strginShtatRasps[i].stringDolgnost]);
                         }catch (KeyNotFoundException)
                         {
-                            MessageBox.Show("Должность " + strginShtatRasps[i].stringDolgnost + " не найдена.\nНеобходимо внести данные");
+                            MessageBox.Show("Должность " + strginShtatRasps[i].stringDolgnost + " не найдена.\n            Необходимо внести данные");
+                            AddJobPosition addJobPosition = new AddJobPosition(this,queryForJob.Count()+1, dolg_pk);
+                            addJobPosition.NameJobPosition.Text = strginShtatRasps[i].stringDolgnost;
+                            addJobPosition.ShowDialog();
+                            try
+                            {
+                                newStr.PK_JOB_POS = Convert.ToInt32(dolg_pk[strginShtatRasps[i].stringDolgnost]);
+                            }
+                            catch (KeyNotFoundException)
+                            {
+                                MessageBox.Show("Не вышло");
+                            }
                         }
 
                         newStr.COUNT_STUFF = Convert.ToInt32(strginShtatRasps[i].stringKolEd);
@@ -313,8 +333,8 @@ using WindowsFormsApp1;
                     }
                     model.SaveChanges();
                     MessageBox.Show("Добавленно");
+                    PK_ST = countShtat + 1;
                 }
-                //
             }
         }
 
@@ -339,21 +359,22 @@ using WindowsFormsApp1;
 
     public async void setStrginRasps()
     {
+        strginShtatRasps = new List<StringShtatRasp>();
         await RunLoad();
         MessageBox.Show("Данные загружены", "Выполнено" ,MessageBoxButtons.OK);
     }
 
     public async Task RunLoad()
     {
+        model = new Model1();
         var form = new Donloading();
         form.Show();
         numerusPeople = 0;
         totalInMonth1 = 0;
-        strginShtatRasps = new List<StringShtatRasp>();
         string numdoc = numDocFromChoose.ToString();
         IQueryable<STR_SHTAT_RASP> strShtatRasps = model.STR_SHTAT_RASP;
         strShtatRasps = strShtatRasps.Where(rasp => rasp.SHTAT_RASP.number == numdoc);
-       
+        strginShtatRasps = new List<StringShtatRasp>();
         foreach (STR_SHTAT_RASP strShtatRasp in strShtatRasps)
         {
             strginShtatRasps.Add(setDataInString(new StringShtatRasp(), Convert.ToInt32(strShtatRasp.PK_STROKA),strShtatRasp.PODRAZDELORG.NAME,
@@ -438,8 +459,6 @@ using WindowsFormsApp1;
 
     private void addPodrazdel_Click(object sender, EventArgs e)
     {
-        AddPodrazdel addpodrazdel = new AddPodrazdel();
-        addpodrazdel.Show();
     }
     }
 }
