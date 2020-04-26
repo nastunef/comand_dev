@@ -35,7 +35,7 @@ namespace WindowsFormsApp1
 			using (StreamWriter writer = new StreamWriter(File.Create(Path.Combine(System.IO.Directory.GetCurrentDirectory(), "report.txt"))))
 			{
 				Model1 model = new Model1();
-				writer.WriteLine("Общество с ограниченной ответственностью");
+				writer.WriteLine("Общество с ограниченной ответственностью {0}", model.OUR_ORG.FirstOrDefault().NAME);
 				writer.WriteLine(model.OUR_ORG.FirstOrDefault().ADDRESS);
 				writer.WriteLine("тел. 8(822)13-80-22");
 				writer.WriteLine("ИНН {0}, ОГРН {1}\n", model.OUR_ORG.FirstOrDefault().INN, model.OUR_ORG.FirstOrDefault().OGRN);
@@ -49,7 +49,7 @@ namespace WindowsFormsApp1
 				else
 				{
 					writer.Write("{0} {1} {2}, {3} г.р., ", finded.SURNAME, finded.NAME, finded.MIDDLENAME, finded.BIRTHDATE.ToString().Substring(0, 10));
-					writer.WriteLine("работает в ООО в должности ");
+					writer.WriteLine("работает в ООО {0} в должности ", model.OUR_ORG.FirstOrDefault().NAME);
 					writer.WriteLine("{0} с {1} г. ", finded.PROFESSION.NAME, finded.DATECREATE.ToString().Substring(0, 10));
 					writer.Write("по настоящее время, имеет оклад {0} рублей в месяц.", finded.PK_GRAZD * 4000);
 					//writer.WriteLine("{0} с {1} г. ", finded.PROFESSION.NAME, finded.PEREVOD.LastOrDefault().STARTWORKDATE);
