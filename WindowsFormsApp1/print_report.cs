@@ -32,18 +32,16 @@ namespace WindowsFormsApp1
 
 		private void button_run_Click(object sender, EventArgs e)
 		{
-			string path = @"C:\Program Files (x86)\MinGWStudio\Programs\Solutions\WindowsFormsApp2\WindowsFormsApp2\report.txt";
-
-			using (StreamWriter writer = new StreamWriter(path, false))
+			using (StreamWriter writer = new StreamWriter(File.Create(Path.Combine(System.IO.Directory.GetCurrentDirectory(), "report.txt"))))
 			{
 				Model1 model = new Model1();
 				writer.WriteLine("Общество с ограниченной ответственностью");
-				writer.WriteLine(model.OUR_ORG.First().ADDRESS);
+				writer.WriteLine(model.OUR_ORG.FirstOrDefault().ADDRESS);
 				writer.WriteLine("тел. 8(822)13-80-22");
-				writer.WriteLine("ИНН {0}, ОГРН {1}\n", model.OUR_ORG.First().INN, model.OUR_ORG.First().OGRN);
+				writer.WriteLine("ИНН {0}, ОГРН {1}\n", model.OUR_ORG.FirstOrDefault().INN, model.OUR_ORG.FirstOrDefault().OGRN);
 				writer.WriteLine("от {0}г.", DateTime.Now.ToString().Substring(0, 10)); //todo дату в текущий момент времени
 				writer.WriteLine("СПРАВКА");
-				PERSONCARD finded = model.PERSONCARD.First(p => (p.NAME == comboBox_nameValue.Text &&
+				PERSONCARD finded = model.PERSONCARD.FirstOrDefault(p => (p.NAME == comboBox_nameValue.Text &&
 						p.SURNAME == comboBox_surnameValue.Text &&
 							p.MIDDLENAME == comboBox_middlenameValue.Text));
 				if (finded == null)
@@ -59,6 +57,11 @@ namespace WindowsFormsApp1
 					MessageBox.Show("Справка создана!");
 				}
 			}
+		}
+
+		private void print_report_Load(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
