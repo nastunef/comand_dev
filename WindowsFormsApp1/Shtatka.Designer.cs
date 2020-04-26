@@ -88,7 +88,6 @@
             this.поискПодразделенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.totalEdtx = new System.Windows.Forms.TextBox();
             this.totalInMoth = new System.Windows.Forms.TextBox();
-            
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -671,7 +670,7 @@
             this.totalInMoth.Name = "totalInMoth";
             this.totalInMoth.Size = new System.Drawing.Size(208, 22);
             this.totalInMoth.TabIndex = 59;
-            
+           
             // 
             // Shtatka
             // 
@@ -679,7 +678,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1455, 738);
-            
             this.Controls.Add(this.totalInMoth);
             this.Controls.Add(this.totalEdtx);
             this.Controls.Add(this.year);
@@ -748,7 +746,6 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
-
         
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.TextBox dataCreate;

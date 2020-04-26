@@ -124,7 +124,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.NamePodrazdel);
             this.Name = "AddPodrazdel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddPodrazdel";
+            this.Text = "Добавить подразделение";
             this.Load += new System.EventHandler(this.AddPodrazdel_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
