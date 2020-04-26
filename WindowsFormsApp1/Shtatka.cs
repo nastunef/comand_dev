@@ -206,6 +206,7 @@ using WindowsFormsApp1;
 
         private async void файлToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            model = new Model1();
             exApp = new Application();
             exApp.Visible = false;
             string PATH_TO_SHTATKA = "Shtatnoe\\shtatnoeraspisanie.xls";
@@ -268,93 +269,7 @@ using WindowsFormsApp1;
                 var result = MessageBox.Show("Для корректной работы необходимо добавить документ","Такого документа нет в базе",MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
-                    IQueryable<STR_SHTAT_RASP> queryForStrShtatRasp = model.STR_SHTAT_RASP;
-                    int countStrInST = queryForStrShtatRasp.Count()+2;
-                    newShtat = new SHTAT_RASP();
-                    newShtat.PK_SHTAT_RASP = countShtat+1;
-                    newShtat.number = numberDoc.Text;
-                    newShtat.CREATEDATE = DateTime.Parse(dataCreate.Text);
-                    model.SHTAT_RASP.Add(newShtat);
-                    model.SaveChanges();
-                    IQueryable<PODRAZDELORG> queryForPodr = model.PODRAZDELORG;
-                    foreach (PODRAZDELORG podrazdelorg in queryForPodr)
-                    {
-                        if(!podrazdelorg.NAME.Equals("Наименование органа управления / структурного подразделения"))
-                        try
-                        {
-                            podrazd_pk.Add(podrazdelorg.NAME, Convert.ToInt32(podrazdelorg.PK_PODRAZDEL));
-                        }
-                        catch (ArgumentException)
-                        {
-                        }
-                    }
-
-                    IQueryable<JOB_POSITION> queryForJob = model.JOB_POSITION;
-                    foreach (JOB_POSITION job in queryForJob)
-                    {
-                        try
-                        {
-                            dolg_pk.Add(job.NAME, Convert.ToInt32(job.PK_JOB_POS));
-                        }
-                        catch (ArgumentException)
-                        {
-                        }
-                    }
-                    for (int i = 0; i < strginShtatRasps.Count(); i++)
-                    {
-                        newStr = new STR_SHTAT_RASP();
-                        newStr.PK_STROKA = countStrInST++;
-                        try
-                        {
-                            newStr.PK_PODRAZDEL = Convert.ToInt32(podrazd_pk[strginShtatRasps[i].stringName]);
-                        }
-                        catch (KeyNotFoundException)
-                        {
-                            MessageBox.Show("Подразделения " + strginShtatRasps[i].stringName + " не найдено.\n             Необходимо внести данные");
-                            AddPodrazdel addpodrazdel = new AddPodrazdel(this,podrazd_pk,queryForPodr.Count()+1);
-                            addpodrazdel.NamePodrazdel.Text = strginShtatRasps[i].stringName;
-                            addpodrazdel.ShowDialog();
-                            try
-                            {
-                                newStr.PK_PODRAZDEL = Convert.ToInt32(podrazd_pk[strginShtatRasps[i].stringName]);
-                            }
-                            catch (KeyNotFoundException)
-                            {
-                                MessageBox.Show("Не получилось");
-                            }
-                        }
-
-                        try
-                        {
-                            newStr.PK_JOB_POS = Convert.ToInt32(dolg_pk[strginShtatRasps[i].stringDolgnost]);
-                        }catch (KeyNotFoundException)
-                        {
-                            MessageBox.Show("Должность " + strginShtatRasps[i].stringDolgnost + " не найдена.\n             Необходимо внести данные");
-                            AddJobPosition addJobPosition = new AddJobPosition(this,queryForJob.Count()+1,dolg_pk);
-                            addJobPosition.NameJobPosition.Text = strginShtatRasps[i].stringDolgnost;
-                            addJobPosition.ShowDialog();
-                            try
-                            {
-                                newStr.PK_JOB_POS = Convert.ToInt32(dolg_pk[strginShtatRasps[i].stringDolgnost]);
-                            }
-                            catch (KeyNotFoundException)
-                            {
-                                MessageBox.Show("Не получилось");
-                            }
-                        }
-
-                        newStr.COUNT_STUFF = Convert.ToInt32(strginShtatRasps[i].stringKolEd);
-                        newStr.TARIFF = Convert.ToInt32(strginShtatRasps[i].stringoklad);
-                        newStr.NADBAVKA1 = (Decimal)strginShtatRasps[i].stringNad1;
-                        newStr.NADBAVKA2 = (Decimal)strginShtatRasps[i].stringNad2;
-                        newStr.NADBAVKA3 = (Decimal)strginShtatRasps[i].stringNad3;
-                        newStr.NOTE = strginShtatRasps[i].stringPrim;
-                        newStr.SHTAT_RASP_PK_SHTAT_RASP = countShtat + 1;
-                        model.STR_SHTAT_RASP.Add(newStr);
-                    }
-                    model.SaveChanges();
-                    PK_ST = countShtat + 1;
-                    MessageBox.Show("Добавленно");
+                    await RunLoadShtatkaToBaza();
                 }
             }
         }
@@ -478,10 +393,100 @@ using WindowsFormsApp1;
         form.Close();
     }
 
-    private void addPodrazdel_Click(object sender, EventArgs e)
+    public async Task RunLoadShtatkaToBaza()
     {
-        AddPodrazdel addpodrazdel = new AddPodrazdel();
-        addpodrazdel.Show();
-    }
+        var form = new Donloading();
+        form.Show();
+        IQueryable<STR_SHTAT_RASP> queryForStrShtatRasp = model.STR_SHTAT_RASP;
+                    int countStrInST = queryForStrShtatRasp.Count()+2;
+                    newShtat = new SHTAT_RASP();
+                    newShtat.PK_SHTAT_RASP = countShtat+1;
+                    newShtat.number = numberDoc.Text;
+                    newShtat.CREATEDATE = DateTime.Parse(dataCreate.Text);
+                    model.SHTAT_RASP.Add(newShtat);
+                    model.SaveChanges();
+                    IQueryable<PODRAZDELORG> queryForPodr = model.PODRAZDELORG;
+                    foreach (PODRAZDELORG podrazdelorg in queryForPodr)
+                    {
+                        if(!podrazdelorg.NAME.Equals("Наименование органа управления / структурного подразделения"))
+                        try
+                        {
+                            podrazd_pk.Add(podrazdelorg.NAME, Convert.ToInt32(podrazdelorg.PK_PODRAZDEL));
+                        }
+                        catch (ArgumentException)
+                        {
+                        }
+                    }
+
+                    IQueryable<JOB_POSITION> queryForJob = model.JOB_POSITION;
+                    foreach (JOB_POSITION job in queryForJob)
+                    {
+                        try
+                        {
+                            dolg_pk.Add(job.NAME, Convert.ToInt32(job.PK_JOB_POS));
+                        }
+                        catch (ArgumentException)
+                        {
+                        }
+                    }
+                    for (int i = 0; i < strginShtatRasps.Count(); i++)
+                    {
+                        newStr = new STR_SHTAT_RASP();
+                        newStr.PK_STROKA = countStrInST++;
+                        try
+                        {
+                            newStr.PK_PODRAZDEL = Convert.ToInt32(podrazd_pk[strginShtatRasps[i].stringName]);
+                        }
+                        catch (KeyNotFoundException)
+                        {
+                            MessageBox.Show("Подразделения " + strginShtatRasps[i].stringName + " не найдено.\n             Необходимо внести данные");
+                            AddPodrazdel addpodrazdel = new AddPodrazdel(this,podrazd_pk,queryForPodr.Count()+1);
+                            addpodrazdel.NamePodrazdel.Text = strginShtatRasps[i].stringName;
+                            addpodrazdel.ShowDialog();
+                            try
+                            {
+                                newStr.PK_PODRAZDEL = Convert.ToInt32(podrazd_pk[strginShtatRasps[i].stringName]);
+                            }
+                            catch (KeyNotFoundException)
+                            {
+                                MessageBox.Show("Не получилось");
+                            }
+                        }
+
+                        try
+                        {
+                            newStr.PK_JOB_POS = Convert.ToInt32(dolg_pk[strginShtatRasps[i].stringDolgnost]);
+                        }catch (KeyNotFoundException)
+                        {
+                            MessageBox.Show("Должность " + strginShtatRasps[i].stringDolgnost + " не найдена.\n             Необходимо внести данные");
+                            AddJobPosition addJobPosition = new AddJobPosition(this,queryForJob.Count()+1,dolg_pk);
+                            addJobPosition.NameJobPosition.Text = strginShtatRasps[i].stringDolgnost;
+                            addJobPosition.ShowDialog();
+                            try
+                            {
+                                newStr.PK_JOB_POS = Convert.ToInt32(dolg_pk[strginShtatRasps[i].stringDolgnost]);
+                            }
+                            catch (KeyNotFoundException)
+                            {
+                                MessageBox.Show("Не получилось");
+                            }
+                        }
+
+                        newStr.COUNT_STUFF = Convert.ToInt32(strginShtatRasps[i].stringKolEd);
+                        newStr.TARIFF = Convert.ToInt32(strginShtatRasps[i].stringoklad);
+                        newStr.NADBAVKA1 = (Decimal)strginShtatRasps[i].stringNad1;
+                        newStr.NADBAVKA2 = (Decimal)strginShtatRasps[i].stringNad2;
+                        newStr.NADBAVKA3 = (Decimal)strginShtatRasps[i].stringNad3;
+                        newStr.NOTE = strginShtatRasps[i].stringPrim;
+                        newStr.SHTAT_RASP_PK_SHTAT_RASP = countShtat + 1;
+                        model.STR_SHTAT_RASP.Add(newStr);
+                    }
+
+                    
+                    model.SaveChanges();
+                    PK_ST = countShtat + 1;
+                    form.Close();
+                    MessageBox.Show("Добавленно");
+        }
     }
 }
