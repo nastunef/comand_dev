@@ -46,6 +46,7 @@ namespace WindowsFormsApp1
             this.button2 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -111,7 +112,7 @@ namespace WindowsFormsApp1
             // 
             this.splitContainer1.Panel2.Controls.Add(this.monthCalendar1);
             this.splitContainer1.Size = new System.Drawing.Size(933, 495);
-            this.splitContainer1.SplitterDistance = 310;
+            this.splitContainer1.SplitterDistance = 336;
             this.splitContainer1.SplitterWidth = 2;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -124,7 +125,7 @@ namespace WindowsFormsApp1
             this.flowLayoutPanel1.Controls.Add(this.button3);
             this.flowLayoutPanel1.Controls.Add(this.button2);
             this.flowLayoutPanel1.Controls.Add(this.button7);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 72);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 71);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(285, 345);
@@ -257,5 +258,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
 
         #endregion
+
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
