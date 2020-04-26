@@ -149,6 +149,7 @@ using WindowsFormsApp1;
             mainDolgnost.Text = ((excelsheets.Cells[151, 36]).Value ?? string.Empty).ToString();
             rashPodpis.Text = ((excelsheets.Cells[151, 109]).Value ?? string.Empty).ToString();
             rashPodBuh.Text = ((excelsheets.Cells[154, 62]).Value ?? string.Empty).ToString();
+            numDoc = numberDoc.Text;
             int indexRow = 16;
             int i = 0;
             while(!(excelsheets.Cells[indexRow, 1].Value ?? string.Empty).Equals(""))
@@ -208,11 +209,27 @@ using WindowsFormsApp1;
             exApp = new Application();
             exApp.Visible = false;
             string PATH_TO_SHTATKA = "Shtatnoe\\shtatnoeraspisanie.xls";
+            string PATH_TO_Directory = "Shtatnoe\\";
             if (!Directory.Exists("Shtatnoe"))
                 Directory.CreateDirectory("Shtatnoe");
             if (!File.Exists(PATH_TO_SHTATKA))
             {
                 new WebClient().DownloadFile(new Uri("https://github.com/Th3Ch3shir3Cat/comand_dev/raw/master/shtatnoeraspisanie.xls"), PATH_TO_SHTATKA);
+
+            }
+            if (!File.Exists(PATH_TO_Directory + "shtatnoeraspisanie(103).xls"))
+            {
+                new WebClient().DownloadFile(new Uri("https://github.com/Th3Ch3shir3Cat/Resources/raw/master/shtatnoeraspisanie(103).xls"), PATH_TO_Directory + "shtatnoeraspisanie(103).xls");
+            }
+            if (!File.Exists(PATH_TO_Directory + "shtatnoeraspisanie(104).xls"))
+            {
+                new WebClient().DownloadFile(new Uri("https://github.com/Th3Ch3shir3Cat/Resources/raw/master/shtatnoeraspisanie(104).xls"), PATH_TO_Directory + "shtatnoeraspisanie(104).xls");
+            }if (!File.Exists(PATH_TO_Directory + "shtatnoeraspisanie(105).xls"))
+            {
+                new WebClient().DownloadFile(new Uri("https://github.com/Th3Ch3shir3Cat/Resources/raw/master/shtatnoeraspisanie(105).xls"), PATH_TO_Directory + "shtatnoeraspisanie(105).xls");
+            }if (!File.Exists(PATH_TO_Directory + "shtatnoeraspisanie(Шаблон).xls"))
+            {
+                new WebClient().DownloadFile(new Uri("https://github.com/Th3Ch3shir3Cat/Resources/raw/master/shtatnoeraspisanie(Шаблон).xls"), PATH_TO_Directory + "shtatnoeraspisanie(Шаблон).xls");
             }
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = Directory.GetCurrentDirectory() + "\\Shtatnoe\\";
@@ -229,7 +246,6 @@ using WindowsFormsApp1;
                     Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
             }catch (Exception except)
             {
-                //Console.Error.WriteLine(except.Message);
                 MessageBox.Show("Файл не был выбран", "Внимание", MessageBoxButtons.OK);
                 return;
             }
@@ -239,16 +255,21 @@ using WindowsFormsApp1;
             }
 
             await Run();
-            
-            
+
+            if (numDoc.Equals(""))
+            {
+                MessageBox.Show(
+                    "Отсутствует номер штатного расписания, для продолжения работы с данным файлом необходимо заполнить номер","",
+                    MessageBoxButtons.OK);
+            }
+            else
             if (countShtatRaspAfter == 0)
             {
-                var result = MessageBox.Show("Желаете добавить?","Такого документа нет в базе",MessageBoxButtons.YesNo);
+                var result = MessageBox.Show("Для корректной работы необходимо добавить документ","Такого документа нет в базе",MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     IQueryable<STR_SHTAT_RASP> queryForStrShtatRasp = model.STR_SHTAT_RASP;
                     int countStrInST = queryForStrShtatRasp.Count()+2;
-                    //MessageBox.Show(" Строк в штатке" + countStrInST);
                     newShtat = new SHTAT_RASP();
                     newShtat.PK_SHTAT_RASP = countShtat+1;
                     newShtat.number = numberDoc.Text;
