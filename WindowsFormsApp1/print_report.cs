@@ -52,8 +52,8 @@ namespace WindowsFormsApp1
 					Decimal? end_tariff = some_tariff.TARIFF + some_tariff.NADBAVKA1;
 					//Decimal? some_stub = finded.TABEL.PK_PODRAZDEL;
 					writer.Write("{0} {1} {2}, {3} г.р., ", finded.SURNAME, finded.NAME, finded.MIDDLENAME, finded.BIRTHDATE.ToString().Substring(0, 10));
-					writer.WriteLine("работает в ООО {0} в должности ", model.JOB_POSITION.FirstOrDefault().NAME);
-					writer.WriteLine("{0} с {1} г. ", finded.PROFESSION.NAME, finded.DATECREATE.ToString().Substring(0, 10));
+					writer.WriteLine("работает в ООО {0} в должности ", model.OUR_ORG.FirstOrDefault().NAME);
+					writer.WriteLine("{0} с {1} г. ", finded.JOB_POSITION.NAME, finded.DATECREATE.ToString().Substring(0, 10));
 					writer.Write("по настоящее время, имеет оклад {0} рублей в месяц.", end_tariff);
 					//writer.Write("по настоящее время, имеет оклад {0} рублей в месяц. {1}", end_tariff, some_stub);
 					MessageBox.Show("Справка создана!");
