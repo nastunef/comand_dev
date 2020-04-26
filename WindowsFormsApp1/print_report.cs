@@ -8,9 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using WindowsFormsApp1;
 
-namespace WindowsFormsApp2
+namespace WindowsFormsApp1
 {
 	public partial class print_report : Form
 	{
@@ -44,9 +43,9 @@ namespace WindowsFormsApp2
 				writer.WriteLine("ИНН {0}, ОГРН {1}\n", model.OUR_ORG.First().INN, model.OUR_ORG.First().OGRN);
 				writer.WriteLine("от {0}г.", DateTime.Now.ToString().Substring(0, 10)); //todo дату в текущий момент времени
 				writer.WriteLine("СПРАВКА");
-				PERSONCARD finded = model.PERSONCARD.SingleOrDefault(p => (p.NAME == comboBox_nameValue.Text &&
-					p.MIDDLENAME == comboBox_middlenameValue.Text &&
-						p.MIDDLENAME == comboBox_middlenameValue.Text));
+				PERSONCARD finded = model.PERSONCARD.First(p => (p.NAME == comboBox_nameValue.Text &&
+						p.SURNAME == comboBox_surnameValue.Text &&
+							p.MIDDLENAME == comboBox_middlenameValue.Text));
 				if (finded == null)
 					MessageBox.Show("Сотрудник с указанными ФИО не найден!");
 				else
@@ -54,7 +53,7 @@ namespace WindowsFormsApp2
 					writer.Write("{0} {1} {2}, {3} г.р., ", finded.SURNAME, finded.NAME, finded.MIDDLENAME, finded.BIRTHDATE.ToString().Substring(0, 10));
 					writer.WriteLine("работает в ООО в должности ");
 					writer.WriteLine("{0} с {1} г. ", finded.PROFESSION.NAME, finded.DATECREATE.ToString().Substring(0, 10));
-					writer.WriteLine("по настоящее время, имеет оклад {0} рублей в месяц.", finded.PK_GRAZD * 4000);
+					writer.Write("по настоящее время, имеет оклад {0} рублей в месяц.", finded.PK_GRAZD * 4000);
 					//writer.WriteLine("{0} с {1} г. ", finded.PROFESSION.NAME, finded.PEREVOD.LastOrDefault().STARTWORKDATE);
 					//writer.Write("по настоящее время, имеет оклад {0} рублей в месяц.", finded.PEREVOD.LastOrDefault().JOB_POSITION1.STR_SHTAT_RASP.First().TARIFF);
 					MessageBox.Show("Справка создана!");

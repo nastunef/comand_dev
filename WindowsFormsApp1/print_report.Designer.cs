@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace WindowsFormsApp2
+namespace WindowsFormsApp1
 {
 	partial class print_report
 	{

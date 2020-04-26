@@ -59,7 +59,7 @@ namespace WindowsFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Reports ownedForm = new Reports();
+            print_report ownedForm = new print_report();
             ownedForm.Show();
         }
 
@@ -80,5 +80,10 @@ namespace WindowsFormsApp1
             Shtatka shtatnoeRaspisanie = new Shtatka();
             shtatnoeRaspisanie.Show();
         }
+
+		private void MainWindow_Load(object sender, EventArgs e)
+		{
+
+		}
     }
 }
