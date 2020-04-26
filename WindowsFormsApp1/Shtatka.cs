@@ -265,7 +265,7 @@ using WindowsFormsApp1;
             else
             if (countShtatRaspAfter == 0)
             {
-                var result = MessageBox.Show("Желаете добавить?","Такого документа нет в базе",MessageBoxButtons.YesNo);
+                var result = MessageBox.Show("Для корректной работы необходимо добавить документ","Такого документа нет в базе",MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     IQueryable<STR_SHTAT_RASP> queryForStrShtatRasp = model.STR_SHTAT_RASP;
