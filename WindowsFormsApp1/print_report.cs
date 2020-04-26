@@ -48,12 +48,14 @@ namespace WindowsFormsApp1
 					MessageBox.Show("Сотрудник с указанными ФИО не найден!");
 				else
 				{
+					STR_SHTAT_RASP some_tariff = model.STR_SHTAT_RASP.Where(p => p.PK_PODRAZDEL == finded.TABEL.PK_PODRAZDEL).FirstOrDefault();
+					Decimal? end_tariff = some_tariff.TARIFF + some_tariff.NADBAVKA1;
+					//Decimal? some_stub = finded.TABEL.PK_PODRAZDEL;
 					writer.Write("{0} {1} {2}, {3} г.р., ", finded.SURNAME, finded.NAME, finded.MIDDLENAME, finded.BIRTHDATE.ToString().Substring(0, 10));
-					writer.WriteLine("работает в ООО {0} в должности ", model.OUR_ORG.FirstOrDefault().NAME);
+					writer.WriteLine("работает в ООО {0} в должности ", model.JOB_POSITION.FirstOrDefault().NAME);
 					writer.WriteLine("{0} с {1} г. ", finded.PROFESSION.NAME, finded.DATECREATE.ToString().Substring(0, 10));
-					writer.Write("по настоящее время, имеет оклад {0} рублей в месяц.", finded.PK_GRAZD * 4000);
-					//writer.WriteLine("{0} с {1} г. ", finded.PROFESSION.NAME, finded.PEREVOD.LastOrDefault().STARTWORKDATE);
-					//writer.Write("по настоящее время, имеет оклад {0} рублей в месяц.", finded.PEREVOD.LastOrDefault().JOB_POSITION1.STR_SHTAT_RASP.First().TARIFF);
+					writer.Write("по настоящее время, имеет оклад {0} рублей в месяц.", end_tariff);
+					//writer.Write("по настоящее время, имеет оклад {0} рублей в месяц. {1}", end_tariff, some_stub);
 					MessageBox.Show("Справка создана!");
 				}
 			}
