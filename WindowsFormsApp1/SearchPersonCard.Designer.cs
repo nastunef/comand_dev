@@ -870,9 +870,9 @@ namespace WindowsFormsApp1
 	        // 
 	        // label3
 	        // 
-	        this.label3.Location = new System.Drawing.Point(226, 0);
+	        this.label3.Location = new System.Drawing.Point(220, 0);
 	        this.label3.Name = "label3";
-	        this.label3.Size = new System.Drawing.Size(90, 36);
+	        this.label3.Size = new System.Drawing.Size(107, 36);
 	        this.label3.TabIndex = 3;
 	        this.label3.Text = "Использовать в запросе";
 	        this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;

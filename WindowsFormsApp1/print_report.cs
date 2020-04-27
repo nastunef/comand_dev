@@ -29,7 +29,7 @@ namespace WindowsFormsApp1
 			comboBox_nameValue.Items.AddRange(sorted_name);
 			comboBox_middlenameValue.Items.AddRange(sorted_middlename);
 		}
-
+		
 		private void button_run_Click(object sender, EventArgs e)
 		{
 			using (StreamWriter writer = new StreamWriter(File.Create(Path.Combine(System.IO.Directory.GetCurrentDirectory(), "report.txt"))))
@@ -57,7 +57,20 @@ namespace WindowsFormsApp1
 					writer.Write("по настоящее время, имеет оклад {0} рублей в месяц.", end_tariff);
 					//writer.Write("по настоящее время, имеет оклад {0} рублей в месяц. {1}", end_tariff, some_stub);
 					MessageBox.Show("Справка создана!");
+					writer.Close();
 				}
+				using (FileStream fs = File.OpenRead(Path.Combine(Directory.GetCurrentDirectory(), "report.txt")))
+				{
+					string text = "";
+					byte[] b = new byte[1024];
+					UTF8Encoding temp = new UTF8Encoding(true);
+					while (fs.Read(b,0,b.Length) > 0)
+					{
+						text = temp.GetString(b);
+					}
+					MessageBox.Show(text, "Справка");
+				}
+
 			}
 		}
 
