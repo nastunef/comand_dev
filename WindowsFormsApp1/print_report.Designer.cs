@@ -32,6 +32,7 @@ namespace WindowsFormsApp1
 		private void InitializeComponent()
 		{
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.label1 = new System.Windows.Forms.Label();
 			this.comboBox_middlenameValue = new System.Windows.Forms.ComboBox();
 			this.comboBox_nameValue = new System.Windows.Forms.ComboBox();
 			this.comboBox_surnameValue = new System.Windows.Forms.ComboBox();
@@ -39,7 +40,6 @@ namespace WindowsFormsApp1
 			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -58,6 +58,14 @@ namespace WindowsFormsApp1
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(511, 260);
 			this.panel1.TabIndex = 0;
+			// 
+			// label1
+			// 
+			this.label1.Location = new System.Drawing.Point(44, 32);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(210, 32);
+			this.label1.TabIndex = 88;
+			this.label1.Text = "Выдать справку с места работы:";
 			// 
 			// comboBox_middlenameValue
 			// 
@@ -130,14 +138,6 @@ namespace WindowsFormsApp1
 			this.label3.TabIndex = 78;
 			this.label3.Text = "Фамилия";
 			// 
-			// label1
-			// 
-			this.label1.Location = new System.Drawing.Point(44, 32);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(210, 32);
-			this.label1.TabIndex = 88;
-			this.label1.Text = "Выдать справку с места работы:";
-			// 
 			// print_report
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -145,6 +145,7 @@ namespace WindowsFormsApp1
 			this.ClientSize = new System.Drawing.Size(531, 284);
 			this.Controls.Add(this.panel1);
 			this.Name = "print_report";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Справка с места работы";
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();

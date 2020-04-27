@@ -224,7 +224,7 @@ namespace WindowsFormsApp1
             // 
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label8.Location = new System.Drawing.Point(555, -19);
+            this.label8.Location = new System.Drawing.Point(555, -18);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(136, 45);
@@ -493,7 +493,7 @@ namespace WindowsFormsApp1
             this.button1.Location = new System.Drawing.Point(864, 870);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(229, 64);
+            this.button1.Size = new System.Drawing.Size(229, 63);
             this.button1.TabIndex = 28;
             this.button1.Text = "Отдать на распоряжение";
             this.button1.UseVisualStyleBackColor = true;
@@ -612,7 +612,7 @@ namespace WindowsFormsApp1
             // 
             // buttonBack
             // 
-            this.buttonBack.Location = new System.Drawing.Point(924, 956);
+            this.buttonBack.Location = new System.Drawing.Point(924, 957);
             this.buttonBack.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(99, 30);
@@ -673,7 +673,7 @@ namespace WindowsFormsApp1
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel9.Controls.Add(this.buttonNewPlaceWork);
             this.panel9.Controls.Add(this.label21);
-            this.panel9.Location = new System.Drawing.Point(117, 671);
+            this.panel9.Location = new System.Drawing.Point(117, 672);
             this.panel9.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(148, 172);
@@ -813,7 +813,7 @@ namespace WindowsFormsApp1
             this.panel14.Controls.Add(this.textBox12);
             this.panel14.Controls.Add(this.label27);
             this.panel14.Controls.Add(this.label26);
-            this.panel14.Location = new System.Drawing.Point(893, 48);
+            this.panel14.Location = new System.Drawing.Point(892, 48);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(228, 92);
             this.panel14.TabIndex = 51;
@@ -822,6 +822,8 @@ namespace WindowsFormsApp1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1143, 1021);
             this.Controls.Add(this.panel14);
@@ -856,7 +858,7 @@ namespace WindowsFormsApp1
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "PerevodWorkPrikaz";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Приказ о приеме на работу";
+            this.Text = "Приказ о переводе на работу";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
