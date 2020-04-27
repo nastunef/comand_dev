@@ -61,14 +61,8 @@ namespace WindowsFormsApp1
 				}
 				using (FileStream fs = File.OpenRead(Path.Combine(Directory.GetCurrentDirectory(), "report.txt")))
 				{
-					string text = "";
-					byte[] b = new byte[1024];
-					UTF8Encoding temp = new UTF8Encoding(true);
-					while (fs.Read(b,0,b.Length) > 0)
-					{
-						text = temp.GetString(b);
-					}
-					MessageBox.Show(text, "Справка");
+					PrintForm ownedForm = new PrintForm();
+					ownedForm.Show();
 				}
 
 			}
