@@ -99,7 +99,9 @@ namespace WindowsFormsApp1
             dataGridView1.DataSource = stringJobPositions;
             dataGridView1.Columns[1].Width = 255;
             dataGridView1.Columns[2].Width = 75;
-            dataGridView1.Columns[3].Width = 70;
+            dataGridView1.Columns[3].Width = 45;
+            dataGridView1.Columns[5].Visible = false;
+            dataGridView1.Columns[6].Visible = false;
             dataGridView1.Columns["id"].Visible = false;
             dataGridView1.Columns["tariff"].Visible = false;
 
@@ -129,7 +131,9 @@ namespace WindowsFormsApp1
             dataGridView1.DataSource = stringJobPositions;
             dataGridView1.Columns[1].Width = 255;
             dataGridView1.Columns[2].Width = 75;
-            dataGridView1.Columns[3].Width = 70;
+            dataGridView1.Columns[3].Width = 45;
+            dataGridView1.Columns[5].Visible = false;
+            dataGridView1.Columns[6].Visible = false;
             dataGridView1.Columns["id"].Visible = false;
             this.totalCnt.Text = totalCount.ToString();
             this.totalZm.Text = totalZam.ToString();
