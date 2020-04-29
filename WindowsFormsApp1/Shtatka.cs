@@ -113,13 +113,21 @@ using WindowsFormsApp1;
             IQueryable<PODRAZDELORG> query = model.PODRAZDELORG;
             query = query.Where(podrazdelorg => podrazdelorg.NAME == selectedString.stringName);
             string dataCreate = "";
+            string dateUprazd = "";
             foreach (PODRAZDELORG podrazdelorg in query)
             {
                 podrazdelenie.podrazdelorg = podrazdelorg;
                 dataCreate = podrazdelorg.DATECREATE.ToString();
+                dateUprazd = podrazdelorg.DATEUPRAZD.ToString();
             }
 
+            if (dateUprazd.Equals(""))
+            {
+                dateUprazd = "//";
+            }
+            
             podrazdelenie.keyST = PK_ST;
+            podrazdelenie.dateUprazdText.Text = dateUprazd;
             podrazdelenie.dataCreate.Text = dataCreate;
             podrazdelenie.Show();
         }

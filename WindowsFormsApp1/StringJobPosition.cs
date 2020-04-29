@@ -1,4 +1,6 @@
-﻿namespace WindowsFormsApp1
+﻿using System;
+
+namespace WindowsFormsApp1
 {
     public class StringJobPosition
     {
@@ -8,5 +10,9 @@
         
         public int kolZam { get; set; }
         public int tariff { get; set; }
+        
+        public string dateCreate { get; set; }
+        
+        public string dateUprazd { get; set; }
     }
 }

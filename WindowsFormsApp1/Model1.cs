@@ -125,6 +125,12 @@ namespace WindowsFormsApp1
                 .IsUnicode(false);
 
             modelBuilder.Entity<JOB_POSITION>()
+                .Property(e => e.DATECREATE);
+
+            modelBuilder.Entity<JOB_POSITION>()
+                .Property(e => e.DATEUPRAZD);
+
+            modelBuilder.Entity<JOB_POSITION>()
                 .HasMany(e => e.PEREVOD)
                 .WithRequired(e => e.JOB_POSITION)
                 .HasForeignKey(e => e.PK_NEW_JOB_POS)
@@ -483,6 +489,9 @@ namespace WindowsFormsApp1
             modelBuilder.Entity<PODRAZDELORG>()
                 .Property(e => e.CODE)
                 .IsUnicode(false);
+            
+            modelBuilder.Entity<PODRAZDELORG>()
+                .Property(e => e.DATEUPRAZD);
 
             modelBuilder.Entity<PODRAZDELORG>()
                 .Property(e => e.PK_PODRAZDEL_PK_PODRAZDEL)

@@ -31,6 +31,8 @@ namespace WindowsFormsApp1
         public string CODE { get; set; }
 
         public DateTime? DATECREATE { get; set; }
+        
+        public DateTime? DATEUPRAZD { get; set; }
 
         public decimal? PK_PODRAZDEL_PK_PODRAZDEL { get; set; }
 

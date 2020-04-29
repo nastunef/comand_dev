@@ -670,7 +670,6 @@
             this.totalInMoth.Name = "totalInMoth";
             this.totalInMoth.Size = new System.Drawing.Size(208, 22);
             this.totalInMoth.TabIndex = 59;
-           
             // 
             // Shtatka
             // 
@@ -746,7 +745,7 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
-        
+
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.TextBox dataCreate;
         private System.Windows.Forms.DataGridView dataGridView1;

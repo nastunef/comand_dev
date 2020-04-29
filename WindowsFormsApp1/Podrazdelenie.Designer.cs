@@ -46,6 +46,12 @@ namespace WindowsFormsApp1
             this.nameChoose = new System.Windows.Forms.Label();
             this.oklad = new System.Windows.Forms.Label();
             this.Podrazdels = new System.Windows.Forms.TreeView();
+            this.dateUprazd = new System.Windows.Forms.Label();
+            this.dateUprazdText = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dateCreateT = new System.Windows.Forms.Label();
+            this.dateUprazdT = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,7 +112,7 @@ namespace WindowsFormsApp1
             // 
             // dataCreate
             // 
-            this.dataCreate.Location = new System.Drawing.Point(627, 39);
+            this.dataCreate.Location = new System.Drawing.Point(636, 12);
             this.dataCreate.Name = "dataCreate";
             this.dataCreate.ReadOnly = true;
             this.dataCreate.Size = new System.Drawing.Size(160, 22);
@@ -114,7 +120,7 @@ namespace WindowsFormsApp1
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(627, 13);
+            this.label5.Location = new System.Drawing.Point(473, 15);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(139, 23);
             this.label5.TabIndex = 6;
@@ -147,7 +153,7 @@ namespace WindowsFormsApp1
             // 
             // label
             // 
-            this.label.Location = new System.Drawing.Point(284, 512);
+            this.label.Location = new System.Drawing.Point(284, 480);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(52, 23);
             this.label.TabIndex = 10;
@@ -155,16 +161,16 @@ namespace WindowsFormsApp1
             // 
             // nameChoose
             // 
-            this.nameChoose.Location = new System.Drawing.Point(284, 478);
+            this.nameChoose.Location = new System.Drawing.Point(284, 435);
             this.nameChoose.Name = "nameChoose";
             this.nameChoose.Size = new System.Drawing.Size(512, 23);
             this.nameChoose.TabIndex = 11;
             // 
             // oklad
             // 
-            this.oklad.Location = new System.Drawing.Point(381, 512);
+            this.oklad.Location = new System.Drawing.Point(440, 480);
             this.oklad.Name = "oklad";
-            this.oklad.Size = new System.Drawing.Size(243, 23);
+            this.oklad.Size = new System.Drawing.Size(181, 23);
             this.oklad.TabIndex = 12;
             // 
             // Podrazdels
@@ -175,11 +181,63 @@ namespace WindowsFormsApp1
             this.Podrazdels.TabIndex = 13;
             this.Podrazdels.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.Podrazdels_AfterSelect);
             // 
+            // dateUprazd
+            // 
+            this.dateUprazd.Location = new System.Drawing.Point(473, 61);
+            this.dateUprazd.Name = "dateUprazd";
+            this.dateUprazd.Size = new System.Drawing.Size(148, 23);
+            this.dateUprazd.TabIndex = 14;
+            this.dateUprazd.Text = "Дата упразднения";
+            // 
+            // dateUprazdText
+            // 
+            this.dateUprazdText.Location = new System.Drawing.Point(636, 58);
+            this.dateUprazdText.Name = "dateUprazdText";
+            this.dateUprazdText.ReadOnly = true;
+            this.dateUprazdText.Size = new System.Drawing.Size(160, 22);
+            this.dateUprazdText.TabIndex = 15;
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(284, 503);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(139, 23);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Дата создания";
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(284, 526);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(139, 23);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Дата упразднения";
+            // 
+            // dateCreateT
+            // 
+            this.dateCreateT.Location = new System.Drawing.Point(440, 503);
+            this.dateCreateT.Name = "dateCreateT";
+            this.dateCreateT.Size = new System.Drawing.Size(172, 23);
+            this.dateCreateT.TabIndex = 18;
+            // 
+            // dateUprazdT
+            // 
+            this.dateUprazdT.Location = new System.Drawing.Point(440, 526);
+            this.dateUprazdT.Name = "dateUprazdT";
+            this.dateUprazdT.Size = new System.Drawing.Size(172, 23);
+            this.dateUprazdT.TabIndex = 19;
+            // 
             // Podrazdelenie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 568);
+            this.Controls.Add(this.dateUprazdT);
+            this.Controls.Add(this.dateCreateT);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.dateUprazdText);
+            this.Controls.Add(this.dateUprazd);
             this.Controls.Add(this.Podrazdels);
             this.Controls.Add(this.oklad);
             this.Controls.Add(this.nameChoose);
@@ -197,7 +255,7 @@ namespace WindowsFormsApp1
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Podrazdelenie";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Podrazdelenie";
+            this.Text = "Подразделение";
             this.Load += new System.EventHandler(this.Podrazdelenie_Load);
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -206,12 +264,18 @@ namespace WindowsFormsApp1
 
         public System.Windows.Forms.TextBox dataCreate;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label dateCreateT;
+        private System.Windows.Forms.Label dateUprazd;
+        private System.Windows.Forms.Label dateUprazdT;
+        public System.Windows.Forms.TextBox dateUprazdText;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label nameChoose;
         public System.Windows.Forms.Label namePodrazdel;
         public System.Windows.Forms.Label oklad;

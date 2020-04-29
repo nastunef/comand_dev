@@ -22,11 +22,12 @@ namespace WindowsFormsApp1
         //Всего заместителей
         private int totalZam;
 
-        private StringJobPosition setDataInString(StringJobPosition str, int id ,string name, int kolEd, int kolZam, int tariff)
+        private StringJobPosition setDataInString(StringJobPosition str, int id ,string name, string dateCreate, string dateUprzad ,int kolEd, int kolZam, int tariff)
         {
             str.id = id;
             str.name = name;
-            
+            str.dateCreate = dateCreate;
+            str.dateUprazd = dateUprzad;
             str.numSthatEd = kolEd;
             str.kolZam = kolZam;
             str.tariff = tariff;
@@ -54,7 +55,8 @@ namespace WindowsFormsApp1
 
             this.nameChoose.Text = selectedString.name;
             this.oklad.Text = selectedString.tariff.ToString();
-
+            this.dateCreateT.Text = selectedString.dateCreate;
+            this.dateUprazdT.Text = selectedString.dateUprazd;
         }
 
         private void AddNode(IQueryable<PODRAZDELORG> query,TreeNode parentNode, TreeNode childNode)
@@ -87,9 +89,9 @@ namespace WindowsFormsApp1
             Random random = new Random();
             foreach (STR_SHTAT_RASP jobPosition in query)
             {
-                int rnd = random.Next(5);
+                int rnd = random.Next(2);
                 stringJobPositions.Add(setDataInString(new StringJobPosition(), Convert.ToInt32(jobPosition.PK_JOB_POS),
-                    jobPosition.JOB_POSITION.NAME, Convert.ToInt32(jobPosition.COUNT_STUFF), rnd, Convert.ToInt32(jobPosition.TARIFF)));
+                    jobPosition.JOB_POSITION.NAME, jobPosition.JOB_POSITION.DATECREATE.ToString(),jobPosition.JOB_POSITION.DATEUPRAZD.ToString(),Convert.ToInt32(jobPosition.COUNT_STUFF), rnd, Convert.ToInt32(jobPosition.TARIFF)));
                 totalZam += rnd;
                 totalCount += Convert.ToInt32(jobPosition.COUNT_STUFF);
             }
@@ -118,7 +120,7 @@ namespace WindowsFormsApp1
             {
                 int rnd = random.Next(5);
                 stringJobPositions.Add(setDataInString(new StringJobPosition(), Convert.ToInt32(jobPosition.PK_JOB_POS),
-                    jobPosition.JOB_POSITION.NAME, Convert.ToInt32(jobPosition.COUNT_STUFF), rnd, Convert.ToInt32(jobPosition.TARIFF)));
+                    jobPosition.JOB_POSITION.NAME, jobPosition.JOB_POSITION.DATECREATE.ToString(),jobPosition.JOB_POSITION.DATEUPRAZD.ToString(),Convert.ToInt32(jobPosition.COUNT_STUFF), rnd, Convert.ToInt32(jobPosition.TARIFF)));
                 totalZam += rnd;
                 totalCount += Convert.ToInt32(jobPosition.COUNT_STUFF);
             }
