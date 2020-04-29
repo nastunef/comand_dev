@@ -39,6 +39,8 @@ namespace WindowsFormsApp1
             this.mainPodrazdel = new System.Windows.Forms.ComboBox();
             this.dateCreate = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dateUprazd = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // NamePodrazdel
@@ -77,7 +79,7 @@ namespace WindowsFormsApp1
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(69, 207);
+            this.label3.Location = new System.Drawing.Point(69, 241);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(171, 23);
             this.label3.TabIndex = 4;
@@ -86,7 +88,7 @@ namespace WindowsFormsApp1
             // mainPodrazdel
             // 
             this.mainPodrazdel.FormattingEnabled = true;
-            this.mainPodrazdel.Location = new System.Drawing.Point(330, 204);
+            this.mainPodrazdel.Location = new System.Drawing.Point(330, 238);
             this.mainPodrazdel.Name = "mainPodrazdel";
             this.mainPodrazdel.Size = new System.Drawing.Size(178, 24);
             this.mainPodrazdel.TabIndex = 5;
@@ -109,11 +111,28 @@ namespace WindowsFormsApp1
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(69, 198);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(159, 23);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Дата упразднения";
+            // 
+            // dateUprazd
+            // 
+            this.dateUprazd.Location = new System.Drawing.Point(330, 193);
+            this.dateUprazd.Name = "dateUprazd";
+            this.dateUprazd.Size = new System.Drawing.Size(178, 22);
+            this.dateUprazd.TabIndex = 11;
+            // 
             // AddPodrazdel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(568, 362);
+            this.Controls.Add(this.dateUprazd);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dateCreate);
             this.Controls.Add(this.mainPodrazdel);
@@ -133,9 +152,11 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox codePodrazdel;
         private System.Windows.Forms.DateTimePicker dateCreate;
+        private System.Windows.Forms.DateTimePicker dateUprazd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox mainPodrazdel;
         public System.Windows.Forms.Label NamePodrazdel;
 

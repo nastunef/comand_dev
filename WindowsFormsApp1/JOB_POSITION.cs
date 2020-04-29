@@ -28,6 +28,10 @@ namespace WindowsFormsApp1
 
         [StringLength(500)]
         public string NAME { get; set; }
+        
+        public DateTime? DATECREATE { get; set; }
+        
+        public DateTime? DATEUPRAZD { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PEREVOD> PEREVOD { get; set; }

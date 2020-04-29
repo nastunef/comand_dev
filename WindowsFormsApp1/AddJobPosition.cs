@@ -27,6 +27,8 @@ namespace WindowsFormsApp1
             JOB_POSITION jobPosition = new JOB_POSITION();
             jobPosition.PK_JOB_POS = countJob;
             jobPosition.NAME = NameJobPosition.Text;
+            jobPosition.DATECREATE = dateCreate.Value;
+            jobPosition.DATEUPRAZD = dateUprazd.Value;
             jobPosition.CIPHER = codeJob.Text;
             model.JOB_POSITION.Add(jobPosition);
             model.SaveChanges();

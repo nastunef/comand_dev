@@ -48,6 +48,7 @@ namespace WindowsFormsApp1
                 podrazdelorg.PK_PODRAZDEL = countPodrazdels;
                 podrazdelorg.CODE = codePodrazdel.Text;
                 podrazdelorg.DATECREATE = dateCreate.Value;
+                podrazdelorg.DATEUPRAZD = dateUprazd.Value;
                 podrazdelorg.NAME = NamePodrazdel.Text;
                 podrazdelorg.PK_PODRAZDEL_PK_PODRAZDEL = podrazd_pk[mainPodrazdel.SelectedItem.ToString()];
                 model.PODRAZDELORG.Add(podrazdelorg);
