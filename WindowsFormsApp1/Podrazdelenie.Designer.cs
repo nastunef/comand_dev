@@ -57,10 +57,10 @@ namespace WindowsFormsApp1
             // 
             // namePodrazdel
             // 
-            this.namePodrazdel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.namePodrazdel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.namePodrazdel.Location = new System.Drawing.Point(1, 18);
             this.namePodrazdel.Name = "namePodrazdel";
-            this.namePodrazdel.Size = new System.Drawing.Size(620, 43);
+            this.namePodrazdel.Size = new System.Drawing.Size(437, 43);
             this.namePodrazdel.TabIndex = 0;
             this.namePodrazdel.Text = "Подразделение";
             this.namePodrazdel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
