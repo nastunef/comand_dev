@@ -30,10 +30,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.placesView = new System.Windows.Forms.DataGridView();
             this.CounrtyColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -235,9 +235,9 @@
             // StartDateColumn
             // 
             this.StartDateColumn.DataPropertyName = "STARTDATE";
-            dataGridViewCellStyle5.Format = "d";
-            dataGridViewCellStyle5.NullValue = "##.##.####";
-            this.StartDateColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = "##.##.####";
+            this.StartDateColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.StartDateColumn.HeaderText = "Дата начала";
             this.StartDateColumn.Name = "StartDateColumn";
             this.StartDateColumn.Width = 96;
@@ -245,9 +245,9 @@
             // FinishDateColumn
             // 
             this.FinishDateColumn.DataPropertyName = "ENDDATE";
-            dataGridViewCellStyle6.Format = "d";
-            dataGridViewCellStyle6.NullValue = "##.##.####";
-            this.FinishDateColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = "##.##.####";
+            this.FinishDateColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.FinishDateColumn.HeaderText = "Дата окончания";
             this.FinishDateColumn.Name = "FinishDateColumn";
             this.FinishDateColumn.Width = 114;
@@ -666,9 +666,9 @@
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "STARTDATE";
-            dataGridViewCellStyle7.Format = "d";
-            dataGridViewCellStyle7.NullValue = "01.01.2020";
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = "01.01.2020";
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTextBoxColumn8.HeaderText = "Дата окончания";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.Width = 114;
@@ -676,9 +676,9 @@
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "TRIP";
-            dataGridViewCellStyle8.Format = "d";
-            dataGridViewCellStyle8.NullValue = "01.01.2020";
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Format = "d";
+            dataGridViewCellStyle4.NullValue = "01.01.2020";
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn9.HeaderText = "Цель";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.Width = 58;
@@ -738,7 +738,6 @@
             this.Name = "KomandirovkaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Командировка";
-            this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.KomandirovkaForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.placesView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WorkersGridView)).EndInit();
