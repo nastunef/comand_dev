@@ -15,7 +15,8 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\kamot\OneDrive\Рабочий стол\кек\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -27,8 +28,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -93,6 +94,18 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>05A6070BB26CB8B196D3FEF645023BC23AA3A323</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>WindowsFormsApp1_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -292,19 +305,17 @@
     <Compile Include="ReadDelWorkPrikaz.Designer.cs">
       <DependentUpon>ReadDelWorkPrikaz.cs</DependentUpon>
     </Compile>
-
     <Compile Include="SearchPodrazdel.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SearchPodrazdel.Designer.cs">
       <DependentUpon>SearchPodrazdel.cs</DependentUpon>
-	</Compile>
+    </Compile>
     <Compile Include="SearchPersonCard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SearchPersonCard.Designer.cs">
       <DependentUpon>SearchPersonCard.cs</DependentUpon>
-	
     </Compile>
     <Compile Include="SearchPrikaz.cs">
       <SubType>Form</SubType>
@@ -407,16 +418,14 @@
     <EmbeddedResource Include="Reports.resx">
       <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="SearchPodrazdel.resx">
       <DependentUpon>SearchPodrazdel.cs</DependentUpon>
-</EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReadPerevodWork.resx">
       <DependentUpon>ReadPerevodWork.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchPersonCard.resx">
       <DependentUpon>SearchPersonCard.cs</DependentUpon>
-
     </EmbeddedResource>
     <EmbeddedResource Include="SearchWorkerForm.resx">
       <DependentUpon>SearchWorkerForm.cs</DependentUpon>
@@ -433,6 +442,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="WindowsFormsApp1_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -653,12 +653,14 @@ namespace Komandirovki
             string PATH_TO_T9A = "templates\\T-9A.xls";
             if (!Directory.Exists("templates"))
                 Directory.CreateDirectory("templates");
-            try
-            {
-                // спешл фор 7 винда
-                if(Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ProductName", "").ToString().Contains("7"))
-                    System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
-            }catch(Exception){}
+            // спешл фор Астахова
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
+            // try
+            // {
+            //     // спешл фор 7 винда
+            //     //if(Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ProductName", "").ToString().Contains("7"))
+            //         System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
+            // }catch(Exception){}
             try
             {
                 if (!File.Exists(PATH_TO_T9))
@@ -675,7 +677,7 @@ namespace Komandirovki
             }
             catch (Exception)
             {
-                MyMsgBox.showError("Не удалось скачать шаблоны для заполнения. Попробуйте добавить программу в исключения антивируса/брандмауэра.");
+                MyMsgBox.showError("Не удалось скачать шаблоны для заполнения.");
                 return;
             }
 
