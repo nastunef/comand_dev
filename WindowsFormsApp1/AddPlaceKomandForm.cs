@@ -79,12 +79,10 @@ namespace Komandirovki
             Console.WriteLine($"id org = {trip_org.PK_TRIP_ORG}");
             komandirovkaForm.AddOrgTrip(trip_org);
             MyMsgBox.showInfo("Добавлено!");
+            this.Close();
+            komandirovkaForm.Show();
         }
-
-        private void AddPlaceKomandForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            e.Cancel = !MyMsgBox.showAsk("Вы уверены?");
-        }
+        
 
         private void ExitButton_Click(object sender, EventArgs e)
         {

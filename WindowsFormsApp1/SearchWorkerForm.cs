@@ -94,6 +94,7 @@ namespace Komandirovki
             komandirovkaForm.SetWorkers(selected);
             MyMsgBox.showInfo("Добавлено!");
             this.Close();
+            komandirovkaForm.Show();
         }
     }
 }

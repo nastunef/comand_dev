@@ -7,6 +7,7 @@ using System.Net;
 using System.Windows.Forms;
 using WindowsFormsApp1;
 using Microsoft.Office.Interop.Excel;
+using Microsoft.Win32;
 using Application = Microsoft.Office.Interop.Excel.Application;
 
 namespace Komandirovki
@@ -34,7 +35,6 @@ namespace Komandirovki
             model = new Model1();
             allOrgs = model.TRIP_ORG;
             InitializeComponent();
-
             UpdatePlaces();
             CounrtyColumn.DataSource = cities.Keys.ToList();
             waitForm.Close();
@@ -638,22 +638,50 @@ namespace Komandirovki
 
         private void ExportButton_Click(object sender, EventArgs e)
         {
-            Application exApp = new Application();
+            Application exApp;
+            try
+            {
+                exApp = new Application();
+                 
+            }
+            catch (Exception)
+            {
+                MyMsgBox.showError("Не удалось открыть Excel для заполения данных.");
+                return;
+            }
             string PATH_TO_T9 = "templates\\T-9.xls";
             string PATH_TO_T9A = "templates\\T-9A.xls";
             if (!Directory.Exists("templates"))
                 Directory.CreateDirectory("templates");
-            if (!File.Exists(PATH_TO_T9))
+            try
             {
-                new WebClient().DownloadFile(new Uri("https://github.com/pi62/templates/raw/master/T-9.xls"), PATH_TO_T9);
-            }
-            if (!File.Exists(PATH_TO_T9A))
+                // спешл фор 7 винда
+                if(Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ProductName", "").ToString().Contains("7"))
+                    System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
+            }catch(Exception){}
+            try
             {
-                new WebClient().DownloadFile(new Uri("https://github.com/pi62/templates/raw/master/T-9A.xls"), PATH_TO_T9A);
+                if (!File.Exists(PATH_TO_T9))
+                {
+                    new WebClient().DownloadFile(new Uri("https://github.com/pi62/templates/raw/master/T-9.xls"),
+                        PATH_TO_T9);
+                }
+
+                if (!File.Exists(PATH_TO_T9A))
+                {
+                    new WebClient().DownloadFile(new Uri("https://github.com/pi62/templates/raw/master/T-9A.xls"),
+                        PATH_TO_T9A);
+                }
             }
+            catch (Exception)
+            {
+                MyMsgBox.showError("Не удалось скачать шаблоны для заполнения. Попробуйте добавить программу в исключения антивируса/брандмауэра.");
+                return;
+            }
+
             var saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.InitialDirectory = Directory.GetCurrentDirectory();
-           
+
             saveFileDialog1.DefaultExt = "xls";
             saveFileDialog1.ShowDialog();
             var savePath = saveFileDialog1.FileName;
