@@ -221,6 +221,7 @@ using WindowsFormsApp1;
             string PATH_TO_Directory = "Shtatnoe\\";
             if (!Directory.Exists("Shtatnoe"))
                 Directory.CreateDirectory("Shtatnoe");
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
             if (!File.Exists(PATH_TO_SHTATKA))
             {
                 new WebClient().DownloadFile(new Uri("https://github.com/Th3Ch3shir3Cat/comand_dev/raw/master/shtatnoeraspisanie.xls"), PATH_TO_SHTATKA);
